@@ -1,0 +1,28 @@
+[Unit]
+Description=CEX microstructure — Ethereum mempool recorder (public pending tx; data collection only)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=@RUN_USER@
+Group=@RUN_USER@
+WorkingDirectory=@APP_DIR@/scripts
+Environment=DATA_ROOT=@DATA_ROOT@
+Environment=ETH_WS_URL=wss://ethereum-rpc.publicnode.com
+Environment=ENRICH=1
+Environment=FETCH_RECEIPT=1
+Environment=PYTHONUNBUFFERED=1
+ExecStart=@APP_DIR@/.venv/bin/python @APP_DIR@/scripts/record_mempool_eth.py
+Restart=always
+RestartSec=5
+KillSignal=SIGTERM
+TimeoutStopSec=30
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=@DATA_ROOT@
+
+[Install]
+WantedBy=multi-user.target
