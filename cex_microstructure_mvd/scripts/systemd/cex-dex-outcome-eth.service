@@ -1,0 +1,28 @@
+[Unit]
+Description=CEX/DEX research — Ethereum post-inclusion DEX outcome tracker (measurement only)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=@RUN_USER@
+Group=@RUN_USER@
+WorkingDirectory=@APP_DIR@/scripts
+Environment=DATA_ROOT=@DATA_ROOT@
+Environment=ETH_WS_URL=wss://ethereum-rpc.publicnode.com
+Environment=ETH_RPC_URL=https://ethereum-rpc.publicnode.com
+Environment=MIN_NOTIONAL_USD=5000
+Environment=PYTHONUNBUFFERED=1
+ExecStart=@APP_DIR@/.venv/bin/python @APP_DIR@/scripts/track_dex_inclusion_outcomes.py
+Restart=always
+RestartSec=5
+KillSignal=SIGTERM
+TimeoutStopSec=30
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=@DATA_ROOT@
+
+[Install]
+WantedBy=multi-user.target
