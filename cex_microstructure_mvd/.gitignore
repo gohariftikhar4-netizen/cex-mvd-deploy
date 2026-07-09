@@ -1,0 +1,7 @@
+# Recorder runtime artifacts — never commit captured data or venvs.
+data/
+reports/
+.venv/
+__pycache__/
+*.pyc
+*.tmp

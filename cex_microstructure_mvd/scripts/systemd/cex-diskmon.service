@@ -1,0 +1,14 @@
+[Unit]
+Description=CEX microstructure — disk-usage monitor
+
+[Service]
+Type=oneshot
+User=@RUN_USER@
+Group=@RUN_USER@
+Environment=DATA_ROOT=@DATA_ROOT@
+# Report-only by default (no pruning): an MVD must not silently drop data.
+ExecStart=@APP_DIR@/.venv/bin/python @APP_DIR@/scripts/disk_monitor.py --data-root @DATA_ROOT@ --min-free-gb 10
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=@DATA_ROOT@

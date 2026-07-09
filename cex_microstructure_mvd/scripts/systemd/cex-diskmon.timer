@@ -1,0 +1,10 @@
+[Unit]
+Description=Run CEX disk-usage monitor hourly
+
+[Timer]
+OnCalendar=hourly
+RandomizedDelaySec=60
+Persistent=true
+
+[Install]
+WantedBy=timers.target

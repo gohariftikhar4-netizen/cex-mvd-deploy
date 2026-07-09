@@ -1,0 +1,15 @@
+[Unit]
+Description=CEX microstructure — daily data-quality report
+
+[Service]
+Type=oneshot
+User=@RUN_USER@
+Group=@RUN_USER@
+Environment=DATA_ROOT=@DATA_ROOT@
+# Writes the machine-readable report to @REPORTS@/quality-latest.json; the
+# full human-readable table goes to the journal (journalctl -u cex-quality).
+ExecStart=@APP_DIR@/.venv/bin/python @APP_DIR@/scripts/daily_quality_report.py --data-root @DATA_ROOT@ --json @REPORTS@/quality-latest.json
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=@REPORTS@

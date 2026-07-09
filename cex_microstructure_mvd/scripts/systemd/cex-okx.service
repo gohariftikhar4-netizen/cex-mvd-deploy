@@ -1,0 +1,29 @@
+[Unit]
+Description=CEX microstructure recorder — OKX (public market data)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=@RUN_USER@
+Group=@RUN_USER@
+WorkingDirectory=@APP_DIR@/recorders
+Environment=DATA_ROOT=@DATA_ROOT@
+Environment=OKX_SYMBOL=BTC-USDT-SWAP
+Environment=POLL_SECONDS=30
+Environment=PYTHONUNBUFFERED=1
+ExecStart=@APP_DIR@/.venv/bin/python @APP_DIR@/recorders/okx_recorder.py
+Restart=always
+RestartSec=5
+# Flush buffers on stop before SIGKILL.
+KillSignal=SIGTERM
+TimeoutStopSec=30
+# Hardening: no privileges, writes confined to the data dir.
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=@DATA_ROOT@
+
+[Install]
+WantedBy=multi-user.target

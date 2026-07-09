@@ -1,0 +1,26 @@
+[Unit]
+Description=CEX microstructure recorder — Coinbase (public market data)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=@RUN_USER@
+Group=@RUN_USER@
+WorkingDirectory=@APP_DIR@/recorders
+Environment=DATA_ROOT=@DATA_ROOT@
+Environment=CB_PRODUCT=BTC-USD
+Environment=PYTHONUNBUFFERED=1
+ExecStart=@APP_DIR@/.venv/bin/python @APP_DIR@/recorders/coinbase_recorder.py
+Restart=always
+RestartSec=5
+KillSignal=SIGTERM
+TimeoutStopSec=30
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=@DATA_ROOT@
+
+[Install]
+WantedBy=multi-user.target
