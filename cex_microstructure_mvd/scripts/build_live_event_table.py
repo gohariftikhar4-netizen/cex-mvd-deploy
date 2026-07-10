@@ -33,15 +33,33 @@ def main():
     out = _load(args.data_root, "outcomes")
     if out.empty:
         print("no outcome rows yet"); return
-    # attach pending-side metadata from the mempool recorder (best-effort join)
+    out["tx_hash"] = out["tx_hash"].str.lower()  # normalize for join (getLogs vs recorder)
+
+    # attach pending-side metadata (pending_first_seen_ts + priority fee + router)
     pend = _load(args.data_root, "pending")
     if not pend.empty:
-        cols = [c for c in ["tx_hash", "max_priority_gwei", "gas_price_gwei", "router", "method", "selector"] if c in pend.columns]
-        out = out.merge(pend[cols].drop_duplicates("tx_hash"), on="tx_hash", how="left", suffixes=("", "_pend"))
+        pend["tx_hash"] = pend["tx_hash"].str.lower()
+        pcols = {"ts_local_receive": "pending_first_seen_ts", "max_priority_gwei": "priority_fee_gwei",
+                 "gas_price_gwei": "gas_price_gwei", "router": "router_pending", "method": "method_pending"}
+        keep = ["tx_hash"] + [c for c in pcols if c in pend.columns]
+        pj = pend[keep].drop_duplicates("tx_hash").rename(columns=pcols)
+        out = out.merge(pj, on="tx_hash", how="left")
     incl = _load(args.data_root, "inclusion")
     if not incl.empty:
-        c = [x for x in ["tx_hash", "inclusion_delay_s", "success", "replaced"] if x in incl.columns]
-        out = out.merge(incl[c].drop_duplicates("tx_hash"), on="tx_hash", how="left")
+        incl["tx_hash"] = incl["tx_hash"].str.lower()
+        ic = [x for x in ["tx_hash", "inclusion_delay_s", "success", "replaced"] if x in incl.columns]
+        out = out.merge(incl[ic].drop_duplicates("tx_hash"), on="tx_hash", how="left")
+
+    # A/B split: A = seen in pending BEFORE inclusion; B = observed at inclusion only.
+    out["pending_visible"] = out.get("pending_first_seen_ts").notna() if "pending_first_seen_ts" in out else False
+    out["group"] = out["pending_visible"].map({True: "A_pending_visible", False: "B_inclusion_only"})
+    out["included_ts"] = out["block_ts"]
+    out["pool_liquidity_usd"] = None   # not recorded by tracker yet (V3 needs liquidity()); TODO enhancement
+
+    # matched-control buckets: protocol x liquidity/notional bucket x time-of-day
+    out["tod_bucket"] = (pd.to_datetime(out["block_ts"], unit="ms", utc=True).dt.hour // 4).astype("Int64")
+    liq = out["pool_liquidity_usd"].fillna(out["notional_usd"])  # proxy until liquidity is captured
+    out["liq_bucket"] = pd.qcut(liq.rank(method="first"), 4, labels=False, duplicates="drop") if len(out) >= 8 else 0
 
     # derived returns per horizon (post-inclusion)
     p0 = out["price_incl"]
@@ -56,6 +74,7 @@ def main():
     os.makedirs(os.path.dirname(dest), exist_ok=True)
     out.to_csv(dest, index=False)
     print(f"event table: {len(out)} events, {out.shape[1]} cols -> {dest}")
+    print("group A/B:", out["group"].value_counts().to_dict())
     print("labels:", out["event_labels"].value_counts().head(8).to_dict() if "event_labels" in out else {})
     for b in BLOCK_HZ:
         c = f"ret_b{b}_bps"

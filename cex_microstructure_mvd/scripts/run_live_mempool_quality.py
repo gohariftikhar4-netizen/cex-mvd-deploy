@@ -43,6 +43,23 @@ def _load(root, stream):
     return out
 
 
+def _norm(h):
+    return h.lower() if isinstance(h, str) else h
+
+
+def _hashes(root, stream):
+    """All tx_hashes for a stream (tx_hash column only, cheap), normalized lowercase."""
+    s = set()
+    for f in glob.glob(f"{root}/ethereum/{stream}/**/*.parquet", recursive=True):
+        try:
+            for h in pq.read_table(f, columns=["tx_hash"]).column("tx_hash").to_pylist():
+                if h:
+                    s.add(h.lower())
+        except Exception:
+            pass
+    return s
+
+
 def _dir_gb(p):
     t = 0
     for r, _d, fs in os.walk(p):
@@ -88,10 +105,22 @@ def main():
         m["replacement_rate"] = round(sum(1 for r in incl if r.get("replaced")) / len(incl), 3)
         d = [r["inclusion_delay_s"] for r in incl if r.get("inclusion_delay_s") is not None]
         m["avg_inclusion_delay_s"] = round(sum(d) / len(d), 1) if d else None
-    # inclusion match rate: outcomes whose tx also in inclusion sample
-    if out and incl:
-        inclset = {r.get("tx_hash") for r in incl}
-        m["inclusion_match_rate"] = round(sum(1 for r in out if r.get("tx_hash") in inclset) / len(out), 3)
+    # inclusion/pending linkage: outcomes are sourced from BLOCK LOGS, independently of
+    # the sampled pending feed, so match rate is expected to be PARTIAL (that is the
+    # A=pending-visible / B=inclusion-only split M2 needs). Compare against the FULL
+    # tx_hash sets (not a recent 50-file sample) so the rate is meaningful, not a
+    # temporal-window artifact. Informational only — never a fail condition.
+    if out:
+        incl_hashes = _hashes(root, "inclusion")
+        pend_hashes = _hashes(root, "pending")
+        outh = [_norm(r.get("tx_hash")) for r in out if r.get("tx_hash")]
+        if outh:
+            m["inclusion_match_rate"] = round(sum(1 for h in outh if h in incl_hashes) / len(outh), 3)
+            m["pending_visible_rate"] = round(sum(1 for h in outh if h in pend_hashes) / len(outh), 3)
+            m["n_inclusion_hashes"] = len(incl_hashes)
+            m["n_pending_hashes"] = len(pend_hashes)
+            m["linkage_note"] = ("outcomes are block-sourced; pending feed is sampled (~10/s) so a "
+                                 "low match is expected and defines the A/B split, not a bug")
 
     fails = []
     if out:
