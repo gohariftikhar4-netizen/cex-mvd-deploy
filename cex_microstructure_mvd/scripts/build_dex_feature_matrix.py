@@ -189,12 +189,34 @@ def main():
         fs = glob.glob(f"{root}/ethereum/{stream}/**/*.parquet", recursive=True)
         return pd.concat([pd.read_parquet(f) for f in fs], ignore_index=True) if fs else pd.DataFrame()
 
+    def build_idx(stream, cols, targets):
+        """Memory-safe join index: scan files reading only `cols`, keep ONLY rows whose
+        tx_hash is in `targets`. Avoids loading the full pending/inclusion history (which
+        OOM-killed the v1 build at 27k+ files)."""
+        idx = {}
+        if not targets:
+            return idx
+        # newest-first (date=/hour= in path sorts chronologically) so early-break can fire
+        for f in sorted(glob.glob(f"{root}/ethereum/{stream}/**/*.parquet", recursive=True), reverse=True):
+            try:
+                df = pd.read_parquet(f, columns=cols)
+            except Exception:
+                try:
+                    df = pd.read_parquet(f)
+                except Exception:
+                    continue
+            if "tx_hash" not in df.columns:
+                continue
+            m = df[df["tx_hash"].str.lower().isin(targets)]
+            for r in m.to_dict("records"):
+                idx[r["tx_hash"].lower()] = r
+            if len(idx) >= len(targets):
+                break  # found matches for all targets
+        return idx
+
     ev = load("outcomes")
     if ev.empty:
         print("no outcome events yet"); return
-    pend = load("pending"); incl = load("inclusion")
-    pidx = {r["tx_hash"].lower(): r for r in pend.to_dict("records")} if not pend.empty else {}
-    iidx = {r["tx_hash"].lower(): r for r in incl.to_dict("records")} if not incl.empty else {}
 
     done = set()
     if os.path.exists(dest):
@@ -204,6 +226,11 @@ def main():
             done = set()
     ev = ev.sort_values("block_ts").tail(args.max_events)
     todo = [e for e in ev.to_dict("records") if e["tx_hash"].lower() not in done]
+    targets = {e["tx_hash"].lower() for e in todo}
+    # build join indexes filtered to just the events we will enrich (bounded memory)
+    pidx = build_idx("pending", ["tx_hash", "max_priority_gwei", "gas_price_gwei"], targets)
+    iidx = build_idx("inclusion", ["tx_hash", "inclusion_delay_s", "success", "replaced"], targets)
+    print(f"join index: pending={len(pidx)} inclusion={len(iidx)} (matched to {len(targets)} targets)")
     print(f"events={len(ev)} already_enriched={len(done)} to_enrich={len(todo)} workers={args.workers} gt={args.with_gt}")
     if not todo:
         print("nothing new to enrich"); return
