@@ -1,0 +1,22 @@
+[Unit]
+Description=DEX discovery engine — daily feature matrix + class-separated ranking (measurement only)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=@RUN_USER@
+Group=@RUN_USER@
+Environment=APP_DIR=@APP_DIR@
+Environment=DATA_ROOT=@DATA_ROOT@
+Environment=REPORTS=@REPORTS@
+Environment=GATE=200
+Environment=MAX_EVENTS=3000
+Environment=ETH_RPC_URL=https://ethereum-rpc.publicnode.com
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/usr/bin/env bash @APP_DIR@/scripts/run_discovery.sh
+TimeoutStartSec=2400
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=@REPORTS@
