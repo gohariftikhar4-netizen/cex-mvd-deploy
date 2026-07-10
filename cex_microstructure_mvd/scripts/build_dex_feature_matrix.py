@@ -26,6 +26,28 @@ from __future__ import annotations
 import argparse, glob, json, os, time, urllib.request
 import pandas as pd
 
+# Availability class per feature — the anti-leakage contract (see reports/leakage_audit.md).
+#   PRE_INCLUSION      known from the pending tx, before inclusion
+#   POST_BLOCK         known once the inclusion block is finalized (exact for recent blocks)
+#   CURRENT_STATE_PROXY fetched at 'latest' AFTER the event -> lookahead-UNSAFE, quarantined
+FEATURE_CLASSES = {
+    "pending_visible": "PRE_INCLUSION", "priority_fee_gwei": "PRE_INCLUSION",
+    "gas_price_gwei": "PRE_INCLUSION", "replaced": "PRE_INCLUSION",
+    "protocol": "POST_BLOCK", "direction": "POST_BLOCK", "notional_usd": "POST_BLOCK",
+    "log_notional": "POST_BLOCK", "tx_index_in_block": "POST_BLOCK", "is_first_in_block": "POST_BLOCK",
+    "block_tx_count": "POST_BLOCK", "swaps_in_block": "POST_BLOCK", "same_pool_swaps": "POST_BLOCK",
+    "sandwich_candidate": "POST_BLOCK", "gas_used": "POST_BLOCK", "effective_gas_price_gwei": "POST_BLOCK",
+    "inclusion_delay_s": "POST_BLOCK", "from_is_contract": "POST_BLOCK", "to_is_contract": "POST_BLOCK",
+    "token_base_has_code": "POST_BLOCK",
+    "wallet_nonce_proxy": "CURRENT_STATE_PROXY", "wallet_eth_balance_proxy": "CURRENT_STATE_PROXY",
+    "gt_fdv_usd": "CURRENT_STATE_PROXY", "gt_reserve_usd": "CURRENT_STATE_PROXY",
+    "gt_vol_h24": "CURRENT_STATE_PROXY", "gt_market_cap": "CURRENT_STATE_PROXY",
+    "swap_size_vs_liq": "CURRENT_STATE_PROXY",
+}
+OBSERVABLE_DELAY = {"PRE_INCLUSION": "before inclusion (pending)",
+                    "POST_BLOCK": "at inclusion block (~0)",
+                    "CURRENT_STATE_PROXY": "unbounded (fetched post-event; may post-date the outcome)"}
+
 RPC = os.environ.get("ETH_RPC_URL", "https://ethereum-rpc.publicnode.com")
 GT = "https://api.geckoterminal.com/api/v2"
 V2 = "0xd78ad95fa46c994b6551d0da85fc275fe613ce37657fb8d5e3d130840159d822"
@@ -94,6 +116,7 @@ def enrich(ev, pend_idx, incl_idx):
     import math
     txh = ev["tx_hash"].lower()
     f = {"tx_hash": txh, "block_number": ev["block_number"], "block_ts": ev["block_ts"],
+         "pool": ev.get("pool"), "token_base": ev.get("token_base"),  # cluster IDs (not features)
          "protocol": ev["protocol"], "direction": ev["direction"], "notional_usd": ev["notional_usd"],
          "log_notional": math.log10(ev["notional_usd"]) if ev.get("notional_usd") else None,
          "event_labels": ev.get("event_labels"), "price_incl": ev.get("price_incl")}
@@ -107,6 +130,7 @@ def enrich(ev, pend_idx, incl_idx):
     # tx + wallet
     tx = rpc("eth_getTransactionByHash", [txh]) or {}
     frm = tx.get("from"); to = tx.get("to")
+    f["from_addr"] = frm.lower() if frm else None   # cluster ID (not a feature)
     f["tx_index_in_block"] = int(tx["transactionIndex"], 16) if tx.get("transactionIndex") else None
     f["is_first_in_block"] = int(f["tx_index_in_block"] == 0) if f["tx_index_in_block"] is not None else None
     f["from_is_contract"] = int(has_code(frm)) if frm else None
@@ -160,7 +184,14 @@ def main():
     dest = args.out or f"{root}/../reports/dex_feature_matrix.parquet"
     os.makedirs(os.path.dirname(dest), exist_ok=True)
     fm.to_parquet(dest, index=False)
+    # availability-class metadata sidecar (the anti-leakage contract)
+    meta = {c: {"class": FEATURE_CLASSES.get(c, "UNCLASSIFIED"),
+                "observable_delay": OBSERVABLE_DELAY.get(FEATURE_CLASSES.get(c, ""), "unknown")}
+            for c in fm.columns if c in FEATURE_CLASSES}
+    with open(dest.replace(".parquet", ".classes.json"), "w") as fh:
+        json.dump(meta, fh, indent=2)
     print(f"feature matrix: {len(fm)} events x {fm.shape[1]} cols -> {dest}")
+    print(f"class sidecar -> {dest.replace('.parquet', '.classes.json')}")
     feats = [c for c in fm.columns if not (c.startswith("price_") or c in ("tx_hash", "mfe", "mae"))]
     print(f"features computed: {len(feats)}")
     print("coverage:", {c: round(fm[c].notna().mean(), 2) for c in feats[:12]})
