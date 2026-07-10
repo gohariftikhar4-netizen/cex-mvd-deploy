@@ -93,6 +93,26 @@ log "VERDICT: $VERDICT"
   echo "}"
 } > "$HEALTH"
 log "health -> $HEALTH ; reports in $REPORTS"
+
+# 7) OPTIONAL publish of ONLY the health JSON (non-sensitive ops metadata) to the public
+#    deploy repo so a remote operator can read status without SSH. Best-effort; gated on a
+#    scoped token (HEALTH_PUBLISH_TOKEN). Leaderboards/matrix are NEVER published.
+if [ -n "${HEALTH_PUBLISH_TOKEN:-}" ]; then
+  PUBREPO="${HEALTH_PUBLISH_REPO:-gohariftikhar4-netizen/cex-mvd-deploy}"
+  PUBDIR="$REPORTS/.publish"; rm -rf "$PUBDIR"
+  if git clone --depth 1 "https://x-access-token:${HEALTH_PUBLISH_TOKEN}@github.com/${PUBREPO}.git" "$PUBDIR" >>"$LOG" 2>&1; then
+    mkdir -p "$PUBDIR/status"; cp "$HEALTH" "$PUBDIR/status/discovery_health.json"
+    ( cd "$PUBDIR" \
+      && git -c user.name=cexrec -c user.email=deploy@users.noreply.github.com add status/discovery_health.json \
+      && git -c user.name=cexrec -c user.email=deploy@users.noreply.github.com commit -q -m "health $(ts)" \
+      && git push -q origin HEAD:main ) >>"$LOG" 2>&1 \
+      && log "health published -> $PUBREPO status/discovery_health.json" || log "health publish: push failed"
+    rm -rf "$PUBDIR"
+  else
+    log "health publish: clone failed (check token / network)"
+  fi
+fi
+
 log "=== discovery run end ==="
 # exit non-zero only on a real problem (service down / enrich fail) so the timer flags it
 [ "$SVC_OK" -eq 1 ] && [ "$ENRICH_RC" -eq 0 ] && [ "$EVENTS" -gt 0 ]

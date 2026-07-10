@@ -14,6 +14,9 @@ Environment=GATE=200
 Environment=MAX_EVENTS=3000
 Environment=ETH_RPC_URL=https://ethereum-rpc.publicnode.com
 Environment=PYTHONUNBUFFERED=1
+# Optional token for publishing ONLY discovery_health.json to the public repo's status/ dir
+# (root-only file, read by systemd before dropping to User). Absent = no publish.
+EnvironmentFile=-/etc/default/cex-discovery
 ExecStart=/usr/bin/env bash @APP_DIR@/scripts/run_discovery.sh
 TimeoutStartSec=2400
 NoNewPrivileges=true
