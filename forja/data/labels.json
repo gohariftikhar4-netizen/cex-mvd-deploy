@@ -1,0 +1,106 @@
+{
+  "rubric": "Graded relevance per (candidate, job). Grade 2 = strong match: the job violates no hard constraint of the candidate AND the core occupation/skill fit is strong enough that a competent advisor would place it at the top of the list. Grade 1 = worth pursuing: no hard-constraint violation AND a credible partial or transferable-skill path exists; an advisor would include it with caveats. Grade 0 (implicit for every unlisted pair) = not worth the candidate's time; by definition this includes EVERY job that violates at least one hard constraint (location/commute, shifts, physical limitations, driving license, legally required certification, language level, citizenship/clearance, position percentage, disclosed salary below the candidate's floor, overnight travel). Labels were authored per-pair by reading the full candidate record against the full job record, BEFORE the first benchmark run, and are never edited to make any workflow look better; they change only to fix a demonstrable labeling error, documented in notes and in the commit message. Known bias: the labels were written by the same author as the matching logic and the taxonomy — see BENCHMARK.md 'Threats to validity'.",
+  "labels": {
+    "cand_ingrid": {"job_001": 2, "job_003": 2, "job_004": 2, "job_079": 2, "job_006": 1},
+    "cand_marius": {"job_007": 2, "job_008": 2, "job_011": 2, "job_013": 2},
+    "cand_amira": {"job_022": 2, "job_023": 2, "job_027": 2, "job_028": 1},
+    "cand_bjorn": {"job_029": 2, "job_030": 2, "job_032": 2, "job_033": 1, "job_034": 1, "job_035": 1},
+    "cand_silje": {"job_036": 2, "job_037": 2, "job_038": 1, "job_040": 1, "job_042": 1},
+    "cand_tarik": {"job_044": 2, "job_045": 2, "job_048": 2, "job_046": 1},
+    "cand_kari": {"job_015": 2, "job_019": 2, "job_020": 2, "job_017": 1},
+    "cand_pawel": {"job_049": 2, "job_082": 2, "job_051": 1, "job_053": 1},
+    "cand_lene": {"job_062": 2, "job_063": 2, "job_066": 2, "job_067": 1},
+    "cand_oddvar": {"job_055": 2, "job_059": 2, "job_061": 1}
+  },
+  "notes": {
+    "cand_ingrid": {
+      "job_001": "Autorisert sykepleier med 15 års erfaring; ren dagstilling i Bergen over lønnsgulvet.",
+      "job_003": "80 % dagstilling innenfor hennes 80–100 %-vindu; vaksinasjon og veiledning er dokumentert kompetanse.",
+      "job_004": "Overførbar-kompetanse-match: pasientveiledning/DIPS-superbruker mot e-helse kundesuksess; hybrid Bergen, godt over lønnsgulv.",
+      "job_079": "Poliklinisk dagstilling ved eget sykehus; kjernekompetanse + DIPS.",
+      "job_006": "Strekk: helsefaglig saksbehandling bygger på klinisk vurdering og dokumentasjon, men forvaltningserfaring mangler — inkluderes med forbehold.",
+      "job_002": "TRAP grade 0: 3-delt turnus krever nattevakter; hun kan ikke jobbe natt.",
+      "job_005": "TRAP grade 0: 70 % stilling er under hennes absolutte minimum på 80 %."
+    },
+    "cand_marius": {
+      "job_007": "Kjernematch: Go/Kubernetes/PostgreSQL senior, hybrid Oslo, lønn godt over gulv.",
+      "job_008": "Plattformrolle: Kubernetes/AWS direkte, Terraform er hull men to av tre kjernekrav + tilgrensende erfaring.",
+      "job_011": "CI/CD, Kubernetes og Linux er dokumentert kjernekompetanse; konsulentrolle uten reising.",
+      "job_013": "Java fra konsulentårene + API-design og PostgreSQL; bank i Oslo over lønnsgulv.",
+      "job_009": "TRAP grade 0: onsite Trondheim; han kan ikke flytte og pendler maks 60 min fra Oslo.",
+      "job_012": "TRAP grade 0: oppgitt maksimallønn 700 000 er under hans absolutte gulv på 750 000 (statsborgerskapskravet oppfyller han).",
+      "job_010": "Grade 0 med vilje: begge frontend-kjernekrav (TypeScript, React) mangler helt; en kompetent rådgiver sender ikke en ren backender hit."
+    },
+    "cand_amira": {
+      "job_022": "Kjernematch: betongdimensjonering med ETABS/AutoCAD, 9 års erfaring, Drammen lokalt, norskkrav B1 = hennes nivå.",
+      "job_023": "DAK/teknisk tegning er dokumentert daglig verktøy; eksplisitt åpen for utenlandsk bakgrunn; Oslo innenfor 60 min pendling.",
+      "job_027": "Internasjonalt kontor med engelsk arbeidsspråk (hun har C1) og uttalt åpenhet for ikke-godkjent utdanning underveis; stålerfaring fra Amman.",
+      "job_028": "Delvis: prosjektering dekket, HMS-krav mangler; reising med overnatting er OK for henne. Inkluderes med forbehold.",
+      "job_024": "TRAP grade 0: krever norsk C1; hun er på B1.",
+      "job_025": "TRAP grade 0: krever norsk statsborgerskap (sikkerhetsklarering); hun har permanent opphold, ikke statsborgerskap.",
+      "job_026": "TRAP grade 0: ansvarsrett krever NOKUT-godkjent utdanning; søknaden hennes er ikke ferdigbehandlet."
+    },
+    "cand_bjorn": {
+      "job_029": "Kjernematch: butikksjef elektro → butikksjef elektro, samme by, over lønnsgulv, ingen natt.",
+      "job_030": "Varehussjef: alle tre kjernekrav dokumentert; Stjørdal er nøyaktig på 40-minuttersgrensen hans (innenfor).",
+      "job_032": "Regionsjef: naturlig neste steg med 15 års sjefserfaring; reising med overnatting er OK for ham (ikke en begrensning).",
+      "job_033": "Sideveis til dagligvare: drift og vaktplanlegging dekket; kveld/helg er OK (kun natt er sperret).",
+      "job_034": "Overførbar: personalledelse + kundeservice mot kontaktsenterledelse; bransjebytte gir forbehold.",
+      "job_035": "Delvis: salg og budsjettansvar dokumentert, men B2B-salgsledelse er nytt terreng.",
+      "job_031": "TRAP grade 0: ren nattstilling (22–06); han kan ikke jobbe natt.",
+      "job_081": "TRAP grade 0: perfekt faglig match, men onsite Oslo — langt utenfor pendlingsgrense og han kan ikke flytte."
+    },
+    "cand_silje": {
+      "job_036": "Kjernematch: fiskehelse + feltarbeid; annonsen inviterer nyutdannede eksplisitt; hun flytter gjerne til Bergen.",
+      "job_037": "Kjernematch i egen by: miljøovervåking + GIS + R.",
+      "job_038": "Delvis: lab dokumentert, KS-systemet må læres (overførbart fra akkreditert labpraksis); flytting til Rogaland OK.",
+      "job_040": "Reell inngangsdør til næringen: driftsforståelse via fiskehelsearbeid; fysisk krevende og helgeturnus er OK for henne. Overkvalifisert — forbehold.",
+      "job_042": "Strekk: to av tre kjernekrav, men annonsen ber om 5 år og prosjektledelse; 'sterke kandidater med kortere fartstid vurderes'.",
+      "job_039": "TRAP grade 0: lovpålagt autorisasjon som fiskehelsebiolog; marinbiologer uten autorisasjon avvises eksplisitt.",
+      "job_041": "TRAP grade 0: 60 % vikariat; hun trenger 100 % fast (hardt krav)."
+    },
+    "cand_tarik": {
+      "job_044": "Kjernematch: KS/HMS/internkontroll-kontorrolle som eksplisitt ønsker elektrobakgrunn; ingen fysiske krav.",
+      "job_045": "Planleggerrolle med fagbrevkrav og praktisk installasjonsbakgrunn som ønsket profil; Sandnes innenfor 50 min.",
+      "job_048": "Tilsyns-/saksbehandlerrolle uten montasje: feilsøking, internkontroll og dokumentasjon er kjernen hans.",
+      "job_046": "Delvis: automasjon via dokumentert feilsøkingskompetanse; skift (inkl. natt) er OK for ham. Forbehold: PLS må læres.",
+      "job_043": "TRAP grade 0: daglige tunge løft og arbeid i høyden; han har dokumentert begrensning mot tunge løft.",
+      "job_047": "TRAP grade 0: offshorerotasjon (overnatting borte) OG tunge løft — begge brudd på absolutte krav. Lokkende lønn."
+    },
+    "cand_kari": {
+      "job_015": "Kjernematch: innholdsutvikling + læreplanverk, fullt remote fra Tromsø, over lektorlønn-gulvet hennes.",
+      "job_019": "Kommunikasjonsrådgiver i egen by på dagtid: skriving og formidling er kjernestyrken; helsesektor er nøytral for henne.",
+      "job_020": "Engelsk læremiddelutvikling remote; underviser i engelsk med C2-nivå.",
+      "job_017": "Eligible og formelt sterk (lektor med PPU), men hun vil ut av klasserommet — inkluderes kun med tydelig forbehold (preferanse, ikke hardt krav).",
+      "job_016": "TRAP grade 0: krever to faste dager på kontor i Oslo; hun bor i Tromsø og kan ikke flytte. Ellers perfekt profil-tekst.",
+      "job_018": "TRAP grade 0: undervisning hovedsakelig på kveldstid; hun kan ikke jobbe kveld.",
+      "job_021": "TRAP grade 0: 60 % stilling er under hennes minimum på 80 %."
+    },
+    "cand_pawel": {
+      "job_049": "Kjernematch: dagskift med truckkrav han oppfyller; eksplisitt god bussforbindelse fra Fredrikstad.",
+      "job_082": "Kjernematch: truck + WMS på 2-skift dag/kveld (natt sperret, kveld OK); Moss innenfor 45 min.",
+      "job_051": "Steg opp: lagererfaring dokumentert, teamledelse mangler formelt men annonsen inviterer lagermedarbeidere som vil opp; norskkrav B2 = hans nivå.",
+      "job_053": "Tilgrensende: varemottak + truck som pluss; dag/kveld uten natt.",
+      "job_050": "TRAP grade 0: ren nattstilling; legen har stoppet nattarbeid (hardt krav).",
+      "job_052": "TRAP grade 0: krever førerkort klasse B; han har ikke førerkort.",
+      "job_054": "TRAP grade 0: krever norsk C1 (toll-/avtaledokumenter); han er på B2."
+    },
+    "cand_lene": {
+      "job_062": "Kjernematch: controller i 60 % fast — nøyaktig vinduet hennes; lønn over gulv.",
+      "job_063": "Regnskapskonsulent 80 % med Visma/årsoppgjørserfaring; Lillestrøm 20 min unna.",
+      "job_066": "Økonomirådgiver 80 % i Drammen (40 min); økonomistyring + rapportering er kjernen hennes.",
+      "job_067": "Delvis: regnskap direkte, lønn via regnskapsbakgrunn; øvre lønn tangerer gulvet hennes — forbehold.",
+      "job_064": "TRAP grade 0: 100 % stilling og annonsen avviser redusert stilling eksplisitt; hun kan maks 80 %. Ellers perfekt faglig match.",
+      "job_065": "TRAP grade 0: lovpålagt autorisasjon som regnskapsfører; hun er ikke autorisert."
+    },
+    "cand_oddvar": {
+      "job_055": "Kjernematch: lokal CE-distribusjon fra Hamar-terminal, dagtid, hjemme hver natt; YSK i orden.",
+      "job_059": "Renovasjonsruter klasse C (dekket av CE) på ren dagtid uten helg; over lønnsgulv.",
+      "job_061": "Ut av førerhuset men innenfor alle krav: varemottak/lastsikring dokumentert; annonsen ønsker tidligere sjåfører.",
+      "job_056": "TRAP grade 0: langtransport med overnatting borte — eksplisitt stoppet av lege/hardt krav. Hans gamle arbeidsgiver, lokkende tekst.",
+      "job_057": "TRAP grade 0: krever førerkort klasse D (buss); CE dekker ikke D.",
+      "job_058": "TRAP grade 0: krever truckførerbevis T1–T4; han har ikke truckbevis (YSK/ADR er noe annet).",
+      "job_060": "TRAP grade 0: arbeidsspråk engelsk minimum B1; han er på A2."
+    }
+  }
+}

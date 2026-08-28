@@ -1,0 +1,576 @@
+[
+  {
+    "id": "job_001", "title": "Sykepleier dagkirurgi", "employer": "Bergen kirurgiske senter", "sector": "helse",
+    "location_city": "Bergen", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 520000, "salary_nok_max": 580000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["klinisk_sykepleie", "medikamenthandtering"], "nice_to_have_skills": ["journalforing_dips"], "min_years_experience": 3, "certifications_required": ["hpr_autorisasjon_sykepleier"], "driving_license_required": null, "norwegian_min_level": "C1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Vi søker autorisert sykepleier til vår dagkirurgiske enhet. Ren dagarbeidstid mandag til fredag — ingen nattevakter, ingen helger. Du følger pasienten gjennom hele det polikliniske forløpet og må være trygg på medikamenthåndtering og postoperativ observasjon."
+  },
+  {
+    "id": "job_002", "title": "Sykepleier sengepost, 3-delt turnus", "employer": "Haraldsplass Diakonale Sykehus", "sector": "helse",
+    "location_city": "Bergen", "work_mode": "onsite", "percent_position": 100, "shifts": ["day", "evening", "night", "weekend"],
+    "salary_nok_min": 510000, "salary_nok_max": 560000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["klinisk_sykepleie", "medikamenthandtering"], "nice_to_have_skills": ["palliativ_pleie"], "min_years_experience": 2, "certifications_required": ["hpr_autorisasjon_sykepleier"], "driving_license_required": null, "norwegian_min_level": "C1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Medisinsk sengepost søker erfaren sykepleier i 100 % fast stilling. Stillingen inngår i 3-delt turnus med dag, kveld og natt samt arbeid hver tredje helg. Godt fagmiljø og gode tillegg for ubekvem arbeidstid."
+  },
+  {
+    "id": "job_003", "title": "Helsesykepleier vaksinasjonskontor, 80 %", "employer": "Bergen kommune", "sector": "helse",
+    "location_city": "Bergen", "work_mode": "onsite", "percent_position": 80, "shifts": ["day"],
+    "salary_nok_min": 500000, "salary_nok_max": 540000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["vaksinasjon", "pasientveiledning"], "nice_to_have_skills": ["journalforing_dips", "dokumentasjon"], "min_years_experience": 2, "certifications_required": ["hpr_autorisasjon_sykepleier"], "driving_license_required": null, "norwegian_min_level": "C1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Vaksinasjonskontoret i Bergen kommune søker sykepleier i 80 % fast stilling, dagtid. Arbeidet består av reisevaksinering, barnevaksinasjonsprogrammet og veiledning av publikum. Lønn oppgitt i 100 %-ekvivalent etter kommunal tariff."
+  },
+  {
+    "id": "job_004", "title": "Kundesuksessansvarlig e-helse", "employer": "MedVest Journal AS", "sector": "teknologi",
+    "location_city": "Bergen", "work_mode": "hybrid", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 550000, "salary_nok_max": 650000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["kundesuksess"], "nice_to_have_skills": ["klinisk_sykepleie", "journalforing_dips", "kommunikasjon"], "min_years_experience": 2, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B2", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Vi lager journal- og samhandlingsløsninger for norske sykehus og søker en kundesuksessansvarlig som kan følge opp, lære opp og beholde kundene våre. Helsefaglig bakgrunn og kjennskap til DIPS eller lignende systemer er et stort pluss — mange av våre beste folk er tidligere klinikere. Hybrid kontor i Bergen sentrum."
+  },
+  {
+    "id": "job_005", "title": "Sykepleier hjemmetjenesten, 70 %", "employer": "Bergen kommune, Fyllingsdalen", "sector": "helse",
+    "location_city": "Bergen", "work_mode": "onsite", "percent_position": 70, "shifts": ["day", "evening", "weekend"],
+    "salary_nok_min": 480000, "salary_nok_max": 520000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["klinisk_sykepleie", "medikamenthandtering"], "nice_to_have_skills": ["dokumentasjon"], "min_years_experience": 1, "certifications_required": ["hpr_autorisasjon_sykepleier"], "driving_license_required": "B", "norwegian_min_level": "C1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Hjemmetjenesten i Fyllingsdalen søker sykepleier i 70 % stilling med arbeid dag/kveld og hver tredje helg. Du kjører mellom brukere og har selvstendig ansvar for medikamenthåndtering og oppfølging. Førerkort klasse B kreves."
+  },
+  {
+    "id": "job_006", "title": "Rådgiver helseforvaltning", "employer": "Statsforvaltaren i Vestland", "sector": "offentlig",
+    "location_city": "Bergen", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 540000, "salary_nok_max": 610000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["saksbehandling_helse", "dokumentasjon"], "nice_to_have_skills": ["klinisk_sykepleie"], "min_years_experience": 5, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "C1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Helseavdelinga søker rådgiver til tilsyns- og klagesaker på helseområdet. Vi ser etter deg med helsefaglig bakgrunn og solid erfaring fra tjenestene, som kan vurdere saker grundig og skrive presist. Ordinær kontorarbeidstid."
+  },
+  {
+    "id": "job_007", "title": "Senior Backend Engineer (Go)", "employer": "Nordpay Technologies", "sector": "finans",
+    "location_city": "Oslo", "work_mode": "hybrid", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 850000, "salary_nok_max": 1000000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["go", "kubernetes", "postgresql"], "nice_to_have_skills": ["aws", "terraform"], "min_years_experience": 5, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": null, "english_min_level": "B2", "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "We build payment infrastructure processing millions of transactions daily. You will own critical Go services on Kubernetes, tune PostgreSQL under real load, and participate in a healthy on-call rotation. Hybrid from our Oslo office; English working language."
+  },
+  {
+    "id": "job_008", "title": "Plattformingeniør", "employer": "Fjellkraft Digital", "sector": "energi",
+    "location_city": "Oslo", "work_mode": "hybrid", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 800000, "salary_nok_max": 950000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["kubernetes", "terraform", "aws"], "nice_to_have_skills": ["go", "ci_cd"], "min_years_experience": 4, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": null, "english_min_level": "B2", "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Plattformteamet vårt bygger den interne utviklerplattformen for hele konsernet: Kubernetes, Terraform og AWS med GitOps i bunn. Du får stor frihet til å forme verktøykjeden og jobber tett med produktteamene. Hybrid i Oslo."
+  },
+  {
+    "id": "job_009", "title": "Backend-utvikler helseteknologi", "employer": "TrønderHelse Software", "sector": "teknologi",
+    "location_city": "Trondheim", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 750000, "salary_nok_max": 900000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["python", "postgresql"], "nice_to_have_skills": ["docker", "aws"], "min_years_experience": 3, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B2", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Vi lager beslutningsstøtte for fastleger og søker backend-utvikler med solid Python- og databaseerfaring. Vi sitter samlokalisert med klinikere i Trondheim og jobber fysisk på kontoret alle dager — det er en del av arbeidsformen vår."
+  },
+  {
+    "id": "job_010", "title": "Fullstack-utvikler (remote)", "employer": "Skygard Systems", "sector": "teknologi",
+    "location_city": "Oslo", "work_mode": "remote", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 700000, "salary_nok_max": 850000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["typescript", "react", "api_design"], "nice_to_have_skills": ["python", "aws"], "min_years_experience": 3, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": null, "english_min_level": "B2", "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Fully remote position within Norway. You will build our customer-facing web application end to end: React and TypeScript in front, designing clean APIs behind. We meet in Oslo one week per quarter."
+  },
+  {
+    "id": "job_011", "title": "DevOps-konsulent", "employer": "Kranglefant Consulting", "sector": "teknologi",
+    "location_city": "Oslo", "work_mode": "hybrid", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 750000, "salary_nok_max": 950000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["ci_cd", "kubernetes", "linux"], "nice_to_have_skills": ["aws", "terraform"], "min_years_experience": 4, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B2", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Vi hjelper norske virksomheter med å modernisere utviklings- og driftsplattformene sine. Som konsulent hos oss bygger du CI/CD-pipelines, drifter Kubernetes og rydder i Linux-miljøer hos kunder i Oslo-området. Ingen reisevirksomhet utenfor Østlandet."
+  },
+  {
+    "id": "job_012", "title": "IKT-driftstekniker", "employer": "Cyberforsvaret", "sector": "forsvar",
+    "location_city": "Lillestrøm", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 600000, "salary_nok_max": 700000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["linux", "informasjonssikkerhet"], "nice_to_have_skills": ["ci_cd"], "min_years_experience": 2, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B2", "english_min_level": null, "requires_norwegian_citizenship": true, "physical_demands": []},
+    "description": "Cyberforsvaret søker driftstekniker til graderte systemer. Stillingen krever sikkerhetsklarering på nivå HEMMELIG, og norsk statsborgerskap er derfor et absolutt krav. Spennende fagmiljø og god pensjonsordning; lønn etter statens regulativ."
+  },
+  {
+    "id": "job_013", "title": "Systemutvikler betalingsløsninger (Java)", "employer": "Sparegruppen IT", "sector": "finans",
+    "location_city": "Oslo", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 780000, "salary_nok_max": 920000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["java", "api_design", "postgresql"], "nice_to_have_skills": ["kubernetes", "microservices"], "min_years_experience": 3, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Bankens betalingsteam søker utvikler med god Java-erfaring og forståelse for API-design i kritiske systemer. Vi jobber fra kontoret i Bjørvika med korte beslutningsveier og moderne teknologistabel."
+  },
+  {
+    "id": "job_014", "title": "Teknisk kundekonsulent SaaS", "employer": "Fossefall Software", "sector": "teknologi",
+    "location_city": "Oslo", "work_mode": "onsite", "percent_position": 100, "shifts": ["day", "evening"],
+    "salary_nok_min": 550000, "salary_nok_max": 650000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["kundeservice", "crm_system"], "nice_to_have_skills": ["dokumentasjon"], "min_years_experience": 1, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B2", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Supportteamet vårt hjelper bedriftskunder i hele Norden og bemanner til kl. 21 på hverdager i vaktordning. Du trives med å løse tekniske problemer i fart og dokumentere løsninger i CRM-systemet."
+  },
+  {
+    "id": "job_015", "title": "Innholdsutvikler norsk – digitale læremidler", "employer": "Læreverk Norge AS", "sector": "teknologi",
+    "location_city": "Oslo", "work_mode": "remote", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 560000, "salary_nok_max": 640000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["innholdsproduksjon", "laereplanarbeid"], "nice_to_have_skills": ["undervisning", "digital_laering"], "min_years_experience": 2, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "C1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Vi utvikler digitale læremidler i norsk for grunnskolen og søker en innholdsutvikler som kjenner læreplanverket fra innsiden. Stillingen er fullt ut remote fra hele Norge; teamet samles digitalt hver morgen. Lærerbakgrunn er sterkt ønsket."
+  },
+  {
+    "id": "job_016", "title": "Customer Success Manager – edtech", "employer": "Skoleportalen AS", "sector": "teknologi",
+    "location_city": "Oslo", "work_mode": "hybrid", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 540000, "salary_nok_max": 620000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["kundesuksess", "formidling"], "nice_to_have_skills": ["undervisning", "crm_system"], "min_years_experience": 2, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "C1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Vi hjelper norske skoler å lykkes med plattformen vår og søker en CSM som brenner for god formidling. Tidligere lærere gjør det svært godt i denne rollen. Hybrid ordning med minst to faste dager i uken på kontoret i Oslo sentrum."
+  },
+  {
+    "id": "job_017", "title": "Lektor i norsk, ungdomstrinnet", "employer": "Tromsø kommune, Sommerlyst skole", "sector": "utdanning",
+    "location_city": "Tromsø", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 560000, "salary_nok_max": 640000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["undervisning", "klasseledelse"], "nice_to_have_skills": ["laereplanarbeid", "digital_laering"], "min_years_experience": 2, "certifications_required": ["ppu_pedagogisk_utdanning"], "driving_license_required": null, "norwegian_min_level": "C1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Sommerlyst skole søker lektor i norsk med tilleggsfag, fast 100 %. Vi tilbyr et sterkt lagarbeid rundt eleven, redusert leseplikt første år for nyansatte og et raust kollegium. Undervisning på dagtid; godkjent pedagogisk utdanning kreves."
+  },
+  {
+    "id": "job_018", "title": "Rådgiver voksenopplæring, 80 %", "employer": "Tromsø voksenopplæring", "sector": "utdanning",
+    "location_city": "Tromsø", "work_mode": "onsite", "percent_position": 80, "shifts": ["day", "evening"],
+    "salary_nok_min": 520000, "salary_nok_max": 580000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["undervisning", "formidling"], "nice_to_have_skills": ["laereplanarbeid"], "min_years_experience": 2, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "C1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Voksenopplæringen søker rådgiver som skal undervise i norsk for voksne innvandrere og veilede deltakere. Undervisningen foregår i hovedsak på kveldstid to til tre dager i uken, resten dagtid."
+  },
+  {
+    "id": "job_019", "title": "Kommunikasjonsrådgiver", "employer": "Universitetssykehuset Nord-Norge (UNN)", "sector": "helse",
+    "location_city": "Tromsø", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 550000, "salary_nok_max": 630000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["kommunikasjon", "innholdsproduksjon"], "nice_to_have_skills": ["formidling", "digital_laering"], "min_years_experience": 3, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "C1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Kommunikasjonsavdelingen ved UNN søker rådgiver som skriver skarpt og formidler komplekst fagstoff forståelig — internkommunikasjon, nettsider og pressehåndtering. Kontorarbeidstid i Breivika."
+  },
+  {
+    "id": "job_020", "title": "Læremiddelutvikler engelsk (remote)", "employer": "Nordisk Undervisningsforlag", "sector": "utdanning",
+    "location_city": "Oslo", "work_mode": "remote", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 550000, "salary_nok_max": 650000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["innholdsproduksjon", "undervisning"], "nice_to_have_skills": ["digital_laering", "laereplanarbeid"], "min_years_experience": 2, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B2", "english_min_level": "C1", "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Forlaget utvikler nytt engelskverk for ungdomstrinnet og søker læremiddelutvikler med undervisningserfaring i engelsk og svært god skriftlig engelsk. Hjemmekontor fra hele landet med to digitale samlinger i måneden."
+  },
+  {
+    "id": "job_021", "title": "Kursutvikler bedriftsopplæring, 60 %", "employer": "KompetanseNord AS", "sector": "utdanning",
+    "location_city": "Tromsø", "work_mode": "onsite", "percent_position": 60, "shifts": ["day"],
+    "salary_nok_min": 500000, "salary_nok_max": 560000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["kursutvikling", "formidling"], "nice_to_have_skills": ["digital_laering"], "min_years_experience": 2, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "C1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Vi lager skreddersydde kurs for bedrifter i Nord-Norge og søker kursutvikler i 60 % fast stilling på dagtid. Du bygger kursopplegg fra behovskartlegging til gjennomføring. Lønn oppgitt i 100 %-ekvivalent."
+  },
+  {
+    "id": "job_022", "title": "Konstruktør betong", "employer": "Buskerud Prosjektering AS", "sector": "bygg_anlegg",
+    "location_city": "Drammen", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 620000, "salary_nok_max": 720000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["konstruksjonsberegning", "betongkonstruksjoner"], "nice_to_have_skills": ["etabs", "autocad"], "min_years_experience": 5, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Rådgivende ingeniørfirma i Drammen søker konstruktør med solid erfaring fra dimensjonering av betongkonstruksjoner. Vi har et internasjonalt fagmiljø der flere jobber på en blanding av norsk og engelsk; det viktigste er at du kan faget. Beregningsverktøy: ETABS og egne ark."
+  },
+  {
+    "id": "job_023", "title": "Teknisk tegner / DAK-operatør", "employer": "Struktura Rådgivning", "sector": "bygg_anlegg",
+    "location_city": "Oslo", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 520000, "salary_nok_max": 600000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["teknisk_tegning", "autocad"], "nice_to_have_skills": ["revit"], "min_years_experience": 2, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Vi trenger en dyktig DAK-operatør til armerings- og detaljtegninger i AutoCAD, med mulighet for opplæring i Revit. Godt arbeidsmiljø sentralt i Oslo; vi har god erfaring med medarbeidere som har utenlandsk ingeniørbakgrunn."
+  },
+  {
+    "id": "job_024", "title": "Byggesaksbehandler", "employer": "Drammen kommune", "sector": "offentlig",
+    "location_city": "Drammen", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 560000, "salary_nok_max": 640000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["byggesak", "saksbehandling"], "nice_to_have_skills": ["teknisk_tegning"], "min_years_experience": 2, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "C1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Byggesaksavdelingen søker saksbehandler til behandling av søknader etter plan- og bygningsloven. Stillingen krever svært god skriftlig norsk (minimum C1) fordi vedtakene er juridisk bindende dokumenter."
+  },
+  {
+    "id": "job_025", "title": "Senioringeniør konstruksjon", "employer": "Forsvarsbygg", "sector": "forsvar",
+    "location_city": "Oslo", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 650000, "salary_nok_max": 780000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["konstruksjonsberegning", "stalkonstruksjoner"], "nice_to_have_skills": ["prosjektering"], "min_years_experience": 5, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B2", "english_min_level": null, "requires_norwegian_citizenship": true, "physical_demands": []},
+    "description": "Forsvarsbygg søker senioringeniør til beregning av beskyttelseskonstruksjoner. Arbeidet er gradert: sikkerhetsklarering og norsk statsborgerskap er absolutte krav. Meget interessante og samfunnskritiske prosjekter."
+  },
+  {
+    "id": "job_026", "title": "Prosjekteringsleder / ansvarlig søker", "employer": "Byggmester Consult Oslo", "sector": "bygg_anlegg",
+    "location_city": "Oslo", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 640000, "salary_nok_max": 750000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["prosjektering", "byggesak"], "nice_to_have_skills": ["konstruksjonsberegning"], "min_years_experience": 5, "certifications_required": ["nokut_godkjent_ingeniorutdanning"], "driving_license_required": null, "norwegian_min_level": "B2", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Vi søker prosjekteringsleder som skal stå som ansvarlig søker i byggesaker. For å oppfylle kravene til ansvarsrett må utdanningen din være godkjent i Norge (NOKUT-godkjenning for utenlandsk utdanning); dette er et absolutt krav for rollen."
+  },
+  {
+    "id": "job_027", "title": "Structural Engineer, Steel", "employer": "Arctic Structures International", "sector": "bygg_anlegg",
+    "location_city": "Oslo", "work_mode": "hybrid", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 560000, "salary_nok_max": 660000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["konstruksjonsberegning", "stalkonstruksjoner"], "nice_to_have_skills": ["autocad", "etabs"], "min_years_experience": 2, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": null, "english_min_level": "B2", "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "International engineering office in Oslo with English as working language. We design steel structures for industrial clients across the Nordics and welcome engineers educated abroad — several colleagues joined us while completing Norwegian credential recognition. Hybrid setup, central Oslo."
+  },
+  {
+    "id": "job_028", "title": "Prosjektingeniør anlegg (reise)", "employer": "Fjellsprenger Entreprenør", "sector": "bygg_anlegg",
+    "location_city": "Oslo", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 600000, "salary_nok_max": 700000, "requires_overnight_travel": true,
+    "requirements": {"must_have_skills": ["prosjektering", "hms"], "nice_to_have_skills": ["betongkonstruksjoner"], "min_years_experience": 3, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Entreprenør med anleggsprosjekter over hele Sør-Norge søker prosjektingeniør. Stillingen innebærer perioder med arbeid på prosjektsted med overnatting (typisk to netter i uken). Vi har eget norskkurs for ansatte og internasjonalt arbeidsmiljø."
+  },
+  {
+    "id": "job_029", "title": "Butikksjef elektrohandel", "employer": "Strømsted Elektro, Trondheim", "sector": "handel",
+    "location_city": "Trondheim", "work_mode": "onsite", "percent_position": 100, "shifts": ["day", "weekend"],
+    "salary_nok_min": 560000, "salary_nok_max": 640000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["butikkdrift", "personalledelse", "budsjettansvar"], "nice_to_have_skills": ["varelogistikk", "salg"], "min_years_experience": 5, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B2", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Vi søker butikksjef til vår elektroforretning i Trondheim med resultatansvar for 15 ansatte. Du er en driftssterk leder som kan bemanning, budsjett og varehåndtering, og som løfter både salg og kundetilfredshet. Noe helgearbeid må påregnes."
+  },
+  {
+    "id": "job_030", "title": "Varehussjef byggevare", "employer": "ByggMax-kjeden, Stjørdal", "sector": "handel",
+    "location_city": "Stjørdal", "work_mode": "onsite", "percent_position": 100, "shifts": ["day", "weekend"],
+    "salary_nok_min": 600000, "salary_nok_max": 700000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["personalledelse", "budsjettansvar", "varelogistikk"], "nice_to_have_skills": ["innkjop", "opplaering_ansatte"], "min_years_experience": 8, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B2", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Varehuset vårt i Stjørdal trenger ny sjef med solid ledererfaring fra handel. Full P&L, 25 ansatte, stort varelager. Vi ser etter en trygg folkeleder som får logistikken til å flyte og laget til å trives."
+  },
+  {
+    "id": "job_031", "title": "Nattsjef logistikk, varehus", "employer": "MidtNorsk Handelspark", "sector": "handel",
+    "location_city": "Trondheim", "work_mode": "onsite", "percent_position": 100, "shifts": ["night"],
+    "salary_nok_min": 540000, "salary_nok_max": 600000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["varelogistikk", "personalledelse"], "nice_to_have_skills": ["vaktplanlegging"], "min_years_experience": 3, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B2", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Som nattsjef leder du varepåfyllingsteamet på 12 personer mellom kl. 22 og 06. God ledererfaring fra butikk eller lager kreves; nattillegg kommer i tillegg til oppgitt grunnlønn."
+  },
+  {
+    "id": "job_032", "title": "Regionsjef detaljhandel Midt-Norge", "employer": "Hjemfryd Interiørkjede", "sector": "handel",
+    "location_city": "Trondheim", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 700000, "salary_nok_max": 820000, "requires_overnight_travel": true,
+    "requirements": {"must_have_skills": ["personalledelse", "budsjettansvar", "salg"], "nice_to_have_skills": ["butikkdrift", "innkjop"], "min_years_experience": 10, "certifications_required": [], "driving_license_required": "B", "norwegian_min_level": "B2", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Du får ansvar for åtte butikker fra Molde til Steinkjer med base i Trondheim. Rollen innebærer to til fire reisedøgn i måneden med overnatting. Vi ser etter en erfaren butikkleder som er klar for neste steg og kan bygge prestasjonskultur på tvers."
+  },
+  {
+    "id": "job_033", "title": "Driftsleder dagligvare", "employer": "Matkroken Heimdal", "sector": "handel",
+    "location_city": "Trondheim", "work_mode": "onsite", "percent_position": 100, "shifts": ["day", "evening", "weekend"],
+    "salary_nok_min": 520000, "salary_nok_max": 580000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["butikkdrift", "vaktplanlegging"], "nice_to_have_skills": ["innkjop", "varelogistikk"], "min_years_experience": 3, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B2", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Stor dagligvarebutikk på Heimdal søker driftsleder som er butikksjefens høyre hånd: vaktplaner, varetrykk, ferskvaredrift og daglig oppfølging av medarbeidere. Turnus med dag, kveld og enkelte helger — ingen nattevakter."
+  },
+  {
+    "id": "job_034", "title": "Kundeservicesjef kontaktsenter", "employer": "Trøndelag Kraftsalg", "sector": "handel",
+    "location_city": "Trondheim", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 550000, "salary_nok_max": 620000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["kundeservice", "personalledelse"], "nice_to_have_skills": ["crm_system", "opplaering_ansatte"], "min_years_experience": 5, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B2", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Vi søker leder for kontaktsenteret vårt med 18 rådgivere. Du har ledet serviceteam før, elsker målbar kundetilfredshet og bygger folk gjennom systematisk trening og coaching. Dagtid, sentralt i Trondheim."
+  },
+  {
+    "id": "job_035", "title": "Salgssjef B2B storkunder", "employer": "TeknikkPartner Trøndelag", "sector": "handel",
+    "location_city": "Trondheim", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 600000, "salary_nok_max": 750000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["salg", "budsjettansvar"], "nice_to_have_skills": ["personalledelse", "crm_system"], "min_years_experience": 5, "certifications_required": [], "driving_license_required": "B", "norwegian_min_level": "B2", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Vi leverer teknisk utstyr til industri og offentlige kunder i Trøndelag og søker salgssjef med resultatansvar. Dagsbesøk hos kunder i regionen med firmabil (førerkort klasse B kreves); hjemme hver kveld."
+  },
+  {
+    "id": "job_036", "title": "Fiskehelsekonsulent", "employer": "Vestkyst Akvaservice", "sector": "havbruk",
+    "location_city": "Bergen", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 540000, "salary_nok_max": 620000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["fiskehelse", "feltarbeid"], "nice_to_have_skills": ["r_statistikk", "laboratoriearbeid"], "min_years_experience": 2, "certifications_required": [], "driving_license_required": "B", "norwegian_min_level": "B2", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Vi følger opp fiskehelsen hos oppdrettere i Vestland og søker konsulent til anleggsbesøk, prøveuttak og rapportering. Nyutdannede med relevant mastergrad og felterfaring oppfordres til å søke. Dagsturer langs kysten med firmabil, hjemme hver kveld."
+  },
+  {
+    "id": "job_037", "title": "Miljørådgiver havbruk", "employer": "AquaMiljø Trøndelag", "sector": "havbruk",
+    "location_city": "Trondheim", "work_mode": "hybrid", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 560000, "salary_nok_max": 640000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["miljoovervaking", "gis"], "nice_to_have_skills": ["dataanalyse", "r_statistikk"], "min_years_experience": 2, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B2", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Vi utfører miljøundersøkelser (B- og C-undersøkelser) for havbruksnæringen og søker rådgiver med GIS-kompetanse og forståelse for marine økosystemer. Kontor i Trondheim med hybrid fleksibilitet, feltdager langs Trøndelagskysten."
+  },
+  {
+    "id": "job_038", "title": "Laboratorieingeniør vannanalyse", "employer": "RogaLab AS", "sector": "industri",
+    "location_city": "Sandnes", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 500000, "salary_nok_max": 560000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["laboratoriearbeid", "kvalitetssikring_ks"], "nice_to_have_skills": ["dataanalyse"], "min_years_experience": 1, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B2", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Akkreditert laboratorium i Sandnes søker labingeniør til analyse av drikke- og avløpsvann. Arbeidet krever nøyaktighet og dokumentert kvalitetssikring etter ISO 17025. Fast dagtid."
+  },
+  {
+    "id": "job_039", "title": "Fiskehelsebiolog", "employer": "Havbruk Helse Vest", "sector": "havbruk",
+    "location_city": "Bergen", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 580000, "salary_nok_max": 660000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["fiskehelse", "laboratoriearbeid"], "nice_to_have_skills": ["akvakultur_drift"], "min_years_experience": 2, "certifications_required": ["fiskehelsebiolog_autorisasjon"], "driving_license_required": null, "norwegian_min_level": "B2", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Vi søker autorisert fiskehelsebiolog til helsekontroller og reseptutstedelse hos våre kunder. Autorisasjon som fiskehelsebiolog fra Mattilsynet er et lovpålagt krav for stillingen — marinbiologer uten autorisasjon kan dessverre ikke vurderes."
+  },
+  {
+    "id": "job_040", "title": "Havbrukstekniker / røkter", "employer": "Nordlys Laks, Tromsø", "sector": "havbruk",
+    "location_city": "Tromsø", "work_mode": "onsite", "percent_position": 100, "shifts": ["day", "weekend"],
+    "salary_nok_min": 480000, "salary_nok_max": 540000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["akvakultur_drift"], "nice_to_have_skills": ["fiskehelse", "feltarbeid"], "min_years_experience": 0, "certifications_required": [], "driving_license_required": "B", "norwegian_min_level": "B1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": ["heavy_lifting"]},
+    "description": "Vi trenger røkter til sjøanlegget vårt utenfor Tromsø: fôring, notarbeid, avlusing og daglig tilsyn. Fysisk krevende arbeid med tunge løft i all slags vær; helgevakter i turnus. Godt sprangbrett inn i næringen for nyutdannede."
+  },
+  {
+    "id": "job_041", "title": "Forskningstekniker marin, 60 % vikariat", "employer": "NTNU Institutt for biologi", "sector": "offentlig",
+    "location_city": "Trondheim", "work_mode": "onsite", "percent_position": 60, "shifts": ["day"],
+    "salary_nok_min": 500000, "salary_nok_max": 560000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["feltarbeid", "laboratoriearbeid"], "nice_to_have_skills": ["r_statistikk"], "min_years_experience": 0, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B2", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Ettårig vikariat i 60 % stilling knyttet til feltinnsamling og prøveopparbeiding i et forskningsprosjekt om kystøkologi. Lønn oppgitt i 100 %-ekvivalent etter statens satser."
+  },
+  {
+    "id": "job_042", "title": "Miljøkonsulent", "employer": "GrønnRåd Consulting", "sector": "bygg_anlegg",
+    "location_city": "Oslo", "work_mode": "hybrid", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 600000, "salary_nok_max": 700000, "requires_overnight_travel": true,
+    "requirements": {"must_have_skills": ["miljoovervaking", "gis", "prosjektledelse"], "nice_to_have_skills": ["dataanalyse"], "min_years_experience": 5, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B2", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Konsulentselskap innen miljøkartlegging søker konsulent til oppdrag over hele landet. Vi ønsker fem års erfaring og prosjektlederkompetanse, men sterke kandidater med kortere fartstid vurderes. Reisevirksomhet med overnatting må påregnes i feltsesongen."
+  },
+  {
+    "id": "job_043", "title": "Serviceelektriker næringsbygg", "employer": "Rogaland Elektropartner", "sector": "bygg_anlegg",
+    "location_city": "Stavanger", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 560000, "salary_nok_max": 620000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["elektro_installasjon", "feilsoking_elektro"], "nice_to_have_skills": ["internkontroll"], "min_years_experience": 3, "certifications_required": ["fagbrev_elektriker", "fse_lavspenning"], "driving_license_required": "B", "norwegian_min_level": "B1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": ["heavy_lifting", "working_at_heights"]},
+    "description": "Vi søker serviceelektriker til næringskunder i Stavanger-området. Arbeidet innebærer daglige tunge løft av kabler og utstyr samt arbeid i høyden fra lift og stige. Fagbrev og FSE kreves; servicebil følger med."
+  },
+  {
+    "id": "job_044", "title": "KS/HMS-koordinator elektro", "employer": "Jærkraft Installasjon", "sector": "bygg_anlegg",
+    "location_city": "Stavanger", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 580000, "salary_nok_max": 660000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["kvalitetssikring_ks", "hms", "internkontroll"], "nice_to_have_skills": ["elektro_installasjon", "dokumentasjon"], "min_years_experience": 5, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B2", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Installasjonsbedrift med 90 montører søker KS/HMS-koordinator. Du eier kvalitetssystemet, følger opp avvik, holder internkurs og er med på vernerunder. Kontorstilling på dagtid — fagbakgrunn fra elektro er en stor fordel fordi du skal snakke montørenes språk."
+  },
+  {
+    "id": "job_045", "title": "Planlegger elektro, nettselskap", "employer": "Sørvest Nett", "sector": "energi",
+    "location_city": "Sandnes", "work_mode": "hybrid", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 600000, "salary_nok_max": 680000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["elektro_installasjon", "dokumentasjon"], "nice_to_have_skills": ["teknisk_tegning", "automasjon"], "min_years_experience": 5, "certifications_required": ["fagbrev_elektriker"], "driving_license_required": null, "norwegian_min_level": "B2", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Nettselskapet søker planlegger som prosjekterer mindre nettanlegg og bestiller arbeid mot entreprenører. Fagbrev som elektriker kreves; erfaring fra praktisk installasjon er akkurat det vi ser etter i denne kontorrollen. Hybrid mulig etter opplæring."
+  },
+  {
+    "id": "job_046", "title": "Automasjonstekniker industri, skift", "employer": "Forus Prosessindustri", "sector": "industri",
+    "location_city": "Stavanger", "work_mode": "onsite", "percent_position": 100, "shifts": ["day", "night"],
+    "salary_nok_min": 560000, "salary_nok_max": 640000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["automasjon"], "nice_to_have_skills": ["plc", "feilsoking_elektro"], "min_years_experience": 3, "certifications_required": ["fagbrev_elektriker"], "driving_license_required": null, "norwegian_min_level": "B1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Prosessanlegget vårt på Forus kjører døgnkontinuerlig, og vedlikeholdsteamet går 2-skift med dag og natt. Vi søker tekniker med fagbrev elektro som vil inn i automasjon; god feilsøkingserfaring teller mer enn PLS-kurs."
+  },
+  {
+    "id": "job_047", "title": "Elektriker offshore, rotasjon 2-4", "employer": "NordSjø Energiservice", "sector": "energi",
+    "location_city": "Stavanger", "work_mode": "onsite", "percent_position": 100, "shifts": ["day", "night"],
+    "salary_nok_min": 750000, "salary_nok_max": 850000, "requires_overnight_travel": true,
+    "requirements": {"must_have_skills": ["elektro_installasjon", "feilsoking_elektro"], "nice_to_have_skills": ["automasjon"], "min_years_experience": 5, "certifications_required": ["fagbrev_elektriker", "fse_lavspenning"], "driving_license_required": null, "norwegian_min_level": "B1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": ["heavy_lifting"]},
+    "description": "Offshorerotasjon 2-4 med svært konkurransedyktig lønn. Du bor på plattformen i arbeidsperioden og går skift som dekker dag og natt. Fysisk krevende vedlikeholdsarbeid; gyldig fagbrev, FSE og helseattest kreves."
+  },
+  {
+    "id": "job_048", "title": "Saksbehandler elsikkerhet (DLE)", "employer": "Rogaland Elsikkerhet", "sector": "energi",
+    "location_city": "Stavanger", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 570000, "salary_nok_max": 640000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["internkontroll", "dokumentasjon", "feilsoking_elektro"], "nice_to_have_skills": ["kundeservice"], "min_years_experience": 5, "certifications_required": ["fagbrev_elektriker"], "driving_license_required": null, "norwegian_min_level": "B2", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Vi utfører tilsyn på vegne av Det lokale eltilsyn og søker saksbehandler med elektrikerbakgrunn. Rollen er en kontorstilling med befaringer uten fysisk montasjearbeid: du vurderer anlegg, skriver rapporter og veileder anleggseiere."
+  },
+  {
+    "id": "job_049", "title": "Lagermedarbeider dag, truck", "employer": "Østfold Distribusjonssenter", "sector": "logistikk",
+    "location_city": "Sarpsborg", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 440000, "salary_nok_max": 480000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["lagerarbeid", "truckkjoring"], "nice_to_have_skills": ["wms_system", "plukk_pakk"], "min_years_experience": 1, "certifications_required": ["truckforerbevis_t1_t4"], "driving_license_required": null, "norwegian_min_level": "B1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Sentrallageret vårt i Sarpsborg søker lagermedarbeider til fast dagskift (07–15). Gyldig truckførerbevis T1–T4 kreves; erfaring med skannerbasert plukk i WMS er et pluss. God bussforbindelse fra Fredrikstad og Sarpsborg sentrum."
+  },
+  {
+    "id": "job_050", "title": "Lagermedarbeider natt", "employer": "FredriksLog AS", "sector": "logistikk",
+    "location_city": "Fredrikstad", "work_mode": "onsite", "percent_position": 100, "shifts": ["night"],
+    "salary_nok_min": 480000, "salary_nok_max": 540000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["lagerarbeid", "truckkjoring"], "nice_to_have_skills": ["plukk_pakk"], "min_years_experience": 1, "certifications_required": ["truckforerbevis_t1_t4"], "driving_license_required": null, "norwegian_min_level": "B1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Nattlaget vårt (22–06) håndterer innkommende gods for neste dags distribusjon. Solid nattillegg gir god totallønn. Truckførerbevis kreves; vi har flere polskspråklige på laget."
+  },
+  {
+    "id": "job_051", "title": "Teamleder lager", "employer": "MossePort Logistikk", "sector": "logistikk",
+    "location_city": "Moss", "work_mode": "onsite", "percent_position": 100, "shifts": ["day", "evening"],
+    "salary_nok_min": 500000, "salary_nok_max": 560000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["lagerarbeid", "teamledelse"], "nice_to_have_skills": ["wms_system", "opplaering_ansatte"], "min_years_experience": 3, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B2", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Vi søker teamleder for skiftet dag/kveld på terminalen i Moss. Du fordeler arbeid for 10 medarbeidere, følger opp kvalitet i WMS og tar selv i et tak når det trengs. Erfarne lagermedarbeidere som vil ta steget opp oppfordres til å søke."
+  },
+  {
+    "id": "job_052", "title": "Sjåfør varedistribusjon (kl. B)", "employer": "Glomma Budservice", "sector": "transport",
+    "location_city": "Sarpsborg", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 460000, "salary_nok_max": 520000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["distribusjonskjoring"], "nice_to_have_skills": ["ruteplanlegging", "varemottak"], "min_years_experience": 0, "certifications_required": [], "driving_license_required": "B", "norwegian_min_level": "B1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Vi leverer pakker og stykkgods i Nedre Glomma med varebiler og søker sjåfør til fast dagrute. Førerkort klasse B med plettfri vandel kreves. Lageret ligger sentralt i Sarpsborg."
+  },
+  {
+    "id": "job_053", "title": "Produksjonsoperatør næringsmiddel", "employer": "Østfold Matverk", "sector": "industri",
+    "location_city": "Fredrikstad", "work_mode": "onsite", "percent_position": 100, "shifts": ["day", "evening"],
+    "salary_nok_min": 450000, "salary_nok_max": 510000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["varemottak"], "nice_to_have_skills": ["truckkjoring", "lagerarbeid"], "min_years_experience": 1, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Næringsmiddelfabrikken vår i Fredrikstad søker operatør til varemottak og pakkelinje, 2-skift dag/kveld (ingen nattskift). Truckerfaring er et pluss. Ryddige forhold og tariffavtale."
+  },
+  {
+    "id": "job_054", "title": "Logistikkoordinator", "employer": "Fredrikstad Fryselager", "sector": "logistikk",
+    "location_city": "Fredrikstad", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 520000, "salary_nok_max": 580000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["wms_system", "dokumentasjon"], "nice_to_have_skills": ["ruteplanlegging"], "min_years_experience": 3, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "C1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Koordinatoren vår planlegger inn- og utgående transporter, håndterer tolldokumentasjon og svarer kunder skriftlig. Stillingen krever meget god skriftlig norsk (C1) på grunn av avtale- og tolldokumenter."
+  },
+  {
+    "id": "job_055", "title": "Distribusjonssjåfør CE, lokalruter", "employer": "Mjøsa Transport", "sector": "transport",
+    "location_city": "Hamar", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 500000, "salary_nok_max": 560000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["distribusjonskjoring", "lastsikring"], "nice_to_have_skills": ["ruteplanlegging"], "min_years_experience": 2, "certifications_required": ["ysk_gods"], "driving_license_required": "CE", "norwegian_min_level": "B1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Faste lokalruter i Mjøs-regionen med vogntog — du starter og slutter på terminalen på Hamar hver dag og sover hjemme hver natt. Dagtid mandag til fredag. CE og gyldig YSK kreves; erfarne sjåfører prioriteres."
+  },
+  {
+    "id": "job_056", "title": "Langtransportsjåfør Europa", "employer": "Østerdal Transport", "sector": "transport",
+    "location_city": "Elverum", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 540000, "salary_nok_max": 620000, "requires_overnight_travel": true,
+    "requirements": {"must_have_skills": ["sjafor_tungbil", "lastsikring"], "nice_to_have_skills": ["ruteplanlegging"], "min_years_experience": 3, "certifications_required": ["ysk_gods", "adr_grunnkurs"], "driving_license_required": "CE", "norwegian_min_level": "B1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Vi kjører faste ruter til Tyskland og Benelux og søker erfaren CE-sjåfør med ADR. Turene går over flere døgn med overnatting i bil eller på hotell, typisk to uker ute og én hjemme. Topp moderne bilpark."
+  },
+  {
+    "id": "job_057", "title": "Bussjåfør klasse D", "employer": "Innlandet Kollektiv", "sector": "transport",
+    "location_city": "Hamar", "work_mode": "onsite", "percent_position": 100, "shifts": ["day", "evening", "weekend"],
+    "salary_nok_min": 480000, "salary_nok_max": 540000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["kundeservice"], "nice_to_have_skills": ["ruteplanlegging"], "min_years_experience": 0, "certifications_required": [], "driving_license_required": "D", "norwegian_min_level": "B1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Vi trenger flere bussjåfører til rutenettet rundt Hamar. Førerkort klasse D med YSK persontransport er et absolutt krav — vi tilbyr dessverre ikke finansiert føreropplæring for eksterne søkere i denne runden. Turnus med dag, kveld og helg, ingen nattkjøring."
+  },
+  {
+    "id": "job_058", "title": "Terminalarbeider med truck", "employer": "Elverum Godsterminal", "sector": "logistikk",
+    "location_city": "Elverum", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 460000, "salary_nok_max": 500000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["lagerarbeid", "truckkjoring"], "nice_to_have_skills": ["varemottak"], "min_years_experience": 0, "certifications_required": ["truckforerbevis_t1_t4"], "driving_license_required": null, "norwegian_min_level": "B1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Godsterminalen i Elverum søker terminalarbeider på dagtid. Gyldig truckførerbevis T1–T4 er et krav siden det meste av godset flyttes med motvekts- og støttebenstruck."
+  },
+  {
+    "id": "job_059", "title": "Renovasjonssjåfør klasse C", "employer": "Sirkula Innlandet", "sector": "transport",
+    "location_city": "Elverum", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 490000, "salary_nok_max": 540000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["distribusjonskjoring"], "nice_to_have_skills": ["ruteplanlegging", "kundeservice"], "min_years_experience": 2, "certifications_required": ["ysk_gods"], "driving_license_required": "C", "norwegian_min_level": "B1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Fast stilling som renovasjonssjåfør på faste ruter i Sør-Østerdal. Tidlig oppstart (kl. 06) men ren dagtid og fri alle helger. Klasse C og YSK kreves; comfort-biler med moderne komprimatorpåbygg."
+  },
+  {
+    "id": "job_060", "title": "Sjåfør massetransport CE, anleggsprosjekt", "employer": "Scandinavian Infra Group", "sector": "bygg_anlegg",
+    "location_city": "Hamar", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 510000, "salary_nok_max": 570000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["sjafor_tungbil", "lastsikring"], "nice_to_have_skills": ["maskinkjoring_anlegg"], "min_years_experience": 3, "certifications_required": ["ysk_gods"], "driving_license_required": "CE", "norwegian_min_level": "B1", "english_min_level": "B1", "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Stort samferdselsprosjekt ved Hamar trenger CE-sjåfører til massetransport. Prosjektet er internasjonalt: all HMS-kommunikasjon, briefer og rapportering foregår på engelsk, så arbeidsspråk engelsk (minimum B1) er et krav. Dagtid, hjemreise hver kveld."
+  },
+  {
+    "id": "job_061", "title": "Terminal-/lagermedarbeider transportselskap", "employer": "Hedmark Spedisjon", "sector": "logistikk",
+    "location_city": "Hamar", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 450000, "salary_nok_max": 500000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["varemottak", "lastsikring"], "nice_to_have_skills": ["truckkjoring"], "min_years_experience": 1, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Terminalen vår på Hamar søker medarbeider til varemottak, omlasting og sikring av gods på dagtid. Bakgrunn fra transportbransjen er midt i blinken — mange av våre beste terminalfolk er tidligere sjåfører. Truckbevis kan tas hos oss."
+  },
+  {
+    "id": "job_062", "title": "Controller, 60 % fast", "employer": "Stiftelsen Byforskning", "sector": "finans",
+    "location_city": "Oslo", "work_mode": "hybrid", "percent_position": 60, "shifts": ["day"],
+    "salary_nok_min": 620000, "salary_nok_max": 700000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["controlling", "rapportering", "excel"], "nice_to_have_skills": ["powerbi", "sap"], "min_years_experience": 5, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B2", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Forskningsstiftelse søker controller i 60 % fast stilling — en sjelden mulighet for deg som ønsker redusert stilling uten å gå ned i nivå. Måneds- og prosjektrapportering, budsjettstøtte til forskningsledere. Lønn oppgitt i 100 %-ekvivalent; hybrid hverdag."
+  },
+  {
+    "id": "job_063", "title": "Regnskapskonsulent, 80 %", "employer": "Romerike Regnskapshus", "sector": "finans",
+    "location_city": "Lillestrøm", "work_mode": "onsite", "percent_position": 80, "shifts": ["day"],
+    "salary_nok_min": 620000, "salary_nok_max": 680000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["regnskap", "visma"], "nice_to_have_skills": ["arsoppgjor", "lonn", "mva"], "min_years_experience": 3, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B2", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Regnskapsbyrå i vekst søker erfaren regnskapskonsulent i 80 % fast stilling — vi vet at livet har flere faser, og har god erfaring med redusert stilling. Kundeportefølje av SMB-er i Visma; lønn oppgitt i 100 %-ekvivalent."
+  },
+  {
+    "id": "job_064", "title": "Konserncontroller IFRS", "employer": "Havgap Industrier ASA", "sector": "finans",
+    "location_city": "Oslo", "work_mode": "hybrid", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 750000, "salary_nok_max": 850000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["controlling", "ifrs", "konsolidering"], "nice_to_have_skills": ["sap", "powerbi"], "min_years_experience": 5, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B2", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Børsnotert konsern søker konserncontroller til konsolidering og ekstern rapportering etter IFRS. Stillingen er 100 % — på grunn av rapporteringsfristene kan vi dessverre ikke tilby redusert stilling. Svært konkurransedyktig lønn og bonus."
+  },
+  {
+    "id": "job_065", "title": "Autorisert regnskapsfører, 70 %", "employer": "Sentrum Økonomitjenester", "sector": "finans",
+    "location_city": "Oslo", "work_mode": "onsite", "percent_position": 70, "shifts": ["day"],
+    "salary_nok_min": 620000, "salary_nok_max": 700000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["regnskap", "arsoppgjor"], "nice_to_have_skills": ["visma", "mva"], "min_years_experience": 3, "certifications_required": ["autorisert_regnskapsforer"], "driving_license_required": null, "norwegian_min_level": "B2", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Vi søker regnskapsfører i 70 % stilling som skal stå som oppdragsansvarlig for egne kunder. Autorisasjon som regnskapsfører fra Finanstilsynet er et lovpålagt krav for rollen og kan ikke fravikes. Lønn oppgitt i 100 %-ekvivalent."
+  },
+  {
+    "id": "job_066", "title": "Økonomirådgiver, 80 %", "employer": "Drammen kommune, økonomiavdelingen", "sector": "offentlig",
+    "location_city": "Drammen", "work_mode": "hybrid", "percent_position": 80, "shifts": ["day"],
+    "salary_nok_min": 600000, "salary_nok_max": 660000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["okonomistyring", "rapportering"], "nice_to_have_skills": ["excel", "regnskap"], "min_years_experience": 3, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "C1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Økonomiavdelingen søker rådgiver i 80 % fast stilling til budsjettoppfølging og rapportering mot virksomhetene. Fleksitid, hybrid hverdag og sju minutter fra togstasjonen. Lønn oppgitt i 100 %-ekvivalent."
+  },
+  {
+    "id": "job_067", "title": "Lønningsansvarlig, 80 %", "employer": "Omsorgsdrift Norge", "sector": "helse",
+    "location_city": "Oslo", "work_mode": "onsite", "percent_position": 80, "shifts": ["day"],
+    "salary_nok_min": 560000, "salary_nok_max": 620000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["lonn", "regnskap"], "nice_to_have_skills": ["visma", "excel"], "min_years_experience": 3, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B2", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Privat omsorgsleverandør søker lønningsansvarlig i 80 % stilling for kjøring av lønn for 400 ansatte med turnustillegg. Regnskapsbakgrunn med lønnserfaring passer perfekt. Lønn oppgitt i 100 %-ekvivalent."
+  },
+  {
+    "id": "job_068", "title": "Finanscontroller industrikonsern", "employer": "Vestkyst Maritime Group", "sector": "industri",
+    "location_city": "Bergen", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 700000, "salary_nok_max": 800000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["controlling", "ifrs"], "nice_to_have_skills": ["sap"], "min_years_experience": 5, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B2", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Maritimt konsern med hovedkontor i Bergen søker finanscontroller i 100 % stilling. IFRS-rapportering for verftsgruppen, tett på CFO. Flyttepakke kan diskuteres for rett kandidat."
+  },
+  {
+    "id": "job_069", "title": "Kokk offshore, rotasjon 2-4", "employer": "NordSjø Forpleining", "sector": "energi",
+    "location_city": "Stavanger", "work_mode": "onsite", "percent_position": 100, "shifts": ["day", "evening", "weekend"],
+    "salary_nok_min": 560000, "salary_nok_max": 620000, "requires_overnight_travel": true,
+    "requirements": {"must_have_skills": ["matlaging", "hms"], "nice_to_have_skills": [], "min_years_experience": 3, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": ["prolonged_standing"]},
+    "description": "Forpleiningsselskap søker kokk til offshorerotasjon 2-4. Du bor om bord i arbeidsperioden og lager mat til 120 personer i turnus som dekker alle ukedager. Fagbrev kokk og gyldig helseattest kreves."
+  },
+  {
+    "id": "job_070", "title": "Barnehagelærer", "employer": "Løvetann Barnehage", "sector": "utdanning",
+    "location_city": "Bergen", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 480000, "salary_nok_max": 540000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["pedagogisk_arbeid_barn"], "nice_to_have_skills": ["formidling"], "min_years_experience": 0, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "C1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Vi søker barnehagelærer med godkjent barnehagelærerutdanning til storbarnsavdelingen vår i Bergen. Uten godkjent pedagogisk utdanning for barnehage kan søknaden dessverre ikke vurderes."
+  },
+  {
+    "id": "job_071", "title": "Advokatfullmektig forretningsjus", "employer": "Advokatfirmaet Vintersletta", "sector": "finans",
+    "location_city": "Oslo", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 650000, "salary_nok_max": 800000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["juridisk_radgivning", "saksbehandling"], "nice_to_have_skills": [], "min_years_experience": 0, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "C1", "english_min_level": "B2", "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Vi søker advokatfullmektig til transaksjons- og selskapsrettsteamet. Master i rettsvitenskap med gode resultater kreves."
+  },
+  {
+    "id": "job_072", "title": "Sveiser", "employer": "Nidaros Mekaniske Verksted", "sector": "industri",
+    "location_city": "Trondheim", "work_mode": "onsite", "percent_position": 100, "shifts": ["day", "evening"],
+    "salary_nok_min": 500000, "salary_nok_max": 560000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["sveising"], "nice_to_have_skills": ["hms"], "min_years_experience": 2, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": ["heavy_lifting"]},
+    "description": "Mekanisk verksted søker sveiser med sertifikater i MIG/MAG og TIG. 2-skift dag/kveld; fysisk arbeid med løft av stålkomponenter."
+  },
+  {
+    "id": "job_073", "title": "Frisør", "employer": "Salong Munkegata", "sector": "handel",
+    "location_city": "Trondheim", "work_mode": "onsite", "percent_position": 100, "shifts": ["day", "weekend"],
+    "salary_nok_min": 420000, "salary_nok_max": 470000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["frisering", "kundeservice"], "nice_to_have_skills": ["salg"], "min_years_experience": 2, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B2", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": ["prolonged_standing"]},
+    "description": "Sentrumssalong søker frisør med svennebrev og egen kundeportefølje som et pluss. Lørdagsjobbing i turnus."
+  },
+  {
+    "id": "job_074", "title": "Grafisk designer", "employer": "Byrået Skjæringspunkt", "sector": "kultur",
+    "location_city": "Oslo", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 540000, "salary_nok_max": 620000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["grafisk_design", "innholdsproduksjon"], "nice_to_have_skills": ["kommunikasjon"], "min_years_experience": 3, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B2", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Designbyrå søker grafisk designer med sterk portefølje innen visuell identitet og redaksjonell design. Adobe-pakken i fingrene er en selvfølge."
+  },
+  {
+    "id": "job_075", "title": "Resepsjonist hotell, turnus", "employer": "Fjordgløtt Hotell Bergen", "sector": "handel",
+    "location_city": "Bergen", "work_mode": "onsite", "percent_position": 100, "shifts": ["day", "evening", "night", "weekend"],
+    "salary_nok_min": 430000, "salary_nok_max": 470000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["resepsjonsarbeid", "kundeservice"], "nice_to_have_skills": [], "min_years_experience": 0, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B2", "english_min_level": "B1", "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Sentrumshotell søker resepsjonist i full turnus inkludert nattevakter og helger. Serviceinnstilling og god engelsk kreves i møte med internasjonale gjester."
+  },
+  {
+    "id": "job_076", "title": "Maskinfører anlegg", "employer": "Østerdalen Anleggsdrift", "sector": "bygg_anlegg",
+    "location_city": "Elverum", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 520000, "salary_nok_max": 580000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["maskinkjoring_anlegg"], "nice_to_have_skills": ["lastsikring", "hms"], "min_years_experience": 2, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Vi søker maskinfører til gravemaskin og hjullaster på prosjekter i Sør-Østerdal. Maskinførerbevis (M2/M4) er et krav. Dagtid og hjemreise hver kveld."
+  },
+  {
+    "id": "job_077", "title": "Sosialkonsulent NAV", "employer": "NAV Drammen", "sector": "offentlig",
+    "location_city": "Drammen", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 520000, "salary_nok_max": 580000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["sosialt_arbeid", "saksbehandling"], "nice_to_have_skills": ["kommunikasjon"], "min_years_experience": 1, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "C1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "NAV Drammen søker sosialkonsulent til oppfølging av brukere med sammensatte behov. Sosialfaglig utdanning (sosionom eller tilsvarende) og meget god norsk kreves."
+  },
+  {
+    "id": "job_078", "title": "Renholdsoperatør", "employer": "BlankPuss Servicepartner", "sector": "industri",
+    "location_city": "Oslo", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 400000, "salary_nok_max": 440000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["renhold"], "nice_to_have_skills": [], "min_years_experience": 0, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "A2", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": ["prolonged_standing"]},
+    "description": "Servicebedrift søker renholdsoperatør til næringsbygg i Oslo sentrum, tidlig dagtid fra kl. 05. Fagbrev renholdsoperatør er et pluss."
+  },
+  {
+    "id": "job_079", "title": "Sykepleier poliklinikk ortopedi", "employer": "Haukeland universitetssjukehus", "sector": "helse",
+    "location_city": "Bergen", "work_mode": "onsite", "percent_position": 100, "shifts": ["day"],
+    "salary_nok_min": 510000, "salary_nok_max": 570000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["klinisk_sykepleie", "pasientveiledning"], "nice_to_have_skills": ["journalforing_dips", "dokumentasjon"], "min_years_experience": 3, "certifications_required": ["hpr_autorisasjon_sykepleier"], "driving_license_required": null, "norwegian_min_level": "C1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Ortopedisk poliklinikk søker sykepleier i fast 100 % dagstilling — ingen turnus, fri alle helger og høytider. Du koordinerer pasientforløp, assisterer ved småkirurgi og veileder pasienter før og etter inngrep. DIPS brukes i hele forløpet."
+  },
+  {
+    "id": "job_080", "title": "Butikkmedarbeider, 40 % helg", "employer": "Sportshuset Lagunen", "sector": "handel",
+    "location_city": "Bergen", "work_mode": "onsite", "percent_position": 40, "shifts": ["day", "weekend"],
+    "salary_nok_min": 420000, "salary_nok_max": 460000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["kundeservice", "salg"], "nice_to_have_skills": [], "min_years_experience": 0, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Deltidsstilling 40 % med hovedvekt på helger og onsdagskvelder. Passer for studenter. Lønn oppgitt i 100 %-ekvivalent etter tariff."
+  },
+  {
+    "id": "job_081", "title": "Butikksjef stormarked", "employer": "Storhandel Alnabru", "sector": "handel",
+    "location_city": "Oslo", "work_mode": "onsite", "percent_position": 100, "shifts": ["day", "weekend"],
+    "salary_nok_min": 620000, "salary_nok_max": 720000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["butikkdrift", "personalledelse", "budsjettansvar"], "nice_to_have_skills": ["varelogistikk", "innkjop"], "min_years_experience": 5, "certifications_required": [], "driving_license_required": null, "norwegian_min_level": "B2", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Et av landets største stormarkeder søker butikksjef med dokumenterte resultater fra varehusdrift: 45 ansatte, omsetning over 300 MNOK. Svært god lønnspakke for rett leder."
+  },
+  {
+    "id": "job_082", "title": "Truckfører helautomatisert lager", "employer": "Moss AutoLager", "sector": "logistikk",
+    "location_city": "Moss", "work_mode": "onsite", "percent_position": 100, "shifts": ["day", "evening"],
+    "salary_nok_min": 460000, "salary_nok_max": 520000, "requires_overnight_travel": false,
+    "requirements": {"must_have_skills": ["truckkjoring", "wms_system"], "nice_to_have_skills": ["lagerarbeid", "plukk_pakk"], "min_years_experience": 2, "certifications_required": ["truckforerbevis_t1_t4"], "driving_license_required": null, "norwegian_min_level": "B1", "english_min_level": null, "requires_norwegian_citizenship": false, "physical_demands": []},
+    "description": "Nytt helautomatisert lager i Moss søker truckfører som også betjener WMS-styrte kraner og plukkstasjoner. 2-skift dag/kveld, ingen natt. Truckførerbevis T1–T4 kreves; god opplæring gis på automasjonen."
+  }
+]

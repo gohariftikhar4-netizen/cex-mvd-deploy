@@ -1,0 +1,309 @@
+[
+  {
+    "id": "cand_ingrid",
+    "name": "Ingrid Fossmark",
+    "location_city": "Bergen",
+    "work_authorization": "citizen",
+    "languages": {"norwegian": "native", "english": "B2"},
+    "driving_licenses": ["B"],
+    "certifications": ["hpr_autorisasjon_sykepleier"],
+    "education": [
+      {"degree": "Bachelor", "field": "Sykepleie", "institution": "Høgskulen på Vestlandet", "year": 2008, "recognized_in_norway": true}
+    ],
+    "work_history": [
+      {"title": "Sykepleier, kirurgisk sengepost", "employer": "Haukeland universitetssjukehus", "years": 12, "description": "Turnusarbeid på kirurgisk sengepost: medikamenthåndtering, sårstell, dokumentasjon i DIPS, veiledning av studenter og pårørende."},
+      {"title": "Sykepleier, legevakt", "employer": "Bergen legevakt", "years": 3, "description": "Triagering av pasienter i akuttmottak, telefonvurderinger, samarbeid med lege om hastegrad."}
+    ],
+    "skills": ["klinisk_sykepleie", "medikamenthandtering", "pasientveiledning", "triage", "journalforing_dips", "vaksinasjon", "dokumentasjon"],
+    "hard_constraints": {
+      "max_commute_minutes": 45,
+      "willing_to_relocate": false,
+      "relocation_counties": [],
+      "cannot_work_shifts": ["night"],
+      "physical_limitations": [],
+      "min_salary_nok": 500000,
+      "percent_min": 80,
+      "percent_max": 100,
+      "no_overnight_travel": true
+    },
+    "preferred_sectors": ["helse", "teknologi"],
+    "avoided_sectors": [],
+    "free_text": "Jeg har jobbet 15 år som sykepleier i Bergen og er stolt av faget mitt, men nattevaktene går ikke lenger opp med livet som alenemor. Jeg trives best i møte med pasienter og pårørende, og kollegaer sier jeg er god til å forklare vanskelige ting enkelt. Jeg kjenner DIPS ut og inn og har vært superbruker på posten. Jeg er nysgjerrig på e-helse og kunne tenke meg å bruke erfaringen min i helseteknologi eller veiledning, men jeg kan også fortsette klinisk hvis arbeidstiden er dagtid. Jeg kan ikke reise bort med overnatting, og jeg trenger minst 80 prosent stilling for å få økonomien til å gå rundt."
+  },
+  {
+    "id": "cand_marius",
+    "name": "Marius Elvebakk",
+    "location_city": "Oslo",
+    "work_authorization": "citizen",
+    "languages": {"norwegian": "native", "english": "C1"},
+    "driving_licenses": [],
+    "certifications": [],
+    "education": [
+      {"degree": "Master", "field": "Informatikk", "institution": "NTNU", "year": 2016, "recognized_in_norway": true}
+    ],
+    "work_history": [
+      {"title": "Senior backend-utvikler", "employer": "Kvistpay AS (fintech)", "years": 6, "description": "Bygget betalings-API-er i Go og Python på Kubernetes i AWS. Ansvar for PostgreSQL-ytelse, microservices-arkitektur og on-call. Nedbemannet da selskapet mistet finansiering."},
+      {"title": "Konsulent, systemutvikling", "employer": "Bekk-lignende konsulenthus", "years": 3, "description": "Java-baserte kundeprosjekter i offentlig sektor, CI/CD-pipelines, testautomatisering."}
+    ],
+    "skills": ["python", "go", "java", "kubernetes", "docker", "aws", "postgresql", "api_design", "microservices", "ci_cd", "linux", "testing_automatisering"],
+    "hard_constraints": {
+      "max_commute_minutes": 60,
+      "willing_to_relocate": false,
+      "relocation_counties": [],
+      "cannot_work_shifts": [],
+      "physical_limitations": [],
+      "min_salary_nok": 750000,
+      "percent_min": 100,
+      "percent_max": 100,
+      "no_overnight_travel": false
+    },
+    "preferred_sectors": ["teknologi", "finans"],
+    "avoided_sectors": [],
+    "free_text": "Ble nedbemannet fra fintech-selskapet der jeg var senior backend-utvikler i seks år. Jeg er sterkest på Go, Python, Kubernetes og AWS, og jeg liker å eie systemer i produksjon — drift, observability og feilsøking under press. Samboeren min er bundet til Oslo, så flytting er uaktuelt, men jeg pendler gjerne opp mot en time og jobber gjerne hybrid eller remote. Jeg har ikke førerkort. Lønnsmessig kan jeg ikke gå under 750 000 med boliglånet vi har."
+  },
+  {
+    "id": "cand_amira",
+    "name": "Amira Haddad",
+    "location_city": "Drammen",
+    "work_authorization": "permanent_permit",
+    "languages": {"norwegian": "B1", "english": "C1", "arabic": "native"},
+    "driving_licenses": ["B"],
+    "certifications": [],
+    "education": [
+      {"degree": "Bachelor", "field": "Bygg- og konstruksjonsteknikk", "institution": "University of Aleppo", "year": 2009, "recognized_in_norway": false}
+    ],
+    "work_history": [
+      {"title": "Konstruksjonsingeniør", "employer": "Al-Sham Engineering, Aleppo", "years": 6, "description": "Dimensjonering av betongkonstruksjoner for bolig- og næringsbygg i ETABS og AutoCAD. Ansvar for armeringstegninger og teknisk tegning."},
+      {"title": "Byggeplassingeniør", "employer": "Petra Structures, Amman", "years": 3, "description": "Oppfølging av stålkonstruksjoner på byggeplass, prosjektering av mindre tilbygg, kontroll av utførelse mot tegninger."}
+    ],
+    "skills": ["konstruksjonsberegning", "autocad", "etabs", "betongkonstruksjoner", "stalkonstruksjoner", "teknisk_tegning", "prosjektering"],
+    "hard_constraints": {
+      "max_commute_minutes": 60,
+      "willing_to_relocate": false,
+      "relocation_counties": [],
+      "cannot_work_shifts": [],
+      "physical_limitations": [],
+      "min_salary_nok": null,
+      "percent_min": 80,
+      "percent_max": 100,
+      "no_overnight_travel": false
+    },
+    "preferred_sectors": ["bygg_anlegg", "offentlig"],
+    "avoided_sectors": [],
+    "free_text": "Jeg er bygningsingeniør fra Syria med ni års erfaring med konstruksjonsberegning i betong og stål, mest i ETABS og AutoCAD. Familien min er etablert i Drammen og barna går på skole her, så vi blir i området, men Oslo er innenfor pendleavstand med tog. Norsken min er på B1-nivå og jeg tar kurs mot B2; på jobb i Amman var arbeidsspråket engelsk. NOKUT-søknaden om godkjenning av utdanningen min er sendt inn, men ikke ferdigbehandlet. Jeg tar gjerne en stilling under mitt gamle nivå for å komme i gang i norsk byggebransje."
+  },
+  {
+    "id": "cand_bjorn",
+    "name": "Bjørn Sletthaug",
+    "location_city": "Trondheim",
+    "work_authorization": "citizen",
+    "languages": {"norwegian": "native", "english": "B1"},
+    "driving_licenses": ["B"],
+    "certifications": [],
+    "education": [
+      {"degree": "Videregående", "field": "Allmennfag", "institution": "Strinda videregående skole", "year": 1995, "recognized_in_norway": true}
+    ],
+    "work_history": [
+      {"title": "Butikksjef", "employer": "ElektroHuset Trondheim", "years": 15, "description": "Drift av elektronikkvarehus med 20 ansatte: personalansvar, vaktplanlegging, budsjett- og resultatansvar, varelogistikk, innkjøp og opplæring av ansatte."},
+      {"title": "Selger", "employer": "ElektroHuset Trondheim", "years": 5, "description": "Salg av forbrukerelektronikk, kundeservice, reklamasjonshåndtering."}
+    ],
+    "skills": ["personalledelse", "budsjettansvar", "varelogistikk", "kundeservice", "salg", "butikkdrift", "innkjop", "opplaering_ansatte", "vaktplanlegging"],
+    "hard_constraints": {
+      "max_commute_minutes": 40,
+      "willing_to_relocate": false,
+      "relocation_counties": [],
+      "cannot_work_shifts": ["night"],
+      "physical_limitations": [],
+      "min_salary_nok": 520000,
+      "percent_min": 100,
+      "percent_max": 100,
+      "no_overnight_travel": false
+    },
+    "preferred_sectors": ["handel"],
+    "avoided_sectors": [],
+    "free_text": "Tjue år i samme elektronikkvarehus, de siste femten som butikksjef, til kjeden la ned i vår. Jeg kan drift: bemanning, budsjett, svinn, varelogistikk og å bygge et lag som leverer på kundeservice. Jeg har ikke studiepoeng, men jeg har resultater og referanser. Jeg vil helst lede folk i handel eller service i Trondheims-området, kjører gjerne til Stjørdal, men nattarbeid er uaktuelt. Reising med noen hotellnetter i måneden takler jeg fint."
+  },
+  {
+    "id": "cand_silje",
+    "name": "Silje Vangberg",
+    "location_city": "Trondheim",
+    "work_authorization": "citizen",
+    "languages": {"norwegian": "native", "english": "C1"},
+    "driving_licenses": ["B"],
+    "certifications": [],
+    "education": [
+      {"degree": "Master", "field": "Marinbiologi", "institution": "NTNU", "year": 2025, "recognized_in_norway": true}
+    ],
+    "work_history": [
+      {"title": "Forskningsassistent (engasjement)", "employer": "NTNU / SINTEF Ocean", "years": 1, "description": "Feltarbeid og prøvetaking i oppdrettsanlegg, laboratoriearbeid med fiskehelse (gjelleprøver, histologi), dataanalyse i R og kartlegging i GIS."}
+    ],
+    "skills": ["r_statistikk", "gis", "feltarbeid", "laboratoriearbeid", "fiskehelse", "miljoovervaking", "dataanalyse"],
+    "hard_constraints": {
+      "max_commute_minutes": 60,
+      "willing_to_relocate": true,
+      "relocation_counties": [],
+      "cannot_work_shifts": [],
+      "physical_limitations": [],
+      "min_salary_nok": 480000,
+      "percent_min": 100,
+      "percent_max": 100,
+      "no_overnight_travel": false
+    },
+    "preferred_sectors": ["havbruk", "offentlig"],
+    "avoided_sectors": [],
+    "free_text": "Nyutdannet marinbiolog fra NTNU med et års engasjement bak meg innen fiskehelse og miljøovervåking i oppdrett. Jeg er trygg i felt, på lab og i R, og jeg vil ut i havbruksnæringen eller miljøforvaltningen. Jeg er ugift og kan flytte hvor som helst i landet — kysten frister mest. Jeg trenger fast fulltidsjobb nå; nye korte vikariater eller små deltidsstillinger er ikke aktuelt fordi jeg må kunne betale ned studielånet."
+  },
+  {
+    "id": "cand_tarik",
+    "name": "Tarik Hadžić",
+    "location_city": "Stavanger",
+    "work_authorization": "citizen",
+    "languages": {"norwegian": "C1", "english": "B1", "bosnian": "native"},
+    "driving_licenses": ["BE"],
+    "certifications": ["fagbrev_elektriker", "fse_lavspenning"],
+    "education": [
+      {"degree": "Fagbrev", "field": "Elektrikerfaget", "institution": "Stavanger yrkesskole", "year": 1999, "recognized_in_norway": true}
+    ],
+    "work_history": [
+      {"title": "Serviceelektriker", "employer": "Lyse Installasjon (og forgjengere)", "years": 20, "description": "Installasjon og service i bolig og næringsbygg: feilsøking, internkontroll, dokumentasjon av anlegg, kundekontakt. De siste årene også ansvar for KS og HMS på serviceavdelingen."}
+    ],
+    "skills": ["elektro_installasjon", "feilsoking_elektro", "internkontroll", "hms", "kvalitetssikring_ks", "kundeservice", "dokumentasjon"],
+    "hard_constraints": {
+      "max_commute_minutes": 50,
+      "willing_to_relocate": false,
+      "relocation_counties": [],
+      "cannot_work_shifts": [],
+      "physical_limitations": ["no_heavy_lifting"],
+      "min_salary_nok": 550000,
+      "percent_min": 100,
+      "percent_max": 100,
+      "no_overnight_travel": true
+    },
+    "preferred_sectors": ["energi", "bygg_anlegg", "industri"],
+    "avoided_sectors": [],
+    "free_text": "Elektriker med fagbrev og tjue års erfaring fra service og installasjon i Stavanger-området. En ryggskade gjør at jeg ikke lenger kan ta tunge løft, så montørjobber med kabeltromler og stiger er uaktuelt — men hodet og erfaringen feiler ingenting. Jeg har hatt ansvar for kvalitetssikring, internkontroll og HMS, og jeg er god på feilsøking og på å forklare kundene hva som faktisk er gjort. Offshore-rotasjon og reising med overnatting er utelukket av familiehensyn. Jeg ser etter en teknisk kontor- eller koordinatorrolle der fagbakgrunnen min brukes."
+  },
+  {
+    "id": "cand_kari",
+    "name": "Kari Mikkelborg",
+    "location_city": "Tromsø",
+    "work_authorization": "citizen",
+    "languages": {"norwegian": "native", "english": "C2"},
+    "driving_licenses": ["B"],
+    "certifications": ["ppu_pedagogisk_utdanning"],
+    "education": [
+      {"degree": "Master", "field": "Nordisk språk og litteratur", "institution": "UiT Norges arktiske universitet", "year": 2018, "recognized_in_norway": true}
+    ],
+    "work_history": [
+      {"title": "Lektor, norsk og engelsk", "employer": "Kvaløya ungdomsskole", "years": 7, "description": "Undervisning i norsk og engelsk på ungdomstrinnet, klasseledelse, læreplanarbeid ved fagfornyelsen, utvikling av digitale undervisningsopplegg og vurderingskriterier."}
+    ],
+    "skills": ["undervisning", "laereplanarbeid", "klasseledelse", "formidling", "innholdsproduksjon", "kommunikasjon", "digital_laering"],
+    "hard_constraints": {
+      "max_commute_minutes": 40,
+      "willing_to_relocate": false,
+      "relocation_counties": [],
+      "cannot_work_shifts": ["evening", "weekend"],
+      "physical_limitations": [],
+      "min_salary_nok": 540000,
+      "percent_min": 80,
+      "percent_max": 100,
+      "no_overnight_travel": true
+    },
+    "preferred_sectors": ["teknologi", "utdanning"],
+    "avoided_sectors": [],
+    "free_text": "Lektor i norsk og engelsk med sju år på ungdomstrinnet i Tromsø. Jeg er utbrent på klasseromshverdagen, ikke på faget: jeg elsker å lage undervisningsopplegg, skrive godt og formidle. Drømmen er å jobbe med digitale læremidler, innholdsutvikling eller kommunikasjon — gjerne remote for et selskap sørpå, for partneren min jobber på UNN og vi blir i Tromsø. Kveldsarbeid og helgejobbing går ikke med to små barn, og jeg kan ikke reise bort med overnatting. Jeg går ikke ned under lektorlønn."
+  },
+  {
+    "id": "cand_pawel",
+    "name": "Paweł Zieliński",
+    "location_city": "Fredrikstad",
+    "work_authorization": "eea",
+    "languages": {"norwegian": "B2", "polish": "native", "english": "B1"},
+    "driving_licenses": [],
+    "certifications": ["truckforerbevis_t1_t4"],
+    "education": [
+      {"degree": "Teknisk videregående", "field": "Logistikk", "institution": "Zespół Szkół Technicznych, Gdańsk", "year": 2015, "recognized_in_norway": true}
+    ],
+    "work_history": [
+      {"title": "Lagermedarbeider", "employer": "Borg Logistikk, Fredrikstad", "years": 4, "description": "Plukk og pakk mot skanner i WMS, truckkjøring (T1–T4), varemottak, lastsikring av paller, opplæring av sommervikarer."},
+      {"title": "Produksjonsmedarbeider", "employer": "Emballasjefabrikk, Sarpsborg", "years": 2, "description": "Maskinbetjening og pakking i produksjonslinje, kvalitetskontroll av ferdigvarer."}
+    ],
+    "skills": ["lagerarbeid", "truckkjoring", "plukk_pakk", "wms_system", "varemottak", "lastsikring"],
+    "hard_constraints": {
+      "max_commute_minutes": 45,
+      "willing_to_relocate": false,
+      "relocation_counties": [],
+      "cannot_work_shifts": ["night"],
+      "physical_limitations": [],
+      "min_salary_nok": 430000,
+      "percent_min": 100,
+      "percent_max": 100,
+      "no_overnight_travel": false
+    },
+    "preferred_sectors": ["logistikk", "industri"],
+    "avoided_sectors": [],
+    "free_text": "Jeg kommer fra Polen og har bodd i Fredrikstad i seks år. Jeg har truckførerbevis T1 til T4 og er rask og nøyaktig på plukk og pakk; på Borg Logistikk hadde jeg lavest feilprosent på avdelingen. Norsken min er god (B2-test bestått), polsk er morsmål. Legen har sagt at jeg må slutte med nattarbeid på grunn av søvnproblemer, så jeg ser etter dagjobb eller dag/kveld. Jeg har ikke førerkort for bil ennå — jeg sparer til det — så jobben må være mulig å nå med buss eller tog fra Fredrikstad."
+  },
+  {
+    "id": "cand_lene",
+    "name": "Lene Brattbakk",
+    "location_city": "Oslo",
+    "work_authorization": "citizen",
+    "languages": {"norwegian": "native", "english": "C1"},
+    "driving_licenses": ["B"],
+    "certifications": [],
+    "education": [
+      {"degree": "Siviløkonom (MSc)", "field": "Økonomi og administrasjon", "institution": "Handelshøyskolen BI", "year": 2013, "recognized_in_norway": true}
+    ],
+    "work_history": [
+      {"title": "Konserncontroller", "employer": "Nordisk industrikonsern, Oslo", "years": 6, "description": "Månedsrapportering og konsolidering etter IFRS i SAP, budsjett- og prognoseprosesser, Power BI-dashboards for ledelsen, controlling av tre datterselskaper."},
+      {"title": "Regnskapskonsulent", "employer": "Regnskapsbyrå, Oslo", "years": 4, "description": "Løpende regnskapsføring og årsoppgjør for SMB-kunder i Visma, mva-meldinger, kontakt med revisor."}
+    ],
+    "skills": ["controlling", "regnskap", "ifrs", "konsolidering", "excel", "powerbi", "sap", "visma", "rapportering", "okonomistyring", "arsoppgjor", "mva"],
+    "hard_constraints": {
+      "max_commute_minutes": 45,
+      "willing_to_relocate": false,
+      "relocation_counties": [],
+      "cannot_work_shifts": [],
+      "physical_limitations": [],
+      "min_salary_nok": 620000,
+      "percent_min": 60,
+      "percent_max": 80,
+      "no_overnight_travel": true
+    },
+    "preferred_sectors": ["finans", "offentlig"],
+    "avoided_sectors": [],
+    "free_text": "Siviløkonom med ti års erfaring fra regnskap og controlling, de siste seks som konserncontroller med IFRS-konsolidering i SAP og rapportering i Power BI. Jeg kommer tilbake fra foreldrepermisjon og skal ha hovedansvaret hjemme en periode, så jeg kan bare jobbe 60 til 80 prosent — det er absolutt, uansett hvor spennende stillingen er. Reiser med overnatting går ikke. Jeg er vant til høyt tempo og korte frister og holder gjerne i månedsavslutning og rapportering. Lønnskravet mitt er minst 620 000 i full stilling."
+  },
+  {
+    "id": "cand_oddvar",
+    "name": "Oddvar Bråthen",
+    "location_city": "Elverum",
+    "work_authorization": "citizen",
+    "languages": {"norwegian": "native", "english": "A2"},
+    "driving_licenses": ["CE"],
+    "certifications": ["ysk_gods", "adr_grunnkurs"],
+    "education": [
+      {"degree": "Grunnskole + yrkesutdanning", "field": "Transportfag", "institution": "Elverum", "year": 1986, "recognized_in_norway": true}
+    ],
+    "work_history": [
+      {"title": "Langtransportsjåfør", "employer": "Østerdal Transport", "years": 25, "description": "Langtransport i Norge og Europa med vogntog (CE), ADR-gods, lastsikring, kjøre- og hviletid, kundekontakt hos mottakere."},
+      {"title": "Distribusjonssjåfør", "employer": "Hedmark Distribusjon", "years": 10, "description": "Lokal distribusjon av stykkgods i Innlandet, ruteplanlegging, varemottak hos kunder, håndtering av fraktbrev."}
+    ],
+    "skills": ["sjafor_tungbil", "distribusjonskjoring", "lastsikring", "ruteplanlegging", "varemottak"],
+    "hard_constraints": {
+      "max_commute_minutes": 60,
+      "willing_to_relocate": false,
+      "relocation_counties": [],
+      "cannot_work_shifts": ["night"],
+      "physical_limitations": [],
+      "min_salary_nok": 480000,
+      "percent_min": 100,
+      "percent_max": 100,
+      "no_overnight_travel": true
+    },
+    "preferred_sectors": ["transport", "logistikk"],
+    "avoided_sectors": [],
+    "free_text": "Yrkessjåfør i 35 år, mesteparten langtransport i Norge og Europa. Etter en hjerteoperasjon i fjor sier legen at nattkjøring og ukependling med overnatting i bilen er over for min del — og kona er enig. Jeg har CE, gyldig YSK og ADR-bevis, og jeg kan lastsikring og kjøre- og hviletid bedre enn de fleste. Engelsken min er enkel; jeg klarte meg på tyske og danske terminaler, men noe kontorspråk er det ikke. Nå ser jeg etter lokalkjøring på dagtid rundt Elverum og Hamar til jeg pensjonerer meg om sju år."
+  }
+]
