@@ -12,9 +12,12 @@ from ..schemas import Candidate, Job
 
 MAX_TOP = 10
 MAX_EXTENDED = 50
-CHUNK_CHAR_BUDGET = 45_000   # ≈ 11k tokens of rendered job blocks per call
-CHUNK_KEEP = 15              # candidates kept per chunk
-FINALISTS = 60               # merged shortlist size before the final ranking
+# claude-opus-5 has a 1M-token context window: a benchmark slice of a few
+# thousand ads fits in ONE call, which is the purest reading of the B0 spec
+# ("candidate profile + available jobs"). Map-reduce only kicks in beyond it.
+CHUNK_CHAR_BUDGET = 2_600_000  # ≈ 650k tokens of rendered job blocks per call
+CHUNK_KEEP = 15                # candidates kept per chunk (map-reduce mode)
+FINALISTS = 60                 # merged shortlist size before the final ranking
 
 _CLAIM_SCHEMA = {
     "type": "object",
@@ -106,6 +109,22 @@ def jobs_prompt(candidate: Candidate, jobs: list[Job], extra: str = "") -> str:
     parts += [CANDIDATE_SECTION, render_candidate(candidate), "", JOBS_SECTION]
     parts += [render_job(j) for j in jobs]
     return "\n\n".join(parts)
+
+
+def jobs_prompt_parts(candidate: Candidate, jobs: list[Job], extra: str = "",
+                      instruction: str = "") -> tuple[str, str]:
+    """(stable_prefix, volatile_suffix) with the jobs corpus FIRST so the
+    prefix is identical across candidates and can be prompt-cached. The
+    candidate profile and any per-candidate context go in the suffix (long-
+    context best practice also favors query-after-documents)."""
+    prefix = "\n\n".join([JOBS_SECTION] + [render_job(j) for j in jobs])
+    suffix_parts = []
+    if extra:
+        suffix_parts.append(extra)
+    suffix_parts += [CANDIDATE_SECTION, render_candidate(candidate)]
+    if instruction:
+        suffix_parts.append(instruction)
+    return prefix, "\n\n".join(suffix_parts)
 
 
 def chunk_jobs(jobs: list[Job], char_budget: int = CHUNK_CHAR_BUDGET) -> list[list[Job]]:

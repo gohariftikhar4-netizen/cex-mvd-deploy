@@ -75,7 +75,7 @@ def _log_call(logger: RunLogger, *, task: str, client_name: str, model: str,
               system: str, user: str, result_text: str, parsed_ok: bool,
               latency_s: float, input_tokens: int | None,
               output_tokens: int | None, error: str | None = None,
-              tags: dict | None = None) -> None:
+              tags: dict | None = None, **extra) -> None:
     logger.log_model_call(
         task=task,
         client=client_name,
@@ -89,6 +89,7 @@ def _log_call(logger: RunLogger, *, task: str, client_name: str, model: str,
         output_tokens=output_tokens,
         error=error,
         tags=tags or {},
+        **extra,
     )
 
 
@@ -109,18 +110,41 @@ class AnthropicClient:
                 "Install it (pip install anthropic) or run with --mode offline."
             ) from e
         self._anthropic = anthropic
-        self._client = anthropic.Anthropic()
+        # Identity-linked API keys require the workspace the request acts in.
+        headers = {}
+        workspace = os.environ.get("ANTHROPIC_WORKSPACE_ID")
+        if workspace:
+            headers["anthropic-workspace-id"] = workspace
+        self._client = anthropic.Anthropic(
+            timeout=1200.0, max_retries=3,
+            default_headers=headers or None,
+        )
         self.model = model
         self._logger = logger
 
     def complete(self, *, task: str, system: str, user: str,
                  json_schema: dict | None = None, max_tokens: int = 4096,
-                 tags: dict | None = None) -> ModelResult:
+                 tags: dict | None = None,
+                 cached_prefix: str | None = None) -> ModelResult:
+        """One model call. `cached_prefix` is a stable text block placed before
+        the volatile part with a 1h prompt-cache breakpoint — used for the
+        shared jobs corpus so all candidates reuse it (cost accounting tracks
+        cache reads/writes separately)."""
+        if cached_prefix:
+            content: Any = [
+                {"type": "text", "text": cached_prefix,
+                 "cache_control": {"type": "ephemeral", "ttl": "1h"}},
+                {"type": "text", "text": user},
+            ]
+            full_prompt = cached_prefix + "\n\n" + user
+        else:
+            content = user
+            full_prompt = user
         kwargs: dict[str, Any] = dict(
             model=self.model,
             max_tokens=max_tokens,
             system=system,
-            messages=[{"role": "user", "content": user}],
+            messages=[{"role": "user", "content": content}],
         )
         if json_schema is not None:
             kwargs["output_config"] = {
@@ -128,25 +152,32 @@ class AnthropicClient:
             }
         start = time.perf_counter()
         try:
-            response = self._client.messages.create(**kwargs)
+            # Streaming: long inputs/outputs must not hit HTTP timeouts.
+            with self._client.messages.stream(**kwargs) as stream:
+                response = stream.get_final_message()
         except self._anthropic.APIError as e:
             latency = time.perf_counter() - start
             _log_call(self._logger, task=task, client_name=self.name, model=self.model,
-                      system=system, user=user, result_text="", parsed_ok=False,
+                      system=system, user=full_prompt, result_text="", parsed_ok=False,
                       latency_s=latency, input_tokens=None, output_tokens=None,
                       error=f"{type(e).__name__}: {e}", tags=tags)
             raise ForjaModelError(f"model call failed for task {task!r}: {e}") from e
         latency = time.perf_counter() - start
 
+        usage_extra = {
+            "cache_creation_input_tokens": getattr(response.usage, "cache_creation_input_tokens", 0) or 0,
+            "cache_read_input_tokens": getattr(response.usage, "cache_read_input_tokens", 0) or 0,
+        }
+
         if response.stop_reason == "refusal":
             detail = getattr(response, "stop_details", None)
             msg = f"model refused task {task!r}" + (f" ({detail})" if detail else "")
             _log_call(self._logger, task=task, client_name=self.name, model=self.model,
-                      system=system, user=user, result_text="", parsed_ok=False,
+                      system=system, user=full_prompt, result_text="", parsed_ok=False,
                       latency_s=latency,
                       input_tokens=response.usage.input_tokens,
                       output_tokens=response.usage.output_tokens,
-                      error=msg, tags=tags)
+                      error=msg, tags=tags, **usage_extra)
             raise ForjaModelError(msg)
 
         text = "".join(b.text for b in response.content if b.type == "text")
@@ -158,11 +189,11 @@ class AnthropicClient:
             except json.JSONDecodeError as e:
                 parse_error = f"invalid JSON from structured output: {e}"
         _log_call(self._logger, task=task, client_name=self.name, model=self.model,
-                  system=system, user=user, result_text=text,
+                  system=system, user=full_prompt, result_text=text,
                   parsed_ok=parse_error is None, latency_s=latency,
                   input_tokens=response.usage.input_tokens,
                   output_tokens=response.usage.output_tokens,
-                  error=parse_error, tags=tags)
+                  error=parse_error, tags=tags, **usage_extra)
         if parse_error:
             raise ForjaModelError(parse_error)
         return ModelResult(
@@ -191,10 +222,28 @@ def live_capability() -> tuple[bool, str]:
 # Offline deterministic client
 # --------------------------------------------------------------------------
 
+def split_sections(prompt: str) -> tuple[str, str]:
+    """(candidate_part, jobs_part) regardless of section order — V2 prompts
+    put the jobs corpus first (for prompt caching), V1 puts the candidate
+    first; both must parse."""
+    ci = prompt.find(CANDIDATE_SECTION)
+    ji = prompt.find(JOBS_SECTION)
+    cand = jobs = ""
+    if ci >= 0:
+        end = ji if ji > ci else len(prompt)
+        cand = prompt[ci + len(CANDIDATE_SECTION):end]
+    if ji >= 0:
+        end = ci if ci > ji else len(prompt)
+        jobs = prompt[ji + len(JOBS_SECTION):end]
+    return cand, jobs
+
+
 def split_job_blocks(prompt: str) -> list[tuple[str, str]]:
     """Split the jobs section of a prompt into (job_id, block_text) pairs.
     Blocks are introduced by the shared '[STILLING <id>]' convention."""
-    jobs_part = prompt.split(JOBS_SECTION, 1)[1] if JOBS_SECTION in prompt else prompt
+    _, jobs_part = split_sections(prompt)
+    if not jobs_part:
+        jobs_part = prompt
     blocks: list[tuple[str, str]] = []
     current_id: str | None = None
     current_lines: list[str] = []
@@ -222,7 +271,10 @@ class OfflineDeterministicClient:
 
     def complete(self, *, task: str, system: str, user: str,
                  json_schema: dict | None = None, max_tokens: int = 4096,
-                 tags: dict | None = None) -> ModelResult:
+                 tags: dict | None = None,
+                 cached_prefix: str | None = None) -> ModelResult:
+        if cached_prefix:
+            user = cached_prefix + "\n\n" + user
         start = time.perf_counter()
         parsed: Any | None = None
         if task == "baseline.advise":
@@ -263,7 +315,7 @@ class OfflineDeterministicClient:
     def _scored_blocks(self, prompt: str) -> list[tuple[float, str, list[str]]]:
         if CANDIDATE_SECTION not in prompt or JOBS_SECTION not in prompt:
             raise ForjaModelError("prompt missing expected sections")
-        candidate_part = prompt.split(CANDIDATE_SECTION, 1)[1].split(JOBS_SECTION, 1)[0]
+        candidate_part, _ = split_sections(prompt)
         candidate_tokens = set(_tokens(candidate_part))
         scored = []
         for job_id, body in split_job_blocks(prompt):
