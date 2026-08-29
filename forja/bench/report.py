@@ -48,6 +48,42 @@ def _quality_table(agg: dict) -> list[str]:
     return lines
 
 
+def _strongest_baseline(agg: dict) -> str | None:
+    """HYPOTHESIS_V2.md: without HAM, the reference is the baseline arm with
+    the best composite quality. Mechanical composite: mean(P@10, R@50, NDCG)
+    minus violation rate."""
+    best, best_score = None, None
+    for arm in ("b0", "b1", "b2"):
+        a = agg.get(arm)
+        if not a:
+            continue
+        parts = [a.get("mean_precision_at_10"), a.get("mean_recall_at_50"),
+                 a.get("mean_ndcg_at_10")]
+        if any(p is None for p in parts):
+            continue
+        score = sum(parts) / 3 - (a.get("mean_violation_rate") or 0)
+        if best_score is None or score > best_score:
+            best, best_score = arm, score
+    return best
+
+
+def _materially_worse(b3: dict, base: dict) -> list[str]:
+    """The frozen FAIL conditions decidable from quality point estimates."""
+    problems = []
+    for key in ("mean_precision_at_10", "mean_recall_at_10", "mean_recall_at_50",
+                "mean_ndcg_at_10"):
+        a, b = b3.get(key), base.get(key)
+        if a is not None and b is not None and a < b - 0.10:
+            problems.append(f"{key}: {a} vs {b} (>0.10 worse)")
+    v3, vb = b3.get("mean_violation_rate"), base.get("mean_violation_rate")
+    if v3 is not None and vb is not None and v3 > vb + 0.01:
+        problems.append(f"violation rate {v3} vs {vb} (excess >0.01)")
+    u3, ub = b3.get("mean_unsupported_evidence_rate"), base.get("mean_unsupported_evidence_rate")
+    if u3 is not None and ub is not None and u3 > ub + 0.02:
+        problems.append(f"unsupported evidence {u3} vs {ub} (excess >0.02)")
+    return problems
+
+
 def _noninferior(b3: dict, base: dict) -> tuple[bool, list[str]]:
     """Frozen non-inferiority margins (HYPOTHESIS_V2.md)."""
     problems = []
@@ -115,7 +151,11 @@ def build_report(results: dict | None, review: dict | None,
             "",
         ]
     if agg:
-        L += _quality_table(agg) + [""]
+        L += _quality_table(agg)
+        counts = {a.upper(): agg[a].get("cases") for a in agg}
+        L += ["", f"Cases per arm: {counts}. Arms with unequal case counts are "
+                  "not strictly paired; the B3-vs-B2 comparison uses the full "
+                  "paired set.", ""]
 
     def q(n, title, body):
         L.extend([f"## Q{n}. {title}", "", *body, ""])
@@ -237,6 +277,42 @@ def build_report(results: dict | None, review: dict | None,
         q(8, "BUILD, PIVOT, or KILL?", [
             "Apply the frozen decision mapping in HYPOTHESIS_V2.md to Q1–Q3 above.",
         ])
+    elif live and agg and "b3" in agg:
+        # The frozen FAIL clause ("materially worse matching/recall") is
+        # decidable from quality point estimates alone — no HAM needed.
+        ref = _strongest_baseline(agg)
+        problems = _materially_worse(agg["b3"], agg[ref]) if ref else []
+        if problems:
+            q(8, "BUILD, PIVOT, or KILL?", [
+                f"**FAIL — the frozen criteria recommend KILL for the current "
+                f"architecture.** B3 is materially worse than the strongest "
+                f"baseline ({ref.upper()}) on quality point estimates:",
+                "",
+                *[f"- {p}" for p in problems],
+                "",
+                "Per HYPOTHESIS_V2.md, FAIL triggers on 'materially worse "
+                "matching/recall' regardless of human-time measurement, and the "
+                "pre-committed mapping is: FAIL → recommend KILL. Since the "
+                "baseline that wins here (B2) shares Forja's constraint engine "
+                "and retrieval, the verbatim pre-committed sentence applies: "
+                "**the current architecture does not demonstrate a defensible "
+                "edge.** Sunk engineering cost carries zero weight in this "
+                "decision.",
+                "",
+                "Scope of the verdict: it attaches to this run's shared engine "
+                "(see run metadata) and this corpus. Measuring HAM could not "
+                "rescue a PASS: the PASS criteria require non-inferior quality, "
+                "which is already violated.",
+            ])
+        else:
+            q(8, "BUILD, PIVOT, or KILL?", [
+                f"Quality non-inferiority vs the strongest baseline "
+                f"({ref.upper() if ref else 'n/a'}) is not violated at the FAIL "
+                "level, so the verdict is **NOT DECIDABLE until human active "
+                "minutes are measured** (review sessions per §3 of the "
+                "methodology). No BUILD recommendation is possible from quality "
+                "alone.",
+            ])
     else:
         q(8, "BUILD, PIVOT, or KILL?", [
             "**NOT DECIDABLE — and this report refuses to guess.** The frozen "
