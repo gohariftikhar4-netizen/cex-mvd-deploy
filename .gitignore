@@ -8,3 +8,5 @@ review_sessions/
 labeling_batches/
 adversarial_report.json
 .venv/
+nav_data/
+nav_ads.json.gz
