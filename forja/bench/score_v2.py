@@ -161,9 +161,16 @@ def score_run(run_dir: Path) -> dict:
     gold = GoldV2(data_dir / "manifest.json", list(candidates.values()))
 
     per_case: dict[str, dict[str, dict]] = {}
+    errored: list[dict] = []
     for cand_id, arms in outputs.items():
         per_case[cand_id] = {}
         for wf, output in arms.items():
+            if output.get("error"):
+                # An arm that failed live is excluded from metrics, never
+                # scored as zeros — but its failure is reported.
+                errored.append({"candidate_id": cand_id, "workflow": wf,
+                                "error": output["error"]})
+                continue
             per_case[cand_id][wf] = evaluate_case(
                 output, candidates[cand_id], gold, jobs_by_id, slice_ids)
 
@@ -177,6 +184,7 @@ def score_run(run_dir: Path) -> dict:
     results = {
         "run_meta": meta,
         "gold_meta": gold.meta,
+        "errored_cases_excluded": errored,
         "per_case": per_case,
         "aggregate": agg,
         "human_active_minutes": {

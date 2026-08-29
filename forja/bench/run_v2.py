@@ -63,7 +63,22 @@ def run(mode: str, workflows: list[str], candidate_ids: list[str] | None,
         result = {}
         for wf in workflows:
             print(f"  {cand.id} × {wf} ...", flush=True)
-            result[wf] = WORKFLOWS[wf](cand, jobs, logger, client)
+            last_error = None
+            for attempt in (1, 2):  # one retry per arm; a flake must not kill the run
+                try:
+                    result[wf] = WORKFLOWS[wf](cand, jobs, logger, client)
+                    last_error = None
+                    break
+                except Exception as e:  # noqa: BLE001 — recorded, never silent
+                    last_error = e
+                    print(f"    ! {cand.id} × {wf} attempt {attempt} failed: {e}",
+                          flush=True)
+            if last_error is not None:
+                result[wf] = {"workflow": wf, "candidate_id": cand.id,
+                              "error": str(last_error), "recommendations": [],
+                              "extended": [], "wall_time_s": None}
+                logger.log_decision("run.arm_failed", candidate_id=cand.id,
+                                    workflow=wf, error=str(last_error))
         return cand.id, result
 
     outputs: dict[str, dict[str, dict]] = {}
