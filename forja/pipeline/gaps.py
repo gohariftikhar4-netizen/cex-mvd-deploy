@@ -35,7 +35,8 @@ def analyze(profile: CandidateProfile, job: Job, match: MatchResult) -> list[Gap
         ))
 
     for skill in match.partially_covered:
-        paths = taxonomy.transfer_paths(profile.skill_set, skill)
+        normalized = taxonomy.normalize_skill(skill) or skill
+        paths = taxonomy.transfer_paths(profile.skill_set, normalized)
         source, _w, rationale = paths[0]
         gaps.append(Gap(
             kind="partial_skill",
@@ -55,7 +56,8 @@ def analyze(profile: CandidateProfile, job: Job, match: MatchResult) -> list[Gap
 
     missing_nice = [
         s for s in job.requirements.nice_to_have_skills
-        if s not in profile.skill_set and not taxonomy.transfer_paths(profile.skill_set, s)
+        if (taxonomy.normalize_skill(s) or s) not in profile.skill_set
+        and not taxonomy.transfer_paths(profile.skill_set, taxonomy.normalize_skill(s) or s)
     ]
     if missing_nice:
         gaps.append(Gap(

@@ -96,10 +96,22 @@ CERTIFICATIONS = [
     "truckforerbevis_t1_t4",             # forklift certificates T1–T4
     "adr_grunnkurs",                     # ADR dangerous-goods certificate
     "ysk_gods",                          # professional driver competence (goods)
+    "ysk_person",                        # professional driver competence (passengers)
     "nokut_godkjent_ingeniorutdanning",  # NOKUT-recognized engineering degree
     "autorisert_regnskapsforer",         # authorized accountant (Finanstilsynet)
     "ppu_pedagogisk_utdanning",          # teaching qualification (PPU/lektor)
     "fiskehelsebiolog_autorisasjon",     # authorized fish health biologist
+    # V2 additions (credential registry only; not matching vocabulary)
+    "autorisasjon_helsefagarbeider",     # HPR authorization, health worker
+    "hpr_autorisasjon_farmasoyt",        # HPR authorization, pharmacist
+    "fagbrev_tomrer",                    # trade certificate, carpenter
+    "fagbrev_kokk",                      # trade certificate, chef
+    "svennebrev_frisor",                 # journeyman certificate, hairdresser
+    "barnehagelarerutdanning",           # kindergarten-teacher qualification
+    "maskinforerbevis",                  # construction machine operator card
+    "gsk_sikkerhetskurs",                # offshore basic safety course (GSK)
+    "vekterutdanning",                   # licensed security guard training
+    "kjoreseddel_persontransport",       # passenger-transport permit (taxi/bus)
 ]
 
 
@@ -211,6 +223,11 @@ SKILLS = [
     "matlaging", "renhold", "pedagogisk_arbeid_barn", "frisering",
     "grafisk_design", "juridisk_radgivning", "sveising",
     "maskinkjoring_anlegg", "resepsjonsarbeid", "sosialt_arbeid",
+    # V2 candidate-pool additions
+    "helsefagarbeid", "tomrerarbeid", "kalkulasjon", "byggeledelse",
+    "ux_design", "brukertesting", "figma", "prosessoperator_drift",
+    "apotekteknikk", "it_support", "nettverk_drift", "persontransport",
+    "vakthold", "rekruttering",
 ]
 
 _SKILL_SET = set(SKILLS)
@@ -337,6 +354,28 @@ TRANSFERABLE: dict[str, list[tuple[str, float, str]]] = {
     ],
     "dokumentasjon": [
         ("saksbehandling", 0.5, "strukturert dokumentasjon er halve saksbehandlingen"),
+    ],
+    # V2 additions
+    "persontransport": [
+        ("kundeservice", 0.7, "daglig kundehåndtering i bil krever samme serviceferdigheter"),
+        ("distribusjonskjoring", 0.6, "profesjonell bykjøring med tidspress er direkte overførbar"),
+    ],
+    "tomrerarbeid": [
+        ("byggeledelse", 0.5, "praktisk byggfagbakgrunn er grunnlaget for arbeidsledelse på plass"),
+        ("kalkulasjon", 0.4, "mengdeforståelse fra utførelse gir godt grunnlag for kalkulasjon"),
+    ],
+    "helsefagarbeid": [
+        ("pasientveiledning", 0.6, "daglig veiledning av brukere og pårørende"),
+    ],
+    "kundeservice": [
+        ("it_support", 0.4, "strukturert feilsøking av kundeproblemer er kjernen i brukerstøtte"),
+        ("resepsjonsarbeid", 0.6, "førstelinjehåndtering av henvendelser er samme håndverk"),
+    ],
+    "ux_design": [
+        ("grafisk_design", 0.6, "visuell utforming er en kjernedel av UX-arbeid"),
+    ],
+    "prosessoperator_drift": [
+        ("automasjon", 0.4, "drift av prosessanlegg gir praktisk automasjonsforståelse"),
     ],
 }
 

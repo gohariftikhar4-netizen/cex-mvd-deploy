@@ -32,6 +32,7 @@ DIMENSIONS = [
     "percent_position",
     "salary",
     "overnight_travel",
+    "deadline",
 ]
 
 
@@ -124,7 +125,12 @@ def check(candidate: Candidate, job: Job) -> ConstraintReport:
                 ))
 
     # 3. Shifts: the job's required shift coverage must avoid every shift the
-    # candidate cannot work.
+    # candidate cannot work. An empty shifts list means the structured parse
+    # does not state the schedule — that cannot be verified here, so it is
+    # flagged unverified (never silently passed) when the candidate has shift
+    # restrictions.
+    if not job.shifts and hc.cannot_work_shifts:
+        unverified.append("shifts")
     blocked = sorted(set(job.shifts) & set(hc.cannot_work_shifts))
     if blocked:
         violations.append(Violation(
@@ -164,17 +170,22 @@ def check(candidate: Candidate, job: Job) -> ConstraintReport:
                 job_value=required_license,
             ))
 
-    # 6. Legally required certifications/authorizations.
-    missing_certs = [
-        c for c in job.requirements.certifications_required
-        if c not in candidate.certifications
-    ]
-    for cert in missing_certs:
+    # 6. Legally required certifications/authorizations. Only VALID
+    # certifications count: expired or pending credentials do not satisfy a
+    # legal requirement (and claiming otherwise would be a false statement).
+    held_valid = candidate.valid_certification_ids
+    cert_summary = ",".join(f"{c.id}({c.status})" for c in candidate.certifications) or "none"
+    for cert in job.requirements.certifications_required:
+        if cert in held_valid:
+            continue
+        statuses = [c.status for c in candidate.certifications if c.id == cert]
+        detail = (f"kandidatens {cert} har status '{statuses[0]}'"
+                  if statuses else "kandidaten mangler denne autorisasjonen/sertifiseringen")
         violations.append(Violation(
             dimension="certifications",
-            reason=f"Stillingen krever {cert}; kandidaten mangler denne autorisasjonen/sertifiseringen.",
+            reason=f"Stillingen krever gyldig {cert}; {detail}.",
             candidate_ref="certifications",
-            candidate_value=",".join(candidate.certifications) or "none",
+            candidate_value=cert_summary,
             job_ref="requirements.certifications_required",
             job_value=cert,
         ))
@@ -228,7 +239,19 @@ def check(candidate: Candidate, job: Job) -> ConstraintReport:
                     job_value=str(job.salary_nok_max),
                 ))
 
-    # 11. Overnight travel.
+    # 11. Application deadline: a job whose deadline has passed is not a real
+    # opportunity for anyone.
+    if job.deadline_passed():
+        violations.append(Violation(
+            dimension="deadline",
+            reason=f"Søknadsfristen ({job.application_deadline}) er utløpt.",
+            candidate_ref="",
+            candidate_value="",
+            job_ref="application_deadline",
+            job_value=str(job.application_deadline),
+        ))
+
+    # 12. Overnight travel.
     if hc.no_overnight_travel and job.requires_overnight_travel:
         violations.append(Violation(
             dimension="overnight_travel",

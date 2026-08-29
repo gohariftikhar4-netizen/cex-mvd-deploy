@@ -1,0 +1,884 @@
+[
+  {
+    "id": "cand_yusuf",
+    "name": "Yusuf Warsame",
+    "location_city": "Oslo",
+    "work_authorization": "citizen",
+    "languages": {
+      "norwegian": "B2",
+      "somali": "native",
+      "english": "B1"
+    },
+    "driving_licenses": [
+      "B"
+    ],
+    "certifications": [
+      {
+        "id": "kjoreseddel_persontransport",
+        "status": "valid"
+      }
+    ],
+    "education": [
+      {
+        "degree": "Videregående",
+        "field": "Allmennfag",
+        "institution": "Hargeisa Secondary School",
+        "year": 2005,
+        "recognized_in_norway": true
+      }
+    ],
+    "work_history": [
+      {
+        "title": "Taxisjåfør",
+        "employer": "Oslo Taxi",
+        "years": 12,
+        "description": "Persontransport i Oslo, kundeservice i alle døgnets timer, håndtering av oppgjør og app-basert kjøresystem."
+      }
+    ],
+    "skills": [
+      "persontransport",
+      "kundeservice"
+    ],
+    "hard_constraints": {
+      "max_commute_minutes": 60,
+      "willing_to_relocate": false,
+      "relocation_counties": [],
+      "cannot_work_shifts": [
+        "night"
+      ],
+      "physical_limitations": [],
+      "min_salary_nok": 460000,
+      "percent_min": 100,
+      "percent_max": 100,
+      "no_overnight_travel": false
+    },
+    "preferred_sectors": [
+      "teknologi"
+    ],
+    "avoided_sectors": [
+      "transport"
+    ],
+    "free_text": "Jeg har kjørt taxi i Oslo i tolv år, men kroppen og familien sier stopp — spesielt nattkjøringen. De siste to årene har jeg tatt kveldskurs i IT-drift: grunnleggende Linux, nettverk og Windows-feilsøking, og jeg har bygget og reparert PC-er for halve nabolaget. Drømmen er førstelinje IT-support eller helpdesk, der jeg får brukt både teknikken og serviceerfaringen fra tolv år med krevende kunder i baksetet. Jeg lærer fort og er vant til å jobbe selvstendig.",
+    "constraint_notes": "Vil helst helt bort fra kjøreyrket, men sier samtidig at han 'kan ta noe kjøring i en overgangsfase hvis det trengs'. Natt er uansett utelukket."
+  },
+  {
+    "id": "cand_marta",
+    "name": "Marta Kowalczyk",
+    "location_city": "Bergen",
+    "work_authorization": "eea",
+    "languages": {
+      "norwegian": "B1",
+      "polish": "native",
+      "english": "B2"
+    },
+    "driving_licenses": [
+      "B"
+    ],
+    "certifications": [
+      {
+        "id": "hpr_autorisasjon_sykepleier",
+        "status": "pending",
+        "note": "Søknad til Helsedirektoratet sendt mars 2026, ikke ferdigbehandlet."
+      }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor",
+        "field": "Sykepleie",
+        "institution": "Medical University of Gdańsk",
+        "year": 2014,
+        "recognized_in_norway": false
+      }
+    ],
+    "work_history": [
+      {
+        "title": "Sykepleier, kirurgisk avdeling",
+        "employer": "Szpital Gdańsk",
+        "years": 8,
+        "description": "Postoperativ sykepleie, medikamenthåndtering, sårstell og opplæring av studenter."
+      },
+      {
+        "title": "Pleieassistent (tilkallingsvikar)",
+        "employer": "Bergen kommune, sykehjem",
+        "years": 1,
+        "description": "Stell, mating, forflytning og miljøarbeid på skjermet avdeling. Dokumentasjon i journalsystem."
+      }
+    ],
+    "skills": [
+      "klinisk_sykepleie",
+      "medikamenthandtering",
+      "helsefagarbeid",
+      "dokumentasjon"
+    ],
+    "hard_constraints": {
+      "max_commute_minutes": 45,
+      "willing_to_relocate": false,
+      "relocation_counties": [],
+      "cannot_work_shifts": [],
+      "physical_limitations": [],
+      "min_salary_nok": 420000,
+      "percent_min": 80,
+      "percent_max": 100,
+      "no_overnight_travel": false
+    },
+    "preferred_sectors": [
+      "helse"
+    ],
+    "avoided_sectors": [],
+    "free_text": "Jeg er utdannet sykepleier fra Polen med åtte års sykehuserfaring, men den norske autorisasjonen min er fortsatt under behandling, så jeg kan ikke jobbe som sykepleier ennå. Nå tar jeg vakter som pleieassistent og vil gjerne ha en fast stilling i pleie og omsorg mens jeg venter — assistent, pleiemedarbeider eller lignende. Norsken min er på B1 og blir bedre for hver måned; jeg tar norskkurs to kvelder i uken. Turnus med kveld, natt og helg går helt fint.",
+    "constraint_notes": "Kan ikke ta stillinger som krever norsk autorisasjon som sykepleier eller helsefagarbeider før søknaden er ferdigbehandlet."
+  },
+  {
+    "id": "cand_henrik",
+    "name": "Henrik Sørbøen",
+    "location_city": "Tromsø",
+    "work_authorization": "citizen",
+    "languages": {
+      "norwegian": "native",
+      "english": "C2"
+    },
+    "driving_licenses": [
+      "B"
+    ],
+    "certifications": [],
+    "education": [
+      {
+        "degree": "PhD",
+        "field": "Fysikk (numerisk plasmamodellering)",
+        "institution": "UiT Norges arktiske universitet",
+        "year": 2023,
+        "recognized_in_norway": true
+      }
+    ],
+    "work_history": [
+      {
+        "title": "Postdoktor",
+        "employer": "UiT, Institutt for fysikk og teknologi",
+        "years": 3,
+        "description": "Numerisk modellering og simulering i Python, analyse av store datasett, maskinlæring for signalklassifisering, publisering og formidling. Kontrakten løper ut i høst."
+      },
+      {
+        "title": "Stipendiat",
+        "employer": "UiT",
+        "years": 4,
+        "description": "Doktorgradsarbeid med tunge beregninger, SQL-baserte resultatdatabaser og veiledning av masterstudenter."
+      }
+    ],
+    "skills": [
+      "python",
+      "dataanalyse",
+      "sql",
+      "formidling"
+    ],
+    "hard_constraints": {
+      "max_commute_minutes": 45,
+      "willing_to_relocate": true,
+      "relocation_counties": [],
+      "cannot_work_shifts": [],
+      "physical_limitations": [],
+      "min_salary_nok": 550000,
+      "percent_min": 100,
+      "percent_max": 100,
+      "no_overnight_travel": false
+    },
+    "preferred_sectors": [
+      "teknologi",
+      "energi"
+    ],
+    "avoided_sectors": [],
+    "free_text": "Postdoktorkontrakten min løper ut, og jeg har bestemt meg for å forlate akademia. Jeg vil inn i industrien som dataanalytiker eller data scientist — jeg har ti år med Python, numerikk, maskinlæring og store datasett, men null kommersiell erfaring, og jeg er ærlig talt redd for å bli stemplet som overkvalifisert for juniorroller og underkvalifisert for seniorroller. Jeg flytter gjerne hvor som helst i landet for riktig jobb.",
+    "constraint_notes": "Vil IKKE tilbake til midlertidige forskerstillinger, selv om det er de jobbene han lettest får."
+  },
+  {
+    "id": "cand_fatima",
+    "name": "Fatima Rezaei",
+    "location_city": "Drammen",
+    "work_authorization": "temporary_permit",
+    "languages": {
+      "norwegian": "B1",
+      "farsi": "native",
+      "english": "C1"
+    },
+    "driving_licenses": [
+      "B"
+    ],
+    "certifications": [
+      {
+        "id": "hpr_autorisasjon_farmasoyt",
+        "status": "pending",
+        "note": "Krever kompletterende kurs og norskprøve B2 før autorisasjon kan gis."
+      }
+    ],
+    "education": [
+      {
+        "degree": "Master",
+        "field": "Farmasi",
+        "institution": "Tehran University of Medical Sciences",
+        "year": 2015,
+        "recognized_in_norway": false
+      }
+    ],
+    "work_history": [
+      {
+        "title": "Farmasøyt",
+        "employer": "Apotek, Teheran",
+        "years": 7,
+        "description": "Reseptekspedisjon, legemiddelrådgivning, lagerstyring og veiledning av kunder."
+      },
+      {
+        "title": "Apotekmedarbeider (ekstrahjelp)",
+        "employer": "Apotekkjede, Drammen",
+        "years": 1.5,
+        "description": "Kundebetjening i selvvalg, varepåfylling, kasse og enklere veiledning under tilsyn."
+      }
+    ],
+    "skills": [
+      "apotekteknikk",
+      "kundeservice",
+      "dokumentasjon"
+    ],
+    "hard_constraints": {
+      "max_commute_minutes": 50,
+      "willing_to_relocate": false,
+      "relocation_counties": [],
+      "cannot_work_shifts": [
+        "night"
+      ],
+      "physical_limitations": [],
+      "min_salary_nok": 400000,
+      "percent_min": 80,
+      "percent_max": 100,
+      "no_overnight_travel": false
+    },
+    "preferred_sectors": [
+      "helse",
+      "handel"
+    ],
+    "avoided_sectors": [],
+    "free_text": "Jeg er farmasøyt fra Iran med sju års apotekerfaring. Den norske autorisasjonen ligger fortsatt et stykke frem — jeg må fullføre kompletterende utdanning og bestå norskprøve B2 først. I mellomtiden vil jeg jobbe i apotek eller helserelatert butikk med det jeg faktisk kan: legemidler, kunder og nøyaktighet. Jeg har midlertidig oppholdstillatelse med full arbeidstillatelse. Oslo er innenfor pendleavstand med tog.",
+    "constraint_notes": "Kan ikke inneha farmasøytstillinger før autorisasjon foreligger; kan heller ikke ta stillinger som krever norsk statsborgerskap."
+  },
+  {
+    "id": "cand_geir",
+    "name": "Geir Moldestad",
+    "location_city": "Trondheim",
+    "work_authorization": "citizen",
+    "languages": {
+      "norwegian": "native",
+      "english": "B1"
+    },
+    "driving_licenses": [
+      "BE"
+    ],
+    "certifications": [
+      {
+        "id": "fagbrev_tomrer",
+        "status": "valid"
+      }
+    ],
+    "education": [
+      {
+        "degree": "Fagbrev",
+        "field": "Tømrerfaget",
+        "institution": "Charlottenlund videregående",
+        "year": 2003,
+        "recognized_in_norway": true
+      }
+    ],
+    "work_history": [
+      {
+        "title": "Bas / arbeidsleder tømmer",
+        "employer": "Trøndelag Entreprenør",
+        "years": 4,
+        "description": "Arbeidsledelse for lag på seks tømrere, fremdriftsplanlegging, HMS-ansvar på plass, mengdeberegning og bestillinger."
+      },
+      {
+        "title": "Tømrer",
+        "employer": "Diverse entreprenører, Trondheim",
+        "years": 14,
+        "description": "Nybygg og rehabilitering av eneboliger og leilighetsbygg, presisjonsarbeid, kvalitetssikring og avviksdokumentasjon."
+      }
+    ],
+    "skills": [
+      "tomrerarbeid",
+      "byggeledelse",
+      "kalkulasjon",
+      "hms",
+      "kvalitetssikring_ks"
+    ],
+    "hard_constraints": {
+      "max_commute_minutes": 45,
+      "willing_to_relocate": false,
+      "relocation_counties": [],
+      "cannot_work_shifts": [],
+      "physical_limitations": [
+        "no_heavy_lifting"
+      ],
+      "min_salary_nok": 520000,
+      "percent_min": 100,
+      "percent_max": 100,
+      "no_overnight_travel": true
+    },
+    "preferred_sectors": [
+      "bygg_anlegg"
+    ],
+    "avoided_sectors": [],
+    "free_text": "Tømrer med fagbrev og atten år i faget, de siste fire som bas med ansvar for fremdrift, HMS og mengder. I mai røk skulderen, og jeg er operert: legen er tydelig på at tunge løft er utelukket frem til tidligst mars 2027, kanskje lenger. Hodet og erfaringen feiler ingenting, så jeg ser etter byggeleder-, kalkulasjons- eller KS-roller der tømrerbakgrunnen er gull verdt. På sikt kan jeg kanskje tilbake på verktøyet, men jeg planlegger ikke for det.",
+    "constraint_notes": "Løftebegrensningen er midlertidig (til ca. mars 2027), men gjelder fullt ut i dag og må behandles som absolutt nå. Under opptreningen går det heller ikke med anleggsrotasjon/overnatting borte — han må hjem til fysioterapi og familie."
+  },
+  {
+    "id": "cand_solveig",
+    "name": "Solveig Bakkejord",
+    "location_city": "Sarpsborg",
+    "work_authorization": "citizen",
+    "languages": {
+      "norwegian": "native",
+      "english": "B1"
+    },
+    "driving_licenses": [
+      "B"
+    ],
+    "certifications": [
+      {
+        "id": "autorisasjon_helsefagarbeider",
+        "status": "valid"
+      }
+    ],
+    "education": [
+      {
+        "degree": "Fagbrev",
+        "field": "Helsearbeiderfaget",
+        "institution": "St. Olav videregående, Sarpsborg",
+        "year": 2015,
+        "recognized_in_norway": true
+      }
+    ],
+    "work_history": [
+      {
+        "title": "Helsefagarbeider",
+        "employer": "Sarpsborg kommune, sykehjem",
+        "years": 9,
+        "description": "Stell og pleie i turnus, medisinutdeling etter delegasjon, dokumentasjon i Gerica journalsystem, kontakt med pårørende, opplæring av vikarer."
+      }
+    ],
+    "skills": [
+      "helsefagarbeid",
+      "dokumentasjon"
+    ],
+    "hard_constraints": {
+      "max_commute_minutes": 40,
+      "willing_to_relocate": false,
+      "relocation_counties": [],
+      "cannot_work_shifts": [
+        "evening",
+        "night",
+        "weekend"
+      ],
+      "physical_limitations": [],
+      "min_salary_nok": 430000,
+      "percent_min": 80,
+      "percent_max": 100,
+      "no_overnight_travel": true
+    },
+    "preferred_sectors": [
+      "helse",
+      "offentlig"
+    ],
+    "avoided_sectors": [],
+    "free_text": "Jeg er helsefagarbeider med autorisasjon og ni år på sykehjem, og jeg elsker jobben — men som alenemor med to barn og barnehage som stenger 16:30 MÅ jeg over på ren dagtid mandag til fredag. Turnusen knekker oss. Jeg vet at dagjobber i pleien er få, så jeg er også åpen for legekontor, dagsenter, helsestasjon eller kontorroller i helsetjenesten der fagbakgrunnen teller. Jeg er stabil, sterk i dokumentasjon og god med både brukere og pårørende.",
+    "constraint_notes": "Arbeidstid utenfor 07:30–16:30 hverdager er umulig uansett hvor god stillingen er. Dette er hennes hardeste krav."
+  },
+  {
+    "id": "cand_dmitri",
+    "name": "Dmitrijs Ozols",
+    "location_city": "Oslo",
+    "work_authorization": "eea",
+    "languages": {
+      "norwegian": "C1",
+      "latvian": "native",
+      "english": "C1",
+      "russian": "native"
+    },
+    "driving_licenses": [
+      "B"
+    ],
+    "certifications": [],
+    "education": [
+      {
+        "degree": "Bachelor",
+        "field": "Business Administration",
+        "institution": "Stockholm School of Economics in Riga",
+        "year": 2010,
+        "recognized_in_norway": true
+      }
+    ],
+    "work_history": [
+      {
+        "title": "Salgssjef",
+        "employer": "SaaS-selskap, Oslo",
+        "years": 6,
+        "description": "Ledet team på fem selgere mot nordiske B2B-kunder, budsjett- og prognoseansvar, CRM-disiplin (HubSpot), ny-salg og fornyelser."
+      },
+      {
+        "title": "Account Manager",
+        "employer": "IT-distributør, Oslo",
+        "years": 4,
+        "description": "Porteføljeansvar for storkunder, tilbudsarbeid og kontraktsforhandlinger."
+      }
+    ],
+    "skills": [
+      "salg",
+      "crm_system",
+      "budsjettansvar",
+      "teamledelse",
+      "kundeoppfolging"
+    ],
+    "hard_constraints": {
+      "max_commute_minutes": 45,
+      "willing_to_relocate": false,
+      "relocation_counties": [],
+      "cannot_work_shifts": [],
+      "physical_limitations": [],
+      "min_salary_nok": 700000,
+      "percent_min": 100,
+      "percent_max": 100,
+      "no_overnight_travel": false
+    },
+    "preferred_sectors": [
+      "teknologi",
+      "handel"
+    ],
+    "avoided_sectors": [],
+    "free_text": "Salgssjef med ti år i norsk B2B-tech. Med bonus har jeg ligget rundt 900 000 de siste årene, og det sier jeg gjerne høyt i intervjuer. Men om jeg skal være ærlig: for den rette rollen — godt produkt, sunt miljø, mindre press — går jeg ned i lønn. Jeg ser etter salgsleder- eller senior AM-roller i Oslo-området. Team gjerne, men ikke et krav.",
+    "constraint_notes": "Oppgir 900 000 som forventning utad, men reelt absolutt minimum er 700 000 fast. Stillinger mellom 700 og 900 skal altså ikke filtreres bort."
+  },
+  {
+    "id": "cand_ragnhild",
+    "name": "Ragnhild Espeseth",
+    "location_city": "Bergen",
+    "work_authorization": "citizen",
+    "languages": {
+      "norwegian": "native",
+      "english": "B2"
+    },
+    "driving_licenses": [
+      "B"
+    ],
+    "certifications": [],
+    "education": [
+      {
+        "degree": "Videregående + hotellfagskole",
+        "field": "Hotelladministrasjon",
+        "institution": "Norsk hotellhøgskole, kurs",
+        "year": 1986,
+        "recognized_in_norway": true
+      }
+    ],
+    "work_history": [
+      {
+        "title": "Front office manager",
+        "employer": "Hotell Vestlandia, Bergen",
+        "years": 20,
+        "description": "Ansvar for resepsjonsteam på 12, vaktplaner, opplæring, klagehåndtering, booking- og kanalsystemer (Opera PMS), tett samarbeid med housekeeping og økonomi. Hotellet ble lagt ned i sommer."
+      },
+      {
+        "title": "Resepsjonist",
+        "employer": "Diverse hoteller, Bergen",
+        "years": 8,
+        "description": "Resepsjon, natt- og dagvakter, gjestehåndtering på norsk og engelsk."
+      }
+    ],
+    "skills": [
+      "resepsjonsarbeid",
+      "personalledelse",
+      "kundeservice",
+      "vaktplanlegging",
+      "opplaering_ansatte"
+    ],
+    "hard_constraints": {
+      "max_commute_minutes": 40,
+      "willing_to_relocate": false,
+      "relocation_counties": [],
+      "cannot_work_shifts": [
+        "night"
+      ],
+      "physical_limitations": [],
+      "min_salary_nok": 480000,
+      "percent_min": 80,
+      "percent_max": 100,
+      "no_overnight_travel": true
+    },
+    "preferred_sectors": [
+      "handel",
+      "offentlig",
+      "helse"
+    ],
+    "avoided_sectors": [],
+    "free_text": "Etter 28 år i hotell — de siste tjue som front office manager — står jeg uten jobb fordi hotellet ble lagt ned. Jeg er 61 og har mer energi enn de fleste, men jeg orker ikke flere nattevakter. Jeg er usikker på veien videre: en del av meg vil ha en roligere rolle i resepsjon eller administrasjon, en annen del vet at jeg er en god leder og kunne tatt et service- eller kontorlederansvar til. Jeg er åpen for helsevesen, det offentlige eller privat — det viktigste er et ordentlig arbeidsmiljø.",
+    "constraint_notes": "Motstridende ønsker: både 'roligere rolle' og 'lederansvar'. Ingen av delene er absolutt; natt og overnattingsreiser er absolutte nei."
+  },
+  {
+    "id": "cand_omar",
+    "name": "Omar Sheikh",
+    "location_city": "Drammen",
+    "work_authorization": "citizen",
+    "languages": {
+      "norwegian": "native",
+      "urdu": "native",
+      "english": "B2"
+    },
+    "driving_licenses": [
+      "B",
+      "C1"
+    ],
+    "certifications": [
+      {
+        "id": "ysk_gods",
+        "status": "expired",
+        "note": "Utløp november 2025; etterutdanningskurs (35 t) ikke gjennomført ennå."
+      },
+      {
+        "id": "truckforerbevis_t1_t4",
+        "status": "valid"
+      }
+    ],
+    "education": [
+      {
+        "degree": "Videregående",
+        "field": "Transport og logistikk",
+        "institution": "Åssiden videregående, Drammen",
+        "year": 2014,
+        "recognized_in_norway": true
+      }
+    ],
+    "work_history": [
+      {
+        "title": "Varebilsjåfør",
+        "employer": "Budfirma, Drammen/Oslo",
+        "years": 5,
+        "description": "Distribusjon av pakker og stykkgods med varebil under 3,5 tonn, ruteplanlegging, leveringspresisjon, kundekontakt."
+      },
+      {
+        "title": "Lagermedarbeider",
+        "employer": "Grossistlager, Drammen",
+        "years": 3,
+        "description": "Truckkjøring, varemottak, plukk og pakk mot håndterminal."
+      }
+    ],
+    "skills": [
+      "distribusjonskjoring",
+      "lagerarbeid",
+      "truckkjoring",
+      "varemottak",
+      "ruteplanlegging"
+    ],
+    "hard_constraints": {
+      "max_commute_minutes": 45,
+      "willing_to_relocate": false,
+      "relocation_counties": [],
+      "cannot_work_shifts": [
+        "night"
+      ],
+      "physical_limitations": [],
+      "min_salary_nok": 440000,
+      "percent_min": 100,
+      "percent_max": 100,
+      "no_overnight_travel": true
+    },
+    "preferred_sectors": [
+      "logistikk",
+      "transport"
+    ],
+    "avoided_sectors": [],
+    "free_text": "Sjåfør og lagermann fra Drammen. Jeg kjører varebil daglig og har i tillegg førerkort C1 for lett lastebil — men yrkessjåførkompetansen (YSK) min gikk ut i november i fjor, og jeg har ikke fått tatt etterutdanningskurset ennå. Planen er å ta det til vinteren. Inntil da kan jeg lovlig kjøre varebil (under 3,5 tonn) og jobbe på lager med truck. Natt går ikke på grunn av familien, og jeg vil sove hjemme.",
+    "constraint_notes": "C1-stillinger som krever gyldig YSK er utelukket inntil etterutdanning er tatt; varebil (klasse B) krever ikke YSK."
+  },
+  {
+    "id": "cand_ingvild",
+    "name": "Ingvild Tjelta",
+    "location_city": "Stavanger",
+    "work_authorization": "citizen",
+    "languages": {
+      "norwegian": "native",
+      "english": "C1"
+    },
+    "driving_licenses": [
+      "B"
+    ],
+    "certifications": [],
+    "education": [
+      {
+        "degree": "Bachelor",
+        "field": "Økonomi og administrasjon",
+        "institution": "Universitetet i Stavanger",
+        "year": 2026,
+        "recognized_in_norway": true
+      }
+    ],
+    "work_history": [
+      {
+        "title": "Butikkmedarbeider (deltid)",
+        "employer": "Klesbutikk, Stavanger",
+        "years": 3,
+        "description": "Kasse, kundeservice og varepåfylling ved siden av studiene; ansvar for opplæring av nye helgeansatte siste året."
+      }
+    ],
+    "skills": [
+      "excel",
+      "kundeservice"
+    ],
+    "hard_constraints": {
+      "max_commute_minutes": 45,
+      "willing_to_relocate": true,
+      "relocation_counties": [],
+      "cannot_work_shifts": [],
+      "physical_limitations": [],
+      "min_salary_nok": 420000,
+      "percent_min": 100,
+      "percent_max": 100,
+      "no_overnight_travel": false
+    },
+    "preferred_sectors": [
+      "finans",
+      "offentlig",
+      "energi"
+    ],
+    "avoided_sectors": [],
+    "free_text": "Nyutdannet med bachelor i økonomi og administrasjon fra UiS, ferdig i vår. Jeg fordypet meg i regnskapsfag og skrev bacheloroppgave med analyse i Excel og litt Power BI. Nå søker jeg min første ordentlige jobb: regnskapsassistent, økonomimedarbeider, junior controller — jeg tar gjerne det nederste trinnet og lærer fort. Jeg kan flytte hvor som helst i landet for en fast fulltidsjobb.",
+    "constraint_notes": "Ingen reell arbeidserfaring innen økonomi utover studiene; stillinger med absolutte krav om flere års erfaring er ikke reelle muligheter ennå."
+  },
+  {
+    "id": "cand_thomas",
+    "name": "Thomas Wangberg",
+    "location_city": "Lillestrøm",
+    "work_authorization": "citizen",
+    "languages": {
+      "norwegian": "native",
+      "english": "C2"
+    },
+    "driving_licenses": [
+      "B"
+    ],
+    "certifications": [],
+    "education": [
+      {
+        "degree": "Master",
+        "field": "Informatikk",
+        "institution": "Universitetet i Oslo",
+        "year": 2010,
+        "recognized_in_norway": true
+      }
+    ],
+    "work_history": [
+      {
+        "title": "Sjefskonsulent / løsningsarkitekt",
+        "employer": "Konsulentselskap, Oslo",
+        "years": 14,
+        "description": "Se fritekst — han har ikke oppdatert CV-en med teknologier og prosjekter."
+      }
+    ],
+    "skills": [],
+    "hard_constraints": {
+      "max_commute_minutes": 45,
+      "willing_to_relocate": false,
+      "relocation_counties": [],
+      "cannot_work_shifts": [],
+      "physical_limitations": [],
+      "min_salary_nok": 700000,
+      "percent_min": 80,
+      "percent_max": 100,
+      "no_overnight_travel": true
+    },
+    "preferred_sectors": [
+      "teknologi",
+      "offentlig"
+    ],
+    "avoided_sectors": [],
+    "free_text": "Jeg har vært konsulent og løsningsarkitekt i fjorten år: Java i bunn, mye Azure de siste årene, integrasjonsarkitektur mellom fagsystemer i offentlig sektor, en del PostgreSQL, og alt for mange timer i salgs- og tilbudsarbeid. Nå vil jeg NED i ansvar, ikke opp: en ren senior utviklerrolle uten personalansvar, uten salgsmål og helst uten kundejag. 80 prosent hadde vært ideelt, men 100 går fint. Hybrid eller remote foretrekkes, men et hyggelig kontor i Oslo-området fungerer også. Beklager tynn CV — det meste sitter i hodet og i referansene.",
+    "constraint_notes": "Vil aktivt bort fra arkitekt-/lederroller selv om han er best kvalifisert til dem. Remote-ønsket er en preferanse, ikke et krav."
+  },
+  {
+    "id": "cand_aisha",
+    "name": "Aisha Mohamed",
+    "location_city": "Tromsø",
+    "work_authorization": "permanent_permit",
+    "languages": {
+      "norwegian": "B2",
+      "somali": "native",
+      "english": "B1"
+    },
+    "driving_licenses": [],
+    "certifications": [],
+    "education": [
+      {
+        "degree": "Barnehagelærerutdanning (deltid, pågående)",
+        "field": "Pedagogikk",
+        "institution": "UiT, samlingsbasert",
+        "year": 2028,
+        "recognized_in_norway": true
+      }
+    ],
+    "work_history": [
+      {
+        "title": "Barnehageassistent",
+        "employer": "Solstua barnehage, Tromsø",
+        "years": 6,
+        "description": "Daglig omsorg og pedagogisk arbeid med barn 1–5 år, foreldrekontakt, gjennomføring av aktiviteter, ansvar for tilvenning av nye barn."
+      }
+    ],
+    "skills": [
+      "pedagogisk_arbeid_barn",
+      "kommunikasjon"
+    ],
+    "hard_constraints": {
+      "max_commute_minutes": 40,
+      "willing_to_relocate": false,
+      "relocation_counties": [],
+      "cannot_work_shifts": [
+        "evening",
+        "night"
+      ],
+      "physical_limitations": [],
+      "min_salary_nok": 400000,
+      "percent_min": 60,
+      "percent_max": 100,
+      "no_overnight_travel": true
+    },
+    "preferred_sectors": [
+      "utdanning",
+      "offentlig"
+    ],
+    "avoided_sectors": [],
+    "free_text": "Jeg har jobbet seks år som assistent i barnehage i Tromsø og tar barnehagelærerutdanning på deltid — to år igjen. Jeg søker assistent- eller fagarbeiderstillinger i barnehage eller SFO, gjerne ned mot 60 prosent så jeg får tid til studiesamlingene. Pedagogisk lederansvar kan jeg først ta når utdanningen er ferdig i 2028. Norsken min er god (B2), og jeg er spesielt trygg i foreldresamarbeid.",
+    "constraint_notes": "Kan ikke ta stillinger som krever fullført barnehagelærerutdanning før 2028. Redusert stilling er ønskelig, ikke påkrevd."
+  },
+  {
+    "id": "cand_kjell",
+    "name": "Kjell Aronsen",
+    "location_city": "Stavanger",
+    "work_authorization": "citizen",
+    "languages": {
+      "norwegian": "native",
+      "english": "B2"
+    },
+    "driving_licenses": [
+      "B"
+    ],
+    "certifications": [
+      {
+        "id": "gsk_sikkerhetskurs",
+        "status": "expired",
+        "note": "Grunnleggende sikkerhetskurs utløp august 2026; repetisjonskurs ikke tatt — han vil ikke offshore igjen."
+      }
+    ],
+    "education": [
+      {
+        "degree": "Fagbrev",
+        "field": "Kjemiprosessfaget",
+        "institution": "Stavanger offshore tekniske skole",
+        "year": 2000,
+        "recognized_in_norway": true
+      }
+    ],
+    "work_history": [
+      {
+        "title": "Prosessoperatør offshore",
+        "employer": "Operatørselskap, Nordsjøen",
+        "years": 15,
+        "description": "Drift og overvåking av prosessanlegg i rotasjon 2-4, HMS-arbeid, internkontroll, avviksdokumentasjon og optimalisering av driftsparametre."
+      },
+      {
+        "title": "Prosessoperatør landanlegg",
+        "employer": "Prosessanlegg, Rogaland",
+        "years": 5,
+        "description": "Skiftarbeid på landanlegg: kontrollromsovervåking, feltrunder og prøvetaking."
+      }
+    ],
+    "skills": [
+      "prosessoperator_drift",
+      "hms",
+      "internkontroll",
+      "dokumentasjon"
+    ],
+    "hard_constraints": {
+      "max_commute_minutes": 50,
+      "willing_to_relocate": false,
+      "relocation_counties": [],
+      "cannot_work_shifts": [],
+      "physical_limitations": [],
+      "min_salary_nok": 600000,
+      "percent_min": 100,
+      "percent_max": 100,
+      "no_overnight_travel": true
+    },
+    "preferred_sectors": [
+      "industri",
+      "energi"
+    ],
+    "avoided_sectors": [],
+    "free_text": "Tjue år som prosessoperatør, femten av dem offshore i rotasjon. Nå er det slutt på pendlingen ut i havet — familien og jeg er enige, og jeg lot til og med sikkerhetskurset løpe ut. Offshore lå jeg rundt 950 000, og jeg vet at land betaler mindre; jeg aksepterer ned mot 600 000 for en god driftsjobb på et landanlegg i Stavanger-området. Skift på land går helt fint, også natt — det er borteboingen som er problemet, ikke arbeidstiden.",
+    "constraint_notes": "Lønnsanker fra offshore (950k) er IKKE minstekravet; reelt gulv er 600 000. Rotasjon/overnatting borte er absolutt nei; skift inkludert natt på land er OK."
+  },
+  {
+    "id": "cand_lin",
+    "name": "Lin van der Berg",
+    "location_city": "Oslo",
+    "work_authorization": "eea",
+    "languages": {
+      "norwegian": "A2",
+      "dutch": "native",
+      "english": "C2"
+    },
+    "driving_licenses": [
+      "B"
+    ],
+    "certifications": [],
+    "education": [
+      {
+        "degree": "MA",
+        "field": "Interaction Design",
+        "institution": "Design Academy Eindhoven",
+        "year": 2017,
+        "recognized_in_norway": true
+      }
+    ],
+    "work_history": [
+      {
+        "title": "Senior UX Designer",
+        "employer": "Fintech startup, Oslo",
+        "years": 2,
+        "description": "End-to-end produktdesign: research, brukertesting, prototyping i Figma, designsystem, tett samarbeid med utviklere. Engelskspråklig arbeidsmiljø. Selskapet nedbemannet designteamet."
+      },
+      {
+        "title": "UX Designer",
+        "employer": "Digitalbyrå, Amsterdam",
+        "years": 5,
+        "description": "Design for e-handel og offentlige tjenester, brukerintervjuer, universell utforming."
+      }
+    ],
+    "skills": [
+      "ux_design",
+      "brukertesting",
+      "figma",
+      "grafisk_design"
+    ],
+    "hard_constraints": {
+      "max_commute_minutes": 45,
+      "willing_to_relocate": false,
+      "relocation_counties": [],
+      "cannot_work_shifts": [],
+      "physical_limitations": [],
+      "min_salary_nok": 600000,
+      "percent_min": 100,
+      "percent_max": 100,
+      "no_overnight_travel": false
+    },
+    "preferred_sectors": [
+      "teknologi",
+      "finans"
+    ],
+    "avoided_sectors": [],
+    "free_text": "Dutch UX designer based in Oslo, seven years of experience, laid off when my startup cut the design team. My Norwegian is still basic (A2 — I'm taking classes), so I need an English-speaking workplace, which I know narrows the field a lot in Norway. I do research, testing, prototyping and design systems, and I've shipped accessible services used by millions. My partner works here, so relocating is not an option.",
+    "constraint_notes": "Norsk på A2: stillinger med krav om norsk B1 eller høyere er reelt utilgjengelige nå, uansett hvor godt profilen ellers passer."
+  }
+]

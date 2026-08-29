@@ -52,25 +52,27 @@ def verify_evidence_item(item: dict, candidate: Candidate, job: Job,
     allowed = _allowed_skills(candidate)
 
     if etype == "skill_match":
-        skill = item.get("job_value", "")
+        raw = item.get("job_value", "")
+        skill = taxonomy.normalize_skill(raw) or raw
         cited = _cited_requirement_list(job, item.get("job_ref", ""))
-        if cited is None or skill not in cited:
-            return False, f"job does not list {skill!r} in the cited requirement list"
+        if cited is None or raw not in cited:
+            return False, f"job does not list {raw!r} in the cited requirement list"
         if skill in allowed:
             return True, "ok"
         if profile_skills.get(skill) == "llm_suggested_validated":
             return True, "llm-suggested skill (passed the verbatim-quote gate)"
-        return False, f"candidate records do not support skill {skill!r}"
+        return False, f"candidate records do not support skill {raw!r}"
 
     if etype == "transferable_skill":
-        target = item.get("job_value", "")
+        raw_target = item.get("job_value", "")
+        target = taxonomy.normalize_skill(raw_target) or raw_target
         m = re.match(r"profile\.effective_skills\.(\w+)", item.get("candidate_ref", ""))
         if not m:
             return False, "unparseable candidate_ref"
         source = m.group(1)
         cited = _cited_requirement_list(job, item.get("job_ref", ""))
-        if cited is None or target not in cited:
-            return False, f"job does not list {target!r} in the cited requirement list"
+        if cited is None or raw_target not in cited:
+            return False, f"job does not list {raw_target!r} in the cited requirement list"
         if source not in allowed and profile_skills.get(source) != "llm_suggested_validated":
             return False, f"candidate records do not support source skill {source!r}"
         if not taxonomy.transfer_paths({source}, target):

@@ -57,9 +57,12 @@ def test_job_inverted_salary_rejected():
         Job.from_dict(job_dict(salary_nok_min=600000, salary_nok_max=500000))
 
 
-def test_job_empty_shifts_rejected():
-    with pytest.raises(SchemaError, match="shifts"):
-        Job.from_dict(job_dict(shifts=[]))
+def test_job_empty_shifts_means_unspecified():
+    """V2: an empty shifts list is legal and means 'not stated in the
+    structured parse'; the constraint engine flags it unverified for
+    candidates with shift restrictions (see test_constraints)."""
+    job = Job.from_dict(job_dict(shifts=[]))
+    assert job.shifts == ()
 
 
 def test_candidate_experience_sum():

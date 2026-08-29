@@ -97,7 +97,13 @@ class MatchResult:
 
 def _skill_coverage(profile: CandidateProfile, skills: tuple[str, ...],
                     kind: str) -> tuple[float, list[EvidenceItem], list[str], list[str]]:
-    """Credit per required skill: 1.0 direct, transfer weight if transferable, else 0."""
+    """Credit per required skill: 1.0 direct, transfer weight if transferable, else 0.
+
+    V2: job-side skills are free strings (the corpus is not taxonomy-bound).
+    Each is normalized through the alias map before lookup; a string the
+    taxonomy cannot place is honestly counted as missing — vocabulary drift is
+    a measured weakness of this deterministic matcher, not something to paper
+    over."""
     if not skills:
         return 1.0, [], [], []
     held = profile.skill_set
@@ -105,35 +111,36 @@ def _skill_coverage(profile: CandidateProfile, skills: tuple[str, ...],
     missing: list[str] = []
     partial: list[str] = []
     credit = 0.0
-    for skill in skills:
+    for raw_skill in skills:
+        skill = taxonomy.normalize_skill(raw_skill) or raw_skill
         if skill in held:
             credit += 1.0
             evidence.append(EvidenceItem(
                 type="skill_match",
-                claim=f"Kandidaten har etterspurt kompetanse: {skill} "
+                claim=f"Kandidaten har etterspurt kompetanse: {raw_skill} "
                       f"(kilde: {profile.effective_skills[skill]}).",
                 candidate_ref=f"profile.effective_skills.{skill}",
                 candidate_value=profile.effective_skills[skill],
                 job_ref=f"requirements.{kind}",
-                job_value=skill,
+                job_value=raw_skill,
             ))
             continue
         paths = taxonomy.transfer_paths(held, skill)
         if paths:
             source, weight, rationale = paths[0]
             credit += weight
-            partial.append(skill)
+            partial.append(raw_skill)
             evidence.append(EvidenceItem(
                 type="transferable_skill",
-                claim=f"Delvis dekning av {skill} via overførbar kompetanse "
+                claim=f"Delvis dekning av {raw_skill} via overførbar kompetanse "
                       f"{source} (vekt {weight}): {rationale}.",
                 candidate_ref=f"profile.effective_skills.{source}",
                 candidate_value=profile.effective_skills[source],
                 job_ref=f"requirements.{kind}",
-                job_value=skill,
+                job_value=raw_skill,
             ))
         else:
-            missing.append(skill)
+            missing.append(raw_skill)
     return credit / len(skills), evidence, missing, partial
 
 

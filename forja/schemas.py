@@ -7,15 +7,58 @@ loudly at load time instead of corrupting benchmark results.
 
 from __future__ import annotations
 
+import datetime as _dt
 import json
+import re
 from dataclasses import dataclass, field, asdict
 from pathlib import Path
 
 from . import taxonomy
 
+# The benchmark's fixed "today" for deadline/staleness/temporary-constraint
+# logic. Never use the wall clock in workflow logic (determinism invariant).
+BENCHMARK_TODAY = _dt.date(2026, 9, 1)
+
 
 class SchemaError(ValueError):
     """Raised when a candidate/job record violates the schema."""
+
+
+# Job-side skill strings are deliberately NOT bound to the taxonomy: the V2
+# corpus must not be constructed around Forja's vocabulary. Format check only.
+_SKILL_STRING_RE = re.compile(r"^[a-z0-9æøåéü][a-z0-9æøåéü ._/+-]{1,60}$")
+
+
+def _check_skill_strings(values: list[str], where: str) -> None:
+    bad = [v for v in values if not _SKILL_STRING_RE.match(v)]
+    if bad:
+        raise SchemaError(f"{where}: malformed skill strings: {bad}")
+
+
+CERTIFICATION_STATUSES = ["valid", "expired", "pending"]
+
+
+@dataclass(frozen=True)
+class Certification:
+    """A credential with lifecycle status. String records (v1 data) load as
+    status='valid'. Only 'valid' certifications satisfy job requirements."""
+
+    id: str
+    status: str = "valid"
+    note: str = ""
+
+    @staticmethod
+    def from_record(rec, where: str) -> "Certification":
+        if isinstance(rec, str):
+            rec = {"id": rec}
+        _require_keys(rec, required={"id"}, optional={"status", "note"}, where=where)
+        cert_id = rec["id"]
+        status = rec.get("status", "valid")
+        if cert_id not in taxonomy.CERTIFICATIONS:
+            raise SchemaError(f"{where}: unknown certification {cert_id!r}")
+        if status not in CERTIFICATION_STATUSES:
+            raise SchemaError(f"{where}: unknown certification status {status!r}")
+        return Certification(id=cert_id, status=status, note=rec.get("note", ""))
 
 
 def _require_keys(d: dict, required: set[str], optional: set[str], where: str) -> None:
@@ -124,7 +167,7 @@ class Candidate:
     work_authorization: str  # taxonomy.WORK_AUTH_STATUSES
     languages: dict[str, str]  # language -> CEFR level
     driving_licenses: tuple[str, ...]
-    certifications: tuple[str, ...]
+    certifications: tuple[Certification, ...]
     education: tuple[EducationEntry, ...]
     work_history: tuple[WorkHistoryEntry, ...]
     skills: tuple[str, ...]
@@ -132,10 +175,15 @@ class Candidate:
     preferred_sectors: tuple[str, ...]
     avoided_sectors: tuple[str, ...]
     free_text: str
+    constraint_notes: str = ""  # soft preferences / ambiguity, prose (v2)
 
     @property
     def is_citizen(self) -> bool:
         return self.work_authorization == "citizen"
+
+    @property
+    def valid_certification_ids(self) -> frozenset[str]:
+        return frozenset(c.id for c in self.certifications if c.status == "valid")
 
     def total_experience_years(self) -> float:
         return round(sum(w.years for w in self.work_history), 1)
@@ -154,7 +202,7 @@ class Candidate:
                 "skills", "hard_constraints", "preferred_sectors", "avoided_sectors",
                 "free_text",
             },
-            optional=set(),
+            optional={"constraint_notes"},
             where=where,
         )
         _check_city(d["location_city"], f"{where}.location_city")
@@ -164,7 +212,10 @@ class Candidate:
             if level not in taxonomy.CEFR_ORDER:
                 raise SchemaError(f"{where}.languages[{lang}]: unknown level {level!r}")
         _check_vocab(d["driving_licenses"], taxonomy.DRIVING_LICENSE_CLASSES, f"{where}.driving_licenses")
-        _check_vocab(d["certifications"], taxonomy.CERTIFICATIONS, f"{where}.certifications")
+        certifications = tuple(
+            Certification.from_record(rec, f"{where}.certifications[{i}]")
+            for i, rec in enumerate(d["certifications"])
+        )
         _check_vocab(d["skills"], taxonomy.SKILLS, f"{where}.skills")
         _check_vocab(d["preferred_sectors"], taxonomy.SECTORS, f"{where}.preferred_sectors")
         _check_vocab(d["avoided_sectors"], taxonomy.SECTORS, f"{where}.avoided_sectors")
@@ -203,7 +254,7 @@ class Candidate:
             work_authorization=d["work_authorization"],
             languages=dict(d["languages"]),
             driving_licenses=tuple(d["driving_licenses"]),
-            certifications=tuple(d["certifications"]),
+            certifications=certifications,
             education=tuple(education),
             work_history=tuple(history),
             skills=tuple(d["skills"]),
@@ -211,6 +262,7 @@ class Candidate:
             preferred_sectors=tuple(d["preferred_sectors"]),
             avoided_sectors=tuple(d["avoided_sectors"]),
             free_text=d["free_text"],
+            constraint_notes=d.get("constraint_notes", ""),
         )
 
     def to_dict(self) -> dict:
@@ -247,8 +299,10 @@ class JobRequirements:
             optional=set(),
             where=where,
         )
-        _check_vocab(d["must_have_skills"], taxonomy.SKILLS, f"{where}.must_have_skills")
-        _check_vocab(d["nice_to_have_skills"], taxonomy.SKILLS, f"{where}.nice_to_have_skills")
+        # Job-side skills are free strings (V2): the corpus is not built around
+        # Forja's taxonomy. Workflows must cope with vocabulary drift.
+        _check_skill_strings(d["must_have_skills"], f"{where}.must_have_skills")
+        _check_skill_strings(d["nice_to_have_skills"], f"{where}.nice_to_have_skills")
         _check_vocab(d["certifications_required"], taxonomy.CERTIFICATIONS, f"{where}.certifications_required")
         _check_vocab(d["physical_demands"], taxonomy.PHYSICAL_DEMANDS, f"{where}.physical_demands")
         lic = d["driving_license_required"]
@@ -272,6 +326,9 @@ class JobRequirements:
         )
 
 
+STRUCTURED_COMPLETENESS = ["full", "partial", "minimal"]
+
+
 @dataclass(frozen=True)
 class Job:
     id: str
@@ -287,6 +344,16 @@ class Job:
     requires_overnight_travel: bool
     requirements: JobRequirements
     description: str  # the ad text shown to workflows
+    application_deadline: str | None = None  # ISO date; past deadline = stale
+    # How much of the ad's real requirements made it into structured fields.
+    # 'partial'/'minimal' jobs carry requirements only the TEXT states — a
+    # deliberate V2 stressor for structured-field-only pipelines.
+    structured_completeness: str = "full"
+
+    def deadline_passed(self) -> bool:
+        if self.application_deadline is None:
+            return False
+        return _dt.date.fromisoformat(self.application_deadline) < BENCHMARK_TODAY
 
     @staticmethod
     def from_dict(d: dict) -> "Job":
@@ -298,7 +365,7 @@ class Job:
                 "percent_position", "shifts", "salary_nok_min", "salary_nok_max",
                 "requires_overnight_travel", "requirements", "description",
             },
-            optional=set(),
+            optional={"application_deadline", "structured_completeness"},
             where=where,
         )
         if d["sector"] not in taxonomy.SECTORS:
@@ -307,8 +374,8 @@ class Job:
         if d["work_mode"] not in WORK_MODES:
             raise SchemaError(f"{where}: unknown work_mode {d['work_mode']!r}")
         _check_vocab(d["shifts"], taxonomy.SHIFT_TYPES, f"{where}.shifts")
-        if not d["shifts"]:
-            raise SchemaError(f"{where}: shifts must not be empty (use ['day'])")
+        # V2: an empty shifts list means "not stated in the structured parse of
+        # the ad" — the truth may live only in the description text.
         if not (0 < int(d["percent_position"]) <= 100):
             raise SchemaError(f"{where}: percent_position out of range")
         lo, hi = d["salary_nok_min"], d["salary_nok_max"]
@@ -316,6 +383,15 @@ class Job:
             raise SchemaError(f"{where}: salary bounds must both be set or both null")
         if lo is not None and not (0 < lo <= hi):
             raise SchemaError(f"{where}: invalid salary range")
+        deadline = d.get("application_deadline")
+        if deadline is not None:
+            try:
+                _dt.date.fromisoformat(deadline)
+            except ValueError as e:
+                raise SchemaError(f"{where}: bad application_deadline {deadline!r}") from e
+        completeness = d.get("structured_completeness", "full")
+        if completeness not in STRUCTURED_COMPLETENESS:
+            raise SchemaError(f"{where}: unknown structured_completeness {completeness!r}")
         return Job(
             id=d["id"],
             title=d["title"],
@@ -330,6 +406,8 @@ class Job:
             requires_overnight_travel=bool(d["requires_overnight_travel"]),
             requirements=JobRequirements.from_dict(d["requirements"], f"{where}.requirements"),
             description=d["description"],
+            application_deadline=deadline,
+            structured_completeness=completeness,
         )
 
     def to_dict(self) -> dict:
@@ -349,6 +427,18 @@ def load_candidates(path: Path | None = None) -> list[Candidate]:
     candidates = [Candidate.from_dict(c) for c in raw]
     _ensure_unique_ids([c.id for c in candidates], "candidate")
     return candidates
+
+
+def load_candidates_v2(path_v1: Path | None = None, path_v2: Path | None = None) -> list[Candidate]:
+    """The Benchmark V2 candidate set: the 10 V1 candidates plus the 14
+    ambiguity-focused V2 additions."""
+    v1 = load_candidates(path_v1)
+    path_v2 = path_v2 or DATA_DIR / "candidates_v2.json"
+    raw = json.loads(Path(path_v2).read_text(encoding="utf-8"))
+    v2 = [Candidate.from_dict(c) for c in raw]
+    combined = v1 + v2
+    _ensure_unique_ids([c.id for c in combined], "candidate")
+    return combined
 
 
 def load_jobs(path: Path | None = None) -> list[Job]:

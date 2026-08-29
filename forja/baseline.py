@@ -35,7 +35,10 @@ def render_candidate(candidate: Candidate) -> str:
         f"Arbeidstillatelse: {candidate.work_authorization}",
         "Språk: " + ", ".join(f"{lang} ({lvl})" for lang, lvl in candidate.languages.items()),
         "Førerkort: " + (", ".join(candidate.driving_licenses) or "ingen"),
-        "Sertifiseringer/autorisasjoner: " + (", ".join(candidate.certifications) or "ingen"),
+        "Sertifiseringer/autorisasjoner: " + (", ".join(
+            c.id if c.status == "valid" else f"{c.id} [{c.status.upper()}]"
+            for c in candidate.certifications
+        ) or "ingen"),
         "Utdanning: " + "; ".join(
             f"{e.degree} i {e.field}, {e.institution} ({e.year})"
             + ("" if e.recognized_in_norway else " [IKKE godkjent i Norge ennå]")
@@ -64,6 +67,8 @@ def render_candidate(candidate: Candidate) -> str:
         "Kandidatens egen beskrivelse:",
         candidate.free_text,
     ]
+    if candidate.constraint_notes:
+        lines += ["", "Merknader om ønsker/begrensninger:", candidate.constraint_notes]
     return "\n".join(lines)
 
 
@@ -79,6 +84,8 @@ def render_job(job: Job) -> str:
         "Lønn: " + (f"{job.salary_nok_min}–{job.salary_nok_max} NOK"
                     if job.salary_nok_min else "ikke oppgitt"),
     ]
+    if job.application_deadline:
+        lines.append(f"Søknadsfrist: {job.application_deadline}")
     reqs = []
     if req.must_have_skills:
         reqs.append("krav: " + ", ".join(req.must_have_skills))

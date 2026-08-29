@@ -74,7 +74,8 @@ class ModelClient(Protocol):
 def _log_call(logger: RunLogger, *, task: str, client_name: str, model: str,
               system: str, user: str, result_text: str, parsed_ok: bool,
               latency_s: float, input_tokens: int | None,
-              output_tokens: int | None, error: str | None = None) -> None:
+              output_tokens: int | None, error: str | None = None,
+              tags: dict | None = None) -> None:
     logger.log_model_call(
         task=task,
         client=client_name,
@@ -87,6 +88,7 @@ def _log_call(logger: RunLogger, *, task: str, client_name: str, model: str,
         input_tokens=input_tokens,
         output_tokens=output_tokens,
         error=error,
+        tags=tags or {},
     )
 
 
@@ -112,7 +114,8 @@ class AnthropicClient:
         self._logger = logger
 
     def complete(self, *, task: str, system: str, user: str,
-                 json_schema: dict | None = None, max_tokens: int = 4096) -> ModelResult:
+                 json_schema: dict | None = None, max_tokens: int = 4096,
+                 tags: dict | None = None) -> ModelResult:
         kwargs: dict[str, Any] = dict(
             model=self.model,
             max_tokens=max_tokens,
@@ -131,7 +134,7 @@ class AnthropicClient:
             _log_call(self._logger, task=task, client_name=self.name, model=self.model,
                       system=system, user=user, result_text="", parsed_ok=False,
                       latency_s=latency, input_tokens=None, output_tokens=None,
-                      error=f"{type(e).__name__}: {e}")
+                      error=f"{type(e).__name__}: {e}", tags=tags)
             raise ForjaModelError(f"model call failed for task {task!r}: {e}") from e
         latency = time.perf_counter() - start
 
@@ -143,7 +146,7 @@ class AnthropicClient:
                       latency_s=latency,
                       input_tokens=response.usage.input_tokens,
                       output_tokens=response.usage.output_tokens,
-                      error=msg)
+                      error=msg, tags=tags)
             raise ForjaModelError(msg)
 
         text = "".join(b.text for b in response.content if b.type == "text")
@@ -159,7 +162,7 @@ class AnthropicClient:
                   parsed_ok=parse_error is None, latency_s=latency,
                   input_tokens=response.usage.input_tokens,
                   output_tokens=response.usage.output_tokens,
-                  error=parse_error)
+                  error=parse_error, tags=tags)
         if parse_error:
             raise ForjaModelError(parse_error)
         return ModelResult(
@@ -188,6 +191,26 @@ def live_capability() -> tuple[bool, str]:
 # Offline deterministic client
 # --------------------------------------------------------------------------
 
+def split_job_blocks(prompt: str) -> list[tuple[str, str]]:
+    """Split the jobs section of a prompt into (job_id, block_text) pairs.
+    Blocks are introduced by the shared '[STILLING <id>]' convention."""
+    jobs_part = prompt.split(JOBS_SECTION, 1)[1] if JOBS_SECTION in prompt else prompt
+    blocks: list[tuple[str, str]] = []
+    current_id: str | None = None
+    current_lines: list[str] = []
+    for line in jobs_part.splitlines():
+        if line.startswith(JOB_BLOCK_PREFIX):
+            if current_id is not None:
+                blocks.append((current_id, "\n".join(current_lines)))
+            current_id = line[len(JOB_BLOCK_PREFIX):].rstrip("]").strip()
+            current_lines = []
+        else:
+            current_lines.append(line)
+    if current_id is not None:
+        blocks.append((current_id, "\n".join(current_lines)))
+    return blocks
+
+
 class OfflineDeterministicClient:
     """Neutral deterministic stand-in for a general-purpose LLM (see module docstring)."""
 
@@ -198,52 +221,52 @@ class OfflineDeterministicClient:
         self._logger = logger
 
     def complete(self, *, task: str, system: str, user: str,
-                 json_schema: dict | None = None, max_tokens: int = 4096) -> ModelResult:
+                 json_schema: dict | None = None, max_tokens: int = 4096,
+                 tags: dict | None = None) -> ModelResult:
         start = time.perf_counter()
+        parsed: Any | None = None
         if task == "baseline.advise":
             text = self._baseline_advise(user)
-            parsed = None
         elif task == "forja.profile_enrichment":
             # Conservative offline behavior: suggest nothing rather than guess.
             parsed = {"suggested_skills": [], "notes": "offline mode: no enrichment"}
+            text = json.dumps(parsed, ensure_ascii=False)
+        elif task in ("v2.rank_chunk", "v2.merge", "v2.rerank"):
+            parsed = self._lexical_rank(user)
+            text = json.dumps(parsed, ensure_ascii=False)
+        elif task == "v2.critique":
+            # Offline stand-in: no revisions — echo an empty change set.
+            parsed = {"items": []}
+            text = json.dumps(parsed)
+        elif task == "v2.verify":
+            parsed = {"verdicts": []}  # keep everything (no strikes offline)
+            text = json.dumps(parsed)
+        elif task == "v2.soft_pref":
+            ids = [job_id for job_id, _ in split_job_blocks(user)]
+            parsed = {"preferences": [
+                {"job_id": j, "fit": 0.5, "claim": "offline: nøytral preferanse",
+                 "quote": ""} for j in ids
+            ]}
             text = json.dumps(parsed, ensure_ascii=False)
         else:
             raise ForjaModelError(f"offline client has no handler for task {task!r}")
         latency = time.perf_counter() - start
         _log_call(self._logger, task=task, client_name=self.name, model=self.model,
                   system=system, user=user, result_text=text, parsed_ok=True,
-                  latency_s=latency, input_tokens=None, output_tokens=None)
+                  latency_s=latency, input_tokens=None, output_tokens=None, tags=tags)
         return ModelResult(text=text, parsed_json=parsed, latency_s=latency,
                            input_tokens=None, output_tokens=None,
                            client_name=self.name, model=self.model)
 
-    # -- baseline: rank job blocks by lexical overlap with the candidate text --
+    # -- shared lexical scoring over the same prompt text a real model sees --
 
-    def _baseline_advise(self, prompt: str) -> str:
+    def _scored_blocks(self, prompt: str) -> list[tuple[float, str, list[str]]]:
         if CANDIDATE_SECTION not in prompt or JOBS_SECTION not in prompt:
-            raise ForjaModelError("baseline prompt missing expected sections")
+            raise ForjaModelError("prompt missing expected sections")
         candidate_part = prompt.split(CANDIDATE_SECTION, 1)[1].split(JOBS_SECTION, 1)[0]
-        jobs_part = prompt.split(JOBS_SECTION, 1)[1]
-
         candidate_tokens = set(_tokens(candidate_part))
-
-        # Split the jobs section into blocks introduced by "[STILLING <id>]".
-        blocks: list[tuple[str, str]] = []
-        current_id: str | None = None
-        current_lines: list[str] = []
-        for line in jobs_part.splitlines():
-            if line.startswith(JOB_BLOCK_PREFIX):
-                if current_id is not None:
-                    blocks.append((current_id, "\n".join(current_lines)))
-                current_id = line[len(JOB_BLOCK_PREFIX):].rstrip("]").strip()
-                current_lines = []
-            else:
-                current_lines.append(line)
-        if current_id is not None:
-            blocks.append((current_id, "\n".join(current_lines)))
-
         scored = []
-        for job_id, body in blocks:
+        for job_id, body in split_job_blocks(prompt):
             job_tokens = _tokens(body)
             if not job_tokens:
                 continue
@@ -251,9 +274,23 @@ class OfflineDeterministicClient:
             score = len(overlap) / math.sqrt(len(set(job_tokens)))
             scored.append((score, job_id, overlap[:5]))
         scored.sort(key=lambda s: (-s[0], s[1]))
+        return scored
 
+    def _lexical_rank(self, prompt: str) -> dict:
+        items = []
+        for score, job_id, overlap in self._scored_blocks(prompt)[:50]:
+            quote = overlap[0] if overlap else ""
+            items.append({
+                "job_id": job_id,
+                "score": round(score * 20, 2),
+                "claims": ([{"claim": f"Ordoverlapp med kandidatprofilen: {quote}",
+                             "source": "candidate", "quote": quote}] if quote else []),
+            })
+        return {"items": items}
+
+    def _baseline_advise(self, prompt: str) -> str:
         lines = ["Her er mine anbefalinger, rangert:"]
-        for rank, (score, job_id, overlap) in enumerate(scored[:10], start=1):
+        for rank, (score, job_id, overlap) in enumerate(self._scored_blocks(prompt)[:10], start=1):
             reason = ", ".join(overlap) if overlap else "generell profilmatch"
             lines.append(f"{rank}. {job_id} – god match på: {reason}.")
         return "\n".join(lines)
