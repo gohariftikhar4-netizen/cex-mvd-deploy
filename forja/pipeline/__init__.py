@@ -38,7 +38,8 @@ def run_forja(
     jobs_by_id = {j.id: j for j in jobs}
 
     # 1. Candidate profiling (optionally LLM-enriched; validated deterministically).
-    profile = build_profile(candidate, logger, model_client)
+    profile = build_profile(candidate, logger, model_client,
+                            usage_tags={"workflow": "b3", "candidate_id": candidate.id})
 
     # 2. Hard constraint filtering — before anything ranks or reasons.
     eligible, reports = constraints.filter_eligible(candidate, jobs)

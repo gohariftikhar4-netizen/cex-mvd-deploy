@@ -108,6 +108,7 @@ def build_profile(
     candidate: Candidate,
     logger: RunLogger,
     model_client: ModelClient | None = None,
+    usage_tags: dict | None = None,
 ) -> CandidateProfile:
     effective: dict[str, str] = {s: PROVENANCE_DECLARED for s in candidate.skills}
 
@@ -128,6 +129,7 @@ def build_profile(
             ),
             json_schema=_ENRICHMENT_SCHEMA,
             max_tokens=2000,
+            tags=usage_tags,
         )
         suggestions = (result.parsed_json or {}).get("suggested_skills", [])
         low_text = own_text.lower()

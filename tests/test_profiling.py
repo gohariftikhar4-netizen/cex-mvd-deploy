@@ -19,7 +19,7 @@ class FakeEnrichmentClient:
         self._suggestions = suggestions
         self.calls = 0
 
-    def complete(self, *, task, system, user, json_schema=None, max_tokens=4096):
+    def complete(self, *, task, system, user, json_schema=None, max_tokens=4096, **kwargs):
         self.calls += 1
         payload = {"suggested_skills": self._suggestions, "notes": "test"}
         return ModelResult(
