@@ -46,7 +46,13 @@ def aggregate_usage(model_calls: list[dict]) -> dict:
         })
         agg["model_calls"] += 1
         agg["latency_s"] = round(agg["latency_s"] + (call.get("latency_s") or 0.0), 4)
-        if call.get("input_tokens") is None:
+        if call.get("reported_cost_usd") is not None:
+            # The provider reported the exact cost (OpenRouter): use it.
+            agg["cost_usd"] = round(agg["cost_usd"] + call["reported_cost_usd"], 6)
+            agg["input_tokens"] += call.get("input_tokens") or 0
+            agg["output_tokens"] += call.get("output_tokens") or 0
+            agg["cache_read_tokens"] += call.get("cache_read_input_tokens") or 0
+        elif call.get("input_tokens") is None:
             agg["tokens_known"] = False
         else:
             cache_w_1h = call.get("cache_creation_1h_tokens") or 0

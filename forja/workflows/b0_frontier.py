@@ -40,7 +40,9 @@ def rank_stage(workflow: str, candidate: Candidate, jobs: list[Job],
     known = {j.id for j in jobs}
     jobs_by_id = {j.id: j for j in jobs}
     tags = {"workflow": workflow, "candidate_id": candidate.id}
-    chunks = chunk_jobs(jobs)
+    # Providers differ in context window; clients may advertise their budget.
+    from .common import CHUNK_CHAR_BUDGET as _default_budget
+    chunks = chunk_jobs(jobs, getattr(client, "chunk_char_budget", _default_budget))
 
     if len(chunks) == 1:
         prefix, suffix = jobs_prompt_parts(candidate, chunks[0],

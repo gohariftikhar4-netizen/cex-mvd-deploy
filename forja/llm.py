@@ -209,6 +209,159 @@ class AnthropicClient:
         )
 
 
+class OpenRouterClient:
+    """OpenAI-compatible adapter for OpenRouter (any hosted model).
+
+    - API key from OPENROUTER_API_KEY only; never logged or written anywhere.
+    - Structured output via response_format json_schema (strict); if a call
+      fails or returns empty content, retries once with a doubled token
+      budget, then falls back to prompt-enforced JSON.
+    - `provider_route` pins one upstream host (allow_fallbacks=false) so every
+      arm runs on the same route.
+    - Reports OpenRouter's own cost per call (logged as reported_cost_usd).
+    - cached_prefix is accepted for interface parity but simply concatenated:
+      explicit cache control is Anthropic-specific.
+    """
+
+    name = "openrouter"
+
+    _URL = "https://openrouter.ai/api/v1/chat/completions"
+
+    def __init__(self, logger: RunLogger, model: str,
+                 provider_route: str | None = None,
+                 context_tokens: int = 1_000_000):
+        key = os.environ.get("OPENROUTER_API_KEY")
+        if not key:
+            raise ForjaModelError("OPENROUTER_API_KEY is not set")
+        self._key = key
+        self.model = model
+        self.provider_route = provider_route
+        self._logger = logger
+        # Norwegian text ≈ 2.05 chars/token; keep generous headroom.
+        self.chunk_char_budget = max(120_000, int((context_tokens - 80_000) * 1.9))
+
+    def _post(self, payload: dict, timeout: float = 1200.0) -> dict:
+        import urllib.error
+        import urllib.request
+        body = json.dumps(payload).encode("utf-8")
+        last_err: Exception | None = None
+        for attempt in range(4):
+            req = urllib.request.Request(
+                self._URL, data=body,
+                headers={"Authorization": f"Bearer {self._key}",
+                         "Content-Type": "application/json",
+                         "X-Title": "forja-benchmark-v2"})
+            try:
+                with urllib.request.urlopen(req, timeout=timeout) as resp:
+                    return json.load(resp)
+            except urllib.error.HTTPError as e:
+                try:
+                    detail = json.load(e)
+                except Exception:
+                    detail = {"error": {"message": e.read()[:300].decode(errors="replace")}}
+                msg = (detail.get("error") or {}).get("message", str(e))
+                if e.code in (402,) or "credit" in str(msg).lower():
+                    raise ForjaModelError(f"OpenRouter credits exhausted: {msg}") from e
+                if e.code in (429, 500, 502, 503, 520, 524) and attempt < 3:
+                    time.sleep(5 * (attempt + 1) ** 2)
+                    last_err = e
+                    continue
+                raise ForjaModelError(f"OpenRouter HTTP {e.code}: {msg}") from e
+            except (TimeoutError, OSError) as e:
+                if attempt < 3:
+                    time.sleep(5 * (attempt + 1) ** 2)
+                    last_err = e
+                    continue
+                raise ForjaModelError(f"OpenRouter connection failure: {e}") from e
+        raise ForjaModelError(f"OpenRouter retries exhausted: {last_err}")
+
+    def complete(self, *, task: str, system: str, user: str,
+                 json_schema: dict | None = None, max_tokens: int = 4096,
+                 tags: dict | None = None,
+                 cached_prefix: str | None = None) -> ModelResult:
+        full_prompt = (cached_prefix + "\n\n" + user) if cached_prefix else user
+
+        def build(payload_max: int, use_schema: bool) -> dict:
+            payload: dict[str, Any] = {
+                "model": self.model,
+                "max_tokens": payload_max,
+                "usage": {"include": True},
+                "messages": [
+                    {"role": "system", "content": system},
+                    {"role": "user", "content": full_prompt
+                        if use_schema or json_schema is None else
+                        full_prompt + "\n\nSvar KUN med gyldig JSON etter dette "
+                        "skjemaet, uten kodeblokker eller annen tekst:\n"
+                        + json.dumps(json_schema)},
+                ],
+            }
+            if self.provider_route:
+                payload["provider"] = {"order": [self.provider_route],
+                                       "allow_fallbacks": False}
+            if json_schema is not None and use_schema:
+                payload["response_format"] = {
+                    "type": "json_schema",
+                    "json_schema": {"name": "result", "strict": True,
+                                    "schema": json_schema}}
+            return payload
+
+        start = time.perf_counter()
+        # Reasoning models spend output budget on thinking: give headroom, and
+        # on an empty completion retry once with double budget, then without
+        # the schema constraint.
+        attempts = [(max(max_tokens, 8000), True),
+                    (max(max_tokens * 2, 16000), True),
+                    (max(max_tokens * 2, 16000), False)]
+        response: dict = {}
+        text = ""
+        for payload_max, use_schema in attempts:
+            try:
+                response = self._post(build(payload_max, use_schema))
+            except ForjaModelError as e:
+                latency = time.perf_counter() - start
+                _log_call(self._logger, task=task, client_name=self.name,
+                          model=self.model, system=system, user=full_prompt,
+                          result_text="", parsed_ok=False, latency_s=latency,
+                          input_tokens=None, output_tokens=None,
+                          error=str(e), tags=tags)
+                raise
+            choice = (response.get("choices") or [{}])[0]
+            text = (choice.get("message") or {}).get("content") or ""
+            if text.strip():
+                break
+        latency = time.perf_counter() - start
+
+        usage = response.get("usage") or {}
+        details = usage.get("prompt_tokens_details") or {}
+        parsed: Any | None = None
+        parse_error: str | None = None
+        if json_schema is not None:
+            cleaned = text.strip()
+            if cleaned.startswith("```"):
+                cleaned = cleaned.strip("`")
+                cleaned = cleaned[cleaned.find("{"):cleaned.rfind("}") + 1]
+            try:
+                parsed = json.loads(cleaned)
+            except json.JSONDecodeError as e:
+                parse_error = f"invalid JSON from model: {e}"
+        _log_call(self._logger, task=task, client_name=self.name, model=self.model,
+                  system=system, user=full_prompt, result_text=text,
+                  parsed_ok=parse_error is None, latency_s=latency,
+                  input_tokens=usage.get("prompt_tokens"),
+                  output_tokens=usage.get("completion_tokens"),
+                  error=parse_error, tags=tags,
+                  reported_cost_usd=usage.get("cost"),
+                  served_provider=response.get("provider"),
+                  cache_read_input_tokens=details.get("cached_tokens") or 0,
+                  cache_creation_input_tokens=details.get("cache_write_tokens") or 0)
+        if parse_error:
+            raise ForjaModelError(parse_error)
+        return ModelResult(text=text, parsed_json=parsed, latency_s=latency,
+                           input_tokens=usage.get("prompt_tokens"),
+                           output_tokens=usage.get("completion_tokens"),
+                           client_name=self.name, model=self.model)
+
+
 def live_capability() -> tuple[bool, str]:
     """Best-effort check whether real model calls can work in this environment."""
     try:

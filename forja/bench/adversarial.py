@@ -21,7 +21,7 @@ import json
 import sys
 from pathlib import Path
 
-from ..llm import AnthropicClient, OfflineDeterministicClient
+from ..llm import AnthropicClient, OfflineDeterministicClient, OpenRouterClient
 from ..runlog import NullLogger, RunLogger
 from ..schemas import Candidate, Job
 from ..workflows import WORKFLOWS
@@ -305,11 +305,17 @@ CASES = {
 
 
 def run_suite(mode: str = "offline", arms: tuple[str, ...] = ARMS,
-              logger: RunLogger | None = None) -> dict:
+              logger: RunLogger | None = None, provider: str = "anthropic",
+              model: str | None = None, provider_route: str | None = None) -> dict:
     logger = logger or NullLogger()
-    client = (AnthropicClient(logger) if mode == "live"
-              else OfflineDeterministicClient(logger))
-    report: dict = {"mode": mode, "model": client.model, "cases": {}}
+    if mode != "live":
+        client = OfflineDeterministicClient(logger)
+    elif provider == "openrouter":
+        client = OpenRouterClient(logger, model=model, provider_route=provider_route)
+    else:
+        client = AnthropicClient(logger)
+    report: dict = {"mode": mode, "provider": client.name, "model": client.model,
+                    "provider_route": provider_route, "cases": {}}
     for name, build in CASES.items():
         cand, jobs, expect = build()
         report["cases"][name] = {}
@@ -333,8 +339,16 @@ def main(argv=None) -> int:
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--mode", choices=["offline", "live"], default="offline")
     parser.add_argument("--out", default="adversarial_report.json")
+    parser.add_argument("--arms", default=",".join(ARMS))
+    parser.add_argument("--provider", choices=["anthropic", "openrouter"],
+                        default="anthropic")
+    parser.add_argument("--model", default=None)
+    parser.add_argument("--provider-route", default=None)
     args = parser.parse_args(argv)
-    report = run_suite(mode=args.mode)
+    report = run_suite(mode=args.mode,
+                       arms=tuple(a.strip() for a in args.arms.split(",") if a.strip()),
+                       provider=args.provider, model=args.model,
+                       provider_route=args.provider_route)
     Path(args.out).write_text(json.dumps(report, ensure_ascii=False, indent=1),
                               encoding="utf-8")
     for name, case in report["cases"].items():

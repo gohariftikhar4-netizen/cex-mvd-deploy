@@ -16,7 +16,8 @@ import json
 import sys
 from pathlib import Path
 
-from ..llm import AnthropicClient, OfflineDeterministicClient, live_capability
+from ..llm import (AnthropicClient, OfflineDeterministicClient,
+                   OpenRouterClient, live_capability)
 from ..runlog import RunLogger
 from ..schemas import Job, load_candidates_v2
 from ..workflows import WORKFLOWS
@@ -37,7 +38,8 @@ def load_corpus(data_dir: Path, slice_name: str | None) -> list[Job]:
 
 def run(mode: str, workflows: list[str], candidate_ids: list[str] | None,
         data_dir: Path, slice_name: str | None, out_dir: Path,
-        parallel: int = 1) -> Path:
+        parallel: int = 1, provider: str = "anthropic",
+        model: str | None = None, provider_route: str | None = None) -> Path:
     candidates = load_candidates_v2()
     if candidate_ids:
         wanted = set(candidate_ids)
@@ -55,9 +57,34 @@ def run(mode: str, workflows: list[str], candidate_ids: list[str] | None,
     run_id = _dt.datetime.now(_dt.UTC).strftime("%Y%m%dT%H%M%SZ") + f"-v2-{mode}"
     run_dir = out_dir / run_id
     logger = RunLogger(run_dir)
-    client = AnthropicClient(logger) if mode == "live" else OfflineDeterministicClient(logger)
+    if mode != "live":
+        client = OfflineDeterministicClient(logger)
+    elif provider == "openrouter":
+        if not model:
+            raise SystemExit("--provider openrouter requires --model <slug>")
+        client = OpenRouterClient(logger, model=model, provider_route=provider_route)
+    elif provider == "anthropic":
+        client = AnthropicClient(logger, **({"model": model} if model else {}))
+    else:
+        raise SystemExit(f"unknown provider {provider!r}")
     print(f"run: {run_id}  client: {client.name}  model: {client.model}  "
-          f"jobs: {len(jobs)}  candidates: {len(candidates)}  arms: {workflows}")
+          f"route: {provider_route or 'default'}  jobs: {len(jobs)}  "
+          f"candidates: {len(candidates)}  arms: {workflows}")
+
+    outputs_path = run_dir / "outputs_v2.json"
+
+    def save_outputs(outputs_now: dict) -> None:
+        # Incremental, atomic: an aborted run must still yield scoreable work.
+        tmp = outputs_path.with_suffix(".tmp")
+        tmp.write_text(json.dumps(outputs_now, ensure_ascii=False, indent=1),
+                       encoding="utf-8")
+        tmp.replace(outputs_path)
+        usage_tmp = run_dir / "usage.tmp"
+        usage_tmp.write_text(json.dumps(aggregate_usage(logger.model_calls), indent=2),
+                             encoding="utf-8")
+        usage_tmp.replace(run_dir / "usage.json")
+
+    outputs: dict[str, dict[str, dict]] = {}
 
     def run_candidate(cand):
         result = {}
@@ -70,12 +97,17 @@ def run(mode: str, workflows: list[str], candidate_ids: list[str] | None,
                     last_error = None
                     break
                 except Exception as e:  # noqa: BLE001 — recorded, never silent
-                    if "credit balance" in str(e).lower():
-                        # Billing exhaustion is not transient: stop the whole
-                        # run immediately instead of failing 24 candidates.
+                    if ("credit balance" in str(e).lower()
+                            or "credits exhausted" in str(e).lower()):
+                        # Billing exhaustion is not transient: persist what we
+                        # have, then stop the whole run immediately.
+                        outputs.setdefault(cand.id, {}).update(result)
+                        save_outputs(outputs)
                         raise SystemExit(
                             f"ABORTED: API credit balance exhausted during "
-                            f"{cand.id} × {wf}. Top up credits and rerun.") from e
+                            f"{cand.id} × {wf}. Partial outputs saved to "
+                            f"{outputs_path}. Top up credits and rerun the "
+                            f"remainder.") from e
                     last_error = e
                     print(f"    ! {cand.id} × {wf} attempt {attempt} failed: {e}",
                           flush=True)
@@ -87,27 +119,31 @@ def run(mode: str, workflows: list[str], candidate_ids: list[str] | None,
                                     workflow=wf, error=str(last_error))
         return cand.id, result
 
-    outputs: dict[str, dict[str, dict]] = {}
     if parallel > 1 and len(candidates) > 1:
         # First candidate runs alone so the shared jobs-prefix prompt cache is
         # written once; the rest then read it concurrently.
         cid, res = run_candidate(candidates[0])
         outputs[cid] = res
+        save_outputs(outputs)
         from concurrent.futures import ThreadPoolExecutor
         with ThreadPoolExecutor(max_workers=parallel) as pool:
             for cid, res in pool.map(run_candidate, candidates[1:]):
                 outputs[cid] = res
-        outputs = {c.id: outputs[c.id] for c in candidates}  # stable order
+                save_outputs(outputs)
+        outputs = {c.id: outputs[c.id] for c in candidates if c.id in outputs}
     else:
         for cand in candidates:
             cid, res = run_candidate(cand)
             outputs[cid] = res
+            save_outputs(outputs)
 
-    usage = aggregate_usage(logger.model_calls)
+    save_outputs(outputs)
     meta = {
         "run_id": run_id,
         "phase": "run",
         "mode": mode,
+        "provider": client.name,
+        "provider_route": provider_route,
         "model": client.model,
         "client": client.name,
         "date": _dt.date.today().isoformat(),
@@ -117,9 +153,6 @@ def run(mode: str, workflows: list[str], candidate_ids: list[str] | None,
         "slice": slice_name or "full",
         "data_dir": str(data_dir),
     }
-    (run_dir / "outputs_v2.json").write_text(
-        json.dumps(outputs, ensure_ascii=False, indent=1), encoding="utf-8")
-    (run_dir / "usage.json").write_text(json.dumps(usage, indent=2), encoding="utf-8")
     (run_dir / "run_meta.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
     print(f"phase-1 artifacts: {run_dir}")
     print("next: python3 -m forja.bench.score_v2", run_dir)
@@ -140,12 +173,20 @@ def main(argv=None) -> int:
     parser.add_argument("--parallel", type=int, default=1,
                         help="concurrent candidates (live runs; first candidate "
                              "always runs alone to warm the prompt cache)")
+    parser.add_argument("--provider", choices=["anthropic", "openrouter"],
+                        default="anthropic",
+                        help="live-mode model provider (default: anthropic)")
+    parser.add_argument("--model", default=None,
+                        help="model id/slug (required for openrouter)")
+    parser.add_argument("--provider-route", default=None,
+                        help="openrouter: pin one upstream host (allow_fallbacks=false)")
     args = parser.parse_args(argv)
     cand_ids = None if args.candidates == "all" else [
         c.strip() for c in args.candidates.split(",") if c.strip()]
     run(args.mode, [w.strip() for w in args.workflows.split(",") if w.strip()],
         cand_ids, Path(args.data), args.slice, Path(args.out),
-        parallel=args.parallel)
+        parallel=args.parallel, provider=args.provider, model=args.model,
+        provider_route=args.provider_route)
     return 0
 
 
