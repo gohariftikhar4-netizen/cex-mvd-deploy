@@ -1,0 +1,3483 @@
+{
+ "run_meta": {
+  "run_id": "merged-glm53flash-20260829",
+  "phase": "run",
+  "mode": "live",
+  "provider": "openrouter",
+  "provider_route": "deepinfra/fp8",
+  "model": "z-ai/glm-5.3-flash",
+  "client": "openrouter",
+  "date": "2026-08-29",
+  "workflows": [
+   "b0",
+   "b1",
+   "b2",
+   "b3"
+  ],
+  "candidates": [
+   "cand_aisha",
+   "cand_amira",
+   "cand_bjorn",
+   "cand_dmitri",
+   "cand_fatima",
+   "cand_geir",
+   "cand_henrik",
+   "cand_ingrid",
+   "cand_ingvild",
+   "cand_kari",
+   "cand_kjell",
+   "cand_lene",
+   "cand_lin",
+   "cand_marius",
+   "cand_marta",
+   "cand_oddvar",
+   "cand_omar",
+   "cand_pawel",
+   "cand_ragnhild",
+   "cand_silje",
+   "cand_solveig",
+   "cand_tarik",
+   "cand_thomas",
+   "cand_yusuf"
+  ],
+  "n_jobs": 1000,
+  "slice": "1000",
+  "data_dir": "benchmark_data",
+  "merged_from": [
+   "20260829T203606Z-v2-live",
+   "20260829T205105Z-v2-live"
+  ]
+ },
+ "gold_meta": {
+  "version": "corpus-v2.1",
+  "seed": 20260901,
+  "size": 10000,
+  "benchmark_date": "2026-09-01"
+ },
+ "errored_cases_excluded": [],
+ "per_case": {
+  "cand_ingrid": {
+   "b2": {
+    "workflow": "b2",
+    "candidate_id": "cand_ingrid",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.9,
+    "strong_precision_at_10": 0.9,
+    "recall_at_10": 0.6,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 0.9,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 0.9216,
+    "violation_rate": 0.0,
+    "violations": [],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 25,
+    "opportunity_loss": 0.3077,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 15,
+    "gold_strong": 13,
+    "wall_time_s": 74.5307,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     0,
+     2,
+     2,
+     2,
+     2
+    ],
+    "top_ids": [
+     "job_10217",
+     "job_12290",
+     "job_18611",
+     "job_19993",
+     "job_13464",
+     "job_10920",
+     "job_13880",
+     "job_13025",
+     "job_19401",
+     "job_19302"
+    ]
+   },
+   "b3": {
+    "workflow": "b3",
+    "candidate_id": "cand_ingrid",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.5,
+    "strong_precision_at_10": 0.5,
+    "recall_at_10": 0.3333,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 0.5,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 0.5518,
+    "violation_rate": 0.1,
+    "violations": [
+     {
+      "job_id": "job_18080",
+      "dimensions": [
+       "shifts"
+      ],
+      "strata": [
+       "trap_textonly:shifts:cand_ingrid"
+      ]
+     }
+    ],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 50,
+    "opportunity_loss": 0.6154,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 15,
+    "gold_strong": 13,
+    "wall_time_s": 29.549,
+    "listed_grades": [
+     2,
+     0,
+     0,
+     2,
+     2,
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    "top_ids": [
+     "job_16782",
+     "job_18080",
+     "job_11903",
+     "job_16909",
+     "job_19993",
+     "job_13464",
+     "job_19401",
+     "job_16393",
+     "job_10920",
+     "job_10049"
+    ]
+   },
+   "b0": {
+    "workflow": "b0",
+    "candidate_id": "cand_ingrid",
+    "n_listed": 9,
+    "n_extended": 9,
+    "precision_at_10": 0.5,
+    "strong_precision_at_10": 0.4,
+    "recall_at_10": 0.3333,
+    "recall_at_50": 0.3333,
+    "recall_at_10_capped": 0.5,
+    "recall_at_50_capped": 0.3333,
+    "ndcg_at_10": 0.452,
+    "violation_rate": 0.0,
+    "violations": [],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0741,
+    "n_claims": 27,
+    "opportunity_loss": 0.6923,
+    "false_negative_rate": 0.6667,
+    "gold_relevant": 15,
+    "gold_strong": 13,
+    "wall_time_s": 103.0982,
+    "listed_grades": [
+     0,
+     2,
+     2,
+     2,
+     2,
+     0,
+     0,
+     1,
+     0
+    ],
+    "top_ids": [
+     "job_10920",
+     "job_10217",
+     "job_12290",
+     "job_12933",
+     "job_19401",
+     "job_16393",
+     "job_11903",
+     "job_10059",
+     "job_10885"
+    ]
+   },
+   "b1": {
+    "workflow": "b1",
+    "candidate_id": "cand_ingrid",
+    "n_listed": 9,
+    "n_extended": 9,
+    "precision_at_10": 0.8,
+    "strong_precision_at_10": 0.8,
+    "recall_at_10": 0.5333,
+    "recall_at_50": 0.5333,
+    "recall_at_10_capped": 0.8,
+    "recall_at_50_capped": 0.5333,
+    "ndcg_at_10": 0.858,
+    "violation_rate": 0.0,
+    "violations": [],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.12,
+    "n_claims": 25,
+    "opportunity_loss": 0.3846,
+    "false_negative_rate": 0.4667,
+    "gold_relevant": 15,
+    "gold_strong": 13,
+    "wall_time_s": 188.519,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     0,
+     2,
+     2,
+     2
+    ],
+    "top_ids": [
+     "job_19993",
+     "job_16909",
+     "job_13464",
+     "job_16782",
+     "job_10217",
+     "job_10920",
+     "job_19302",
+     "job_19401",
+     "job_12933"
+    ]
+   }
+  },
+  "cand_marius": {
+   "b2": {
+    "workflow": "b2",
+    "candidate_id": "cand_marius",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.6,
+    "strong_precision_at_10": 0.6,
+    "recall_at_10": 0.3158,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 0.6,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 0.6872,
+    "violation_rate": 0.0,
+    "violations": [],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 30,
+    "opportunity_loss": 0.4545,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 19,
+    "gold_strong": 11,
+    "wall_time_s": 77.4599,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     0,
+     2,
+     0,
+     0,
+     2,
+     0,
+     2
+    ],
+    "top_ids": [
+     "job_15679",
+     "job_19516",
+     "job_11508",
+     "job_13522",
+     "job_17906",
+     "job_19385",
+     "job_14983",
+     "job_12544",
+     "job_13791",
+     "job_15089"
+    ]
+   },
+   "b3": {
+    "workflow": "b3",
+    "candidate_id": "cand_marius",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.3,
+    "strong_precision_at_10": 0.3,
+    "recall_at_10": 0.1579,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 0.3,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 0.3689,
+    "violation_rate": 0.0,
+    "violations": [],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 60,
+    "opportunity_loss": 0.7273,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 19,
+    "gold_strong": 11,
+    "wall_time_s": 20.9563,
+    "listed_grades": [
+     2,
+     0,
+     0,
+     0,
+     2,
+     0,
+     0,
+     0,
+     0,
+     2
+    ],
+    "top_ids": [
+     "job_17906",
+     "job_11717",
+     "job_14983",
+     "job_16026",
+     "job_11998",
+     "job_19385",
+     "job_17975",
+     "job_13522",
+     "job_13791",
+     "job_15089"
+    ]
+   },
+   "b0": {
+    "workflow": "b0",
+    "candidate_id": "cand_marius",
+    "n_listed": 3,
+    "n_extended": 3,
+    "precision_at_10": 0.0,
+    "strong_precision_at_10": 0.0,
+    "recall_at_10": 0.0,
+    "recall_at_50": 0.0,
+    "recall_at_10_capped": 0.0,
+    "recall_at_50_capped": 0.0,
+    "ndcg_at_10": 0.0,
+    "violation_rate": 1.0,
+    "violations": [
+     {
+      "job_id": "job_15718",
+      "dimensions": [
+       "location_commute"
+      ],
+      "strata": [
+       "filler"
+      ]
+     },
+     {
+      "job_id": "job_18545",
+      "dimensions": [
+       "location_commute",
+       "salary"
+      ],
+      "strata": [
+       "misleading_title:cand_solveig"
+      ]
+     },
+     {
+      "job_id": "job_15707",
+      "dimensions": [
+       "driving_license",
+       "location_commute",
+       "salary"
+      ],
+      "strata": [
+       "filler"
+      ]
+     }
+    ],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 1.0,
+    "n_claims": 3,
+    "opportunity_loss": 1.0,
+    "false_negative_rate": 1.0,
+    "gold_relevant": 19,
+    "gold_strong": 11,
+    "wall_time_s": 254.2787,
+    "listed_grades": [
+     0,
+     0,
+     0
+    ],
+    "top_ids": [
+     "job_15718",
+     "job_18545",
+     "job_15707"
+    ]
+   },
+   "b1": {
+    "workflow": "b1",
+    "candidate_id": "cand_marius",
+    "n_listed": 9,
+    "n_extended": 9,
+    "precision_at_10": 0.4,
+    "strong_precision_at_10": 0.2,
+    "recall_at_10": 0.2105,
+    "recall_at_50": 0.2105,
+    "recall_at_10_capped": 0.4,
+    "recall_at_50_capped": 0.2105,
+    "ndcg_at_10": 0.2954,
+    "violation_rate": 0.0,
+    "violations": [],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.1017,
+    "n_claims": 59,
+    "opportunity_loss": 0.8182,
+    "false_negative_rate": 0.7895,
+    "gold_relevant": 19,
+    "gold_strong": 11,
+    "wall_time_s": 307.3679,
+    "listed_grades": [
+     0,
+     2,
+     2,
+     0,
+     0,
+     0,
+     1,
+     0,
+     1
+    ],
+    "top_ids": [
+     "job_13522",
+     "job_11998",
+     "job_17906",
+     "job_19385",
+     "job_14983",
+     "job_11717",
+     "job_19067",
+     "job_15965",
+     "job_17951"
+    ]
+   }
+  },
+  "cand_amira": {
+   "b2": {
+    "workflow": "b2",
+    "candidate_id": "cand_amira",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.7,
+    "strong_precision_at_10": 0.7,
+    "recall_at_10": 1.0,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 1.0,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 0.9804,
+    "violation_rate": 0.2,
+    "violations": [
+     {
+      "job_id": "job_11456",
+      "dimensions": [
+       "language_norwegian"
+      ],
+      "strata": [
+       "trap_textonly:language_norwegian:cand_amira"
+      ]
+     },
+     {
+      "job_id": "job_19811",
+      "dimensions": [
+       "language_norwegian"
+      ],
+      "strata": [
+       "filler"
+      ]
+     }
+    ],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 20,
+    "opportunity_loss": 0.0,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 7,
+    "gold_strong": 7,
+    "wall_time_s": 56.0443,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     2,
+     0,
+     2,
+     2,
+     2,
+     0,
+     0
+    ],
+    "top_ids": [
+     "job_18542",
+     "job_14274",
+     "job_16955",
+     "job_13136",
+     "job_11456",
+     "job_15776",
+     "job_11122",
+     "job_17310",
+     "job_19811",
+     "job_11750"
+    ]
+   },
+   "b3": {
+    "workflow": "b3",
+    "candidate_id": "cand_amira",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.7,
+    "strong_precision_at_10": 0.7,
+    "recall_at_10": 1.0,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 1.0,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 0.7967,
+    "violation_rate": 0.3,
+    "violations": [
+     {
+      "job_id": "job_11456",
+      "dimensions": [
+       "language_norwegian"
+      ],
+      "strata": [
+       "trap_textonly:language_norwegian:cand_amira"
+      ]
+     },
+     {
+      "job_id": "job_19811",
+      "dimensions": [
+       "language_norwegian"
+      ],
+      "strata": [
+       "filler"
+      ]
+     },
+     {
+      "job_id": "job_17837",
+      "dimensions": [
+       "language_norwegian"
+      ],
+      "strata": [
+       "filler",
+       "ambiguous_language"
+      ]
+     }
+    ],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 53,
+    "opportunity_loss": 0.0,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 7,
+    "gold_strong": 7,
+    "wall_time_s": 19.3269,
+    "listed_grades": [
+     0,
+     2,
+     2,
+     2,
+     2,
+     0,
+     2,
+     2,
+     2,
+     0
+    ],
+    "top_ids": [
+     "job_11456",
+     "job_14274",
+     "job_18542",
+     "job_16955",
+     "job_13136",
+     "job_19811",
+     "job_17310",
+     "job_15776",
+     "job_11122",
+     "job_17837"
+    ]
+   },
+   "b0": {
+    "workflow": "b0",
+    "candidate_id": "cand_amira",
+    "n_listed": 0,
+    "n_extended": 0,
+    "precision_at_10": 0.0,
+    "strong_precision_at_10": 0.0,
+    "recall_at_10": 0.0,
+    "recall_at_50": 0.0,
+    "recall_at_10_capped": 0.0,
+    "recall_at_50_capped": 0.0,
+    "ndcg_at_10": 0.0,
+    "violation_rate": 0.0,
+    "violations": [],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": null,
+    "n_claims": 0,
+    "opportunity_loss": 1.0,
+    "false_negative_rate": 1.0,
+    "gold_relevant": 7,
+    "gold_strong": 7,
+    "wall_time_s": 14.0328,
+    "listed_grades": [],
+    "top_ids": []
+   },
+   "b1": {
+    "workflow": "b1",
+    "candidate_id": "cand_amira",
+    "n_listed": 1,
+    "n_extended": 1,
+    "precision_at_10": 0.1,
+    "strong_precision_at_10": 0.1,
+    "recall_at_10": 0.1429,
+    "recall_at_50": 0.1429,
+    "recall_at_10_capped": 0.1429,
+    "recall_at_50_capped": 0.1429,
+    "ndcg_at_10": 0.2749,
+    "violation_rate": 0.0,
+    "violations": [],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.5,
+    "n_claims": 4,
+    "opportunity_loss": 0.8571,
+    "false_negative_rate": 0.8571,
+    "gold_relevant": 7,
+    "gold_strong": 7,
+    "wall_time_s": 135.0112,
+    "listed_grades": [
+     2
+    ],
+    "top_ids": [
+     "job_15776"
+    ]
+   }
+  },
+  "cand_bjorn": {
+   "b2": {
+    "workflow": "b2",
+    "candidate_id": "cand_bjorn",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.8,
+    "strong_precision_at_10": 0.8,
+    "recall_at_10": 0.381,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 0.8,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 0.9526,
+    "violation_rate": 0.2,
+    "violations": [
+     {
+      "job_id": "job_10222",
+      "dimensions": [
+       "shifts"
+      ],
+      "strata": [
+       "trap:shifts:cand_bjorn"
+      ]
+     },
+     {
+      "job_id": "job_18579",
+      "dimensions": [
+       "shifts"
+      ],
+      "strata": [
+       "trap_textonly:shifts:cand_bjorn"
+      ]
+     }
+    ],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 22,
+    "opportunity_loss": 0.0,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 21,
+    "gold_strong": 8,
+    "wall_time_s": 58.6973,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     0,
+     0
+    ],
+    "top_ids": [
+     "job_10202",
+     "job_11689",
+     "job_16321",
+     "job_12068",
+     "job_14683",
+     "job_14124",
+     "job_18658",
+     "job_13555",
+     "job_10222",
+     "job_18579"
+    ]
+   },
+   "b3": {
+    "workflow": "b3",
+    "candidate_id": "cand_bjorn",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.7,
+    "strong_precision_at_10": 0.7,
+    "recall_at_10": 0.3333,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 0.7,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 0.7498,
+    "violation_rate": 0.3,
+    "violations": [
+     {
+      "job_id": "job_18579",
+      "dimensions": [
+       "shifts"
+      ],
+      "strata": [
+       "trap_textonly:shifts:cand_bjorn"
+      ]
+     },
+     {
+      "job_id": "job_10222",
+      "dimensions": [
+       "shifts"
+      ],
+      "strata": [
+       "trap:shifts:cand_bjorn"
+      ]
+     },
+     {
+      "job_id": "job_13043",
+      "dimensions": [
+       "salary"
+      ],
+      "strata": [
+       "trap:salary:cand_bjorn"
+      ]
+     }
+    ],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 59,
+    "opportunity_loss": 0.125,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 21,
+    "gold_strong": 8,
+    "wall_time_s": 37.6206,
+    "listed_grades": [
+     2,
+     0,
+     0,
+     2,
+     2,
+     2,
+     2,
+     2,
+     0,
+     2
+    ],
+    "top_ids": [
+     "job_16321",
+     "job_18579",
+     "job_10222",
+     "job_11689",
+     "job_14124",
+     "job_14683",
+     "job_12068",
+     "job_10202",
+     "job_13043",
+     "job_13555"
+    ]
+   },
+   "b0": {
+    "workflow": "b0",
+    "candidate_id": "cand_bjorn",
+    "n_listed": 1,
+    "n_extended": 1,
+    "precision_at_10": 0.0,
+    "strong_precision_at_10": 0.0,
+    "recall_at_10": 0.0,
+    "recall_at_50": 0.0,
+    "recall_at_10_capped": 0.0,
+    "recall_at_50_capped": 0.0,
+    "ndcg_at_10": 0.0,
+    "violation_rate": 1.0,
+    "violations": [
+     {
+      "job_id": "job_18545",
+      "dimensions": [
+       "location_commute"
+      ],
+      "strata": [
+       "misleading_title:cand_solveig"
+      ]
+     }
+    ],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": null,
+    "n_claims": 0,
+    "opportunity_loss": 1.0,
+    "false_negative_rate": 1.0,
+    "gold_relevant": 21,
+    "gold_strong": 8,
+    "wall_time_s": 114.9977,
+    "listed_grades": [
+     0
+    ],
+    "top_ids": [
+     "job_18545"
+    ]
+   },
+   "b1": {
+    "workflow": "b1",
+    "candidate_id": "cand_bjorn",
+    "n_listed": 2,
+    "n_extended": 2,
+    "precision_at_10": 0.2,
+    "strong_precision_at_10": 0.2,
+    "recall_at_10": 0.0952,
+    "recall_at_50": 0.0952,
+    "recall_at_10_capped": 0.2,
+    "recall_at_50_capped": 0.0952,
+    "ndcg_at_10": 0.393,
+    "violation_rate": 0.0,
+    "violations": [],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.3333,
+    "n_claims": 6,
+    "opportunity_loss": 0.75,
+    "false_negative_rate": 0.9048,
+    "gold_relevant": 21,
+    "gold_strong": 8,
+    "wall_time_s": 243.4511,
+    "listed_grades": [
+     2,
+     2
+    ],
+    "top_ids": [
+     "job_10202",
+     "job_11689"
+    ]
+   }
+  },
+  "cand_silje": {
+   "b2": {
+    "workflow": "b2",
+    "candidate_id": "cand_silje",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 1.0,
+    "strong_precision_at_10": 1.0,
+    "recall_at_10": 0.2128,
+    "recall_at_50": 0.7021,
+    "recall_at_10_capped": 1.0,
+    "recall_at_50_capped": 0.7021,
+    "ndcg_at_10": 1.0,
+    "violation_rate": 0.0,
+    "violations": [],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 21,
+    "opportunity_loss": 0.1667,
+    "false_negative_rate": 0.2979,
+    "gold_relevant": 47,
+    "gold_strong": 12,
+    "wall_time_s": 50.9301,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "top_ids": [
+     "job_12603",
+     "job_18506",
+     "job_14883",
+     "job_10429",
+     "job_17230",
+     "job_18415",
+     "job_14745",
+     "job_11660",
+     "job_17157",
+     "job_17214"
+    ]
+   },
+   "b3": {
+    "workflow": "b3",
+    "candidate_id": "cand_silje",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.8,
+    "strong_precision_at_10": 0.8,
+    "recall_at_10": 0.1702,
+    "recall_at_50": 0.8085,
+    "recall_at_10_capped": 0.8,
+    "recall_at_50_capped": 0.8085,
+    "ndcg_at_10": 0.8201,
+    "violation_rate": 0.2,
+    "violations": [
+     {
+      "job_id": "job_16732",
+      "dimensions": [
+       "certifications"
+      ],
+      "strata": [
+       "trap_textonly:certifications:cand_silje"
+      ]
+     },
+     {
+      "job_id": "job_19649",
+      "dimensions": [
+       "certifications"
+      ],
+      "strata": [
+       "filler"
+      ]
+     }
+    ],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 54,
+    "opportunity_loss": 0.3333,
+    "false_negative_rate": 0.1915,
+    "gold_relevant": 47,
+    "gold_strong": 12,
+    "wall_time_s": 41.3358,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     0,
+     0,
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "top_ids": [
+     "job_18506",
+     "job_12603",
+     "job_10429",
+     "job_16732",
+     "job_19649",
+     "job_14883",
+     "job_17230",
+     "job_18415",
+     "job_14745",
+     "job_11660"
+    ]
+   },
+   "b0": {
+    "workflow": "b0",
+    "candidate_id": "cand_silje",
+    "n_listed": 10,
+    "n_extended": 10,
+    "precision_at_10": 1.0,
+    "strong_precision_at_10": 1.0,
+    "recall_at_10": 0.2128,
+    "recall_at_50": 0.2128,
+    "recall_at_10_capped": 1.0,
+    "recall_at_50_capped": 0.2128,
+    "ndcg_at_10": 1.0,
+    "violation_rate": 0.0,
+    "violations": [],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 24,
+    "opportunity_loss": 0.1667,
+    "false_negative_rate": 0.7872,
+    "gold_relevant": 47,
+    "gold_strong": 12,
+    "wall_time_s": 163.857,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "top_ids": [
+     "job_12603",
+     "job_10429",
+     "job_17157",
+     "job_11660",
+     "job_14745",
+     "job_17230",
+     "job_17214",
+     "job_11254",
+     "job_14883",
+     "job_18415"
+    ]
+   },
+   "b1": {
+    "workflow": "b1",
+    "candidate_id": "cand_silje",
+    "n_listed": 7,
+    "n_extended": 7,
+    "precision_at_10": 0.7,
+    "strong_precision_at_10": 0.7,
+    "recall_at_10": 0.1489,
+    "recall_at_50": 0.1489,
+    "recall_at_10_capped": 0.7,
+    "recall_at_50_capped": 0.1489,
+    "ndcg_at_10": 0.8007,
+    "violation_rate": 0.0,
+    "violations": [],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 21,
+    "opportunity_loss": 0.4167,
+    "false_negative_rate": 0.8511,
+    "gold_relevant": 47,
+    "gold_strong": 12,
+    "wall_time_s": 107.2627,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "top_ids": [
+     "job_18415",
+     "job_12603",
+     "job_11660",
+     "job_17230",
+     "job_18506",
+     "job_14745",
+     "job_14883"
+    ]
+   }
+  },
+  "cand_tarik": {
+   "b2": {
+    "workflow": "b2",
+    "candidate_id": "cand_tarik",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.8,
+    "strong_precision_at_10": 0.8,
+    "recall_at_10": 0.7273,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 0.8,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 0.9526,
+    "violation_rate": 0.1,
+    "violations": [
+     {
+      "job_id": "job_11645",
+      "dimensions": [
+       "overnight_travel"
+      ],
+      "strata": [
+       "trap_textonly:overnight_travel:cand_tarik",
+       "ambiguous_language"
+      ]
+     }
+    ],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 22,
+    "opportunity_loss": 0.0,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 11,
+    "gold_strong": 8,
+    "wall_time_s": 48.4017,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     0,
+     0
+    ],
+    "top_ids": [
+     "job_13658",
+     "job_17933",
+     "job_10482",
+     "job_15460",
+     "job_16221",
+     "job_17698",
+     "job_12900",
+     "job_15370",
+     "job_11645",
+     "job_10999"
+    ]
+   },
+   "b3": {
+    "workflow": "b3",
+    "candidate_id": "cand_tarik",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.8,
+    "strong_precision_at_10": 0.8,
+    "recall_at_10": 0.7273,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 0.8,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 0.9526,
+    "violation_rate": 0.0,
+    "violations": [],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 58,
+    "opportunity_loss": 0.0,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 11,
+    "gold_strong": 8,
+    "wall_time_s": 28.9215,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     0,
+     0
+    ],
+    "top_ids": [
+     "job_17933",
+     "job_13658",
+     "job_15460",
+     "job_16221",
+     "job_17698",
+     "job_15370",
+     "job_10482",
+     "job_12900",
+     "job_18223",
+     "job_12996"
+    ]
+   }
+  },
+  "cand_kari": {
+   "b2": {
+    "workflow": "b2",
+    "candidate_id": "cand_kari",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 1.0,
+    "strong_precision_at_10": 1.0,
+    "recall_at_10": 0.5882,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 1.0,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 1.0,
+    "violation_rate": 0.0,
+    "violations": [],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 29,
+    "opportunity_loss": 0.0909,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 17,
+    "gold_strong": 11,
+    "wall_time_s": 90.4706,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "top_ids": [
+     "job_19188",
+     "job_13432",
+     "job_10438",
+     "job_12955",
+     "job_15179",
+     "job_10720",
+     "job_17999",
+     "job_10188",
+     "job_13450",
+     "job_11062"
+    ]
+   },
+   "b3": {
+    "workflow": "b3",
+    "candidate_id": "cand_kari",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 1.0,
+    "strong_precision_at_10": 0.8,
+    "recall_at_10": 0.5882,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 1.0,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 0.9095,
+    "violation_rate": 0.0,
+    "violations": [],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 60,
+    "opportunity_loss": 0.2727,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 17,
+    "gold_strong": 11,
+    "wall_time_s": 31.4444,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     1,
+     1,
+     2
+    ],
+    "top_ids": [
+     "job_13432",
+     "job_19188",
+     "job_10438",
+     "job_15179",
+     "job_12955",
+     "job_14680",
+     "job_10188",
+     "job_14293",
+     "job_17988",
+     "job_17999"
+    ]
+   }
+  },
+  "cand_pawel": {
+   "b2": {
+    "workflow": "b2",
+    "candidate_id": "cand_pawel",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.9,
+    "strong_precision_at_10": 0.8,
+    "recall_at_10": 0.9,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 0.9,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 0.9758,
+    "violation_rate": 0.1,
+    "violations": [
+     {
+      "job_id": "job_13978",
+      "dimensions": [
+       "shifts"
+      ],
+      "strata": [
+       "trap_textonly:shifts:cand_pawel",
+       "ambiguous_language"
+      ]
+     }
+    ],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 24,
+    "opportunity_loss": 0.0,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 10,
+    "gold_strong": 8,
+    "wall_time_s": 45.887,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     0,
+     1
+    ],
+    "top_ids": [
+     "job_16864",
+     "job_16424",
+     "job_13394",
+     "job_13682",
+     "job_12430",
+     "job_16670",
+     "job_19521",
+     "job_16064",
+     "job_13978",
+     "job_18204"
+    ]
+   },
+   "b3": {
+    "workflow": "b3",
+    "candidate_id": "cand_pawel",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.9,
+    "strong_precision_at_10": 0.8,
+    "recall_at_10": 0.9,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 0.9,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 0.9279,
+    "violation_rate": 0.1,
+    "violations": [
+     {
+      "job_id": "job_13978",
+      "dimensions": [
+       "shifts"
+      ],
+      "strata": [
+       "trap_textonly:shifts:cand_pawel",
+       "ambiguous_language"
+      ]
+     }
+    ],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 60,
+    "opportunity_loss": 0.0,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 10,
+    "gold_strong": 8,
+    "wall_time_s": 86.6493,
+    "listed_grades": [
+     2,
+     2,
+     0,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     1
+    ],
+    "top_ids": [
+     "job_19521",
+     "job_12430",
+     "job_13978",
+     "job_13682",
+     "job_16670",
+     "job_16864",
+     "job_16424",
+     "job_16064",
+     "job_13394",
+     "job_18204"
+    ]
+   }
+  },
+  "cand_lene": {
+   "b2": {
+    "workflow": "b2",
+    "candidate_id": "cand_lene",
+    "n_listed": 10,
+    "n_extended": 25,
+    "precision_at_10": 0.9,
+    "strong_precision_at_10": 0.9,
+    "recall_at_10": 0.75,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 0.9,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 0.9453,
+    "violation_rate": 0.0,
+    "violations": [],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 13,
+    "opportunity_loss": 0.0,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 12,
+    "gold_strong": 9,
+    "wall_time_s": 29.8969,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     0,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "top_ids": [
+     "job_17009",
+     "job_16245",
+     "job_16484",
+     "job_17004",
+     "job_14534",
+     "job_13278",
+     "job_18491",
+     "job_16409",
+     "job_19002",
+     "job_15979"
+    ]
+   },
+   "b3": {
+    "workflow": "b3",
+    "candidate_id": "cand_lene",
+    "n_listed": 10,
+    "n_extended": 25,
+    "precision_at_10": 0.8,
+    "strong_precision_at_10": 0.8,
+    "recall_at_10": 0.6667,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 0.8,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 0.8788,
+    "violation_rate": 0.1,
+    "violations": [
+     {
+      "job_id": "job_18987",
+      "dimensions": [
+       "certifications"
+      ],
+      "strata": [
+       "trap_textonly:certifications:cand_lene"
+      ]
+     }
+    ],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 60,
+    "opportunity_loss": 0.1111,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 12,
+    "gold_strong": 9,
+    "wall_time_s": 51.7496,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     2,
+     0,
+     2,
+     0,
+     2,
+     2,
+     2
+    ],
+    "top_ids": [
+     "job_17009",
+     "job_16245",
+     "job_18491",
+     "job_16484",
+     "job_17004",
+     "job_13278",
+     "job_18987",
+     "job_14534",
+     "job_15979",
+     "job_16409"
+    ]
+   }
+  },
+  "cand_oddvar": {
+   "b2": {
+    "workflow": "b2",
+    "candidate_id": "cand_oddvar",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.9,
+    "strong_precision_at_10": 0.9,
+    "recall_at_10": 0.6923,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 0.9,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 0.9751,
+    "violation_rate": 0.0,
+    "violations": [],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 21,
+    "opportunity_loss": 0.0,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 13,
+    "gold_strong": 9,
+    "wall_time_s": 45.1272,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     0,
+     2
+    ],
+    "top_ids": [
+     "job_15608",
+     "job_16803",
+     "job_10394",
+     "job_10187",
+     "job_14048",
+     "job_14942",
+     "job_15098",
+     "job_14030",
+     "job_14780",
+     "job_17005"
+    ]
+   },
+   "b3": {
+    "workflow": "b3",
+    "candidate_id": "cand_oddvar",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.6,
+    "strong_precision_at_10": 0.6,
+    "recall_at_10": 0.4615,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 0.6,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 0.7472,
+    "violation_rate": 0.1,
+    "violations": [
+     {
+      "job_id": "job_18253",
+      "dimensions": [
+       "overnight_travel"
+      ],
+      "strata": [
+       "trap_textonly:overnight_travel:cand_oddvar"
+      ]
+     }
+    ],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 57,
+    "opportunity_loss": 0.3333,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 13,
+    "gold_strong": 9,
+    "wall_time_s": 18.1446,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     2,
+     0,
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    "top_ids": [
+     "job_17005",
+     "job_10187",
+     "job_14048",
+     "job_14942",
+     "job_18253",
+     "job_10394",
+     "job_15098",
+     "job_14780",
+     "job_15707",
+     "job_18151"
+    ]
+   }
+  },
+  "cand_yusuf": {
+   "b2": {
+    "workflow": "b2",
+    "candidate_id": "cand_yusuf",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.8,
+    "strong_precision_at_10": 0.8,
+    "recall_at_10": 0.4444,
+    "recall_at_50": 0.8333,
+    "recall_at_10_capped": 0.8,
+    "recall_at_50_capped": 0.8333,
+    "ndcg_at_10": 0.9087,
+    "violation_rate": 0.0,
+    "violations": [],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 27,
+    "opportunity_loss": 0.1111,
+    "false_negative_rate": 0.1667,
+    "gold_relevant": 18,
+    "gold_strong": 9,
+    "wall_time_s": 29.5741,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     0,
+     0
+    ],
+    "top_ids": [
+     "job_15379",
+     "job_13489",
+     "job_15489",
+     "job_15902",
+     "job_11426",
+     "job_12217",
+     "job_17661",
+     "job_12813",
+     "job_16106",
+     "job_18646"
+    ]
+   },
+   "b3": {
+    "workflow": "b3",
+    "candidate_id": "cand_yusuf",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.7,
+    "strong_precision_at_10": 0.6,
+    "recall_at_10": 0.3889,
+    "recall_at_50": 0.7778,
+    "recall_at_10_capped": 0.7,
+    "recall_at_50_capped": 0.7778,
+    "ndcg_at_10": 0.5102,
+    "violation_rate": 0.1,
+    "violations": [
+     {
+      "job_id": "job_10510",
+      "dimensions": [
+       "shifts"
+      ],
+      "strata": [
+       "trap_textonly:shifts:cand_yusuf"
+      ]
+     }
+    ],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 56,
+    "opportunity_loss": 0.3333,
+    "false_negative_rate": 0.2222,
+    "gold_relevant": 18,
+    "gold_strong": 9,
+    "wall_time_s": 20.4627,
+    "listed_grades": [
+     0,
+     0,
+     0,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     1
+    ],
+    "top_ids": [
+     "job_10510",
+     "job_16106",
+     "job_18646",
+     "job_17661",
+     "job_15489",
+     "job_12217",
+     "job_15902",
+     "job_15379",
+     "job_12813",
+     "job_18599"
+    ]
+   }
+  },
+  "cand_marta": {
+   "b2": {
+    "workflow": "b2",
+    "candidate_id": "cand_marta",
+    "n_listed": 10,
+    "n_extended": 39,
+    "precision_at_10": 0.6,
+    "strong_precision_at_10": 0.6,
+    "recall_at_10": 1.0,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 1.0,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 1.0,
+    "violation_rate": 0.3,
+    "violations": [
+     {
+      "job_id": "job_16915",
+      "dimensions": [
+       "language_norwegian"
+      ],
+      "strata": [
+       "trap:language_norwegian:cand_marta",
+       "ambiguous_language"
+      ]
+     },
+     {
+      "job_id": "job_11903",
+      "dimensions": [
+       "language_norwegian"
+      ],
+      "strata": [
+       "planted_near:cand_ragnhild"
+      ]
+     },
+     {
+      "job_id": "job_10967",
+      "dimensions": [
+       "certifications"
+      ],
+      "strata": [
+       "filler"
+      ]
+     }
+    ],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 16,
+    "opportunity_loss": 0.0,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 6,
+    "gold_strong": 6,
+    "wall_time_s": 33.0508,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     0,
+     0,
+     0,
+     0
+    ],
+    "top_ids": [
+     "job_12315",
+     "job_16130",
+     "job_19738",
+     "job_10051",
+     "job_18565",
+     "job_14323",
+     "job_16915",
+     "job_11399",
+     "job_11903",
+     "job_10967"
+    ]
+   },
+   "b3": {
+    "workflow": "b3",
+    "candidate_id": "cand_marta",
+    "n_listed": 10,
+    "n_extended": 39,
+    "precision_at_10": 0.6,
+    "strong_precision_at_10": 0.6,
+    "recall_at_10": 1.0,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 1.0,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 0.9877,
+    "violation_rate": 0.4,
+    "violations": [
+     {
+      "job_id": "job_11903",
+      "dimensions": [
+       "language_norwegian"
+      ],
+      "strata": [
+       "planted_near:cand_ragnhild"
+      ]
+     },
+     {
+      "job_id": "job_16915",
+      "dimensions": [
+       "language_norwegian"
+      ],
+      "strata": [
+       "trap:language_norwegian:cand_marta",
+       "ambiguous_language"
+      ]
+     },
+     {
+      "job_id": "job_19401",
+      "dimensions": [
+       "language_norwegian"
+      ],
+      "strata": [
+       "filler"
+      ]
+     },
+     {
+      "job_id": "job_13025",
+      "dimensions": [
+       "language_norwegian"
+      ],
+      "strata": [
+       "filler"
+      ]
+     }
+    ],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 51,
+    "opportunity_loss": 0.0,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 6,
+    "gold_strong": 6,
+    "wall_time_s": 50.9091,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     0,
+     0,
+     2,
+     0,
+     0
+    ],
+    "top_ids": [
+     "job_12315",
+     "job_16130",
+     "job_19738",
+     "job_10051",
+     "job_18565",
+     "job_11903",
+     "job_16915",
+     "job_14323",
+     "job_19401",
+     "job_13025"
+    ]
+   }
+  },
+  "cand_henrik": {
+   "b2": {
+    "workflow": "b2",
+    "candidate_id": "cand_henrik",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.9,
+    "strong_precision_at_10": 0.9,
+    "recall_at_10": 0.2903,
+    "recall_at_50": 0.6129,
+    "recall_at_10_capped": 0.9,
+    "recall_at_50_capped": 0.6129,
+    "ndcg_at_10": 0.9364,
+    "violation_rate": 0.0,
+    "violations": [],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 24,
+    "opportunity_loss": 0.5263,
+    "false_negative_rate": 0.3871,
+    "gold_relevant": 31,
+    "gold_strong": 19,
+    "wall_time_s": 72.6866,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     0
+    ],
+    "top_ids": [
+     "job_14249",
+     "job_17550",
+     "job_15965",
+     "job_13685",
+     "job_18062",
+     "job_10976",
+     "job_17951",
+     "job_19457",
+     "job_19100",
+     "job_17476"
+    ]
+   },
+   "b3": {
+    "workflow": "b3",
+    "candidate_id": "cand_henrik",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.9,
+    "strong_precision_at_10": 0.9,
+    "recall_at_10": 0.2903,
+    "recall_at_50": 0.6129,
+    "recall_at_10_capped": 0.9,
+    "recall_at_50_capped": 0.6129,
+    "ndcg_at_10": 0.8611,
+    "violation_rate": 0.0,
+    "violations": [],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 59,
+    "opportunity_loss": 0.5263,
+    "false_negative_rate": 0.3871,
+    "gold_relevant": 31,
+    "gold_strong": 19,
+    "wall_time_s": 46.3079,
+    "listed_grades": [
+     2,
+     0,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "top_ids": [
+     "job_15965",
+     "job_19603",
+     "job_12478",
+     "job_10976",
+     "job_14412",
+     "job_12997",
+     "job_19067",
+     "job_17550",
+     "job_19457",
+     "job_14249"
+    ]
+   }
+  },
+  "cand_fatima": {
+   "b2": {
+    "workflow": "b2",
+    "candidate_id": "cand_fatima",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 1.0,
+    "strong_precision_at_10": 0.6,
+    "recall_at_10": 0.9091,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 1.0,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 0.9519,
+    "violation_rate": 0.0,
+    "violations": [],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 21,
+    "opportunity_loss": 0.0,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 11,
+    "gold_strong": 6,
+    "wall_time_s": 40.4672,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     1,
+     1,
+     1,
+     1,
+     2,
+     2,
+     2
+    ],
+    "top_ids": [
+     "job_14157",
+     "job_10974",
+     "job_13966",
+     "job_15325",
+     "job_14446",
+     "job_11919",
+     "job_10844",
+     "job_14510",
+     "job_19948",
+     "job_17890"
+    ]
+   },
+   "b3": {
+    "workflow": "b3",
+    "candidate_id": "cand_fatima",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.7,
+    "strong_precision_at_10": 0.5,
+    "recall_at_10": 0.6364,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 0.7,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 0.8549,
+    "violation_rate": 0.2,
+    "violations": [
+     {
+      "job_id": "job_10552",
+      "dimensions": [
+       "language_norwegian"
+      ],
+      "strata": [
+       "planted_near:cand_yusuf"
+      ]
+     },
+     {
+      "job_id": "job_10793",
+      "dimensions": [
+       "certifications"
+      ],
+      "strata": [
+       "trap_textonly:certifications:cand_fatima",
+       "ambiguous_language"
+      ]
+     }
+    ],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 47,
+    "opportunity_loss": 0.1667,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 11,
+    "gold_strong": 6,
+    "wall_time_s": 51.4827,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     1,
+     1,
+     0,
+     0,
+     0
+    ],
+    "top_ids": [
+     "job_14510",
+     "job_14157",
+     "job_10974",
+     "job_19948",
+     "job_17890",
+     "job_15325",
+     "job_10844",
+     "job_13348",
+     "job_10552",
+     "job_10793"
+    ]
+   }
+  },
+  "cand_geir": {
+   "b2": {
+    "workflow": "b2",
+    "candidate_id": "cand_geir",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.7,
+    "strong_precision_at_10": 0.7,
+    "recall_at_10": 0.6364,
+    "recall_at_50": 0.8182,
+    "recall_at_10_capped": 0.7,
+    "recall_at_50_capped": 0.8182,
+    "ndcg_at_10": 0.8688,
+    "violation_rate": 0.3,
+    "violations": [
+     {
+      "job_id": "job_11999",
+      "dimensions": [
+       "overnight_travel"
+      ],
+      "strata": [
+       "filler"
+      ]
+     },
+     {
+      "job_id": "job_12148",
+      "dimensions": [
+       "overnight_travel"
+      ],
+      "strata": [
+       "trap_textonly:overnight_travel:cand_geir"
+      ]
+     },
+     {
+      "job_id": "job_10159",
+      "dimensions": [
+       "overnight_travel"
+      ],
+      "strata": [
+       "trap:overnight_travel:cand_geir"
+      ]
+     }
+    ],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 17,
+    "opportunity_loss": 0.125,
+    "false_negative_rate": 0.1818,
+    "gold_relevant": 11,
+    "gold_strong": 8,
+    "wall_time_s": 47.3724,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     0,
+     0,
+     2,
+     0
+    ],
+    "top_ids": [
+     "job_10795",
+     "job_11420",
+     "job_11175",
+     "job_18184",
+     "job_12333",
+     "job_19073",
+     "job_11999",
+     "job_12148",
+     "job_14386",
+     "job_10159"
+    ]
+   },
+   "b3": {
+    "workflow": "b3",
+    "candidate_id": "cand_geir",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.7,
+    "strong_precision_at_10": 0.7,
+    "recall_at_10": 0.6364,
+    "recall_at_50": 0.8182,
+    "recall_at_10_capped": 0.7,
+    "recall_at_50_capped": 0.8182,
+    "ndcg_at_10": 0.7809,
+    "violation_rate": 0.3,
+    "violations": [
+     {
+      "job_id": "job_11999",
+      "dimensions": [
+       "overnight_travel"
+      ],
+      "strata": [
+       "filler"
+      ]
+     },
+     {
+      "job_id": "job_10159",
+      "dimensions": [
+       "overnight_travel"
+      ],
+      "strata": [
+       "trap:overnight_travel:cand_geir"
+      ]
+     },
+     {
+      "job_id": "job_12148",
+      "dimensions": [
+       "overnight_travel"
+      ],
+      "strata": [
+       "trap_textonly:overnight_travel:cand_geir"
+      ]
+     }
+    ],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 59,
+    "opportunity_loss": 0.125,
+    "false_negative_rate": 0.1818,
+    "gold_relevant": 11,
+    "gold_strong": 8,
+    "wall_time_s": 36.2715,
+    "listed_grades": [
+     2,
+     0,
+     2,
+     2,
+     2,
+     0,
+     2,
+     0,
+     2,
+     2
+    ],
+    "top_ids": [
+     "job_11420",
+     "job_11999",
+     "job_18184",
+     "job_19073",
+     "job_10795",
+     "job_10159",
+     "job_12333",
+     "job_12148",
+     "job_18628",
+     "job_14386"
+    ]
+   }
+  },
+  "cand_solveig": {
+   "b2": {
+    "workflow": "b2",
+    "candidate_id": "cand_solveig",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.7,
+    "strong_precision_at_10": 0.6,
+    "recall_at_10": 0.7,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 0.7,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 0.9087,
+    "violation_rate": 0.2,
+    "violations": [
+     {
+      "job_id": "job_14101",
+      "dimensions": [
+       "shifts"
+      ],
+      "strata": [
+       "trap_textonly:shifts:cand_solveig"
+      ]
+     },
+     {
+      "job_id": "job_12856",
+      "dimensions": [
+       "certifications"
+      ],
+      "strata": [
+       "filler"
+      ]
+     }
+    ],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 17,
+    "opportunity_loss": 0.0,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 10,
+    "gold_strong": 6,
+    "wall_time_s": 20.767,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     0,
+     2,
+     0,
+     0,
+     1
+    ],
+    "top_ids": [
+     "job_15178",
+     "job_15791",
+     "job_16879",
+     "job_16498",
+     "job_10647",
+     "job_14101",
+     "job_10735",
+     "job_12856",
+     "job_12943",
+     "job_13147"
+    ]
+   },
+   "b3": {
+    "workflow": "b3",
+    "candidate_id": "cand_solveig",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.8,
+    "strong_precision_at_10": 0.6,
+    "recall_at_10": 0.8,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 0.8,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 0.9299,
+    "violation_rate": 0.1,
+    "violations": [
+     {
+      "job_id": "job_14101",
+      "dimensions": [
+       "shifts"
+      ],
+      "strata": [
+       "trap_textonly:shifts:cand_solveig"
+      ]
+     }
+    ],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 47,
+    "opportunity_loss": 0.0,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 10,
+    "gold_strong": 6,
+    "wall_time_s": 19.1872,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     0,
+     1,
+     0,
+     2,
+     1
+    ],
+    "top_ids": [
+     "job_16879",
+     "job_10647",
+     "job_16498",
+     "job_15178",
+     "job_10735",
+     "job_14101",
+     "job_17187",
+     "job_10982",
+     "job_15791",
+     "job_15929"
+    ]
+   }
+  },
+  "cand_dmitri": {
+   "b2": {
+    "workflow": "b2",
+    "candidate_id": "cand_dmitri",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.9,
+    "strong_precision_at_10": 0.9,
+    "recall_at_10": 0.8182,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 0.9,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 0.9718,
+    "violation_rate": 0.0,
+    "violations": [],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 21,
+    "opportunity_loss": 0.0,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 11,
+    "gold_strong": 9,
+    "wall_time_s": 26.3734,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     0,
+     2,
+     2
+    ],
+    "top_ids": [
+     "job_17095",
+     "job_16045",
+     "job_10969",
+     "job_12884",
+     "job_13945",
+     "job_16853",
+     "job_14009",
+     "job_15672",
+     "job_12504",
+     "job_12452"
+    ]
+   },
+   "b3": {
+    "workflow": "b3",
+    "candidate_id": "cand_dmitri",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.9,
+    "strong_precision_at_10": 0.9,
+    "recall_at_10": 0.8182,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 0.9,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 0.9554,
+    "violation_rate": 0.0,
+    "violations": [],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 60,
+    "opportunity_loss": 0.0,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 11,
+    "gold_strong": 9,
+    "wall_time_s": 46.52,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     2,
+     0,
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "top_ids": [
+     "job_16853",
+     "job_16045",
+     "job_12452",
+     "job_10969",
+     "job_15672",
+     "job_12884",
+     "job_17095",
+     "job_12504",
+     "job_14009",
+     "job_13945"
+    ]
+   }
+  },
+  "cand_ragnhild": {
+   "b2": {
+    "workflow": "b2",
+    "candidate_id": "cand_ragnhild",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.8,
+    "strong_precision_at_10": 0.6,
+    "recall_at_10": 0.6667,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 0.8,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 0.8484,
+    "violation_rate": 0.0,
+    "violations": [],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 22,
+    "opportunity_loss": 0.25,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 12,
+    "gold_strong": 8,
+    "wall_time_s": 57.1271,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     1,
+     1,
+     0,
+     0
+    ],
+    "top_ids": [
+     "job_10267",
+     "job_13262",
+     "job_18384",
+     "job_18673",
+     "job_11412",
+     "job_13440",
+     "job_18838",
+     "job_16393",
+     "job_10059",
+     "job_14828"
+    ]
+   },
+   "b3": {
+    "workflow": "b3",
+    "candidate_id": "cand_ragnhild",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.9,
+    "strong_precision_at_10": 0.8,
+    "recall_at_10": 0.75,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 0.9,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 0.9551,
+    "violation_rate": 0.1,
+    "violations": [
+     {
+      "job_id": "job_19684",
+      "dimensions": [
+       "shifts"
+      ],
+      "strata": [
+       "trap_textonly:shifts:cand_ragnhild"
+      ]
+     }
+    ],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 56,
+    "opportunity_loss": 0.0,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 12,
+    "gold_strong": 8,
+    "wall_time_s": 39.1004,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     2,
+     0,
+     2,
+     2,
+     2,
+     2,
+     1
+    ],
+    "top_ids": [
+     "job_18673",
+     "job_10267",
+     "job_13262",
+     "job_14569",
+     "job_19684",
+     "job_15344",
+     "job_13440",
+     "job_18384",
+     "job_11412",
+     "job_10500"
+    ]
+   }
+  },
+  "cand_omar": {
+   "b2": {
+    "workflow": "b2",
+    "candidate_id": "cand_omar",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.7,
+    "strong_precision_at_10": 0.7,
+    "recall_at_10": 1.0,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 1.0,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 1.0,
+    "violation_rate": 0.0,
+    "violations": [],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 21,
+    "opportunity_loss": 0.0,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 7,
+    "gold_strong": 7,
+    "wall_time_s": 46.0341,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    "top_ids": [
+     "job_13828",
+     "job_11698",
+     "job_18616",
+     "job_15820",
+     "job_12689",
+     "job_18330",
+     "job_12249",
+     "job_16460",
+     "job_11844",
+     "job_18991"
+    ]
+   },
+   "b3": {
+    "workflow": "b3",
+    "candidate_id": "cand_omar",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.7,
+    "strong_precision_at_10": 0.7,
+    "recall_at_10": 1.0,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 1.0,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 1.0,
+    "violation_rate": 0.1,
+    "violations": [
+     {
+      "job_id": "job_18396",
+      "dimensions": [
+       "certifications"
+      ],
+      "strata": [
+       "filler"
+      ]
+     }
+    ],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 56,
+    "opportunity_loss": 0.0,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 7,
+    "gold_strong": 7,
+    "wall_time_s": 28.6052,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    "top_ids": [
+     "job_13828",
+     "job_11698",
+     "job_12689",
+     "job_18616",
+     "job_18330",
+     "job_12249",
+     "job_15820",
+     "job_18396",
+     "job_12787",
+     "job_16460"
+    ]
+   }
+  },
+  "cand_ingvild": {
+   "b2": {
+    "workflow": "b2",
+    "candidate_id": "cand_ingvild",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 1.0,
+    "strong_precision_at_10": 1.0,
+    "recall_at_10": 0.2703,
+    "recall_at_50": 0.7027,
+    "recall_at_10_capped": 1.0,
+    "recall_at_50_capped": 0.7027,
+    "ndcg_at_10": 1.0,
+    "violation_rate": 0.0,
+    "violations": [],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 26,
+    "opportunity_loss": 0.4737,
+    "false_negative_rate": 0.2973,
+    "gold_relevant": 37,
+    "gold_strong": 19,
+    "wall_time_s": 122.736,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "top_ids": [
+     "job_13400",
+     "job_11868",
+     "job_17829",
+     "job_14517",
+     "job_12666",
+     "job_16518",
+     "job_14347",
+     "job_10371",
+     "job_19894",
+     "job_14818"
+    ]
+   },
+   "b3": {
+    "workflow": "b3",
+    "candidate_id": "cand_ingvild",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 1.0,
+    "strong_precision_at_10": 0.9,
+    "recall_at_10": 0.2703,
+    "recall_at_50": 0.6486,
+    "recall_at_10_capped": 1.0,
+    "recall_at_50_capped": 0.6486,
+    "ndcg_at_10": 0.9432,
+    "violation_rate": 0.0,
+    "violations": [],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 55,
+    "opportunity_loss": 0.5263,
+    "false_negative_rate": 0.3514,
+    "gold_relevant": 37,
+    "gold_strong": 19,
+    "wall_time_s": 8.0372,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     2,
+     1,
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "top_ids": [
+     "job_14818",
+     "job_11868",
+     "job_19894",
+     "job_17829",
+     "job_17112",
+     "job_14347",
+     "job_10370",
+     "job_17858",
+     "job_10371",
+     "job_14517"
+    ]
+   }
+  },
+  "cand_thomas": {
+   "b2": {
+    "workflow": "b2",
+    "candidate_id": "cand_thomas",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.7,
+    "strong_precision_at_10": 0.7,
+    "recall_at_10": 0.7778,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 0.7778,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 0.8142,
+    "violation_rate": 0.0,
+    "violations": [],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 17,
+    "opportunity_loss": 0.2222,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 9,
+    "gold_strong": 9,
+    "wall_time_s": 52.2385,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     0,
+     2,
+     2,
+     0,
+     0,
+     2,
+     2
+    ],
+    "top_ids": [
+     "job_13791",
+     "job_14983",
+     "job_13522",
+     "job_15089",
+     "job_17356",
+     "job_11717",
+     "job_18144",
+     "job_15164",
+     "job_10465",
+     "job_16026"
+    ]
+   },
+   "b3": {
+    "workflow": "b3",
+    "candidate_id": "cand_thomas",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.6,
+    "strong_precision_at_10": 0.6,
+    "recall_at_10": 0.6667,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 0.6667,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 0.6125,
+    "violation_rate": 0.0,
+    "violations": [],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 58,
+    "opportunity_loss": 0.3333,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 9,
+    "gold_strong": 9,
+    "wall_time_s": 19.0084,
+    "listed_grades": [
+     0,
+     2,
+     2,
+     2,
+     2,
+     2,
+     0,
+     0,
+     2,
+     0
+    ],
+    "top_ids": [
+     "job_15089",
+     "job_18546",
+     "job_13791",
+     "job_14983",
+     "job_13522",
+     "job_19385",
+     "job_18144",
+     "job_15164",
+     "job_10465",
+     "job_17906"
+    ]
+   }
+  },
+  "cand_aisha": {
+   "b2": {
+    "workflow": "b2",
+    "candidate_id": "cand_aisha",
+    "n_listed": 10,
+    "n_extended": 48,
+    "precision_at_10": 0.6,
+    "strong_precision_at_10": 0.6,
+    "recall_at_10": 1.0,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 1.0,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 0.9877,
+    "violation_rate": 0.2,
+    "violations": [
+     {
+      "job_id": "job_16189",
+      "dimensions": [
+       "certifications"
+      ],
+      "strata": [
+       "trap_textonly:certifications:cand_aisha",
+       "ambiguous_language"
+      ]
+     },
+     {
+      "job_id": "job_15441",
+      "dimensions": [
+       "shifts"
+      ],
+      "strata": [
+       "trap:shifts:cand_aisha"
+      ]
+     }
+    ],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 11,
+    "opportunity_loss": 0.0,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 6,
+    "gold_strong": 6,
+    "wall_time_s": 23.3082,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     0,
+     0,
+     2,
+     0,
+     0
+    ],
+    "top_ids": [
+     "job_14574",
+     "job_10147",
+     "job_15224",
+     "job_16877",
+     "job_14888",
+     "job_16189",
+     "job_15441",
+     "job_18986",
+     "job_13952",
+     "job_14293"
+    ]
+   },
+   "b3": {
+    "workflow": "b3",
+    "candidate_id": "cand_aisha",
+    "n_listed": 10,
+    "n_extended": 48,
+    "precision_at_10": 0.6,
+    "strong_precision_at_10": 0.6,
+    "recall_at_10": 1.0,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 1.0,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 0.9045,
+    "violation_rate": 0.3,
+    "violations": [
+     {
+      "job_id": "job_16189",
+      "dimensions": [
+       "certifications"
+      ],
+      "strata": [
+       "trap_textonly:certifications:cand_aisha",
+       "ambiguous_language"
+      ]
+     },
+     {
+      "job_id": "job_15441",
+      "dimensions": [
+       "shifts"
+      ],
+      "strata": [
+       "trap:shifts:cand_aisha"
+      ]
+     },
+     {
+      "job_id": "job_18611",
+      "dimensions": [
+       "language_norwegian"
+      ],
+      "strata": [
+       "filler"
+      ]
+     }
+    ],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 47,
+    "opportunity_loss": 0.0,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 6,
+    "gold_strong": 6,
+    "wall_time_s": 23.0306,
+    "listed_grades": [
+     2,
+     0,
+     2,
+     2,
+     2,
+     2,
+     0,
+     2,
+     0,
+     0
+    ],
+    "top_ids": [
+     "job_18986",
+     "job_16189",
+     "job_10147",
+     "job_14888",
+     "job_16877",
+     "job_14574",
+     "job_15441",
+     "job_15224",
+     "job_18611",
+     "job_13025"
+    ]
+   }
+  },
+  "cand_kjell": {
+   "b2": {
+    "workflow": "b2",
+    "candidate_id": "cand_kjell",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.7,
+    "strong_precision_at_10": 0.7,
+    "recall_at_10": 0.7,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 0.7,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 0.9234,
+    "violation_rate": 0.2,
+    "violations": [
+     {
+      "job_id": "job_12046",
+      "dimensions": [
+       "overnight_travel"
+      ],
+      "strata": [
+       "trap:overnight_travel:cand_kjell",
+       "ambiguous_language"
+      ]
+     },
+     {
+      "job_id": "job_13205",
+      "dimensions": [
+       "overnight_travel"
+      ],
+      "strata": [
+       "trap_textonly:overnight_travel:cand_kjell"
+      ]
+     }
+    ],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 20,
+    "opportunity_loss": 0.0,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 10,
+    "gold_strong": 7,
+    "wall_time_s": 35.7086,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    "top_ids": [
+     "job_15595",
+     "job_12996",
+     "job_18223",
+     "job_16926",
+     "job_14829",
+     "job_12285",
+     "job_19566",
+     "job_12046",
+     "job_13205",
+     "job_16221"
+    ]
+   },
+   "b3": {
+    "workflow": "b3",
+    "candidate_id": "cand_kjell",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.7,
+    "strong_precision_at_10": 0.7,
+    "recall_at_10": 0.7,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 0.7,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 0.7356,
+    "violation_rate": 0.2,
+    "violations": [
+     {
+      "job_id": "job_12046",
+      "dimensions": [
+       "overnight_travel"
+      ],
+      "strata": [
+       "trap:overnight_travel:cand_kjell",
+       "ambiguous_language"
+      ]
+     },
+     {
+      "job_id": "job_13205",
+      "dimensions": [
+       "overnight_travel"
+      ],
+      "strata": [
+       "trap_textonly:overnight_travel:cand_kjell"
+      ]
+     }
+    ],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 59,
+    "opportunity_loss": 0.0,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 10,
+    "gold_strong": 7,
+    "wall_time_s": 30.7682,
+    "listed_grades": [
+     0,
+     2,
+     2,
+     2,
+     2,
+     0,
+     2,
+     2,
+     2,
+     0
+    ],
+    "top_ids": [
+     "job_12046",
+     "job_18223",
+     "job_12996",
+     "job_15595",
+     "job_12285",
+     "job_13205",
+     "job_16926",
+     "job_19566",
+     "job_14829",
+     "job_15460"
+    ]
+   }
+  },
+  "cand_lin": {
+   "b2": {
+    "workflow": "b2",
+    "candidate_id": "cand_lin",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.8,
+    "strong_precision_at_10": 0.7,
+    "recall_at_10": 0.6154,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 0.8,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 0.9471,
+    "violation_rate": 0.2,
+    "violations": [
+     {
+      "job_id": "job_12324",
+      "dimensions": [
+       "language_norwegian"
+      ],
+      "strata": [
+       "trap_textonly:language_norwegian:cand_lin"
+      ]
+     },
+     {
+      "job_id": "job_13093",
+      "dimensions": [
+       "language_norwegian"
+      ],
+      "strata": [
+       "filler",
+       "ambiguous_language"
+      ]
+     }
+    ],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 19,
+    "opportunity_loss": 0.0,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 13,
+    "gold_strong": 7,
+    "wall_time_s": 33.7531,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     1,
+     2,
+     0,
+     0
+    ],
+    "top_ids": [
+     "job_13796",
+     "job_14961",
+     "job_18243",
+     "job_13964",
+     "job_11964",
+     "job_19438",
+     "job_11166",
+     "job_18278",
+     "job_12324",
+     "job_13093"
+    ]
+   },
+   "b3": {
+    "workflow": "b3",
+    "candidate_id": "cand_lin",
+    "n_listed": 10,
+    "n_extended": 50,
+    "precision_at_10": 0.7,
+    "strong_precision_at_10": 0.7,
+    "recall_at_10": 0.5385,
+    "recall_at_50": 1.0,
+    "recall_at_10_capped": 0.7,
+    "recall_at_50_capped": 1.0,
+    "ndcg_at_10": 0.913,
+    "violation_rate": 0.3,
+    "violations": [
+     {
+      "job_id": "job_13093",
+      "dimensions": [
+       "language_norwegian"
+      ],
+      "strata": [
+       "filler",
+       "ambiguous_language"
+      ]
+     },
+     {
+      "job_id": "job_12324",
+      "dimensions": [
+       "language_norwegian"
+      ],
+      "strata": [
+       "trap_textonly:language_norwegian:cand_lin"
+      ]
+     },
+     {
+      "job_id": "job_16595",
+      "dimensions": [
+       "language_norwegian"
+      ],
+      "strata": [
+       "filler"
+      ]
+     }
+    ],
+    "hallucination_rate": 0.0,
+    "hallucinated": [],
+    "unsupported_evidence_rate": 0.0,
+    "n_claims": 58,
+    "opportunity_loss": 0.0,
+    "false_negative_rate": 0.0,
+    "gold_relevant": 13,
+    "gold_strong": 7,
+    "wall_time_s": 115.4274,
+    "listed_grades": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     0,
+     2,
+     2,
+     0,
+     0
+    ],
+    "top_ids": [
+     "job_18243",
+     "job_13796",
+     "job_14961",
+     "job_13964",
+     "job_19438",
+     "job_13093",
+     "job_11964",
+     "job_18278",
+     "job_12324",
+     "job_16595"
+    ]
+   }
+  }
+ },
+ "aggregate": {
+  "b0": {
+   "cases": 5,
+   "mean_precision_at_10": 0.3,
+   "mean_strong_precision_at_10": 0.28,
+   "mean_recall_at_10": 0.1092,
+   "mean_recall_at_50": 0.1092,
+   "mean_recall_at_10_capped": 0.3,
+   "mean_recall_at_50_capped": 0.1092,
+   "mean_ndcg_at_10": 0.2904,
+   "mean_violation_rate": 0.4,
+   "mean_hallucination_rate": 0.0,
+   "mean_unsupported_evidence_rate": 0.358,
+   "mean_opportunity_loss": 0.7718,
+   "mean_false_negative_rate": 0.8908,
+   "total_violations": 4,
+   "total_hallucinations": 0,
+   "total_claims": 54,
+   "total_wall_time_s": 650.26,
+   "violations_by_strata": {
+    "filler": 2,
+    "misleading_title": 2
+   },
+   "usage": {
+    "model_calls": 5,
+    "input_tokens": 1557794,
+    "output_tokens": 14781,
+    "cost_usd": 0.0657,
+    "latency_s": 650.08,
+    "tokens_known": true
+   }
+  },
+  "b1": {
+   "cases": 5,
+   "mean_precision_at_10": 0.44,
+   "mean_strong_precision_at_10": 0.4,
+   "mean_recall_at_10": 0.2262,
+   "mean_recall_at_50": 0.2262,
+   "mean_recall_at_10_capped": 0.4486,
+   "mean_recall_at_50_capped": 0.2262,
+   "mean_ndcg_at_10": 0.5244,
+   "mean_violation_rate": 0.0,
+   "mean_hallucination_rate": 0.0,
+   "mean_unsupported_evidence_rate": 0.211,
+   "mean_opportunity_loss": 0.6453,
+   "mean_false_negative_rate": 0.7738,
+   "total_violations": 0,
+   "total_hallucinations": 0,
+   "total_claims": 115,
+   "total_wall_time_s": 981.61,
+   "violations_by_strata": {},
+   "usage": {
+    "model_calls": 15,
+    "input_tokens": 1586697,
+    "output_tokens": 31078,
+    "cost_usd": 0.0728,
+    "latency_s": 981.49,
+    "tokens_known": true
+   }
+  },
+  "b2": {
+   "cases": 24,
+   "mean_precision_at_10": 0.8083,
+   "mean_strong_precision_at_10": 0.7708,
+   "mean_recall_at_10": 0.6665,
+   "mean_recall_at_50": 0.9446,
+   "mean_recall_at_10_capped": 0.8699,
+   "mean_recall_at_50_capped": 0.9446,
+   "mean_ndcg_at_10": 0.9357,
+   "mean_violation_rate": 0.0833,
+   "mean_hallucination_rate": 0.0,
+   "mean_unsupported_evidence_rate": 0.0,
+   "mean_opportunity_loss": 0.1137,
+   "mean_false_negative_rate": 0.0554,
+   "total_violations": 20,
+   "total_hallucinations": 0,
+   "total_claims": 506,
+   "total_wall_time_s": 1218.64,
+   "violations_by_strata": {
+    "ambiguous_language": 6,
+    "filler": 5,
+    "planted_near": 1,
+    "trap": 5,
+    "trap_textonly": 9
+   },
+   "usage": {
+    "model_calls": 24,
+    "input_tokens": 427582,
+    "output_tokens": 54783,
+    "cost_usd": 0.0457,
+    "latency_s": 1217.5,
+    "tokens_known": true
+   }
+  },
+  "b3": {
+   "cases": 24,
+   "mean_precision_at_10": 0.7333,
+   "mean_strong_precision_at_10": 0.6917,
+   "mean_recall_at_10": 0.6181,
+   "mean_recall_at_50": 0.9444,
+   "mean_recall_at_10_capped": 0.7944,
+   "mean_recall_at_50_capped": 0.9444,
+   "mean_ndcg_at_10": 0.8186,
+   "mean_violation_rate": 0.1375,
+   "mean_hallucination_rate": 0.0,
+   "mean_unsupported_evidence_rate": 0.0,
+   "mean_opportunity_loss": 0.1887,
+   "mean_false_negative_rate": 0.0556,
+   "total_violations": 33,
+   "total_hallucinations": 0,
+   "total_claims": 1339,
+   "total_wall_time_s": 900.82,
+   "violations_by_strata": {
+    "ambiguous_language": 7,
+    "filler": 10,
+    "planted_near": 2,
+    "trap": 6,
+    "trap_textonly": 15
+   },
+   "usage": {
+    "model_calls": 48,
+    "input_tokens": 90441,
+    "output_tokens": 31472,
+    "cost_usd": 0.0145,
+    "latency_s": 898.99,
+    "tokens_known": true
+   }
+  }
+ },
+ "human_active_minutes": {
+  "status": "NOT MEASURED",
+  "note": "The primary economic metric requires blinded human review sessions (forja.bench.review). No modeled substitute is reported here per HYPOTHESIS_V2.md."
+ }
+}

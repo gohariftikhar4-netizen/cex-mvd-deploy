@@ -1,0 +1,49 @@
+{
+  "run_id": "merged-glm53flash-20260829",
+  "phase": "run",
+  "mode": "live",
+  "provider": "openrouter",
+  "provider_route": "deepinfra/fp8",
+  "model": "z-ai/glm-5.3-flash",
+  "client": "openrouter",
+  "date": "2026-08-29",
+  "workflows": [
+    "b0",
+    "b1",
+    "b2",
+    "b3"
+  ],
+  "candidates": [
+    "cand_aisha",
+    "cand_amira",
+    "cand_bjorn",
+    "cand_dmitri",
+    "cand_fatima",
+    "cand_geir",
+    "cand_henrik",
+    "cand_ingrid",
+    "cand_ingvild",
+    "cand_kari",
+    "cand_kjell",
+    "cand_lene",
+    "cand_lin",
+    "cand_marius",
+    "cand_marta",
+    "cand_oddvar",
+    "cand_omar",
+    "cand_pawel",
+    "cand_ragnhild",
+    "cand_silje",
+    "cand_solveig",
+    "cand_tarik",
+    "cand_thomas",
+    "cand_yusuf"
+  ],
+  "n_jobs": 1000,
+  "slice": "1000",
+  "data_dir": "benchmark_data",
+  "merged_from": [
+    "20260829T203606Z-v2-live",
+    "20260829T205105Z-v2-live"
+  ]
+}

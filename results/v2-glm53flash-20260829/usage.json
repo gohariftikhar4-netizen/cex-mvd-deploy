@@ -1,0 +1,582 @@
+{
+  "b2::cand_aisha": {
+    "model_calls": 1,
+    "input_tokens": 14562,
+    "output_tokens": 1363,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 23.2045,
+    "cost_usd": 0.001433,
+    "tokens_known": true
+  },
+  "b2::cand_amira": {
+    "model_calls": 1,
+    "input_tokens": 18655,
+    "output_tokens": 2156,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 55.9883,
+    "cost_usd": 0.001938,
+    "tokens_known": true
+  },
+  "b2::cand_bjorn": {
+    "model_calls": 1,
+    "input_tokens": 19228,
+    "output_tokens": 2384,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 58.6478,
+    "cost_usd": 0.002038,
+    "tokens_known": true
+  },
+  "b2::cand_dmitri": {
+    "model_calls": 1,
+    "input_tokens": 18919,
+    "output_tokens": 1413,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 26.3076,
+    "cost_usd": 0.001772,
+    "tokens_known": true
+  },
+  "b2::cand_fatima": {
+    "model_calls": 1,
+    "input_tokens": 18306,
+    "output_tokens": 1985,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 40.4091,
+    "cost_usd": 0.001869,
+    "tokens_known": true
+  },
+  "b2::cand_geir": {
+    "model_calls": 1,
+    "input_tokens": 18866,
+    "output_tokens": 1808,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 47.3232,
+    "cost_usd": 0.001867,
+    "tokens_known": true
+  },
+  "b2::cand_henrik": {
+    "model_calls": 1,
+    "input_tokens": 18213,
+    "output_tokens": 3034,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 72.5953,
+    "cost_usd": 0.002124,
+    "tokens_known": true
+  },
+  "b2::cand_ingrid": {
+    "model_calls": 1,
+    "input_tokens": 19204,
+    "output_tokens": 3483,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 74.5089,
+    "cost_usd": 0.002311,
+    "tokens_known": true
+  },
+  "b2::cand_ingvild": {
+    "model_calls": 1,
+    "input_tokens": 17854,
+    "output_tokens": 7308,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 122.6029,
+    "cost_usd": 0.003166,
+    "tokens_known": true
+  },
+  "b2::cand_kari": {
+    "model_calls": 1,
+    "input_tokens": 19422,
+    "output_tokens": 3540,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 90.4452,
+    "cost_usd": 0.002342,
+    "tokens_known": true
+  },
+  "b2::cand_kjell": {
+    "model_calls": 1,
+    "input_tokens": 18746,
+    "output_tokens": 1722,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 35.6859,
+    "cost_usd": 0.001836,
+    "tokens_known": true
+  },
+  "b2::cand_lene": {
+    "model_calls": 1,
+    "input_tokens": 8008,
+    "output_tokens": 1379,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 29.8617,
+    "cost_usd": 0.000945,
+    "tokens_known": true
+  },
+  "b2::cand_lin": {
+    "model_calls": 1,
+    "input_tokens": 18180,
+    "output_tokens": 1643,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 33.7288,
+    "cost_usd": 0.001774,
+    "tokens_known": true
+  },
+  "b2::cand_marius": {
+    "model_calls": 1,
+    "input_tokens": 18361,
+    "output_tokens": 3663,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 77.4071,
+    "cost_usd": 0.002293,
+    "tokens_known": true
+  },
+  "b2::cand_marta": {
+    "model_calls": 1,
+    "input_tokens": 12523,
+    "output_tokens": 1520,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 33.0339,
+    "cost_usd": 0.001319,
+    "tokens_known": true
+  },
+  "b2::cand_oddvar": {
+    "model_calls": 1,
+    "input_tokens": 18906,
+    "output_tokens": 2009,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 45.07,
+    "cost_usd": 0.00192,
+    "tokens_known": true
+  },
+  "b2::cand_omar": {
+    "model_calls": 1,
+    "input_tokens": 18567,
+    "output_tokens": 1642,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 45.9771,
+    "cost_usd": 0.001803,
+    "tokens_known": true
+  },
+  "b2::cand_pawel": {
+    "model_calls": 1,
+    "input_tokens": 18891,
+    "output_tokens": 1768,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 45.8469,
+    "cost_usd": 0.001859,
+    "tokens_known": true
+  },
+  "b2::cand_ragnhild": {
+    "model_calls": 1,
+    "input_tokens": 18821,
+    "output_tokens": 2743,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 57.1056,
+    "cost_usd": 0.002097,
+    "tokens_known": true
+  },
+  "b2::cand_silje": {
+    "model_calls": 1,
+    "input_tokens": 18785,
+    "output_tokens": 1486,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 50.8536,
+    "cost_usd": 0.00178,
+    "tokens_known": true
+  },
+  "b2::cand_solveig": {
+    "model_calls": 1,
+    "input_tokens": 18506,
+    "output_tokens": 968,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 20.7432,
+    "cost_usd": 0.00163,
+    "tokens_known": true
+  },
+  "b2::cand_tarik": {
+    "model_calls": 1,
+    "input_tokens": 18893,
+    "output_tokens": 1465,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 48.3794,
+    "cost_usd": 0.001783,
+    "tokens_known": true
+  },
+  "b2::cand_thomas": {
+    "model_calls": 1,
+    "input_tokens": 18676,
+    "output_tokens": 2611,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 52.213,
+    "cost_usd": 0.002053,
+    "tokens_known": true
+  },
+  "b2::cand_yusuf": {
+    "model_calls": 1,
+    "input_tokens": 18490,
+    "output_tokens": 1690,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 29.5485,
+    "cost_usd": 0.001809,
+    "tokens_known": true
+  },
+  "b3::cand_aisha": {
+    "model_calls": 2,
+    "input_tokens": 3788,
+    "output_tokens": 1417,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 22.9688,
+    "cost_usd": 0.000638,
+    "tokens_known": true
+  },
+  "b3::cand_amira": {
+    "model_calls": 2,
+    "input_tokens": 3902,
+    "output_tokens": 1322,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 19.2586,
+    "cost_usd": 0.000623,
+    "tokens_known": true
+  },
+  "b3::cand_bjorn": {
+    "model_calls": 2,
+    "input_tokens": 3773,
+    "output_tokens": 1298,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 37.5565,
+    "cost_usd": 0.000608,
+    "tokens_known": true
+  },
+  "b3::cand_dmitri": {
+    "model_calls": 2,
+    "input_tokens": 3639,
+    "output_tokens": 1516,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 46.4492,
+    "cost_usd": 0.000651,
+    "tokens_known": true
+  },
+  "b3::cand_fatima": {
+    "model_calls": 2,
+    "input_tokens": 3820,
+    "output_tokens": 1496,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 51.4152,
+    "cost_usd": 0.000661,
+    "tokens_known": true
+  },
+  "b3::cand_geir": {
+    "model_calls": 2,
+    "input_tokens": 3980,
+    "output_tokens": 1916,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 36.201,
+    "cost_usd": 0.000777,
+    "tokens_known": true
+  },
+  "b3::cand_henrik": {
+    "model_calls": 2,
+    "input_tokens": 3618,
+    "output_tokens": 1505,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 46.2179,
+    "cost_usd": 0.000648,
+    "tokens_known": true
+  },
+  "b3::cand_ingrid": {
+    "model_calls": 2,
+    "input_tokens": 3786,
+    "output_tokens": 1572,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 29.4557,
+    "cost_usd": 0.000676,
+    "tokens_known": true
+  },
+  "b3::cand_ingvild": {
+    "model_calls": 2,
+    "input_tokens": 3658,
+    "output_tokens": 224,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 7.9521,
+    "cost_usd": 0.00033,
+    "tokens_known": true
+  },
+  "b3::cand_kari": {
+    "model_calls": 2,
+    "input_tokens": 3849,
+    "output_tokens": 1118,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 31.3647,
+    "cost_usd": 0.000568,
+    "tokens_known": true
+  },
+  "b3::cand_kjell": {
+    "model_calls": 2,
+    "input_tokens": 3830,
+    "output_tokens": 1602,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 30.7032,
+    "cost_usd": 0.000688,
+    "tokens_known": true
+  },
+  "b3::cand_lene": {
+    "model_calls": 2,
+    "input_tokens": 3780,
+    "output_tokens": 1928,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 51.6828,
+    "cost_usd": 0.000765,
+    "tokens_known": true
+  },
+  "b3::cand_lin": {
+    "model_calls": 2,
+    "input_tokens": 3533,
+    "output_tokens": 1219,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 115.3544,
+    "cost_usd": 0.000569,
+    "tokens_known": true
+  },
+  "b3::cand_marius": {
+    "model_calls": 2,
+    "input_tokens": 3772,
+    "output_tokens": 578,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 20.8825,
+    "cost_usd": 0.000427,
+    "tokens_known": true
+  },
+  "b3::cand_marta": {
+    "model_calls": 2,
+    "input_tokens": 3695,
+    "output_tokens": 1421,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 50.8441,
+    "cost_usd": 0.000633,
+    "tokens_known": true
+  },
+  "b3::cand_oddvar": {
+    "model_calls": 2,
+    "input_tokens": 3895,
+    "output_tokens": 353,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 18.075,
+    "cost_usd": 0.000381,
+    "tokens_known": true
+  },
+  "b3::cand_omar": {
+    "model_calls": 2,
+    "input_tokens": 3833,
+    "output_tokens": 1427,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 28.5213,
+    "cost_usd": 0.000645,
+    "tokens_known": true
+  },
+  "b3::cand_pawel": {
+    "model_calls": 2,
+    "input_tokens": 3828,
+    "output_tokens": 1846,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 86.5798,
+    "cost_usd": 0.000748,
+    "tokens_known": true
+  },
+  "b3::cand_ragnhild": {
+    "model_calls": 2,
+    "input_tokens": 3807,
+    "output_tokens": 1985,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 39.0321,
+    "cost_usd": 0.000782,
+    "tokens_known": true
+  },
+  "b3::cand_silje": {
+    "model_calls": 2,
+    "input_tokens": 3768,
+    "output_tokens": 1791,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 41.2427,
+    "cost_usd": 0.00073,
+    "tokens_known": true
+  },
+  "b3::cand_solveig": {
+    "model_calls": 2,
+    "input_tokens": 3674,
+    "output_tokens": 1085,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 19.1162,
+    "cost_usd": 0.000547,
+    "tokens_known": true
+  },
+  "b3::cand_tarik": {
+    "model_calls": 2,
+    "input_tokens": 3797,
+    "output_tokens": 1251,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 28.8493,
+    "cost_usd": 0.000598,
+    "tokens_known": true
+  },
+  "b3::cand_thomas": {
+    "model_calls": 2,
+    "input_tokens": 3750,
+    "output_tokens": 1033,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 18.9358,
+    "cost_usd": 0.00054,
+    "tokens_known": true
+  },
+  "b3::cand_yusuf": {
+    "model_calls": 2,
+    "input_tokens": 3666,
+    "output_tokens": 569,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 20.3441,
+    "cost_usd": 0.000417,
+    "tokens_known": true
+  },
+  "b0::cand_amira": {
+    "model_calls": 1,
+    "input_tokens": 311607,
+    "output_tokens": 590,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 304640,
+    "latency_s": 13.9883,
+    "cost_usd": 0.00524,
+    "tokens_known": true
+  },
+  "b0::cand_bjorn": {
+    "model_calls": 1,
+    "input_tokens": 311548,
+    "output_tokens": 1493,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 304640,
+    "latency_s": 114.9754,
+    "cost_usd": 0.005461,
+    "tokens_known": true
+  },
+  "b0::cand_ingrid": {
+    "model_calls": 1,
+    "input_tokens": 311608,
+    "output_tokens": 3280,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 103.0413,
+    "cost_usd": 0.024191,
+    "tokens_known": true
+  },
+  "b0::cand_marius": {
+    "model_calls": 1,
+    "input_tokens": 311540,
+    "output_tokens": 5727,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 304640,
+    "latency_s": 254.2378,
+    "cost_usd": 0.006519,
+    "tokens_known": true
+  },
+  "b0::cand_silje": {
+    "model_calls": 1,
+    "input_tokens": 311491,
+    "output_tokens": 3691,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 163.8339,
+    "cost_usd": 0.024285,
+    "tokens_known": true
+  },
+  "b1::cand_amira": {
+    "model_calls": 3,
+    "input_tokens": 314659,
+    "output_tokens": 2391,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 304640,
+    "latency_s": 134.9884,
+    "cost_usd": 0.005918,
+    "tokens_known": true
+  },
+  "b1::cand_bjorn": {
+    "model_calls": 3,
+    "input_tokens": 315042,
+    "output_tokens": 8428,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 304640,
+    "latency_s": 243.4269,
+    "cost_usd": 0.007457,
+    "tokens_known": true
+  },
+  "b1::cand_ingrid": {
+    "model_calls": 3,
+    "input_tokens": 319722,
+    "output_tokens": 5516,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 188.4882,
+    "cost_usd": 0.025358,
+    "tokens_known": true
+  },
+  "b1::cand_marius": {
+    "model_calls": 3,
+    "input_tokens": 319236,
+    "output_tokens": 9990,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 0,
+    "latency_s": 307.3418,
+    "cost_usd": 0.02644,
+    "tokens_known": true
+  },
+  "b1::cand_silje": {
+    "model_calls": 3,
+    "input_tokens": 318038,
+    "output_tokens": 4753,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 291200,
+    "latency_s": 107.2371,
+    "cost_usd": 0.007569,
+    "tokens_known": true
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "paired_candidates": 24,
+  "note": "b3_minus_b2 deltas; b3_better counts respect metric direction",
+  "metrics": {
+    "ndcg_at_10": {
+      "b3_minus_b2": -0.1171,
+      "ci95": [
+        -0.168,
+        -0.0691
+      ],
+      "b3_better": 2,
+      "b2_better": 20,
+      "ties": 2
+    },
+    "precision_at_10": {
+      "b3_minus_b2": -0.075,
+      "ci95": [
+        -0.1292,
+        -0.025
+      ],
+      "b3_better": 2,
+      "b2_better": 10,
+      "ties": 12
+    },
+    "recall_at_50": {
+      "b3_minus_b2": -0.0001,
+      "ci95": [
+        -0.0092,
+        0.011
+      ],
+      "b3_better": 1,
+      "b2_better": 2,
+      "ties": 21
+    },
+    "strong_precision_at_10": {
+      "b3_minus_b2": -0.0792,
+      "ci95": [
+        -0.1333,
+        -0.0292
+      ],
+      "b3_better": 1,
+      "b2_better": 11,
+      "ties": 12
+    },
+    "violation_rate": {
+      "b3_minus_b2": 0.0542,
+      "ci95": [
+        0.025,
+        0.0833
+      ],
+      "b3_better": 2,
+      "b2_better": 13,
+      "ties": 9
+    },
+    "opportunity_loss": {
+      "b3_minus_b2": 0.075,
+      "ci95": [
+        0.0247,
+        0.1275
+      ],
+      "b3_better": 1,
+      "b2_better": 11,
+      "ties": 12
+    }
+  }
+}

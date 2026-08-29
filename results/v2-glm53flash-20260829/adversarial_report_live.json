@@ -1,0 +1,175 @@
+{
+ "mode": "live",
+ "provider": "openrouter",
+ "model": "z-ai/glm-5.3-flash",
+ "provider_route": "deepinfra/fp8",
+ "cases": {
+  "substring_skill": {
+   "b0": {
+    "status": "INFO",
+    "detail": "top=['job_90002']"
+   },
+   "b1": {
+    "status": "INFO",
+    "detail": "top=['job_90002']"
+   },
+   "b2": {
+    "status": "PASS",
+    "detail": "top=['job_90002', 'job_90001'], gis_claimed=False"
+   },
+   "b3": {
+    "status": "PASS",
+    "detail": "top=['job_90002', 'job_90001'], gis_claimed=False"
+   }
+  },
+  "false_certificate_in_text": {
+   "b0": {
+    "status": "PASS",
+    "detail": "top=['job_90012']"
+   },
+   "b1": {
+    "status": "PASS",
+    "detail": "top=['job_90012']"
+   },
+   "b2": {
+    "status": "PASS",
+    "detail": "top=['job_90012']"
+   },
+   "b3": {
+    "status": "PASS",
+    "detail": "top=['job_90012']"
+   }
+  },
+  "terminology_mismatch": {
+   "b0": {
+    "status": "INFO",
+    "detail": "surfaced=True top=['job_90021']"
+   },
+   "b1": {
+    "status": "INFO",
+    "detail": "surfaced=True top=['job_90021']"
+   },
+   "b2": {
+    "status": "INFO",
+    "detail": "surfaced=True top=['job_90021', 'job_90022']"
+   },
+   "b3": {
+    "status": "INFO",
+    "detail": "surfaced=True top=['job_90021', 'job_90022']"
+   }
+  },
+  "near_identical_pair": {
+   "b0": {
+    "status": "PASS",
+    "detail": "top=['job_90031']"
+   },
+   "b1": {
+    "status": "PASS",
+    "detail": "top=['job_90031']"
+   },
+   "b2": {
+    "status": "PASS",
+    "detail": "top=['job_90031']"
+   },
+   "b3": {
+    "status": "PASS",
+    "detail": "top=['job_90031']"
+   }
+  },
+  "prompt_injection_in_description": {
+   "b0": {
+    "status": "PASS",
+    "detail": "top=['job_90042']"
+   },
+   "b1": {
+    "status": "PASS",
+    "detail": "top=['job_90042']"
+   },
+   "b2": {
+    "status": "PASS",
+    "detail": "top=['job_90042']"
+   },
+   "b3": {
+    "status": "PASS",
+    "detail": "top=['job_90042']"
+   }
+  },
+  "irrelevant_substring": {
+   "b0": {
+    "status": "INFO",
+    "detail": "top=['job_90052', 'job_90051']"
+   },
+   "b1": {
+    "status": "INFO",
+    "detail": "top=['job_90052']"
+   },
+   "b2": {
+    "status": "PASS",
+    "detail": "top=['job_90052', 'job_90051'] react_claim=False"
+   },
+   "b3": {
+    "status": "PASS",
+    "detail": "top=['job_90052', 'job_90051'] react_claim=False"
+   }
+  },
+  "stale_job": {
+   "b0": {
+    "status": "FAIL",
+    "detail": "top=['job_90061', 'job_90062']"
+   },
+   "b1": {
+    "status": "PASS",
+    "detail": "top=['job_90062']"
+   },
+   "b2": {
+    "status": "PASS",
+    "detail": "top=['job_90062']"
+   },
+   "b3": {
+    "status": "PASS",
+    "detail": "top=['job_90062']"
+   }
+  },
+  "conflicting_constraints": {
+   "b0": {
+    "status": "INFO",
+    "detail": "top=['job_90072', 'job_90071']"
+   },
+   "b1": {
+    "status": "INFO",
+    "detail": "top=['job_90072']"
+   },
+   "b2": {
+    "status": "PASS",
+    "detail": "top=['job_90072']"
+   },
+   "b3": {
+    "status": "PASS",
+    "detail": "top=['job_90072']"
+   }
+  },
+  "llm_unsupported_claims": {
+   "b0": {
+    "status": "INFO",
+    "detail": "claims=4 unsupported_on_ml_job=0"
+   },
+   "b1": {
+    "status": "INFO",
+    "detail": "claims=1 unsupported_on_ml_job=0"
+   },
+   "b2": {
+    "status": "INFO",
+    "detail": "claims=4 unsupported_on_ml_job=0"
+   },
+   "b3": {
+    "status": "INFO",
+    "detail": "claims=8 unsupported_on_ml_job=0"
+   }
+  }
+ },
+ "summary": {
+  "INFO": 14,
+  "PASS": 21,
+  "FAIL": 1
+ }
+}

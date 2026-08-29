@@ -140,19 +140,32 @@ total, treat as a lower bound (×1.5 with realistic output lengths). The full
 $10 — the cost asymmetry of retrieval-first architectures is itself a
 benchmark result. Start with `--slice 1000` and a candidate subset.
 
-## 6. Current status (2026-08-29)
+## 6. Current status (2026-08-29) — LIVE RESULTS EXIST
 
-- Implementation complete; 116 tests green; offline validation run over 24
-  candidates × 4 arms × 1,000 jobs; adversarial suite: 14 PASS / 0 FAIL /
-  10 INFO / 12 LIVE_ONLY.
-- **No live run has been executed** (no API credentials in the build
-  environment) and **no human review sessions exist**, so the primary
-  hypothesis is untested. See RED_TEAM_V2.md for what is and is not known.
-- Key structural finding already visible offline: on a corpus where ~40% of
-  ads have incomplete structured parses, the deterministic spine floors at a
-  **nonzero violation rate (~0.14)** — essentially all from text-only
-  constraints. B1 re-reads text in its verification pass; B3 currently does
-  not. This deliberate jeopardy stays unpatched until after the live run.
+- **The live experiment has run.** Engine: `z-ai/glm-5.3-flash` via OpenRouter
+  (pinned route `deepinfra/fp8`) for every arm — this is the model OpenRouter
+  reveals as the former "Stealth Ox Alpha". Note the engine deviates from the
+  pre-registered `claude-opus-5`; the verdict formally attaches to this
+  engine. 1,000-job slice; B2/B3 on all 24 candidates, B0/B1 on the first 5
+  (canonical order, credit-limited). Total live cost: **$0.20** (92 calls,
+  3.66M input tokens of which 1.81M cache-served, 0.13M output).
+- **Verdict per the frozen criteria: FAIL → KILL recommendation for the
+  current architecture.** B3 is materially worse than B2 (which shares its
+  constraint engine and retrieval): paired NDCG@10 delta −0.117
+  (95% CI [−0.168, −0.069], B3 better in 2/24 candidates), P@10 −0.075
+  (CI [−0.129, −0.025]), truth-judged violation rate +0.054 worse
+  (CI [+0.025, +0.083]); Recall@50 ties (shared retrieval). B2's one LLM
+  rerank call reads ad text the deterministic spine cannot, catching
+  text-only constraint traps (9 vs 15 slipped) AND ranking better. See
+  RED_TEAM_V2.md and `results/v2-glm53flash-20260829/`.
+- Live adversarial suite (all four arms): 21 PASS / 1 FAIL (B0 recommended a
+  stale posting) / 14 INFO. Live LLM arms resisted the prompt-injection ad
+  and the false-certificate CV in the small-world tests.
+- Still unmeasured: human active minutes (moot for a PASS — quality
+  non-inferiority is already violated — but required before trusting any HAM
+  claims elsewhere). Not yet run: the same benchmark on `claude-opus-5`
+  (partial data for 14 candidates × 4 arms exists in the aborted Anthropic
+  run's full call logs, reconstructable by deterministic replay).
 
 ## 7. Threats to validity
 
