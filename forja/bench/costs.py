@@ -14,19 +14,22 @@ PRICING_PER_MTOK = {
 }
 
 # Prompt-cache multipliers on the input price: 1h-TTL writes cost 2x base
-# input; cache reads cost 0.1x base input.
+# input, 5m-TTL writes 1.25x; cache reads cost 0.1x base input.
 CACHE_WRITE_1H_MULT = 2.0
+CACHE_WRITE_5M_MULT = 1.25
 CACHE_READ_MULT = 0.1
 
 
 def call_cost_usd(model: str, input_tokens: int | None, output_tokens: int | None,
-                  cache_write_tokens: int = 0, cache_read_tokens: int = 0) -> float | None:
+                  cache_write_1h_tokens: int = 0, cache_read_tokens: int = 0,
+                  cache_write_5m_tokens: int = 0) -> float | None:
     if model not in PRICING_PER_MTOK or input_tokens is None or output_tokens is None:
         return None
     p_in, p_out = PRICING_PER_MTOK[model]
     return (input_tokens / 1e6 * p_in
             + output_tokens / 1e6 * p_out
-            + cache_write_tokens / 1e6 * p_in * CACHE_WRITE_1H_MULT
+            + cache_write_1h_tokens / 1e6 * p_in * CACHE_WRITE_1H_MULT
+            + cache_write_5m_tokens / 1e6 * p_in * CACHE_WRITE_5M_MULT
             + cache_read_tokens / 1e6 * p_in * CACHE_READ_MULT)
 
 
@@ -46,14 +49,17 @@ def aggregate_usage(model_calls: list[dict]) -> dict:
         if call.get("input_tokens") is None:
             agg["tokens_known"] = False
         else:
-            cache_w = call.get("cache_creation_input_tokens") or 0
+            cache_w_1h = call.get("cache_creation_1h_tokens") or 0
+            cache_w_5m = ((call.get("cache_creation_5m_tokens") or 0)
+                          or (call.get("cache_creation_input_tokens") or 0))
             cache_r = call.get("cache_read_input_tokens") or 0
             agg["input_tokens"] += call["input_tokens"]
             agg["output_tokens"] += call.get("output_tokens") or 0
-            agg["cache_write_tokens"] += cache_w
+            agg["cache_write_tokens"] += cache_w_1h + cache_w_5m
             agg["cache_read_tokens"] += cache_r
             cost = call_cost_usd(call.get("model", ""), call["input_tokens"],
-                                 call.get("output_tokens"), cache_w, cache_r)
+                                 call.get("output_tokens"), cache_w_1h, cache_r,
+                                 cache_w_5m)
             if cost is not None:
                 agg["cost_usd"] = round(agg["cost_usd"] + cost, 6)
     return {f"{wf}::{cand}": v for (wf, cand), v in sorted(out.items())}

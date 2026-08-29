@@ -164,9 +164,14 @@ class AnthropicClient:
             raise ForjaModelError(f"model call failed for task {task!r}: {e}") from e
         latency = time.perf_counter() - start
 
+        # 1h-TTL cache writes are reported in the nested usage.cache_creation
+        # breakdown; the legacy flat field only covers 5m-TTL writes.
+        nested = getattr(response.usage, "cache_creation", None)
         usage_extra = {
             "cache_creation_input_tokens": getattr(response.usage, "cache_creation_input_tokens", 0) or 0,
             "cache_read_input_tokens": getattr(response.usage, "cache_read_input_tokens", 0) or 0,
+            "cache_creation_1h_tokens": getattr(nested, "ephemeral_1h_input_tokens", 0) or 0,
+            "cache_creation_5m_tokens": getattr(nested, "ephemeral_5m_input_tokens", 0) or 0,
         }
 
         if response.stop_reason == "refusal":

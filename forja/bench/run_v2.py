@@ -70,6 +70,12 @@ def run(mode: str, workflows: list[str], candidate_ids: list[str] | None,
                     last_error = None
                     break
                 except Exception as e:  # noqa: BLE001 — recorded, never silent
+                    if "credit balance" in str(e).lower():
+                        # Billing exhaustion is not transient: stop the whole
+                        # run immediately instead of failing 24 candidates.
+                        raise SystemExit(
+                            f"ABORTED: API credit balance exhausted during "
+                            f"{cand.id} × {wf}. Top up credits and rerun.") from e
                     last_error = e
                     print(f"    ! {cand.id} × {wf} attempt {attempt} failed: {e}",
                           flush=True)
