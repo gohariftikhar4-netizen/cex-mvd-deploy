@@ -35,6 +35,9 @@ from ...llm import AnthropicClient, OpenRouterClient
 from ...runlog import RunLogger
 from ...schemas import Candidate, load_candidates_v2
 from ...workflows.b2_production import run_b2
+from ...match_engine import run_match_engine
+
+ENGINES = {"b2": run_b2, "match_engine_v1": run_match_engine}
 from ...workflows.common import claim_supported
 from .analyze import classify_ad, plain_text
 from .ingest import load_snapshot
@@ -101,7 +104,7 @@ def _suspected_conflicts(cand: Candidate, ad: dict, cls: dict) -> list[dict]:
 
 def validate(snapshot_dir: Path, candidate_ids: list[str], out_dir: Path,
              provider: str, model: str | None, provider_route: str | None,
-             max_ads: int) -> dict:
+             max_ads: int, engine: str = "b2") -> dict:
     ads = load_snapshot(snapshot_dir)[:max_ads]
     candidates = {c.id: c for c in load_candidates_v2()}
     chosen = [candidates[c] for c in candidate_ids]
@@ -123,7 +126,7 @@ def validate(snapshot_dir: Path, candidate_ids: list[str], out_dir: Path,
             notes_by_id[job.id] = notes
             ad_by_id[job.id] = ad
         print(f"  {cand.id}: running B2 over {len(jobs)} real ads ...", flush=True)
-        out = run_b2(cand, jobs, logger, client)
+        out = ENGINES[engine](cand, jobs, logger, client)
 
         recs = []
         for rec in out["recommendations"]:
@@ -179,7 +182,7 @@ def validate(snapshot_dir: Path, candidate_ids: list[str], out_dir: Path,
         "generated_utc": _dt.datetime.now(_dt.UTC).isoformat(),
         "engine": {"provider": client.name, "model": client.model,
                    "route": provider_route},
-        "arm": "B2 only (B3 is archived; not run)",
+        "arm": f"{engine} only (B3 is archived; not run)",
         "n_ads": len(ads),
         "candidates": candidate_ids,
         "cost_usd": round(usage_total, 4),
@@ -212,11 +215,12 @@ def main(argv=None) -> int:
     p.add_argument("--model", default=None)
     p.add_argument("--provider-route", default=None)
     p.add_argument("--max-ads", type=int, default=400)
+    p.add_argument("--engine", choices=sorted(ENGINES), default="b2")
     args = p.parse_args(argv)
     validate(Path(args.snapshot),
              [c.strip() for c in args.candidates.split(",") if c.strip()],
              Path(args.out), args.provider, args.model, args.provider_route,
-             args.max_ads)
+             args.max_ads, args.engine)
     return 0
 
 
