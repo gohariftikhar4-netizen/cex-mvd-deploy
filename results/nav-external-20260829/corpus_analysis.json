@@ -1,0 +1,309 @@
+{
+  "snapshot": "nav_data/snapshot_20260829",
+  "snapshot_manifest": {
+    "snapshot_started_utc": "2026-08-29T21:41:41.099230+00:00",
+    "if_modified_since_anchor": "Tue, 25 Aug 2026 21:41:41 GMT",
+    "ads_captured": 2000,
+    "entries_listed": 7484,
+    "token_fingerprint": "sha256:1a85678c1ac2ed0a"
+  },
+  "n_ads": 2000,
+  "description_length_chars": {
+    "median": 2932,
+    "p10": 1081,
+    "p90": 5245
+  },
+  "structured_field_population_pct": {
+    "extent": 100.0,
+    "engagementtype": 100.0,
+    "sector": 93.1,
+    "positioncount": 100.0,
+    "application_due": 97.7,
+    "work_location_city": 93.8,
+    "occupation_categories": 98.2,
+    "employer_name": 100.0,
+    "description_nonempty": 99.7,
+    "starttime": 32.0
+  },
+  "ads_with_all_key_fields_pct": 27.1,
+  "mean_missing_key_fields": 0.86,
+  "constraint_provenance": {
+    "working_hours_night": {
+      "text_only_pct": 16.8,
+      "both_pct": 0.0,
+      "ambiguous_pct": 4.8,
+      "structured_only_pct": 0.0,
+      "not_specified_pct": 78.5,
+      "present_anywhere_pct": 21.6,
+      "text_borne_pct": 21.6,
+      "counts": {
+        "not_specified": 1569,
+        "text_only": 335,
+        "ambiguous": 96
+      }
+    },
+    "drivers_license": {
+      "text_only_pct": 6.4,
+      "both_pct": 0.0,
+      "ambiguous_pct": 19.5,
+      "structured_only_pct": 0.0,
+      "not_specified_pct": 74.1,
+      "present_anywhere_pct": 25.9,
+      "text_borne_pct": 25.9,
+      "counts": {
+        "not_specified": 1482,
+        "text_only": 128,
+        "ambiguous": 390
+      }
+    },
+    "certification": {
+      "text_only_pct": 3.7,
+      "both_pct": 0.0,
+      "ambiguous_pct": 12.3,
+      "structured_only_pct": 0.0,
+      "not_specified_pct": 84.0,
+      "present_anywhere_pct": 16.1,
+      "text_borne_pct": 16.1,
+      "counts": {
+        "not_specified": 1679,
+        "ambiguous": 247,
+        "text_only": 74
+      }
+    },
+    "authorization": {
+      "text_only_pct": 34.8,
+      "both_pct": 0.0,
+      "ambiguous_pct": 13.0,
+      "structured_only_pct": 0.0,
+      "not_specified_pct": 52.2,
+      "present_anywhere_pct": 47.8,
+      "text_borne_pct": 47.8,
+      "counts": {
+        "not_specified": 1044,
+        "text_only": 696,
+        "ambiguous": 260
+      }
+    },
+    "education": {
+      "text_only_pct": 14.4,
+      "both_pct": 0.0,
+      "ambiguous_pct": 34.4,
+      "structured_only_pct": 0.0,
+      "not_specified_pct": 51.2,
+      "present_anywhere_pct": 48.8,
+      "text_borne_pct": 48.8,
+      "counts": {
+        "not_specified": 1024,
+        "ambiguous": 688,
+        "text_only": 288
+      }
+    },
+    "language": {
+      "text_only_pct": 12.7,
+      "both_pct": 0.0,
+      "ambiguous_pct": 39.5,
+      "structured_only_pct": 0.0,
+      "not_specified_pct": 47.9,
+      "present_anywhere_pct": 52.1,
+      "text_borne_pct": 52.1,
+      "counts": {
+        "not_specified": 958,
+        "text_only": 253,
+        "ambiguous": 789
+      }
+    },
+    "travel": {
+      "text_only_pct": 1.4,
+      "both_pct": 0.0,
+      "ambiguous_pct": 2.5,
+      "structured_only_pct": 0.0,
+      "not_specified_pct": 96.0,
+      "present_anywhere_pct": 4.0,
+      "text_borne_pct": 4.0,
+      "counts": {
+        "not_specified": 1921,
+        "ambiguous": 50,
+        "text_only": 29
+      }
+    },
+    "geography": {
+      "text_only_pct": 0.1,
+      "both_pct": 41.6,
+      "ambiguous_pct": 0.1,
+      "structured_only_pct": 57.6,
+      "not_specified_pct": 0.5,
+      "present_anywhere_pct": 99.5,
+      "text_borne_pct": 0.3,
+      "counts": {
+        "structured_only": 1152,
+        "both": 832,
+        "not_specified": 10,
+        "ambiguous": 3,
+        "text_only": 3
+      }
+    },
+    "physical": {
+      "text_only_pct": 2.8,
+      "both_pct": 0.0,
+      "ambiguous_pct": 1.8,
+      "structured_only_pct": 0.0,
+      "not_specified_pct": 95.4,
+      "present_anywhere_pct": 4.6,
+      "text_borne_pct": 4.6,
+      "counts": {
+        "not_specified": 1908,
+        "ambiguous": 36,
+        "text_only": 56
+      }
+    },
+    "experience": {
+      "text_only_pct": 15.1,
+      "both_pct": 0.0,
+      "ambiguous_pct": 62.5,
+      "structured_only_pct": 0.0,
+      "not_specified_pct": 22.4,
+      "present_anywhere_pct": 77.5,
+      "text_borne_pct": 77.5,
+      "counts": {
+        "not_specified": 449,
+        "text_only": 301,
+        "ambiguous": 1250
+      }
+    },
+    "employment_type": {
+      "text_only_pct": 0.0,
+      "both_pct": 53.4,
+      "ambiguous_pct": 0.0,
+      "structured_only_pct": 46.5,
+      "not_specified_pct": 0.1,
+      "present_anywhere_pct": 100.0,
+      "text_borne_pct": 0.0,
+      "counts": {
+        "structured_only": 931,
+        "both": 1068,
+        "not_specified": 1
+      }
+    },
+    "extent_parttime": {
+      "text_only_pct": 0.0,
+      "both_pct": 51.2,
+      "ambiguous_pct": 0.0,
+      "structured_only_pct": 48.8,
+      "not_specified_pct": 0.0,
+      "present_anywhere_pct": 100.0,
+      "text_borne_pct": 0.0,
+      "counts": {
+        "structured_only": 975,
+        "both": 1025
+      }
+    },
+    "shift_rotation": {
+      "text_only_pct": 17.3,
+      "both_pct": 0.0,
+      "ambiguous_pct": 1.5,
+      "structured_only_pct": 0.0,
+      "not_specified_pct": 81.2,
+      "present_anywhere_pct": 18.8,
+      "text_borne_pct": 18.8,
+      "counts": {
+        "not_specified": 1624,
+        "text_only": 346,
+        "ambiguous": 30
+      }
+    }
+  },
+  "coverage": {
+    "occupation_level1": {
+      "Helse og sosial": 863,
+      "Utdanning": 344,
+      "Salg og service": 303,
+      "Kontor og økonomi": 211,
+      "Håndverkere": 168,
+      "Reiseliv og mat": 98,
+      "Transport og lager": 78,
+      "Industri og produksjon": 71,
+      "Bygg og anlegg": 70,
+      "IT": 53,
+      "Kultur og kreative yrker": 34,
+      "Sikkerhet og beredskap": 30,
+      "Natur og miljø": 26
+    },
+    "occupation_level2_top": {
+      "Sykepleier": 225,
+      "Salg, butikk- og varehandel": 213,
+      "Helsefagarbeider": 143,
+      "Barnehage- og skolefritidsassistenter": 104,
+      "Barnehagelærer": 88,
+      "Vernepleier": 84,
+      "Miljøarbeidere": 73,
+      "Kontor, forvaltning og saksbehandling": 72,
+      "Hjemmehjelper og personlig assistent": 66,
+      "Ledelse, administrasjon og rådgivning": 66,
+      "Andre helseyrker": 63,
+      "Lege": 62,
+      "Grunnskole": 48,
+      "Renholdere og renovasjon": 43,
+      "Reiseliv, hotell og overnatting": 38,
+      "Videregående skole": 38,
+      "Utvikling": 36,
+      "Rådgivere innen sosiale fagfelt": 34,
+      "Restaurant": 34,
+      "Mekaniker": 31
+    },
+    "counties": {
+      "OSLO": 351,
+      "VESTLAND": 281,
+      "AKERSHUS": 256,
+      "ROGALAND": 192,
+      "INNLANDET": 190,
+      "TRØNDELAG": 156,
+      "NORDLAND": 146,
+      "MØRE OG ROMSDAL": 130,
+      "TROMS": 130,
+      "AGDER": 102,
+      "VESTFOLD": 98,
+      "BUSKERUD": 97,
+      "ØSTFOLD": 82,
+      "FINNMARK": 60,
+      "TELEMARK": 59,
+      "null": 12,
+      "SVALBARD": 1
+    },
+    "extent": {
+      "Heltid": 1380,
+      "Deltid": 620
+    },
+    "engagementtype": {
+      "Fast": 1303,
+      "Vikariat": 383,
+      "Annet": 127,
+      "Engasjement": 99,
+      "Sesong": 30,
+      "Prosjekt": 29,
+      "Åremål": 18,
+      "Lærling": 4,
+      "Selvstendig næringsdrivende": 3,
+      "Trainee": 2,
+      "(blank)": 1,
+      "Frilanser": 1
+    },
+    "sector": {
+      "Offentlig": 1027,
+      "Privat": 832,
+      "(blank)": 138,
+      "Ikke oppgitt": 3
+    },
+    "source_systems": {
+      "IMPORTAPI": 1611,
+      "Stillingsregistrering": 373,
+      "AMEDIA": 14,
+      "EURES": 2
+    }
+  },
+  "method_caveats": [
+    "Deterministic Norwegian regex over NAV's own description HTML.",
+    "Pattern recall is unvalidated: a phrasing the patterns miss is counted as not_specified, so text-borne percentages are LOWER BOUNDS.",
+    "'ambiguous' = a requirement pattern co-occurring with a hedge phrase anywhere in the ad; hedge attribution to the specific requirement is not verified.",
+    "No claim about candidate fit is made here. Not gold. Descriptive only."
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "batch": "labeling_20260829",
+  "pairs": 144,
+  "candidates": [
+    "cand_fatima",
+    "cand_geir",
+    "cand_ingrid",
+    "cand_lin",
+    "cand_marta",
+    "cand_omar",
+    "cand_solveig",
+    "cand_yusuf"
+  ],
+  "decoys_per_candidate": 8,
+  "blinding": "reviewer sees only candidate + real NAV ad; no rank, score, system identity, or machine flags"
+}

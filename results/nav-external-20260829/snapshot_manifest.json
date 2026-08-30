@@ -1,0 +1,35 @@
+{
+  "source": "NAV Job Vacancy Feed (pam-stilling-feed)",
+  "source_docs": "https://navikt.github.io/pam-stilling-feed/",
+  "terms": "https://arbeidsplassen.nav.no/vilkar-api",
+  "base_url": "https://pam-stilling-feed.nav.no",
+  "auth": "public token (Bearer JWT)",
+  "token_fingerprint": "sha256:1a85678c1ac2ed0a",
+  "snapshot_started_utc": "2026-08-29T21:41:41.099230+00:00",
+  "snapshot_finished_utc": "2026-08-29T22:00:44.923510+00:00",
+  "if_modified_since_anchor": "Tue, 25 Aug 2026 21:41:41 GMT",
+  "hours_back": 96,
+  "pages_read": 8,
+  "page_cursors": [
+    "1f2564d5-d1d0-462f-afc3-2fd44282c916",
+    "87aeac73-9cfb-4407-bd93-bf1ef0de5e61",
+    "6e489774-86e8-4867-bca7-f26882dbb3d4",
+    "a6acb1d4-5dbf-4b36-9d82-a5c7df43b3f1",
+    "7b81451b-1913-49f8-b354-73bbc71d90ca",
+    "a1aff655-3b4f-41db-a21a-7da588fc998e",
+    "fba841e6-39d1-449c-9e0f-e21860f75789",
+    "4e8c8d68-bf74-4ad6-8cb9-64aca8b8117d"
+  ],
+  "entries_listed": 7484,
+  "entries_listed_active": 5304,
+  "detail_fetches": 2263,
+  "detail_masked_inactive": 263,
+  "ads_captured": 2000,
+  "contacts_kept": false,
+  "corpus_file": "nav_ads.json.gz",
+  "notes": [
+    "Feed is an event log; the same ad reappears on update.",
+    "Inactive ads are content-masked by NAV and cannot be recovered later.",
+    "contactList dropped unless --keep-contacts (personal data, NAV terms)."
+  ]
+}

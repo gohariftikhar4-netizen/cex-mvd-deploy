@@ -1,0 +1,3057 @@
+{
+ "kind": "EXPLORATORY / DESCRIPTIVE — no gold labels exist for real NAV ads",
+ "snapshot": "nav_data/snapshot_20260829",
+ "generated_utc": "2026-08-30T04:07:34.254961+00:00",
+ "engine": {
+  "provider": "openrouter",
+  "model": "z-ai/glm-5.3-flash",
+  "route": "deepinfra/fp8"
+ },
+ "arm": "B2 only (B3 is archived; not run)",
+ "n_ads": 400,
+ "candidates": [
+  "cand_solveig",
+  "cand_marta",
+  "cand_omar",
+  "cand_geir",
+  "cand_lin",
+  "cand_yusuf",
+  "cand_fatima",
+  "cand_ingrid"
+ ],
+ "cost_usd": 0.0513,
+ "per_candidate": {
+  "cand_solveig": {
+   "candidate_id": "cand_solveig",
+   "n_recommendations": 10,
+   "n_extended": 50,
+   "wall_time_s": 30.7637,
+   "recommendations": [
+    {
+     "rank": 1,
+     "job_id": "nav_00386",
+     "nav_uuid": "bfc876ca-906a-4306-bdb5-61d66f4446a3",
+     "title": "Verkstedmedarbeider",
+     "employer": "Dekk Sjekk AS",
+     "nav_city": "ASKIM",
+     "score": 20.0,
+     "n_claims": 3,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "drivers_license",
+      "experience",
+      "language"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work night",
+       "evidence": "se for å jobbe med bil, hører vi gjerne fra deg. Arbeidsoppgaver: Hjulskift på personbiler og varebiler. Omlegging av dekk på felg, samt avbalans"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "bfc876ca-906a-4306-bdb5-61d66f4446a3",
+      "geography_fallback_used": false,
+      "nav_city": "ASKIM",
+      "nav_county": "ØSTFOLD",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "04.10.2026",
+      "description_chars": 1736
+     }
+    },
+    {
+     "rank": 2,
+     "job_id": "nav_00267",
+     "nav_uuid": "3a2efca9-eb27-43de-b468-a07616ee3f71",
+     "title": "100 % stilling, vikariat fra d.d. - 31.03.27",
+     "employer": "Tønsberg kommune Ilebrekke barnehage",
+     "nav_city": "TØNSBERG",
+     "score": 12.0,
+     "n_claims": 2,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "certification",
+      "experience",
+      "language"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: autorisasjon_helsefagarbeider",
+       "evidence": "g på arbeidsplassen. Kvalifikasjonskrav Det er ønskelig med fagbrev som barne- og ungdomsarbeider, men det er ikke et absolutt"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "3a2efca9-eb27-43de-b468-a07616ee3f71",
+      "geography_fallback_used": true,
+      "nav_city": "TØNSBERG",
+      "nav_county": "VESTFOLD",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-06T00:00:00",
+      "description_chars": 2779
+     }
+    },
+    {
+     "rank": 3,
+     "job_id": "nav_00199",
+     "nav_uuid": "2342d448-616f-4da2-b62b-cdd9406714c0",
+     "title": "Er du ledig og klar for oppdrag?",
+     "employer": "Randstad AS",
+     "nav_city": "KRÅKERØY",
+     "score": 10.0,
+     "n_claims": 2,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "certification",
+      "experience",
+      "language",
+      "physical",
+      "shift_rotation"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work night",
+       "evidence": "nsbehov. Du må trives med høyt tempo, være en god lagspiller og takle skiftende arbeidstider. Vi ser etter deg som: Trives med fysisk arbeid og e"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "2342d448-616f-4da2-b62b-cdd9406714c0",
+      "geography_fallback_used": false,
+      "nav_city": "KRÅKERØY",
+      "nav_county": "ØSTFOLD",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "snarest",
+      "description_chars": 1522
+     }
+    },
+    {
+     "rank": 4,
+     "job_id": "nav_00390",
+     "nav_uuid": "b1e30ef7-8ec0-405b-b0fd-c736553dfa15",
+     "title": "Helsefagarbeider til oppdrag i Nordland",
+     "employer": "Konstali Helsenor As",
+     "nav_city": null,
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "experience",
+      "language",
+      "shift_rotation",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work night",
+       "evidence": "i Nordland. Oppdraget har oppstart snarest og varer ut oktober 2026. Turnusen er dag- og aftenvakter med arbeid hver 3. helg. Hva vi ser etter St"
+      },
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work weekend",
+       "evidence": "r ut oktober 2026. Turnusen er dag- og aftenvakter med arbeid hver 3. helg. Hva vi ser etter Stillingen krever en faglig trygg helsefagarbeider"
+      },
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: autorisasjon_helsefagarbeider",
+       "evidence": "tendig ansvar i avdelingen. Vi ser etter deg som har: Norsk autorisasjon som helsefagarbeider Godkjenning for legemiddelhåndtering G"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "b1e30ef7-8ec0-405b-b0fd-c736553dfa15",
+      "geography_fallback_used": true,
+      "nav_city": null,
+      "nav_county": "NORDLAND",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "Snarest",
+      "description_chars": 1246
+     }
+    },
+    {
+     "rank": 5,
+     "job_id": "nav_00220",
+     "nav_uuid": "263743d5-16e9-4393-a4a7-cd8b83d7201d",
+     "title": "Er du en trygg og rolig type, som vil gjøre en forskjell for meg? Ung mann søker BPA-assistent",
+     "employer": "JAG Assistanse AS",
+     "nav_city": "KRISTIANSUND N",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "drivers_license",
+      "experience",
+      "language"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work evening",
+       "evidence": "______________________________________ Tillegg for ubekvem arbeidstid Kveld og natt: kr 67,00 Helg: kr 70,00 Kveld/natt- og helgetillegg ihht. ta"
+      },
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work night",
+       "evidence": "_____________________________ Tillegg for ubekvem arbeidstid Kveld og natt: kr 67,00 Helg: kr 70,00 Kveld/natt- og helgetillegg ihht. tariffavta"
+      },
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work weekend",
+       "evidence": "______________ Tillegg for ubekvem arbeidstid Kveld og natt: kr 67,00 Helg: kr 70,00 Kveld/natt- og helgetillegg ihht. tariffavtalen. Dersom du"
+      },
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: autorisasjon_helsefagarbeider",
+       "evidence": "lig Liker å jobbe i team Krav i stillingen: Plettfri vandel/politiattest Gode norskkunnskaper Førerkort Emosjonelle krav: Det stille"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "263743d5-16e9-4393-a4a7-cd8b83d7201d",
+      "geography_fallback_used": true,
+      "nav_city": "KRISTIANSUND N",
+      "nav_county": "MØRE OG ROMSDAL",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "18-09-2026",
+      "description_chars": 2593
+     }
+    },
+    {
+     "rank": 6,
+     "job_id": "nav_00246",
+     "nav_uuid": "9012941f-4270-4a63-b831-3e46eefadc5b",
+     "title": "Helsefagarbeider",
+     "employer": "Hjemmetjenesten Sør, Meløy kommune",
+     "nav_city": "ENGAVÅGEN",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "certification",
+      "drivers_license",
+      "education",
+      "experience",
+      "language",
+      "physical",
+      "shift_rotation",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work night",
+       "evidence": "enesten i vår vakre distriktskommune. Stillingen har per tiden todelt turnus og jobb hver tredje helg. Hjemmetjenesten sør har kontorer på Halsa,"
+      },
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work weekend",
+       "evidence": "tskommune. Stillingen har per tiden todelt turnus og jobb hver tredje helg. Hjemmetjenesten sør har kontorer på Halsa, Vall, Meløya og Bolga i M"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "9012941f-4270-4a63-b831-3e46eefadc5b",
+      "geography_fallback_used": true,
+      "nav_city": "ENGAVÅGEN",
+      "nav_county": "NORDLAND",
+      "extent_raw": "Deltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-13T00:00:00",
+      "description_chars": 4409
+     }
+    },
+    {
+     "rank": 7,
+     "job_id": "nav_00321",
+     "nav_uuid": "4cbd0975-1220-48b5-89f2-49da9c8c4158",
+     "title": "Ledig Lærlingstillinger.",
+     "employer": "Vestvågøy kommune",
+     "nav_city": "LEKNES",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "certification",
+      "education",
+      "language"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: autorisasjon_helsefagarbeider",
+       "evidence": "ssant ut? Som lærling har du lønn under utdannelsen, og med fagbrev er det uante jobb muligheter innen Helse og mestring. Vi ha"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "4cbd0975-1220-48b5-89f2-49da9c8c4158",
+      "geography_fallback_used": true,
+      "nav_city": "LEKNES",
+      "nav_county": "NORDLAND",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-10-04T00:00:00",
+      "description_chars": 2010
+     }
+    },
+    {
+     "rank": 8,
+     "job_id": "nav_00011",
+     "nav_uuid": "94333844-86b5-4a66-a332-3ce1a7f662fb",
+     "title": "Helsefagarbeider og pleiemedarbeidere",
+     "employer": "Porsanger Kommune",
+     "nav_city": "LAKSELV",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "certification",
+      "drivers_license",
+      "experience",
+      "language",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work weekend",
+       "evidence": "også til å søke. Vi har også ledige stillinger som pleiemedarbeider i helgestilling, og vi har stillinger ledige med arbeid hver andre helg og m"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "94333844-86b5-4a66-a332-3ce1a7f662fb",
+      "geography_fallback_used": true,
+      "nav_city": "LAKSELV",
+      "nav_county": "FINNMARK",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-18T00:00:00",
+      "description_chars": 4323
+     }
+    },
+    {
+     "rank": 9,
+     "job_id": "nav_00353",
+     "nav_uuid": "52f1b5a7-dd83-4bd1-bb71-64271cdb14ed",
+     "title": "Helsefagarbeider - Vefsn kommune - Rehabilitering- og hjemmetjenesten",
+     "employer": "Vefsn kommune Hjemmetjenesten team 4",
+     "nav_city": "MOSJØEN",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "drivers_license",
+      "education",
+      "experience",
+      "language",
+      "physical",
+      "shift_rotation",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work night",
+       "evidence": "ledig fast stilling som helsefagarbeider i 100%. I stillingen inngår turnusarbeid. Som helsefagarbeider skal du bidra til at vi sammen utøver try"
+      },
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work weekend",
+       "evidence": "rdel Erfaring fra pleie og omsorgs tjenester Ønsker å gå langvakter i helgene Ønsker å ta videreutdanning i demensomsorgen Aktuelle søkere vil b"
+      },
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: autorisasjon_helsefagarbeider",
+       "evidence": "garbeideroppgaver vil også bli tildelt Krav til stillingen: Autorisasjon som helsefagarbeider Er du lærling/påbegynt helsefaglig utd"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "52f1b5a7-dd83-4bd1-bb71-64271cdb14ed",
+      "geography_fallback_used": true,
+      "nav_city": "MOSJØEN",
+      "nav_county": "NORDLAND",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-07T00:00:00",
+      "description_chars": 5304
+     }
+    },
+    {
+     "rank": 10,
+     "job_id": "nav_00013",
+     "nav_uuid": "47af29c6-4517-49da-965a-9cc10866e9aa",
+     "title": "Sykepleier til hjemmetjenesten ",
+     "employer": "Porsanger Kommune",
+     "nav_city": "LAKSELV",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "drivers_license",
+      "education",
+      "experience",
+      "language",
+      "shift_rotation",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work night",
+       "evidence": "100 % vikariat med varighet 6-12 måneder. Stillingene inngår i todelt turnus. Turnus for sykepleiere er under endring, og vil på sikt inngå i en f"
+      },
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work weekend",
+       "evidence": "erturnus for helse og omsorg. Alternative turnusordninger for å dekke helgetimer kan påregnes. Arbeidsoppgaver: Som ansatt i hjemmesykepleien iv"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "47af29c6-4517-49da-965a-9cc10866e9aa",
+      "geography_fallback_used": true,
+      "nav_city": "LAKSELV",
+      "nav_county": "FINNMARK",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-25T00:00:00",
+      "description_chars": 4539
+     }
+    }
+   ],
+   "observations": {
+    "recs_with_unsupported_claims": 0,
+    "unsupported_claim_rate": 0.0,
+    "recs_with_any_text_borne_dimension": 10,
+    "recs_with_suspected_conflict": 10,
+    "suspected_conflict_rate": 1.0,
+    "geography_fallback_used": 8
+   }
+  },
+  "cand_marta": {
+   "candidate_id": "cand_marta",
+   "n_recommendations": 10,
+   "n_extended": 50,
+   "wall_time_s": 94.1615,
+   "recommendations": [
+    {
+     "rank": 1,
+     "job_id": "nav_00100",
+     "nav_uuid": "67e73fdd-8af4-46d9-a8cc-2fa79fed2602",
+     "title": "Miljøterapeut/miljøarbeider i Helse og omsorg",
+     "employer": "Humana omsorg og assistanse",
+     "nav_city": "BERGEN",
+     "score": 55.0,
+     "n_claims": 3,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "drivers_license",
+      "education",
+      "experience",
+      "language",
+      "shift_rotation",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "language",
+       "candidate_constraint": "norwegian B1",
+       "evidence": "sme, og/eller psykiske utfordringer. Stillingen krever gode norskferdigheter, både skriftlig og muntlig. Du må ha gyldig førerkort klass"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "67e73fdd-8af4-46d9-a8cc-2fa79fed2602",
+      "geography_fallback_used": false,
+      "nav_city": "BERGEN",
+      "nav_county": "VESTLAND",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "",
+      "description_chars": 1920
+     }
+    },
+    {
+     "rank": 2,
+     "job_id": "nav_00011",
+     "nav_uuid": "94333844-86b5-4a66-a332-3ce1a7f662fb",
+     "title": "Helsefagarbeider og pleiemedarbeidere",
+     "employer": "Porsanger Kommune",
+     "nav_city": "LAKSELV",
+     "score": 20.0,
+     "n_claims": 2,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "certification",
+      "drivers_license",
+      "experience",
+      "language",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "language",
+       "candidate_constraint": "norwegian B1",
+       "evidence": "se, men erfaring og personlig egenhet vil bli vurdert. Gode norskkunnskaper både muntlig og skriftlig. Godkjent politiattest må leveres"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "94333844-86b5-4a66-a332-3ce1a7f662fb",
+      "geography_fallback_used": true,
+      "nav_city": "LAKSELV",
+      "nav_county": "FINNMARK",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-18T00:00:00",
+      "description_chars": 4323
+     }
+    },
+    {
+     "rank": 3,
+     "job_id": "nav_00390",
+     "nav_uuid": "b1e30ef7-8ec0-405b-b0fd-c736553dfa15",
+     "title": "Helsefagarbeider til oppdrag i Nordland",
+     "employer": "Konstali Helsenor As",
+     "nav_city": null,
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "experience",
+      "language",
+      "shift_rotation",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: none valid",
+       "evidence": "tendig ansvar i avdelingen. Vi ser etter deg som har: Norsk autorisasjon som helsefagarbeider Godkjenning for legemiddelhåndtering G"
+      },
+      {
+       "dimension": "language",
+       "candidate_constraint": "norwegian B1",
+       "evidence": "selvstendig ansvar i avdelingen. Vi ser etter deg som har: Norsk autorisasjon som helsefagarbeider Godkjenning for legemidde"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "b1e30ef7-8ec0-405b-b0fd-c736553dfa15",
+      "geography_fallback_used": true,
+      "nav_city": null,
+      "nav_county": "NORDLAND",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "Snarest",
+      "description_chars": 1246
+     }
+    },
+    {
+     "rank": 4,
+     "job_id": "nav_00220",
+     "nav_uuid": "263743d5-16e9-4393-a4a7-cd8b83d7201d",
+     "title": "Er du en trygg og rolig type, som vil gjøre en forskjell for meg? Ung mann søker BPA-assistent",
+     "employer": "JAG Assistanse AS",
+     "nav_city": "KRISTIANSUND N",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "drivers_license",
+      "experience",
+      "language"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: none valid",
+       "evidence": "lig Liker å jobbe i team Krav i stillingen: Plettfri vandel/politiattest Gode norskkunnskaper Førerkort Emosjonelle krav: Det stille"
+      },
+      {
+       "dimension": "language",
+       "candidate_constraint": "norwegian B1",
+       "evidence": "i team Krav i stillingen: Plettfri vandel/politiattest Gode norskkunnskaper Førerkort Emosjonelle krav: Det stilles emosjonelle krav i"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "263743d5-16e9-4393-a4a7-cd8b83d7201d",
+      "geography_fallback_used": true,
+      "nav_city": "KRISTIANSUND N",
+      "nav_county": "MØRE OG ROMSDAL",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "18-09-2026",
+      "description_chars": 2593
+     }
+    },
+    {
+     "rank": 5,
+     "job_id": "nav_00323",
+     "nav_uuid": "d3ffd180-fda8-48f0-a2a6-9e4623802539",
+     "title": "Sykepleier",
+     "employer": "Omsorgssenter, Kristiansand kommune",
+     "nav_city": "KRISTIANSAND S",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "experience",
+      "language",
+      "shift_rotation",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: none valid",
+       "evidence": "ng av nye arbeidsmetoder samarbeide tett med leger og annet helsepersonell en jobb der du får brukt hele sykepleierkompetansen din dyk"
+      },
+      {
+       "dimension": "language",
+       "candidate_constraint": "norwegian B1",
+       "evidence": "ersonlige egenskaper Du er offentlig godkjent sykepleier og behersker norsk på minimum nivå B2. Relevant erfaring er naturligvis en for"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "d3ffd180-fda8-48f0-a2a6-9e4623802539",
+      "geography_fallback_used": true,
+      "nav_city": "KRISTIANSAND S",
+      "nav_county": "AGDER",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-09T00:00:00",
+      "description_chars": 4335
+     }
+    },
+    {
+     "rank": 6,
+     "job_id": "nav_00002",
+     "nav_uuid": "8622ec93-c0a4-4365-bd5f-db95d6068138",
+     "title": "Helsefagarbeidere til Omsorgsteam",
+     "employer": "Hjemmebaserte tjenester Bergenhus, Bergen kommune",
+     "nav_city": "BERGEN",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "drivers_license",
+      "language",
+      "physical",
+      "shift_rotation",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: none valid",
+       "evidence": "ruker vi både bil, el-sykkel og gange Kvalifikasjoner Norsk autorisasjon som helsefagarbeider/hjelpepleier Grunnleggende datakunnska"
+      },
+      {
+       "dimension": "language",
+       "candidate_constraint": "norwegian B1",
+       "evidence": "nnskaper. Mobiltelefon og PC er viktige arbeidsverktøy Gode norskkunnskaper, både muntlig og skriftlig (tilsvarende minimum nivå B2) Fø"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "8622ec93-c0a4-4365-bd5f-db95d6068138",
+      "geography_fallback_used": false,
+      "nav_city": "BERGEN",
+      "nav_county": "VESTLAND",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-13T00:00:00",
+      "description_chars": 4782
+     }
+    },
+    {
+     "rank": 7,
+     "job_id": "nav_00084",
+     "nav_uuid": "7cd3884d-dad6-46b8-8f69-5871b28ba12e",
+     "title": "Vernepleier/Sykepleier 2x100 % fast stilling ved Lundeveien avlastning 38",
+     "employer": "Livsmestring Barn og unge, Kristiansand kommune",
+     "nav_city": "SØGNE",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "drivers_license",
+      "education",
+      "experience",
+      "language",
+      "shift_rotation",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "language",
+       "candidate_constraint": "norwegian B1",
+       "evidence": "brukergruppen. Må kunne bruke digitalt verktøy. Må ha gode norsk kunnskaper både skriftlig og muntlig - krav til B2. Faglig"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "7cd3884d-dad6-46b8-8f69-5871b28ba12e",
+      "geography_fallback_used": true,
+      "nav_city": "SØGNE",
+      "nav_county": "AGDER",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-13T00:00:00",
+      "description_chars": 2908
+     }
+    },
+    {
+     "rank": 8,
+     "job_id": "nav_00124",
+     "nav_uuid": "447b832a-45e5-49f7-9e4a-3aa9fb670a0f",
+     "title": "Er du engasjert, kreativ og har tjenestemottakere i fokus, ønsker vi deg på laget!",
+     "employer": "Tønsberg kommune Brår",
+     "nav_city": "RAMNES",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "drivers_license",
+      "experience",
+      "shift_rotation",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: none valid",
+       "evidence": "Oppfølging av lovverk (inkl. HOL kap. 9) Kvalifikasjonskrav Autorisasjon som vernepleier eller sykepleier Digitale ferdigheter Gyldi"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "447b832a-45e5-49f7-9e4a-3aa9fb670a0f",
+      "geography_fallback_used": true,
+      "nav_city": "RAMNES",
+      "nav_county": "VESTFOLD",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-27T00:00:00",
+      "description_chars": 4169
+     }
+    },
+    {
+     "rank": 9,
+     "job_id": "nav_00303",
+     "nav_uuid": "8f07991d-2c49-450a-930a-e2cbb067307e",
+     "title": "Seks måneders fastlegevikariat i Finnmark",
+     "employer": "Dignus Medical - Kletor AS",
+     "nav_city": "ALTA",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "drivers_license",
+      "experience",
+      "language"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: none valid",
+       "evidence": "ringer og en variert arbeidshverdag. Kvalifikasjoner: Norsk autorisasjon som lege Erfaring fra allmennmedisin eller primærhelsetjene"
+      },
+      {
+       "dimension": "language",
+       "candidate_constraint": "norwegian B1",
+       "evidence": "Legevaktskompetanse er ønskelig Gode kommunikasjonsevner på norsk eller et annet skandinavisk språk, både muntlig og skriftli"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "8f07991d-2c49-450a-930a-e2cbb067307e",
+      "geography_fallback_used": true,
+      "nav_city": "ALTA",
+      "nav_county": "FINNMARK",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-25",
+      "description_chars": 2908
+     }
+    },
+    {
+     "rank": 10,
+     "job_id": "nav_00140",
+     "nav_uuid": "687ac413-532b-427d-95b8-4d9f1c3c7ee4",
+     "title": "Er du sykepleier og på jakt etter nye utfordringer?",
+     "employer": "Sørlandet sykehus HF",
+     "nav_city": "KRISTIANSAND S",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "education",
+      "experience",
+      "language",
+      "shift_rotation",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: none valid",
+       "evidence": "e tett med leger, og andre faggrupper Kvalifikasjoner Norsk autorisasjon som sykepleier Sykepleiere med respiratorkompetanse vil bli"
+      },
+      {
+       "dimension": "language",
+       "candidate_constraint": "norwegian B1",
+       "evidence": "r erfaring fra arbeid med barn i sykehus. Må kunne beherske norsk skriftlig og muntlig. Gode datakunnskaper Må beherske norsk"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "687ac413-532b-427d-95b8-4d9f1c3c7ee4",
+      "geography_fallback_used": true,
+      "nav_city": "KRISTIANSAND S",
+      "nav_county": "AGDER",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-13T00:00:00",
+      "description_chars": 4789
+     }
+    }
+   ],
+   "observations": {
+    "recs_with_unsupported_claims": 0,
+    "unsupported_claim_rate": 0.0,
+    "recs_with_any_text_borne_dimension": 10,
+    "recs_with_suspected_conflict": 10,
+    "suspected_conflict_rate": 1.0,
+    "geography_fallback_used": 8
+   }
+  },
+  "cand_omar": {
+   "candidate_id": "cand_omar",
+   "n_recommendations": 10,
+   "n_extended": 50,
+   "wall_time_s": 45.7029,
+   "recommendations": [
+    {
+     "rank": 1,
+     "job_id": "nav_00334",
+     "nav_uuid": "d9d9be3e-19d5-497a-a08e-2fe5429045ce",
+     "title": "Vi søker dekkmontører til høstsesongen!",
+     "employer": "Rekrutteringshuset Mork AS",
+     "nav_city": "DRAMMEN",
+     "score": 45.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "drivers_license",
+      "language"
+     ],
+     "suspected_conflicts": [],
+     "adaptation_notes": {
+      "nav_uuid": "d9d9be3e-19d5-497a-a08e-2fe5429045ce",
+      "geography_fallback_used": false,
+      "nav_city": "DRAMMEN",
+      "nav_county": "BUSKERUD",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "Snarest",
+      "description_chars": 1179
+     }
+    },
+    {
+     "rank": 2,
+     "job_id": "nav_00331",
+     "nav_uuid": "31a80cb4-e381-4927-8db5-410317f05d12",
+     "title": "Skiservicemedarbeider / Ski Service Technician",
+     "employer": "Norefjell Skisenter",
+     "nav_city": "NORESUND",
+     "score": 25.0,
+     "n_claims": 2,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "experience"
+     ],
+     "suspected_conflicts": [],
+     "adaptation_notes": {
+      "nav_uuid": "31a80cb4-e381-4927-8db5-410317f05d12",
+      "geography_fallback_used": false,
+      "nav_city": "NORESUND",
+      "nav_county": "BUSKERUD",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-15T00:00:00",
+      "description_chars": 3282
+     }
+    },
+    {
+     "rank": 3,
+     "job_id": "nav_00341",
+     "nav_uuid": "a7e6dd41-94fc-4582-8d6b-fa719017a6d8",
+     "title": "Helsefagarbeider",
+     "employer": "Avlastning og aktivitet Bekkevollen avd. Hestenga, Drammen kommune",
+     "nav_city": "DRAMMEN",
+     "score": 15.0,
+     "n_claims": 1,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "drivers_license",
+      "education",
+      "experience",
+      "language",
+      "physical",
+      "shift_rotation",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work night",
+       "evidence": "gging, og består av ansatte med sammensatt fagbakgrunn. Arbeidet er i turnus. Hos oss vil du møte et mangfold av mennesker som trenger bistand for"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "a7e6dd41-94fc-4582-8d6b-fa719017a6d8",
+      "geography_fallback_used": false,
+      "nav_city": "DRAMMEN",
+      "nav_county": "BUSKERUD",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-27T00:00:00",
+      "description_chars": 5032
+     }
+    },
+    {
+     "rank": 4,
+     "job_id": "nav_00254",
+     "nav_uuid": "b65a2896-f591-4ab7-869d-c42fdd64f389",
+     "title": "Vil du bli en nøkkelperson i vårt arbeid med dokumentasjon og arkiv? ",
+     "employer": "Riksrevisjonen",
+     "nav_city": "OSLO",
+     "score": 10.0,
+     "n_claims": 1,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "education",
+      "experience",
+      "language"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: truckforerbevis_t1_t4",
+       "evidence": "både skriftlig og muntlig Stillingen krever at du må kunne sikkerhetsklareres til nivå HEMMELIG. Eventuell ansettelse vil forutsette at k"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "b65a2896-f591-4ab7-869d-c42fdd64f389",
+      "geography_fallback_used": false,
+      "nav_city": "OSLO",
+      "nav_county": "OSLO",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-13T00:00:00",
+      "description_chars": 4636
+     }
+    },
+    {
+     "rank": 5,
+     "job_id": "nav_00335",
+     "nav_uuid": "e52ff01f-64c0-4597-933a-d08cbb9f72f7",
+     "title": "Sjåfør kl.2 med sertifikat for henger",
+     "employer": "Randstad AS",
+     "nav_city": "ÅLESUND",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "drivers_license"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work night",
+       "evidence": "00 til 16.00 og det passer dermed bra for deg som ikke ønsker å jobbe skift. Overtid må påregnes noen dager i uka. Arbeidsoppgavene vil blant ann"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "e52ff01f-64c0-4597-933a-d08cbb9f72f7",
+      "geography_fallback_used": true,
+      "nav_city": "ÅLESUND",
+      "nav_county": "MØRE OG ROMSDAL",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "Snarest",
+      "description_chars": 1500
+     }
+    },
+    {
+     "rank": 6,
+     "job_id": "nav_00220",
+     "nav_uuid": "263743d5-16e9-4393-a4a7-cd8b83d7201d",
+     "title": "Er du en trygg og rolig type, som vil gjøre en forskjell for meg? Ung mann søker BPA-assistent",
+     "employer": "JAG Assistanse AS",
+     "nav_city": "KRISTIANSUND N",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "drivers_license",
+      "experience",
+      "language"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work night",
+       "evidence": "_____________________________ Tillegg for ubekvem arbeidstid Kveld og natt: kr 67,00 Helg: kr 70,00 Kveld/natt- og helgetillegg ihht. tariffavta"
+      },
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: truckforerbevis_t1_t4",
+       "evidence": "lig Liker å jobbe i team Krav i stillingen: Plettfri vandel/politiattest Gode norskkunnskaper Førerkort Emosjonelle krav: Det stille"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "263743d5-16e9-4393-a4a7-cd8b83d7201d",
+      "geography_fallback_used": true,
+      "nav_city": "KRISTIANSUND N",
+      "nav_county": "MØRE OG ROMSDAL",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "18-09-2026",
+      "description_chars": 2593
+     }
+    },
+    {
+     "rank": 7,
+     "job_id": "nav_00235",
+     "nav_uuid": "0cd39e92-032f-4a23-9698-d0b382e5b563",
+     "title": "Undervisningsstillinger i teknologi- og industrifag med inntil 150% fast",
+     "employer": "Vestfold Fylkeskommune",
+     "nav_city": "HOLMESTRAND",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "certification",
+      "education",
+      "experience"
+     ],
+     "suspected_conflicts": [],
+     "adaptation_notes": {
+      "nav_uuid": "0cd39e92-032f-4a23-9698-d0b382e5b563",
+      "geography_fallback_used": true,
+      "nav_city": "HOLMESTRAND",
+      "nav_county": "VESTFOLD",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "10.09.2026",
+      "description_chars": 2904
+     }
+    },
+    {
+     "rank": 8,
+     "job_id": "nav_00013",
+     "nav_uuid": "47af29c6-4517-49da-965a-9cc10866e9aa",
+     "title": "Sykepleier til hjemmetjenesten ",
+     "employer": "Porsanger Kommune",
+     "nav_city": "LAKSELV",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "drivers_license",
+      "education",
+      "experience",
+      "language",
+      "shift_rotation",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work night",
+       "evidence": "100 % vikariat med varighet 6-12 måneder. Stillingene inngår i todelt turnus. Turnus for sykepleiere er under endring, og vil på sikt inngå i en f"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "47af29c6-4517-49da-965a-9cc10866e9aa",
+      "geography_fallback_used": true,
+      "nav_city": "LAKSELV",
+      "nav_county": "FINNMARK",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-25T00:00:00",
+      "description_chars": 4539
+     }
+    },
+    {
+     "rank": 9,
+     "job_id": "nav_00124",
+     "nav_uuid": "447b832a-45e5-49f7-9e4a-3aa9fb670a0f",
+     "title": "Er du engasjert, kreativ og har tjenestemottakere i fokus, ønsker vi deg på laget!",
+     "employer": "Tønsberg kommune Brår",
+     "nav_city": "RAMNES",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "drivers_license",
+      "experience",
+      "shift_rotation",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work night",
+       "evidence": "g som ser løsninger – hos oss er det lov å prøve og lære. Forutsigbar turnus: Dag- og kveldsvakter i ukedager, samt langvakter hver 4. helg – som"
+      },
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: truckforerbevis_t1_t4",
+       "evidence": "Oppfølging av lovverk (inkl. HOL kap. 9) Kvalifikasjonskrav Autorisasjon som vernepleier eller sykepleier Digitale ferdigheter Gyldi"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "447b832a-45e5-49f7-9e4a-3aa9fb670a0f",
+      "geography_fallback_used": true,
+      "nav_city": "RAMNES",
+      "nav_county": "VESTFOLD",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-27T00:00:00",
+      "description_chars": 4169
+     }
+    },
+    {
+     "rank": 10,
+     "job_id": "nav_00011",
+     "nav_uuid": "94333844-86b5-4a66-a332-3ce1a7f662fb",
+     "title": "Helsefagarbeider og pleiemedarbeidere",
+     "employer": "Porsanger Kommune",
+     "nav_city": "LAKSELV",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "certification",
+      "drivers_license",
+      "experience",
+      "language",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [],
+     "adaptation_notes": {
+      "nav_uuid": "94333844-86b5-4a66-a332-3ce1a7f662fb",
+      "geography_fallback_used": true,
+      "nav_city": "LAKSELV",
+      "nav_county": "FINNMARK",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-18T00:00:00",
+      "description_chars": 4323
+     }
+    }
+   ],
+   "observations": {
+    "recs_with_unsupported_claims": 0,
+    "unsupported_claim_rate": 0.0,
+    "recs_with_any_text_borne_dimension": 10,
+    "recs_with_suspected_conflict": 6,
+    "suspected_conflict_rate": 0.6,
+    "geography_fallback_used": 6
+   }
+  },
+  "cand_geir": {
+   "candidate_id": "cand_geir",
+   "n_recommendations": 10,
+   "n_extended": 50,
+   "wall_time_s": 36.295,
+   "recommendations": [
+    {
+     "rank": 1,
+     "job_id": "nav_00082",
+     "nav_uuid": "01554434-b845-46f6-b358-4aa504b6a7a8",
+     "title": "Vil du lede mennesker, prosjekter og lønnsom vekst i L.M.K. Bygg og Anlegg?",
+     "employer": "L.m.k. Bygg Og Anlegg",
+     "nav_city": null,
+     "score": 72.0,
+     "n_claims": 3,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "certification",
+      "drivers_license",
+      "education",
+      "experience",
+      "language"
+     ],
+     "suspected_conflicts": [],
+     "adaptation_notes": {
+      "nav_uuid": "01554434-b845-46f6-b358-4aa504b6a7a8",
+      "geography_fallback_used": true,
+      "nav_city": null,
+      "nav_county": "NORDLAND",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-25",
+      "description_chars": 3089
+     }
+    },
+    {
+     "rank": 2,
+     "job_id": "nav_00015",
+     "nav_uuid": "b481019c-0abd-432f-833b-b4519ca11815",
+     "title": "Håndtverker søkes for prosjekt",
+     "employer": "Ohren Eiendom",
+     "nav_city": "KRISTIANSUND N",
+     "score": 15.0,
+     "n_claims": 2,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "experience"
+     ],
+     "suspected_conflicts": [],
+     "adaptation_notes": {
+      "nav_uuid": "b481019c-0abd-432f-833b-b4519ca11815",
+      "geography_fallback_used": true,
+      "nav_city": "KRISTIANSUND N",
+      "nav_county": "MØRE OG ROMSDAL",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-07",
+      "description_chars": 572
+     }
+    },
+    {
+     "rank": 3,
+     "job_id": "nav_00277",
+     "nav_uuid": "a159d9a4-9827-46a9-8e71-772af23535ee",
+     "title": "Lyst på 100 % fast dagjobb – og en arbeidshverdag litt utenom det vanlige?",
+     "employer": "Solid Assistanse",
+     "nav_city": "HOMMELVIK",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "drivers_license",
+      "experience"
+     ],
+     "suspected_conflicts": [],
+     "adaptation_notes": {
+      "nav_uuid": "a159d9a4-9827-46a9-8e71-772af23535ee",
+      "geography_fallback_used": false,
+      "nav_city": "HOMMELVIK",
+      "nav_county": "TRØNDELAG",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "Snarest",
+      "description_chars": 4356
+     }
+    },
+    {
+     "rank": 4,
+     "job_id": "nav_00220",
+     "nav_uuid": "263743d5-16e9-4393-a4a7-cd8b83d7201d",
+     "title": "Er du en trygg og rolig type, som vil gjøre en forskjell for meg? Ung mann søker BPA-assistent",
+     "employer": "JAG Assistanse AS",
+     "nav_city": "KRISTIANSUND N",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "drivers_license",
+      "experience",
+      "language"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: fagbrev_tomrer",
+       "evidence": "lig Liker å jobbe i team Krav i stillingen: Plettfri vandel/politiattest Gode norskkunnskaper Førerkort Emosjonelle krav: Det stille"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "263743d5-16e9-4393-a4a7-cd8b83d7201d",
+      "geography_fallback_used": true,
+      "nav_city": "KRISTIANSUND N",
+      "nav_county": "MØRE OG ROMSDAL",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "18-09-2026",
+      "description_chars": 2593
+     }
+    },
+    {
+     "rank": 5,
+     "job_id": "nav_00120",
+     "nav_uuid": "e4094cec-c977-4425-af94-7ef0a730b232",
+     "title": "Dansepedagoger Namsos kulturskole, 100 % fast stilling og 70 % vikariat",
+     "employer": "Namsos kommune Kulturskole",
+     "nav_city": "NAMSOS",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "drivers_license",
+      "education",
+      "experience"
+     ],
+     "suspected_conflicts": [],
+     "adaptation_notes": {
+      "nav_uuid": "e4094cec-c977-4425-af94-7ef0a730b232",
+      "geography_fallback_used": false,
+      "nav_city": "NAMSOS",
+      "nav_county": "TRØNDELAG",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-14T00:00:00",
+      "description_chars": 3726
+     }
+    },
+    {
+     "rank": 6,
+     "job_id": "nav_00013",
+     "nav_uuid": "47af29c6-4517-49da-965a-9cc10866e9aa",
+     "title": "Sykepleier til hjemmetjenesten ",
+     "employer": "Porsanger Kommune",
+     "nav_city": "LAKSELV",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "drivers_license",
+      "education",
+      "experience",
+      "language",
+      "shift_rotation",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [],
+     "adaptation_notes": {
+      "nav_uuid": "47af29c6-4517-49da-965a-9cc10866e9aa",
+      "geography_fallback_used": true,
+      "nav_city": "LAKSELV",
+      "nav_county": "FINNMARK",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-25T00:00:00",
+      "description_chars": 4539
+     }
+    },
+    {
+     "rank": 7,
+     "job_id": "nav_00267",
+     "nav_uuid": "3a2efca9-eb27-43de-b468-a07616ee3f71",
+     "title": "100 % stilling, vikariat fra d.d. - 31.03.27",
+     "employer": "Tønsberg kommune Ilebrekke barnehage",
+     "nav_city": "TØNSBERG",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "certification",
+      "experience",
+      "language"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: fagbrev_tomrer",
+       "evidence": "g på arbeidsplassen. Kvalifikasjonskrav Det er ønskelig med fagbrev som barne- og ungdomsarbeider, men det er ikke et absolutt"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "3a2efca9-eb27-43de-b468-a07616ee3f71",
+      "geography_fallback_used": true,
+      "nav_city": "TØNSBERG",
+      "nav_county": "VESTFOLD",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-06T00:00:00",
+      "description_chars": 2779
+     }
+    },
+    {
+     "rank": 8,
+     "job_id": "nav_00098",
+     "nav_uuid": "740ab27f-d8eb-470e-a08f-d1337d64aca2",
+     "title": "Ønsker du deg en arbeidshverdag der kolleger er opptatt av DIN kunnskap og DINE meninger om pasientforløp?",
+     "employer": "Sengeenhet Fysikalsk Medisin og Rehabilitering, Kirkenes sykehus, Finnmarkssykehuset HF",
+     "nav_city": "KIRKENES",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "education",
+      "language",
+      "shift_rotation",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: fagbrev_tomrer",
+       "evidence": "eskrivelse kan ikke utelukkes Kvalifikasjoner Krav om norsk autorisasjon som fysioterapeut Det er en fordel om du har relevant arbei"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "740ab27f-d8eb-470e-a08f-d1337d64aca2",
+      "geography_fallback_used": true,
+      "nav_city": "KIRKENES",
+      "nav_county": "FINNMARK",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-15T00:00:00",
+      "description_chars": 5736
+     }
+    },
+    {
+     "rank": 9,
+     "job_id": "nav_00124",
+     "nav_uuid": "447b832a-45e5-49f7-9e4a-3aa9fb670a0f",
+     "title": "Er du engasjert, kreativ og har tjenestemottakere i fokus, ønsker vi deg på laget!",
+     "employer": "Tønsberg kommune Brår",
+     "nav_city": "RAMNES",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "drivers_license",
+      "experience",
+      "shift_rotation",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: fagbrev_tomrer",
+       "evidence": "Oppfølging av lovverk (inkl. HOL kap. 9) Kvalifikasjonskrav Autorisasjon som vernepleier eller sykepleier Digitale ferdigheter Gyldi"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "447b832a-45e5-49f7-9e4a-3aa9fb670a0f",
+      "geography_fallback_used": true,
+      "nav_city": "RAMNES",
+      "nav_county": "VESTFOLD",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-27T00:00:00",
+      "description_chars": 4169
+     }
+    },
+    {
+     "rank": 10,
+     "job_id": "nav_00070",
+     "nav_uuid": "bf2f1173-e0ec-4c48-8837-8452455272f5",
+     "title": "Konsulent ",
+     "employer": "Service, kommunikasjon og digitalisering",
+     "nav_city": "EVJE",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "education",
+      "experience",
+      "language"
+     ],
+     "suspected_conflicts": [],
+     "adaptation_notes": {
+      "nav_uuid": "bf2f1173-e0ec-4c48-8837-8452455272f5",
+      "geography_fallback_used": true,
+      "nav_city": "EVJE",
+      "nav_county": "AGDER",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-13T00:00:00",
+      "description_chars": 4048
+     }
+    }
+   ],
+   "observations": {
+    "recs_with_unsupported_claims": 0,
+    "unsupported_claim_rate": 0.0,
+    "recs_with_any_text_borne_dimension": 10,
+    "recs_with_suspected_conflict": 4,
+    "suspected_conflict_rate": 0.4,
+    "geography_fallback_used": 8
+   }
+  },
+  "cand_lin": {
+   "candidate_id": "cand_lin",
+   "n_recommendations": 10,
+   "n_extended": 50,
+   "wall_time_s": 77.0687,
+   "recommendations": [
+    {
+     "rank": 1,
+     "job_id": "nav_00142",
+     "nav_uuid": "5cffd41e-cf06-4a65-aed8-758c5a1c369e",
+     "title": "Summer Internship 2027",
+     "employer": "Axaz",
+     "nav_city": "OSLO",
+     "score": 25.0,
+     "n_claims": 2,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "experience"
+     ],
+     "suspected_conflicts": [],
+     "adaptation_notes": {
+      "nav_uuid": "5cffd41e-cf06-4a65-aed8-758c5a1c369e",
+      "geography_fallback_used": false,
+      "nav_city": "OSLO",
+      "nav_county": "OSLO",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-25",
+      "description_chars": 3578
+     }
+    },
+    {
+     "rank": 2,
+     "job_id": "nav_00327",
+     "nav_uuid": "77213418-4cd9-4522-add0-ad7720b75968",
+     "title": "Vil du finne talentene som former morgendagens virksomheter?",
+     "employer": "GreatPeople AS",
+     "nav_city": "OSLO",
+     "score": 15.0,
+     "n_claims": 2,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "experience",
+      "language"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "language",
+       "candidate_constraint": "norwegian A2",
+       "evidence": "erskap og driver prosesser fremover Du kommuniserer godt på norsk og engelsk, både muntlig og skriftlig Du liker å være rådgi"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "77213418-4cd9-4522-add0-ad7720b75968",
+      "geography_fallback_used": false,
+      "nav_city": "OSLO",
+      "nav_county": "OSLO",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "16.09.2026",
+      "description_chars": 3290
+     }
+    },
+    {
+     "rank": 3,
+     "job_id": "nav_00318",
+     "nav_uuid": "5cb513e0-8b64-4645-bacd-41c6218564a5",
+     "title": "Funksjonell arkitekt D365 CE",
+     "employer": "Sperton Global AS ",
+     "nav_city": "OSLO",
+     "score": 10.0,
+     "n_claims": 2,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "experience",
+      "language"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "language",
+       "candidate_constraint": "norwegian A2",
+       "evidence": "lse og evne til å omsette behov til gode tekniske løsninger Norsk som arbeidsspråk Erfaring med Power Platform, Dataverse, Po"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "5cb513e0-8b64-4645-bacd-41c6218564a5",
+      "geography_fallback_used": false,
+      "nav_city": "OSLO",
+      "nav_county": "OSLO",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "Snarest",
+      "description_chars": 1983
+     }
+    },
+    {
+     "rank": 4,
+     "job_id": "nav_00097",
+     "nav_uuid": "f2a599c0-9ed4-453a-b8f0-8c31a4cf7268",
+     "title": "Førstekonsulent/rådgiver",
+     "employer": "NOKUT",
+     "nav_city": "OSLO",
+     "score": 8.0,
+     "n_claims": 2,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "education",
+      "experience"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: none valid",
+       "evidence": "stillingen. Har du utdanning fra utlandet legger du ved en godkjenning fra Direktoratet for høyere utdanning og kompetanse. I samsvar"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "f2a599c0-9ed4-453a-b8f0-8c31a4cf7268",
+      "geography_fallback_used": false,
+      "nav_city": "OSLO",
+      "nav_county": "OSLO",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-15T00:00:00",
+      "description_chars": 5338
+     }
+    },
+    {
+     "rank": 5,
+     "job_id": "nav_00123",
+     "nav_uuid": "b9714a46-516f-4df9-bae1-3615d44d6ab0",
+     "title": "Vi søker en erfaren .NET - utvikler",
+     "employer": "Statens helsetilsyn",
+     "nav_city": "OSLO",
+     "score": 5.0,
+     "n_claims": 2,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "education",
+      "experience",
+      "language"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "language",
+       "candidate_constraint": "norwegian A2",
+       "evidence": "gsmetodikk og smidig arbeid gode evner til å kommunisere på norsk, både muntlig og skriftlig For å bli vurdert for stillingen"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "b9714a46-516f-4df9-bae1-3615d44d6ab0",
+      "geography_fallback_used": false,
+      "nav_city": "OSLO",
+      "nav_county": "OSLO",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-13T00:00:00",
+      "description_chars": 6312
+     }
+    },
+    {
+     "rank": 6,
+     "job_id": "nav_00262",
+     "nav_uuid": "72f453be-c217-48aa-b390-d15fa627dd7a",
+     "title": "Postdoctoral Fellow in immunology",
+     "employer": "University of Oslo",
+     "nav_city": "OSLO",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [],
+     "suspected_conflicts": [],
+     "adaptation_notes": {
+      "nav_uuid": "72f453be-c217-48aa-b390-d15fa627dd7a",
+      "geography_fallback_used": false,
+      "nav_city": "OSLO",
+      "nav_county": "OSLO",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-16T00:00:00",
+      "description_chars": 9479
+     }
+    },
+    {
+     "rank": 7,
+     "job_id": "nav_00283",
+     "nav_uuid": "f5d71a35-f70e-45d5-9a3e-6ff1903f5492",
+     "title": "Haircutter",
+     "employer": "Adecco Karrieresenter",
+     "nav_city": "OSLO",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "language"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "language",
+       "candidate_constraint": "norwegian A2",
+       "evidence": "Language proficiency: Norwegian/Scandinavian or English at B1 level Effective and precise haircutting technique Strong cu"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "f5d71a35-f70e-45d5-9a3e-6ff1903f5492",
+      "geography_fallback_used": false,
+      "nav_city": "OSLO",
+      "nav_county": "OSLO",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "Snarest",
+      "description_chars": 2516
+     }
+    },
+    {
+     "rank": 8,
+     "job_id": "nav_00064",
+     "nav_uuid": "c30e02a5-f11b-4a04-9d56-eca198d47edf",
+     "title": "Vi søker rørleggere til Stavanger  / We are hiring plumbers to Stavanger",
+     "employer": "Personellgruppen AS",
+     "nav_city": "OSLO",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "certification",
+      "experience",
+      "language"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "language",
+       "candidate_constraint": "norwegian A2",
+       "evidence": "ig og effektivt • Gode kommunikasjonsevner og forståelse av norsk og/eller engelsk Vi tilbyr: • Et godt arbeidsmiljø med hygg"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "c30e02a5-f11b-4a04-9d56-eca198d47edf",
+      "geography_fallback_used": false,
+      "nav_city": "OSLO",
+      "nav_county": "OSLO",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "Snarest",
+      "description_chars": 2232
+     }
+    },
+    {
+     "rank": 9,
+     "job_id": "nav_00010",
+     "nav_uuid": "235f12a1-5163-4183-91c6-7f581d6f6f0b",
+     "title": "Ophthalmologist opportunity in a unique Nordic archipelago",
+     "employer": "Dignus Medical",
+     "nav_city": "OSLO",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [],
+     "suspected_conflicts": [],
+     "adaptation_notes": {
+      "nav_uuid": "235f12a1-5163-4183-91c6-7f581d6f6f0b",
+      "geography_fallback_used": false,
+      "nav_city": "OSLO",
+      "nav_county": "OSLO",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-29",
+      "description_chars": 2771
+     }
+    },
+    {
+     "rank": 10,
+     "job_id": "nav_00320",
+     "nav_uuid": "729406bb-e823-46e2-80d1-a85c0e5914de",
+     "title": "Overingeniør/Avdelingsingeniør IT drift",
+     "employer": "OsloMet - storbyuniversitetet",
+     "nav_city": "OSLO",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "education",
+      "experience",
+      "language"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: none valid",
+       "evidence": "et skandinavisk språk eller engelsk. Oversettelser må være autorisert og du må påregne å fremvise originaler ved et eventuelt int"
+      },
+      {
+       "dimension": "language",
+       "candidate_constraint": "norwegian A2",
+       "evidence": "g produktutvikling innen selvbetjening og skytjenester gode norsk- (eller et annet skandinavisk språk) og engelskkunnskaper,"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "729406bb-e823-46e2-80d1-a85c0e5914de",
+      "geography_fallback_used": false,
+      "nav_city": "OSLO",
+      "nav_county": "OSLO",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-21T00:00:00",
+      "description_chars": 6501
+     }
+    }
+   ],
+   "observations": {
+    "recs_with_unsupported_claims": 0,
+    "unsupported_claim_rate": 0.0,
+    "recs_with_any_text_borne_dimension": 8,
+    "recs_with_suspected_conflict": 7,
+    "suspected_conflict_rate": 0.7,
+    "geography_fallback_used": 0
+   }
+  },
+  "cand_yusuf": {
+   "candidate_id": "cand_yusuf",
+   "n_recommendations": 10,
+   "n_extended": 50,
+   "wall_time_s": 91.2046,
+   "recommendations": [
+    {
+     "rank": 1,
+     "job_id": "nav_00157",
+     "nav_uuid": "83bcbbd3-c3cc-45aa-90cd-9fcf08708c9c",
+     "title": "Klar til å forme fremtidens løsninger for maritim sikkerhet?",
+     "employer": "Martin Bruusgaard AS",
+     "nav_city": "SANDVIKA",
+     "score": 72.0,
+     "n_claims": 3,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "experience"
+     ],
+     "suspected_conflicts": [],
+     "adaptation_notes": {
+      "nav_uuid": "83bcbbd3-c3cc-45aa-90cd-9fcf08708c9c",
+      "geography_fallback_used": false,
+      "nav_city": "SANDVIKA",
+      "nav_county": "AKERSHUS",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "10.09.2026",
+      "description_chars": 4291
+     }
+    },
+    {
+     "rank": 2,
+     "job_id": "nav_00320",
+     "nav_uuid": "729406bb-e823-46e2-80d1-a85c0e5914de",
+     "title": "Overingeniør/Avdelingsingeniør IT drift",
+     "employer": "OsloMet - storbyuniversitetet",
+     "nav_city": "OSLO",
+     "score": 55.0,
+     "n_claims": 3,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "education",
+      "experience",
+      "language"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: kjoreseddel_persontransport",
+       "evidence": "et skandinavisk språk eller engelsk. Oversettelser må være autorisert og du må påregne å fremvise originaler ved et eventuelt int"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "729406bb-e823-46e2-80d1-a85c0e5914de",
+      "geography_fallback_used": false,
+      "nav_city": "OSLO",
+      "nav_county": "OSLO",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-21T00:00:00",
+      "description_chars": 6501
+     }
+    },
+    {
+     "rank": 3,
+     "job_id": "nav_00138",
+     "nav_uuid": "9aabbf25-f72a-4d10-8dad-3f2e4a31c618",
+     "title": "Nettverksingeniør",
+     "employer": "Universitetet i Oslo",
+     "nav_city": "OSLO",
+     "score": 50.0,
+     "n_claims": 3,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "education",
+      "experience",
+      "language"
+     ],
+     "suspected_conflicts": [],
+     "adaptation_notes": {
+      "nav_uuid": "9aabbf25-f72a-4d10-8dad-3f2e4a31c618",
+      "geography_fallback_used": false,
+      "nav_city": "OSLO",
+      "nav_county": "OSLO",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-07T00:00:00",
+      "description_chars": 6626
+     }
+    },
+    {
+     "rank": 4,
+     "job_id": "nav_00093",
+     "nav_uuid": "4c9c8b33-7ed9-4f7a-ba13-fa35031a934e",
+     "title": "Kontorleder søkes til trafikkskole i Oslo",
+     "employer": "Trio Bemanning AS",
+     "nav_city": "OSLO",
+     "score": 46.0,
+     "n_claims": 2,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "experience",
+      "language"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work night",
+       "evidence": "med levering og henting av kjøretøy i forbindelse med service og dekkskift Andre administrative og praktiske oppgaver knyttet til den daglige dr"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "4c9c8b33-7ed9-4f7a-ba13-fa35031a934e",
+      "geography_fallback_used": false,
+      "nav_city": "OSLO",
+      "nav_county": "OSLO",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-11-02",
+      "description_chars": 3068
+     }
+    },
+    {
+     "rank": 5,
+     "job_id": "nav_00355",
+     "nav_uuid": "cf626361-aaa8-4134-a0a5-f2fa86fec591",
+     "title": "Vil du være limet hos en av Lillestrøms mest innovative eiendomsutviklere?",
+     "employer": "PROSJEKTKONTORET ROMERIKE AS- en del av Taraldset konsernet",
+     "nav_city": "LILLESTRØM",
+     "score": 40.0,
+     "n_claims": 3,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "drivers_license",
+      "experience"
+     ],
+     "suspected_conflicts": [],
+     "adaptation_notes": {
+      "nav_uuid": "cf626361-aaa8-4134-a0a5-f2fa86fec591",
+      "geography_fallback_used": false,
+      "nav_city": "LILLESTRØM",
+      "nav_county": "AKERSHUS",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "18.09.2026",
+      "description_chars": 2724
+     }
+    },
+    {
+     "rank": 6,
+     "job_id": "nav_00220",
+     "nav_uuid": "263743d5-16e9-4393-a4a7-cd8b83d7201d",
+     "title": "Er du en trygg og rolig type, som vil gjøre en forskjell for meg? Ung mann søker BPA-assistent",
+     "employer": "JAG Assistanse AS",
+     "nav_city": "KRISTIANSUND N",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "drivers_license",
+      "experience",
+      "language"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work night",
+       "evidence": "_____________________________ Tillegg for ubekvem arbeidstid Kveld og natt: kr 67,00 Helg: kr 70,00 Kveld/natt- og helgetillegg ihht. tariffavta"
+      },
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: kjoreseddel_persontransport",
+       "evidence": "lig Liker å jobbe i team Krav i stillingen: Plettfri vandel/politiattest Gode norskkunnskaper Førerkort Emosjonelle krav: Det stille"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "263743d5-16e9-4393-a4a7-cd8b83d7201d",
+      "geography_fallback_used": true,
+      "nav_city": "KRISTIANSUND N",
+      "nav_county": "MØRE OG ROMSDAL",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "18-09-2026",
+      "description_chars": 2593
+     }
+    },
+    {
+     "rank": 7,
+     "job_id": "nav_00027",
+     "nav_uuid": "2e4c368a-6f3e-4418-b4c8-2e9c121bd79a",
+     "title": "Vernepleier til langvaktturnus",
+     "employer": "Aberia Omsorg & Assistanse AS",
+     "nav_city": "OSLO",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "drivers_license",
+      "education",
+      "experience",
+      "shift_rotation",
+      "travel",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work night",
+       "evidence": "sne. Vi søker særlig etter vernepleiere til 100 % stilling i langvaktsturnus , men har også interesse for deg med annen relevant helse- og sosialf"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "2e4c368a-6f3e-4418-b4c8-2e9c121bd79a",
+      "geography_fallback_used": false,
+      "nav_city": "OSLO",
+      "nav_county": "OSLO",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "18.09.2026",
+      "description_chars": 3698
+     }
+    },
+    {
+     "rank": 8,
+     "job_id": "nav_00335",
+     "nav_uuid": "e52ff01f-64c0-4597-933a-d08cbb9f72f7",
+     "title": "Sjåfør kl.2 med sertifikat for henger",
+     "employer": "Randstad AS",
+     "nav_city": "ÅLESUND",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "drivers_license"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work night",
+       "evidence": "00 til 16.00 og det passer dermed bra for deg som ikke ønsker å jobbe skift. Overtid må påregnes noen dager i uka. Arbeidsoppgavene vil blant ann"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "e52ff01f-64c0-4597-933a-d08cbb9f72f7",
+      "geography_fallback_used": true,
+      "nav_city": "ÅLESUND",
+      "nav_county": "MØRE OG ROMSDAL",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "Snarest",
+      "description_chars": 1500
+     }
+    },
+    {
+     "rank": 9,
+     "job_id": "nav_00303",
+     "nav_uuid": "8f07991d-2c49-450a-930a-e2cbb067307e",
+     "title": "Seks måneders fastlegevikariat i Finnmark",
+     "employer": "Dignus Medical - Kletor AS",
+     "nav_city": "ALTA",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "drivers_license",
+      "experience",
+      "language"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: kjoreseddel_persontransport",
+       "evidence": "ringer og en variert arbeidshverdag. Kvalifikasjoner: Norsk autorisasjon som lege Erfaring fra allmennmedisin eller primærhelsetjene"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "8f07991d-2c49-450a-930a-e2cbb067307e",
+      "geography_fallback_used": true,
+      "nav_city": "ALTA",
+      "nav_county": "FINNMARK",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-25",
+      "description_chars": 2908
+     }
+    },
+    {
+     "rank": 10,
+     "job_id": "nav_00323",
+     "nav_uuid": "d3ffd180-fda8-48f0-a2a6-9e4623802539",
+     "title": "Sykepleier",
+     "employer": "Omsorgssenter, Kristiansand kommune",
+     "nav_city": "KRISTIANSAND S",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "experience",
+      "language",
+      "shift_rotation",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work night",
+       "evidence": "ent fagfelt Lønn etter tariff og god pensjonsordning Rekruttering- og turnustillegg - kr 17 000,- pr år i 100% stilling Todelt turnus med arbeid 3"
+      },
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: kjoreseddel_persontransport",
+       "evidence": "ng av nye arbeidsmetoder samarbeide tett med leger og annet helsepersonell en jobb der du får brukt hele sykepleierkompetansen din dyk"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "d3ffd180-fda8-48f0-a2a6-9e4623802539",
+      "geography_fallback_used": true,
+      "nav_city": "KRISTIANSAND S",
+      "nav_county": "AGDER",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-09T00:00:00",
+      "description_chars": 4335
+     }
+    }
+   ],
+   "observations": {
+    "recs_with_unsupported_claims": 0,
+    "unsupported_claim_rate": 0.0,
+    "recs_with_any_text_borne_dimension": 10,
+    "recs_with_suspected_conflict": 7,
+    "suspected_conflict_rate": 0.7,
+    "geography_fallback_used": 4
+   }
+  },
+  "cand_fatima": {
+   "candidate_id": "cand_fatima",
+   "n_recommendations": 10,
+   "n_extended": 50,
+   "wall_time_s": 67.4375,
+   "recommendations": [
+    {
+     "rank": 1,
+     "job_id": "nav_00143",
+     "nav_uuid": "311c034d-2e05-4f31-92c0-02b1b0df2edd",
+     "title": "Butikkselger 80% sesongmedarbeider",
+     "employer": "Clas Ohlson Norge",
+     "nav_city": "OSLO",
+     "score": 82.0,
+     "n_claims": 4,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "education",
+      "experience",
+      "language"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "language",
+       "candidate_constraint": "norwegian B1",
+       "evidence": "en fordel. Er trygg på bruk av digitale verktøy. Behersker norsk muntlig og skriftlig, engelsk muntlig. Er minst 18 år gamme"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "311c034d-2e05-4f31-92c0-02b1b0df2edd",
+      "geography_fallback_used": false,
+      "nav_city": "OSLO",
+      "nav_county": "OSLO",
+      "extent_raw": "Deltid",
+      "percent_assumed": false,
+      "deadline_raw": "Snarest",
+      "description_chars": 2452
+     }
+    },
+    {
+     "rank": 2,
+     "job_id": "nav_00093",
+     "nav_uuid": "4c9c8b33-7ed9-4f7a-ba13-fa35031a934e",
+     "title": "Kontorleder søkes til trafikkskole i Oslo",
+     "employer": "Trio Bemanning AS",
+     "nav_city": "OSLO",
+     "score": 58.0,
+     "n_claims": 3,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "experience",
+      "language"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work night",
+       "evidence": "med levering og henting av kjøretøy i forbindelse med service og dekkskift Andre administrative og praktiske oppgaver knyttet til den daglige dr"
+      },
+      {
+       "dimension": "language",
+       "candidate_constraint": "norwegian B1",
+       "evidence": "og økonomioppfølging Har gode kommunikasjonsevner Behersker norsk og engelsk godt, både muntlig og skriftlig Har gode digital"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "4c9c8b33-7ed9-4f7a-ba13-fa35031a934e",
+      "geography_fallback_used": false,
+      "nav_city": "OSLO",
+      "nav_county": "OSLO",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-11-02",
+      "description_chars": 3068
+     }
+    },
+    {
+     "rank": 3,
+     "job_id": "nav_00185",
+     "nav_uuid": "3c93903a-e20f-455e-b6ac-28fb35c1470d",
+     "title": "ENGASJERT SELGER TIL VÅR 400 m2 BUTIKK SØKES",
+     "employer": "Sofies Villa Tønsberg As",
+     "nav_city": "TØNSBERG",
+     "score": 35.0,
+     "n_claims": 2,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "experience"
+     ],
+     "suspected_conflicts": [],
+     "adaptation_notes": {
+      "nav_uuid": "3c93903a-e20f-455e-b6ac-28fb35c1470d",
+      "geography_fallback_used": true,
+      "nav_city": "TØNSBERG",
+      "nav_county": "VESTFOLD",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-30",
+      "description_chars": 1520
+     }
+    },
+    {
+     "rank": 4,
+     "job_id": "nav_00303",
+     "nav_uuid": "8f07991d-2c49-450a-930a-e2cbb067307e",
+     "title": "Seks måneders fastlegevikariat i Finnmark",
+     "employer": "Dignus Medical - Kletor AS",
+     "nav_city": "ALTA",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "drivers_license",
+      "experience",
+      "language"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: none valid",
+       "evidence": "ringer og en variert arbeidshverdag. Kvalifikasjoner: Norsk autorisasjon som lege Erfaring fra allmennmedisin eller primærhelsetjene"
+      },
+      {
+       "dimension": "language",
+       "candidate_constraint": "norwegian B1",
+       "evidence": "Legevaktskompetanse er ønskelig Gode kommunikasjonsevner på norsk eller et annet skandinavisk språk, både muntlig og skriftli"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "8f07991d-2c49-450a-930a-e2cbb067307e",
+      "geography_fallback_used": true,
+      "nav_city": "ALTA",
+      "nav_county": "FINNMARK",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-25",
+      "description_chars": 2908
+     }
+    },
+    {
+     "rank": 5,
+     "job_id": "nav_00124",
+     "nav_uuid": "447b832a-45e5-49f7-9e4a-3aa9fb670a0f",
+     "title": "Er du engasjert, kreativ og har tjenestemottakere i fokus, ønsker vi deg på laget!",
+     "employer": "Tønsberg kommune Brår",
+     "nav_city": "RAMNES",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "drivers_license",
+      "experience",
+      "shift_rotation",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work night",
+       "evidence": "g som ser løsninger – hos oss er det lov å prøve og lære. Forutsigbar turnus: Dag- og kveldsvakter i ukedager, samt langvakter hver 4. helg – som"
+      },
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: none valid",
+       "evidence": "Oppfølging av lovverk (inkl. HOL kap. 9) Kvalifikasjonskrav Autorisasjon som vernepleier eller sykepleier Digitale ferdigheter Gyldi"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "447b832a-45e5-49f7-9e4a-3aa9fb670a0f",
+      "geography_fallback_used": true,
+      "nav_city": "RAMNES",
+      "nav_county": "VESTFOLD",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-27T00:00:00",
+      "description_chars": 4169
+     }
+    },
+    {
+     "rank": 6,
+     "job_id": "nav_00220",
+     "nav_uuid": "263743d5-16e9-4393-a4a7-cd8b83d7201d",
+     "title": "Er du en trygg og rolig type, som vil gjøre en forskjell for meg? Ung mann søker BPA-assistent",
+     "employer": "JAG Assistanse AS",
+     "nav_city": "KRISTIANSUND N",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "drivers_license",
+      "experience",
+      "language"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work night",
+       "evidence": "_____________________________ Tillegg for ubekvem arbeidstid Kveld og natt: kr 67,00 Helg: kr 70,00 Kveld/natt- og helgetillegg ihht. tariffavta"
+      },
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: none valid",
+       "evidence": "lig Liker å jobbe i team Krav i stillingen: Plettfri vandel/politiattest Gode norskkunnskaper Førerkort Emosjonelle krav: Det stille"
+      },
+      {
+       "dimension": "language",
+       "candidate_constraint": "norwegian B1",
+       "evidence": "i team Krav i stillingen: Plettfri vandel/politiattest Gode norskkunnskaper Førerkort Emosjonelle krav: Det stilles emosjonelle krav i"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "263743d5-16e9-4393-a4a7-cd8b83d7201d",
+      "geography_fallback_used": true,
+      "nav_city": "KRISTIANSUND N",
+      "nav_county": "MØRE OG ROMSDAL",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "18-09-2026",
+      "description_chars": 2593
+     }
+    },
+    {
+     "rank": 7,
+     "job_id": "nav_00242",
+     "nav_uuid": "d750d1cd-cd0a-4fbb-a0e6-80f43c56b61b",
+     "title": "Psykologspesialist",
+     "employer": "Allmennpsykiatrisk post, Larvik, Sykehuset i Vestfold HF",
+     "nav_city": "LARVIK",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "education",
+      "language"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: none valid",
+       "evidence": "stillatelse i Norge Den som tilsettes i stilling som krever autorisasjon, må kunne dokumentere norsk offentlig godkjenning Personlig"
+      },
+      {
+       "dimension": "language",
+       "candidate_constraint": "norwegian B1",
+       "evidence": "ennpsykiatri og spesialisthelsetjenesten God forståelse for norsk helsevesen Gode kommunikasjonsferdigheter i norsk (skandina"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "d750d1cd-cd0a-4fbb-a0e6-80f43c56b61b",
+      "geography_fallback_used": true,
+      "nav_city": "LARVIK",
+      "nav_county": "VESTFOLD",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-20T00:00:00",
+      "description_chars": 4599
+     }
+    },
+    {
+     "rank": 8,
+     "job_id": "nav_00140",
+     "nav_uuid": "687ac413-532b-427d-95b8-4d9f1c3c7ee4",
+     "title": "Er du sykepleier og på jakt etter nye utfordringer?",
+     "employer": "Sørlandet sykehus HF",
+     "nav_city": "KRISTIANSAND S",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "education",
+      "experience",
+      "language",
+      "shift_rotation",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work night",
+       "evidence": "kepleier, og som ønsker mer variasjon. Arbeid p.t. hver tredje helg i tredelt turnus, samt to ekstra helger i året. Vi søker en engasjert sykepleie"
+      },
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: none valid",
+       "evidence": "e tett med leger, og andre faggrupper Kvalifikasjoner Norsk autorisasjon som sykepleier Sykepleiere med respiratorkompetanse vil bli"
+      },
+      {
+       "dimension": "language",
+       "candidate_constraint": "norwegian B1",
+       "evidence": "r erfaring fra arbeid med barn i sykehus. Må kunne beherske norsk skriftlig og muntlig. Gode datakunnskaper Må beherske norsk"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "687ac413-532b-427d-95b8-4d9f1c3c7ee4",
+      "geography_fallback_used": true,
+      "nav_city": "KRISTIANSAND S",
+      "nav_county": "AGDER",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-13T00:00:00",
+      "description_chars": 4789
+     }
+    },
+    {
+     "rank": 9,
+     "job_id": "nav_00313",
+     "nav_uuid": "de81d3fc-5417-43e5-aca9-297fc2e22331",
+     "title": "Elektrikere søkes til lange prosjekter i Møre og Romsdal",
+     "employer": "XL Bemanning AS Avd Ålesund",
+     "nav_city": "ÅLESUND",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "drivers_license",
+      "experience",
+      "language",
+      "shift_rotation",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work night",
+       "evidence": "ige oppdrag, enten du ønsker å jobbe fast i området eller foretrekker rotasjon. Arbeidsoppgaver kan blant annet være Elektriske installasjoner på ve"
+      },
+      {
+       "dimension": "language",
+       "candidate_constraint": "norwegian B1",
+       "evidence": "e har DSB på plass ennå. Du bør kunne kommunisere på norsk, skandinavisk eller engelsk. Førerkort klasse B er en fordel. Dette kan v"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "de81d3fc-5417-43e5-aca9-297fc2e22331",
+      "geography_fallback_used": true,
+      "nav_city": "ÅLESUND",
+      "nav_county": "MØRE OG ROMSDAL",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-12",
+      "description_chars": 2779
+     }
+    },
+    {
+     "rank": 10,
+     "job_id": "nav_00027",
+     "nav_uuid": "2e4c368a-6f3e-4418-b4c8-2e9c121bd79a",
+     "title": "Vernepleier til langvaktturnus",
+     "employer": "Aberia Omsorg & Assistanse AS",
+     "nav_city": "OSLO",
+     "score": 0.0,
+     "n_claims": 0,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "drivers_license",
+      "education",
+      "experience",
+      "shift_rotation",
+      "travel",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work night",
+       "evidence": "sne. Vi søker særlig etter vernepleiere til 100 % stilling i langvaktsturnus , men har også interesse for deg med annen relevant helse- og sosialf"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "2e4c368a-6f3e-4418-b4c8-2e9c121bd79a",
+      "geography_fallback_used": false,
+      "nav_city": "OSLO",
+      "nav_county": "OSLO",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "18.09.2026",
+      "description_chars": 3698
+     }
+    }
+   ],
+   "observations": {
+    "recs_with_unsupported_claims": 0,
+    "unsupported_claim_rate": 0.0,
+    "recs_with_any_text_borne_dimension": 10,
+    "recs_with_suspected_conflict": 9,
+    "suspected_conflict_rate": 0.9,
+    "geography_fallback_used": 7
+   }
+  },
+  "cand_ingrid": {
+   "candidate_id": "cand_ingrid",
+   "n_recommendations": 10,
+   "n_extended": 50,
+   "wall_time_s": 117.4992,
+   "recommendations": [
+    {
+     "rank": 1,
+     "job_id": "nav_00003",
+     "nav_uuid": "6cbc4090-148e-4364-b3b4-5a26f610049d",
+     "title": "Engasjert Vernepleier/sykepleier på jakt etter nye utfordringer?  ",
+     "employer": "Enhet for privatinitierte bogrupper og hjemmeteam, Bergen kommune",
+     "nav_city": "BERGEN",
+     "score": 62.0,
+     "n_claims": 3,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "experience",
+      "language",
+      "shift_rotation",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work night",
+       "evidence": "t deg, og ser frem til å motta søknaden din. Stillingen er fast 100%. Turnusen består av dag- og kveldsvakter, og 12,5 timers vakter hver 4. helg."
+      },
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: hpr_autorisasjon_sykepleier",
+       "evidence": "on i bo tjenesten for definerte fagområder. Kvalifikasjoner Autorisasjon som vernepleier/ sykepleier. Personlig egnethet vektlegges."
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "6cbc4090-148e-4364-b3b4-5a26f610049d",
+      "geography_fallback_used": false,
+      "nav_city": "BERGEN",
+      "nav_county": "VESTLAND",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-09T00:00:00",
+      "description_chars": 4450
+     }
+    },
+    {
+     "rank": 2,
+     "job_id": "nav_00388",
+     "nav_uuid": "2858df19-87a3-4233-8734-1150d267e1a6",
+     "title": " Intensivsjukepleiar - bli ein del av eit av landets leiande fagmiljø",
+     "employer": "Helse Bergen HF",
+     "nav_city": "BERGEN",
+     "score": 45.0,
+     "n_claims": 1,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "education",
+      "experience",
+      "language",
+      "shift_rotation",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work night",
+       "evidence": "helsetenesta. Erfaring frå kirurgiske pasientar er ein fordel. Vi har 3-delt turnus og jobbar 16 helgar på 52 veker. Kontakt: Mette Ravnøy, tlf. 5"
+      },
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: hpr_autorisasjon_sykepleier",
+       "evidence": "rettleiing av studentar og kollegaer Kvalifikasjonar: Norsk autorisasjon som sykepleier Videreutdanning i intensivsykepleie Relevant"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "2858df19-87a3-4233-8734-1150d267e1a6",
+      "geography_fallback_used": false,
+      "nav_city": "BERGEN",
+      "nav_county": "VESTLAND",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-06T00:00:00",
+      "description_chars": 8683
+     }
+    },
+    {
+     "rank": 3,
+     "job_id": "nav_00100",
+     "nav_uuid": "67e73fdd-8af4-46d9-a8cc-2fa79fed2602",
+     "title": "Miljøterapeut/miljøarbeider i Helse og omsorg",
+     "employer": "Humana omsorg og assistanse",
+     "nav_city": "BERGEN",
+     "score": 40.0,
+     "n_claims": 3,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "drivers_license",
+      "education",
+      "experience",
+      "language",
+      "shift_rotation",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work night",
+       "evidence": "ere. Vi har nå behov for miljøterapeuter i 100% medleverstilling, med turnus 3/7/4/7. Vi har også behov for deltidsstillinger på 60%. I Humana job"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "67e73fdd-8af4-46d9-a8cc-2fa79fed2602",
+      "geography_fallback_used": false,
+      "nav_city": "BERGEN",
+      "nav_county": "VESTLAND",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "",
+      "description_chars": 1920
+     }
+    },
+    {
+     "rank": 4,
+     "job_id": "nav_00084",
+     "nav_uuid": "7cd3884d-dad6-46b8-8f69-5871b28ba12e",
+     "title": "Vernepleier/Sykepleier 2x100 % fast stilling ved Lundeveien avlastning 38",
+     "employer": "Livsmestring Barn og unge, Kristiansand kommune",
+     "nav_city": "SØGNE",
+     "score": 22.0,
+     "n_claims": 2,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "drivers_license",
+      "education",
+      "experience",
+      "language",
+      "shift_rotation",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work night",
+       "evidence": "etter: Vernepleier/Sykepleier 2 x 100 % fast med arbeid hver 4. helg. Turnus med langvakter på 12,5 timer (det kan også være mulighet for ordinære"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "7cd3884d-dad6-46b8-8f69-5871b28ba12e",
+      "geography_fallback_used": true,
+      "nav_city": "SØGNE",
+      "nav_county": "AGDER",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-13T00:00:00",
+      "description_chars": 2908
+     }
+    },
+    {
+     "rank": 5,
+     "job_id": "nav_00094",
+     "nav_uuid": "8df7a654-839e-4684-806a-9403ed761d2b",
+     "title": "Vi søkjer engasjert sjukepleiar til fast stilling ",
+     "employer": "Medisinsk sengepost 2 Førde, Helse Førde",
+     "nav_city": "FØRDE",
+     "score": 22.0,
+     "n_claims": 2,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "education",
+      "experience",
+      "shift_rotation",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work night",
+       "evidence": "pasientrelatert med oppfølging av behandling, stell og pleie. Vi har 3-delt turnus og ein må kunne jobbe i det. Vi tilbyr også langvakter i turnu"
+      },
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: hpr_autorisasjon_sykepleier",
+       "evidence": "del av det daglege arbeidet. Kvalifikasjonar Søkjar må vere autorisert sjukepleiar. Det vil være ein fordel om du har erfaring frå"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "8df7a654-839e-4684-806a-9403ed761d2b",
+      "geography_fallback_used": false,
+      "nav_city": "FØRDE",
+      "nav_county": "VESTLAND",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-09T00:00:00",
+      "description_chars": 3118
+     }
+    },
+    {
+     "rank": 6,
+     "job_id": "nav_00124",
+     "nav_uuid": "447b832a-45e5-49f7-9e4a-3aa9fb670a0f",
+     "title": "Er du engasjert, kreativ og har tjenestemottakere i fokus, ønsker vi deg på laget!",
+     "employer": "Tønsberg kommune Brår",
+     "nav_city": "RAMNES",
+     "score": 22.0,
+     "n_claims": 1,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "drivers_license",
+      "experience",
+      "shift_rotation",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work night",
+       "evidence": "g som ser løsninger – hos oss er det lov å prøve og lære. Forutsigbar turnus: Dag- og kveldsvakter i ukedager, samt langvakter hver 4. helg – som"
+      },
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: hpr_autorisasjon_sykepleier",
+       "evidence": "Oppfølging av lovverk (inkl. HOL kap. 9) Kvalifikasjonskrav Autorisasjon som vernepleier eller sykepleier Digitale ferdigheter Gyldi"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "447b832a-45e5-49f7-9e4a-3aa9fb670a0f",
+      "geography_fallback_used": true,
+      "nav_city": "RAMNES",
+      "nav_county": "VESTFOLD",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-27T00:00:00",
+      "description_chars": 4169
+     }
+    },
+    {
+     "rank": 7,
+     "job_id": "nav_00133",
+     "nav_uuid": "5c61cd8e-69e5-4fda-bbae-ce2e13d1cabf",
+     "title": "Sjukepleiar ",
+     "employer": "Medisinsk sengepost 1 Førde, Helse Førde",
+     "nav_city": "FØRDE",
+     "score": 22.0,
+     "n_claims": 2,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "education",
+      "experience",
+      "shift_rotation",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work night",
+       "evidence": "pfølging, behandling, observasjon, stell og pleie. Stillinga inngår i tredelt turnus, og det er ein føresetnad at du kan arbeide i denne turnusordn"
+      },
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: hpr_autorisasjon_sykepleier",
+       "evidence": "del av det daglege arbeidet. Kvalifikasjonar Søkjar må vere autorisert sjukepleiar Søkjar må ha gode norskkunnskapar, både skriftl"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "5c61cd8e-69e5-4fda-bbae-ce2e13d1cabf",
+      "geography_fallback_used": false,
+      "nav_city": "FØRDE",
+      "nav_county": "VESTLAND",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-09T00:00:00",
+      "description_chars": 3513
+     }
+    },
+    {
+     "rank": 8,
+     "job_id": "nav_00140",
+     "nav_uuid": "687ac413-532b-427d-95b8-4d9f1c3c7ee4",
+     "title": "Er du sykepleier og på jakt etter nye utfordringer?",
+     "employer": "Sørlandet sykehus HF",
+     "nav_city": "KRISTIANSAND S",
+     "score": 22.0,
+     "n_claims": 2,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "education",
+      "experience",
+      "language",
+      "shift_rotation",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work night",
+       "evidence": "kepleier, og som ønsker mer variasjon. Arbeid p.t. hver tredje helg i tredelt turnus, samt to ekstra helger i året. Vi søker en engasjert sykepleie"
+      },
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: hpr_autorisasjon_sykepleier",
+       "evidence": "e tett med leger, og andre faggrupper Kvalifikasjoner Norsk autorisasjon som sykepleier Sykepleiere med respiratorkompetanse vil bli"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "687ac413-532b-427d-95b8-4d9f1c3c7ee4",
+      "geography_fallback_used": true,
+      "nav_city": "KRISTIANSAND S",
+      "nav_county": "AGDER",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-13T00:00:00",
+      "description_chars": 4789
+     }
+    },
+    {
+     "rank": 9,
+     "job_id": "nav_00179",
+     "nav_uuid": "10b750b6-29ea-4d0c-9b2d-03ad6bfe0aad",
+     "title": "Sykepleier/vernepleier - Vefsn kommune - Rehabilitering- og hjemmetjenesten",
+     "employer": "Vefsn kommune Hjemmetjenesten team 4",
+     "nav_city": "MOSJØEN",
+     "score": 22.0,
+     "n_claims": 2,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "drivers_license",
+      "experience",
+      "language",
+      "shift_rotation",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work night",
+       "evidence": "t 100% stilling som sykepleier eller vernepleier. I stillingen inngår turnusarbeid. Hvis det er ønske om lavere stillingsprosent, kan vi diskutere"
+      },
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: hpr_autorisasjon_sykepleier",
+       "evidence": "g inngår i avdelingens arbeid og drift Krav til stillingen: Autorisasjon som sykepleier eller vernepleier Er du sykepleierstudent/ve"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "10b750b6-29ea-4d0c-9b2d-03ad6bfe0aad",
+      "geography_fallback_used": true,
+      "nav_city": "MOSJØEN",
+      "nav_county": "NORDLAND",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-16T00:00:00",
+      "description_chars": 5319
+     }
+    },
+    {
+     "rank": 10,
+     "job_id": "nav_00208",
+     "nav_uuid": "c2b5329b-d59f-48e4-84cd-292a0c5679fa",
+     "title": "Sykepleier 100% fast og 100% svangerskapsvikariat avd. Hånes/Tveit",
+     "employer": "Hjemmetjenester øst, Kristiansand kommune",
+     "nav_city": "KRISTIANSAND S",
+     "score": 22.0,
+     "n_claims": 2,
+     "n_unsupported_claims": 0,
+     "unsupported_claims": [],
+     "text_borne_dimensions": [
+      "authorization",
+      "drivers_license",
+      "experience",
+      "language",
+      "shift_rotation",
+      "working_hours_night"
+     ],
+     "suspected_conflicts": [
+      {
+       "dimension": "shifts",
+       "candidate_constraint": "cannot work night",
+       "evidence": "rskapsvikariat. Tiltredelse etter avtale. Stillingen innebærer 2-delt turnus, med arbeid hver 3 helg. Politiattest ikke eldre enn 3 måneder kreves"
+      },
+      {
+       "dimension": "certification_or_authorization",
+       "candidate_constraint": "holds: hpr_autorisasjon_sykepleier",
+       "evidence": "er i andre deler av virksomheten ved behov. Kvalifikasjoner Autorisert sykepleier Gode norskkunnskaper, både muntlig og skriftlig"
+      }
+     ],
+     "adaptation_notes": {
+      "nav_uuid": "c2b5329b-d59f-48e4-84cd-292a0c5679fa",
+      "geography_fallback_used": true,
+      "nav_city": "KRISTIANSAND S",
+      "nav_county": "AGDER",
+      "extent_raw": "Heltid",
+      "percent_assumed": false,
+      "deadline_raw": "2026-09-20T00:00:00",
+      "description_chars": 1908
+     }
+    }
+   ],
+   "observations": {
+    "recs_with_unsupported_claims": 0,
+    "unsupported_claim_rate": 0.0,
+    "recs_with_any_text_borne_dimension": 10,
+    "recs_with_suspected_conflict": 10,
+    "suspected_conflict_rate": 1.0,
+    "geography_fallback_used": 5
+   }
+  }
+ },
+ "caveats": [
+  "No ground truth: nothing here is scored as correct or incorrect.",
+  "'suspected_conflicts' are pattern-based suspicions from ad text and REQUIRE human adjudication; they are not confirmed B2 errors.",
+  "Structured requirement fields are empty by design (NAV publishes none), so the deterministic filter can only enforce location, extent, engagement type and deadline."
+ ]
+}
