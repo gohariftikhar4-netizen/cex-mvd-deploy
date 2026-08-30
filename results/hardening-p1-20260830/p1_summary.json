@@ -1,0 +1,49 @@
+{
+ "kind": "P1 closure evidence — descriptive, no gold labels",
+ "engine": "match_engine_v1 (hardened B2)",
+ "model": "z-ai/glm-5.3-flash via openrouter deepinfra/fp8",
+ "candidates": 8,
+ "ads": 400,
+ "before_b2": {
+  "recommendations": 80,
+  "suspected_conflict_recs": 63,
+  "rate": 0.79,
+  "cost_usd": 0.0513
+ },
+ "after_me1": {
+  "recommendations": 59,
+  "suspected_conflict_recs": 39,
+  "rate": 0.66,
+  "cost_usd": 0.0662
+ },
+ "enforcement": {
+  "model_declared_conflicts": 446,
+  "model_declared_clear": 65,
+  "rejected_after_substantiation": 402,
+  "unsubstantiated_discarded": 8,
+  "rejections_by_dimension": {
+   "experience": 41,
+   "education": 156,
+   "authorization": 109,
+   "shifts": 33,
+   "travel": 10,
+   "certification": 61,
+   "language": 45,
+   "drivers_license": 7,
+   "physical": 2,
+   "work_authorization": 3
+  }
+ },
+ "over_rejection_regression": {
+  "first_attempt_recs_per_candidate": "0-2",
+  "after_fix": "1-11",
+  "travel_rejections_before": 126,
+  "travel_rejections_after": 10
+ },
+ "residual": "39 of 59 emitted recs still trip the pattern detector; the model declared them CLEAR -> these are DETECTION failures (class A), which P2 addresses. Detector FP rate measured 22-37%, so 66% is an upper bound.",
+ "caveats": [
+  "pattern detector is not ground truth",
+  "no human labels yet",
+  "one model, one snapshot"
+ ]
+}

@@ -144,6 +144,11 @@ def validate(snapshot_dir: Path, candidate_ids: list[str], out_dir: Path,
                 "employer": ad.get("employer_name"),
                 "nav_city": (ad.get("work_locations") or [{}])[0].get("city"),
                 "score": rec.get("score"),
+                # Carry the engine's machine-readable verdict into the report
+                # so the audit trail is complete (Match Engine v1 only; the
+                # frozen B2 arm has no such field and reports None).
+                "constraint_verdict": rec.get("constraint_verdict"),
+                "declared_conflicts": rec.get("conflicts", []),
                 "n_claims": len(claims), "n_unsupported_claims": len(unsupported),
                 "unsupported_claims": unsupported,
                 "text_borne_dimensions": text_borne,
