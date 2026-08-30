@@ -14,6 +14,11 @@ from __future__ import annotations
 # Dimensions the model must judge from the RAW ad text. NAV publishes no
 # machine-readable requirement fields for any of these (measured: 0.0%
 # structured coverage for 10 of 13 dimensions), so the text is the only source.
+#
+# Deliberately EXCLUDED: location/commute, position_extent and deadline. Those
+# are enforced deterministically from structured NAV fields, and letting the
+# model re-judge them caused a measured collapse (it read "travel" as "this
+# city is far away" and destroyed 126 recommendations across 7 candidates).
 CONSTRAINT_DIMENSIONS = [
     "shifts",             # night / rotation / evening / weekend duty
     "authorization",      # norsk autorisasjon, HPR, licence to practise
@@ -21,13 +26,15 @@ CONSTRAINT_DIMENSIONS = [
     "drivers_license",    # førerkort class
     "language",           # required Norwegian/English level
     "education",          # required completed education
-    "experience",         # required years//type of experience
-    "travel",             # overnight travel / rotation away from home
+    "experience",         # required years/type of experience
+    "travel",             # ONLY overnight travel / rotation away from home
     "physical",           # lifting, standing, heights
     "work_authorization",  # citizenship / clearance / right to work
-    "position_extent",    # percentage of full-time
-    "deadline",           # application deadline already passed
 ]
+
+# Owned by the deterministic filter; a model verdict on these is ignored.
+DETERMINISTIC_DIMENSIONS = ["location_commute", "position_extent", "deadline",
+                            "employment_type", "salary"]
 
 _CONFLICT_ITEM = {
     "type": "object",
@@ -90,5 +97,17 @@ CONSTRAINT_INSTRUCTION = (
     "ingen dimensjon bryter et absolutt krav.\n"
     "Ikke ranger en stilling høyt fordi den ellers passer: en stilling med "
     "konflikt blir uansett avvist av systemet. Vær ærlig — det er bedre å "
-    "melde en konflikt enn å skjule den."
+    "melde en konflikt enn å skjule den.\n"
+    "\nTO VIKTIGE BEGRENSNINGER:\n"
+    "1. IKKE meld konflikt på geografi/pendleavstand, stillingsprosent, "
+    "ansettelsesform eller søknadsfrist. Disse er allerede kontrollert "
+    "maskinelt mot strukturerte data. 'travel' betyr KUN reise med "
+    "overnatting eller rotasjon borte fra hjemmet — ikke at arbeidsstedet "
+    "ligger i en annen by.\n"
+    "2. Et ØNSKE er ikke et absolutt krav. Formuleringer som 'ønskelig', "
+    "'en fordel', 'gjerne', 'bør', 'vektlegges' beskriver preferanser og "
+    "skal IKKE gi hard_constraint_conflict. Bare krav som faktisk utelukker "
+    "kandidaten ('må ha', 'er et krav', 'forutsetter', 'kreves') teller.\n"
+    "Sitatet i 'conflicts' må stå ORDRETT i annonseteksten. Finner du ikke "
+    "et ordrett sitat som viser kravet, har du ikke belegg for konflikten."
 )

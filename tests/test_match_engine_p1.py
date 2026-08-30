@@ -55,10 +55,11 @@ def test_declared_conflict_is_rejected():
     payload = {"items": [
         {"job_id": "job_801", "score": 99, "claims": [],
          "hard_constraint_conflict": True,
-         "conflict_dimensions": ["shifts"],
-         "conflict_evidence": [{"dimension": "shifts", "quote": "Tredelt turnus med nattevakter"}]},
+         "conflicts": [{"dimension": "shifts",
+                        "quote": "Tredelt turnus med nattevakter",
+                        "explanation": "kandidaten kan ikke jobbe natt"}]},
         {"job_id": "job_800", "score": 10, "claims": [],
-         "hard_constraint_conflict": False, "conflict_dimensions": [], "conflict_evidence": []},
+         "hard_constraint_conflict": False, "conflicts": []},
     ]}
     out = run_match_engine(cand, jobs, NullLogger(), ScriptedClient(payload))
     ids = [r["job_id"] for r in out["recommendations"]]
@@ -72,8 +73,9 @@ def test_score_cannot_override_conflict():
     cand, jobs = _world()
     payload = {"items": [
         {"job_id": "job_801", "score": 100, "claims": [],
-         "hard_constraint_conflict": True, "conflict_dimensions": ["shifts"],
-         "conflict_evidence": [{"dimension": "shifts", "quote": "nattevakter"}]},
+         "hard_constraint_conflict": True,
+         "conflicts": [{"dimension": "shifts", "quote": "Tredelt turnus med nattevakter",
+                        "explanation": "natt"}]},
     ]}
     out = run_match_engine(cand, jobs, NullLogger(), ScriptedClient(payload))
     assert [r["job_id"] for r in out["recommendations"]] == []
@@ -83,8 +85,9 @@ def test_rejection_is_logged_and_auditable():
     cand, jobs = _world()
     payload = {"items": [
         {"job_id": "job_801", "score": 88, "claims": [],
-         "hard_constraint_conflict": True, "conflict_dimensions": ["shifts"],
-         "conflict_evidence": [{"dimension": "shifts", "quote": "nattevakter"}]},
+         "hard_constraint_conflict": True,
+         "conflicts": [{"dimension": "shifts", "quote": "Tredelt turnus med nattevakter",
+                        "explanation": "natt"}]},
     ]}
     logger = NullLogger()
     run_match_engine(cand, jobs, logger, ScriptedClient(payload))
@@ -102,3 +105,64 @@ def test_missing_conflict_field_is_treated_as_unverified_not_safe():
     if recs:
         assert recs[0].get("constraint_verdict") == "unverified", \
             "a missing verdict must be surfaced as unverified, never silently trusted"
+
+
+# --- P1b: the fix must not cause OVER-rejection -------------------------
+# Measured regression on real NAV data: enforcing every declared conflict
+# collapsed recommendations from 10 to 0-2 per candidate (cand_lin: 0).
+# Two systematic causes, both fixed below.
+
+def test_conflict_with_unverifiable_quote_does_not_reject():
+    """A conflict must prove the requirement exists in the ad. If its quote is
+    not in the ad text, the requirement is unsubstantiated and must NOT cause
+    a rejection — that is how the model's misreadings became lost jobs."""
+    cand, jobs = _world()
+    payload = {"items": [
+        {"job_id": "job_800", "score": 70, "claims": [],
+         "hard_constraint_conflict": True,
+         "conflict_dimensions": ["authorization"],
+         "conflicts": [{"dimension": "authorization",
+                        "quote": "krever autorisasjon som sykepleier",   # NOT in job_800
+                        "explanation": "modellen tror det står et krav her"}]},
+    ]}
+    logger = NullLogger()
+    out = run_match_engine(cand, jobs, logger, ScriptedClient(payload))
+    ids = [r["job_id"] for r in out["recommendations"]]
+    assert "job_800" in ids, "rejected on evidence that does not exist in the ad"
+    assert any("unverified_conflict" in d["stage"] for d in logger.decisions), \
+        "an unverifiable conflict must still be logged for review"
+
+
+def test_llm_cannot_reject_on_deterministically_owned_dimension():
+    """Location/extent/deadline are enforced deterministically from structured
+    data. A model verdict on those dimensions must be ignored — on real NAV
+    data the model re-judged geography and destroyed 126 recommendations.
+
+    (Semantic misuse of an owned dimension — e.g. citing a city name under
+    'travel' — is an ENTAILMENT problem and is handled in P3, not here.)"""
+    cand, jobs = _world()
+    payload = {"items": [
+        {"job_id": "job_800", "score": 60, "claims": [],
+         "hard_constraint_conflict": True,
+         "conflicts": [{"dimension": "position_extent",
+                        "quote": "Python-utvikler i Oslo. Ren dagtid.",
+                        "explanation": "feil stillingsprosent"}]},
+    ]}
+    out = run_match_engine(cand, jobs, NullLogger(), ScriptedClient(payload))
+    assert "job_800" in [r["job_id"] for r in out["recommendations"]], \
+        "a location statement was accepted as a travel conflict"
+
+
+def test_real_conflict_still_rejects_after_the_over_rejection_fix():
+    """Regression guard: tightening must not reintroduce the P1 bug."""
+    cand, jobs = _world()
+    payload = {"items": [
+        {"job_id": "job_801", "score": 95, "claims": [],
+         "hard_constraint_conflict": True,
+         "conflict_dimensions": ["shifts"],
+         "conflicts": [{"dimension": "shifts",
+                        "quote": "Tredelt turnus med nattevakter",  # verbatim in job_801
+                        "explanation": "kandidaten kan ikke jobbe natt"}]},
+    ]}
+    out = run_match_engine(cand, jobs, NullLogger(), ScriptedClient(payload))
+    assert "job_801" not in [r["job_id"] for r in out["recommendations"]]

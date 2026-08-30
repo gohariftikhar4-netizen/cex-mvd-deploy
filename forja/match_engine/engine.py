@@ -31,7 +31,8 @@ from ..schemas import Candidate, Job
 from ..workflows.common import (
     CLAIM_INSTRUCTION, FINALISTS, build_output, claim_supported, jobs_prompt,
 )
-from .schema import CONSTRAINT_INSTRUCTION, CONSTRAINT_DIMENSIONS, RANK_SCHEMA_V1
+from .schema import (CONSTRAINT_INSTRUCTION, CONSTRAINT_DIMENSIONS,
+                     DETERMINISTIC_DIMENSIONS, RANK_SCHEMA_V1)
 
 VERDICT_CLEAR = "clear"
 VERDICT_CONFLICT = "conflict"
@@ -80,27 +81,71 @@ def _normalize(parsed: dict | None, known_ids: set[str]) -> list[dict]:
     return items
 
 
-def enforce_constraint_verdicts(items: list[dict], candidate_id: str,
-                                logger: RunLogger) -> tuple[list[dict], list[dict]]:
-    """DETERMINISTIC gate: a declared conflict can never be recommended.
+def _quote_in_ad(quote: str, job: Job) -> bool:
+    """The conflict must prove the requirement EXISTS in this ad."""
+    q = " ".join((quote or "").lower().split())
+    if len(q) < 8:
+        return False
+    hay = " ".join(f"{job.title} {job.description}".lower().split())
+    return q in hay
 
-    Returns (kept, rejected). Nothing about score or rank is consulted — this
-    runs before ordering and is not overridable downstream.
+
+def substantiated_conflicts(item: dict, job: Job) -> tuple[list[dict], list[dict]]:
+    """Split declared conflicts into substantiated vs unsubstantiated.
+
+    A conflict counts only when (a) its dimension is one the model owns — the
+    deterministic filter's dimensions are ignored — and (b) its quote appears
+    verbatim in the ad text.
+    """
+    good, bad = [], []
+    for c in item.get("conflicts", []):
+        dim = c.get("dimension")
+        if dim in DETERMINISTIC_DIMENSIONS or dim not in CONSTRAINT_DIMENSIONS:
+            bad.append({**c, "rejected_because": "dimension owned by the deterministic filter"})
+        elif not _quote_in_ad(c.get("quote", ""), job):
+            bad.append({**c, "rejected_because": "quote not found verbatim in the ad"})
+        else:
+            good.append(c)
+    return good, bad
+
+
+def enforce_constraint_verdicts(items: list[dict], jobs_by_id: dict[str, Job],
+                                candidate_id: str,
+                                logger: RunLogger) -> tuple[list[dict], list[dict]]:
+    """DETERMINISTIC gate: a SUBSTANTIATED conflict can never be recommended.
+
+    Returns (kept, rejected). Score and rank are never consulted — this runs
+    before ordering and is not overridable downstream. A declared conflict
+    whose evidence does not hold up is NOT a rejection (that over-rejection
+    collapsed real-world recommendations to 0-2 per candidate); it is logged
+    for review instead.
     """
     kept, rejected = [], []
     for it in items:
-        if it["constraint_verdict"] == VERDICT_CONFLICT:
-            rejected.append(it)
+        job = jobs_by_id.get(it["job_id"])
+        if it["constraint_verdict"] != VERDICT_CONFLICT or job is None:
+            kept.append(it)
+            continue
+        good, bad = substantiated_conflicts(it, job)
+        if bad:
+            logger.log_decision(
+                "me1.unverified_conflict", candidate_id=candidate_id,
+                job_id=it["job_id"],
+                discarded=[{"dimension": c.get("dimension"),
+                            "quote": (c.get("quote") or "")[:160],
+                            "why": c["rejected_because"]} for c in bad])
+        if good:
+            rejected.append({**it, "conflicts": good})
             logger.log_decision(
                 "me1.hard_constraint_reject",
                 candidate_id=candidate_id, job_id=it["job_id"],
                 score=it["score"],
-                dimensions=sorted({c["dimension"] for c in it["conflicts"]}),
+                dimensions=sorted({c["dimension"] for c in good}),
                 evidence=[{"dimension": c["dimension"], "quote": c.get("quote", "")}
-                          for c in it["conflicts"]],
-            )
+                          for c in good])
         else:
-            kept.append(it)
+            # Conflict declared but nothing substantiated it -> keep, flagged.
+            kept.append({**it, "constraint_verdict": VERDICT_UNVERIFIED})
     return kept, rejected
 
 
@@ -136,7 +181,8 @@ def run_match_engine(candidate: Candidate, jobs: list[Job], logger: RunLogger,
         items = _normalize(result.parsed_json, set(shortlist_ids))
 
         # 4a. HARD GATE — before any ordering. Score cannot override.
-        items, rejected = enforce_constraint_verdicts(items, candidate.id, logger)
+        items, rejected = enforce_constraint_verdicts(
+            items, jobs_by_id, candidate.id, logger)
         items.sort(key=lambda x: (-x["score"], x["job_id"]))
 
         # 4b. Deterministic re-check of the structured constraints, and
