@@ -153,6 +153,28 @@ no backtests, no secrets. Validate changes with
 `scripts/daily_quality_report.py --date all` (expect `VERDICT: PASS`); no
 automated test suite.
 
+## Standing rule — always deliver the result documents
+
+**After every task, hand the founder the current result documents as files**
+(via the file-sending mechanism, not just as prose in chat). This is a
+standing instruction, not a per-task request.
+
+Always include:
+
+| File | What it is |
+|---|---|
+| `REAL_WORLD_NAV_VALIDATION.md` | latest real-world (NAV) validation result |
+| `RED_TEAM_V2.md` | the frozen Benchmark V2 verdict (B3 → KILL) |
+| `MATCH_ENGINE_V1.md` | the frozen matching architecture decision |
+
+Add whatever other artifact the task produced (e.g. a new benchmark summary,
+a labelling batch manifest). If a task changed none of them, still send the
+unchanged current versions and say plainly that nothing changed — the
+founder wants the current state in hand after every assignment, not a diff.
+
+Keep these documents regenerated/up to date before sending: `RED_TEAM_V2.md`
+comes from `python3 -m forja.bench.report`; never hand-edit it.
+
 ## Git conventions
 
 - Work on `claude/`-prefixed branches; push with `git push -u origin <branch>`;
